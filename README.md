@@ -1,4 +1,4 @@
-# failure-taxonomy-serialisation
+# malfunctions-taxonomy-serialisation
 Common logic attachment to the paper "Ontological analysis of malfunctions: some formal considerations"
 
 The .clif axioms were parsed with macleod: https://github.com/thahmann/macleod.
