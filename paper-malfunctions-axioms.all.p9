@@ -1,0 +1,40 @@
+formulas(sos).
+(all x  ((State(x) | Process(x) | Event(x)) -> Occurrent(x))).
+(all x  (State(x) -> -(Process(x) | Event(x)))).
+(all x  (Process(x) -> -(Event(x)))).
+(all x all y  (causeOf(x,y) -> (Occurrent(x) & Occurrent(y)))).
+(all x all y  -(causeOf(x,x))).
+(all x all y  (causeOf(x,y) -> -(causeOf(y,x)))).
+(all x all y  (causeOf(x,y) <-> (achieves(x,y) | prevents(x,y) | allows(x,y) | disallows(x,y)))).
+(all x all y  (posCauseOf(x,y) <-> (achieves(x,y) | allows(x,y)))).
+(all x all y  (achieves(x,y) -> ((Event(x) | Process(x) | State(x)) & (Process(y) | State(y)) & -(State(x) & Process(y))))).
+(all x all y  (prevents(x,y) <-> (exists z  (State(z) & incompatibleWith(z,y) & achieves(x,z))))).
+(all x all y  (prevents(x,y) -> ((Event(x) | Process(x) | State(x)) & (Process(y) | State(y)) & -(State(x) & Process(y))))).
+(all z all y  (facilPreconditionFor(z,y) -> (State(z) & (Event(y) | Process(y) | State(y))))).
+(all z all y  (prevPreconditionFor(z,y) -> (State(z) & (Event(y) | Process(y) | State(y))))).
+(all z all y all w  ((incompatibleWith(z,w) & prevPreconditionFor(w,y)) -> facilPreconditionFor(z,y))).
+(all z all y all w  ((incompatibleWith(z,w) & facilPreconditionFor(w,y)) -> prevPreconditionFor(z,y))).
+(all x all y  (allows(x,y) <-> (exists z  (((achieves(x,z) | maintains(x,z)) & facilPreconditionFor(z,y)) | (prevents(x,z) & prevPreconditionFor(z,y) & -(exists w  (State(w) & achieves(x,w) & prevPreconditionFor(w,y)))))))).
+(all x all y  (allows(x,y) -> ((Event(x) | Process(x)) & (Event(y) | Process(y) | State(y))))).
+(all x all y  (allows(x,y) <-> (exists z  (((achieves(x,z) | maintains(x,z)) & prevPreconditionFor(z,y)) | (prevents(x,z) & facilPreconditionFor(z,y)))))).
+(all x all y  (disallows(x,y) -> ((Event(x) | Process(x)) & (Event(y) | Process(y) | State(y))))).
+(all x all y all t  (participatesIn(x,y,t) -> (Object(x) & Occurrent(y) & Time(t)))).
+(all x all y  (physicalConseqOf(x,y) -> (Occurrent(x) & Occurrent(y)))).
+(all x all y all z  ((physicalConseqOf(x,y) & physicalConseqOf(y,z)) -> physicalConseqOf(x,z))).
+(all x all y all z  ((achieves(x,y) & physicalConseqOf(y,z)) -> achieves(x,z))).
+(all x all y all z  ((allows(x,y) & physicalConseqOf(y,z)) -> allows(x,z))).
+(all x all y all z  ((prevents(x,z) & physicalConseqOf(y,z)) -> prevents(x,y))).
+(all x all y all z  ((disallows(x,z) & physicalConseqOf(y,z)) -> disallows(x,y))).
+(all x  (FunctionCompatible(x) <-> (Occurrent(x) & (all o all f all b all t  ((participatesIn(o,x,t) & functionOf_sys(f,o) & CF(b,f,t)) -> -(incompatibleWith(x,b))))))).
+(all x all y  (posCauseOf(x,y) -> posCauseOf_cross(x,y))).
+(all x all y all z  ((posCauseOf(x,y) & posCauseOf_cross(y,z)) -> posCauseOf_cross(x,z))).
+(all x  (FailureMechanism(x) <-> ((Process(x) | Event(x)) & FunctionCompatible(x) & (exists y  (Failure(y) & posCauseOf_cross(x,y)))))).
+(all x  (FailureCondition(x) <-> (State(x) & FunctionCompatible(x) & (exists y  (Failure(y) & (posCauseOf_cross(x,y) | facilPreconditionFor(x,y) | (exists z  (prevPreconditionFor(x,z) & disallows(z,y))))))))).
+(all x  (MereSymptom(x) <-> (FunctionCompatible(x) & -(exists y  (Failure(y) & causeOf(x,y))) & (exists z  (Fault(z) & causeOf(z,x)))))).
+(all x  (Malfunction(x) <-> -(FunctionCompatible(x)))).
+(all x  (Fault(x) <-> (-(FunctionCompatible(x)) & State(x) & (exists z  (internalTo(z,x) & achieves(z,x)))))).
+(all x  (DownState(x) <-> (-(FunctionCompatible(x)) & State(x) & -(Fault(x))))).
+(all x  (Failure(x) <-> (Malfunction(x) & Event(x) & (exists y  (Fault(y) & achieves(x,y)))))).
+(all x  (NonPerformanceEvent(x) <-> (Malfunction(x) & Event(x) & -(Failure(x))))).
+(all x  (MalfunctionProcess(x) <-> (Malfunction(x) & Process(x)))).
+end_of_list.

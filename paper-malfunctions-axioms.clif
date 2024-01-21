@@ -1,0 +1,249 @@
+(cl-comment 'Ontological analysis of malfunctions: some formal considerations')
+
+(cl-comment 'Ax1: States, processes, and events are occurrents')
+(forall (x)
+	(if (or (State x)(Process x)(Event x))(Occurrent x)))
+
+(cl-comment 'Ax2 part 1: States are disjoined from processes and events')
+(forall (x)
+	(if (State x)(not (or (Process x)(Event x)))))
+
+(cl-comment 'Ax2 part 2: Processes and events are disjoint')
+(forall (x)
+	(if (Process x)(not (Event x))))
+
+(cl-comment 'Ax3: The arguments of the causation relation are both occurrents')
+(forall (x y)
+	(if (causeOf x y)(and (Occurrent x)(Occurrent y))))
+
+(cl-comment 'Ax4 part 1: Causation is irreflexive')
+(forall (x y)
+  (not (causeOf x x)))
+
+(cl-comment 'Ax4 part 2: Causation is asymmetric')
+(forall (x y)
+  (if (causeOf x y)(not (causeOf y x))))
+
+(cl-comment 'Ax5: the achieves, prevents, allows, and disallows relations are specializations of causation and any causal relation can be recognized into one of these four types')
+(forall (x y)
+  (iff (causeOf x y)(or (achieves x y)(prevents x y)(allows x y)(disallows x y))))
+
+(cl-comment 'Df1: x positively-cause y if and only if it either achieves or allows y')
+(forall (x y)
+  (iff (posCauseOf x y)(or (achieves x y)(allows x y))))
+
+(cl-comment 'Ax6: restrictions on domain and range of achieves')
+(forall (x y)
+  (if (achieves x y)(and (or (Event x)(Process x)(State x))(or (Process y)(State y))(not (and (State x)(Process y))))))
+
+(cl-comment 'Df2:  prevents (the negative counterpart of achieves) is defined as achieving a state which is incompatible with the caused occurrence')
+(forall (x y)
+  (iff (prevents x y)(exists (z)(and (State z)(incompatibleWith z y)(achieves x z)))))
+
+(cl-comment 'Ax7: prevents has the same argument constraints seen for achieves')
+(forall (x y)
+  (if (prevents x y)(and (or (Event x)(Process x)(State x))(or (Process y)(State y))(not (and (State x)(Process y))))))
+
+(cl-comment 'Ax8: domain and range restrictions for facilitative preconditions')
+(forall (z y)
+  (if (facilPreconditionFor z y)(and (State z)(or (Event y)(Process y)(State y)))))
+
+(cl-comment 'Ax9: domain and range restrictions for preventive preconditions')
+(forall (z y)
+  (if (prevPreconditionFor z y)(and (State z)(or (Event y)(Process y)(State y)))))
+
+(cl-comment 'Ax10: if some state z is incompatible with a preventive precondition w for some occurrence y, then z is a facilitative precondition for y')
+(forall (z y w)
+  (if (and (incompatibleWith z w)(prevPreconditionFor w y))(facilPreconditionFor z y)))
+
+(cl-comment 'Ax11: if some state z is incompatible with a facilitative precondition w for some occurrence y, then z is a preventive precondition for y')
+(forall (z y w)
+  (if (and (incompatibleWith z w)(facilPreconditionFor w y))(prevPreconditionFor z y)))
+
+(cl-comment 'Df3:  allows is defined as either (i) achieving or maintaining a facilitative precondition, or (ii) preventing a preventive precondition (and assuming that, at the same time, no additional preventive precondition was achieved)')
+(forall (x y)
+  (iff (allows x y)(exists (z)(or 
+    (and (or (achieves x z)(maintains x z))(facilPreconditionFor z y))
+    (and (prevents x z)(prevPreconditionFor z y)(not (exists (w)(and (State w)(achieves x w )(prevPreconditionFor w y)))))
+))))
+
+(cl-comment 'Ax12:  the only argument restriction for allows is that states cannot allow other occurrences')
+(forall (x y)
+  (if (allows x y)(and (or (Event x)(Process x))(or (Event y)(Process y)(State y)))))
+
+(cl-comment 'Df4:  disallows is the negative counterpart of allows, with facilitative and preventive exchanged')
+(forall (x y)
+  (iff (allows x y)(exists (z)(or 
+    (and (or (achieves x z)(maintains x z))(prevPreconditionFor z y))
+    (and (prevents x z)(facilPreconditionFor z y))
+))))
+
+(cl-comment 'Ax13:  the only argument restriction for disallows is that states cannot allow other occurrences')
+(forall (x y)
+  (if (disallows x y)(and (or (Event x)(Process x))(or (Event y)(Process y)(State y)))))
+
+
+
+(cl-comment '=== End of Toyoshima causal ontology===')
+
+
+
+(cl-comment 'Ax14:  If x participates in y at t, then x is an object, y is an occurrence and t a time')
+(forall (x y t)
+  (if (participatesIn x y t)(and (Object x)(Occurrent y)(Time t))))
+
+(cl-comment 'Ax15: The argument of the physical-consequence of relation are occurrents')
+(forall (x y)
+	(if (physicalConseqOf x y)(and (Occurrent x)(Occurrent y))))
+
+(cl-comment 'Ax16: Physical-consequence of is transitive')
+(forall (x y z)
+	(if (and (physicalConseqOf x y)(physicalConseqOf y z))(physicalConseqOf x z)))
+
+(cl-comment 'Ax17 part1: If x achieves y, which physically-entails z, then x achieves z')
+(forall (x y z)
+	(if (and (achieves x y)(physicalConseqOf y z))(achieves x z)))
+
+(cl-comment 'Ax17 part2: If x allows y, which physically-entails z, then x allows z')
+(forall (x y z)
+	(if (and (allows x y)(physicalConseqOf y z))(allows x z)))
+
+(cl-comment 'Ax18 part1: If x prevents z, which is physically-entailed by y, then x prevents y')
+(forall (x y z)
+	(if (and (prevents x z)(physicalConseqOf y z))(prevents x y)))
+
+(cl-comment 'Ax18 part2: If x disallows z, which is physically-entailed by y, then x disallows y')
+(forall (x y z)
+	(if (and (disallows x z)(physicalConseqOf y z))(disallows x y)))
+
+
+
+(cl-comment '=== Start of failure taxonomy ===')
+
+
+
+(cl-comment 'Df8:  x can coexist with normal functionality (in short, is function-compatible) if and only if it is an occurrent and, for each object (o) participating in x at some time (t), if that participant has a systemic function ( f ) at that time realized through a behaviour (b), then, the behaviour is not incompatible with x')
+(forall (x)
+  (iff (FunctionCompatible x)(and (Occurrent x)(forall (o f b t)(
+    if (and(participatesIn o x t)(functionOf_sys f o)(CF b f t))(not (incompatibleWith x b)))
+  )))
+)
+
+(cl-comment 'pr17 part 1:  bare-bone axiomatics for transitive closure of posCausOf')
+(forall (x y)
+  (if (posCauseOf x y)(posCauseOf_cross x y))
+)
+
+(cl-comment 'pr17 part 2:  bare-bone axiomatics for transitive closure of posCausOf')
+(forall (x y z)
+  (if (and (posCauseOf x y)(posCauseOf_cross y z))(posCauseOf_cross x z))
+)
+
+(cl-comment 'Df9:  x is a failure mechanism means that x can coexist with normal functionality, is either a process or an event, and is the positive cause, eventually, of some failure')
+(forall (x)
+  (iff 
+    (FailureMechanism x)
+    (and 
+      (or (Process x)(Event x))
+      (FunctionCompatible x)
+      (exists (y)(and (Failure y)(posCauseOf_cross x y)))
+    )
+  )
+)
+
+(cl-comment 'Df10:  x is a failure condition means that x can coexist with normal functionality, is a state, and is either the facilitative precondition for a failure or the positive cause, eventually, of that failure, or it is the preventive precondition for some occurrence that disallows the failure.')
+(forall (x)
+  (iff 
+    (FailureCondition x)
+    (and 
+      (State x)
+      (FunctionCompatible x)
+      (exists (y)(and (Failure y)
+        (or 
+          (posCauseOf_cross x y)
+          (facilPreconditionFor x y)
+          (exists (z)(and (prevPreconditionFor x z)(disallows z y)))
+        )
+      ))
+    )
+  )
+)
+
+(cl-comment 'Df11:  x is a mere symptom means that x is function-compatible and is caused by a fault, while it has no causal relation to any failure')
+(forall (x)
+  (iff 
+    (MereSymptom x)
+    (and 
+      (FunctionCompatible x)
+      (not (exists (y)(and (Failure y)(causeOf x y))))
+      (exists (z)(and (Fault z)(causeOf z x)))
+    )
+  )
+)
+
+(cl-comment 'Df12: x is a malfunction means that x can not coexist with normal functionality')
+(forall (x)
+  (iff 
+    (Malfunction x)
+    (not (FunctionCompatible x))
+  )
+)
+
+(cl-comment 'Df13: x is a fault means that x is not function-compatible state and is achieved by some occurrence internal to itself')
+(forall (x)
+  (iff 
+    (Fault x)
+    (and 
+      (not (FunctionCompatible x))
+      (State x)
+      (exists (z)(and (internalTo z x)(achieves z x)))
+    )
+  )
+)
+
+(cl-comment 'Df14: x is a down state means that x is not a function-compatible state and also not a fault')
+(forall (x)
+  (iff 
+    (DownState x)
+    (and 
+      (not (FunctionCompatible x))
+      (State x)
+      (not (Fault x))
+    )
+  )
+)
+
+(cl-comment 'Df15: x is a failure means that x is a not-function-compatible event that achieves some faul')
+(forall (x)
+  (iff 
+    (Failure x)
+    (and 
+      (Malfunction x)
+      (Event x)
+      (exists (y)(and (Fault y)(achieves x y)))
+    )
+  )
+)
+
+(cl-comment 'Df16: x is a non-performance event means that x is a malfunction and an event, but not a failure')
+(forall (x)
+  (iff 
+    (NonPerformanceEvent x)
+    (and 
+      (Malfunction x)
+      (Event x)
+      (not (Failure x))
+    )
+  )
+)
+
+(cl-comment 'Df17: x is a malfunction process means that x is a malfunction and a process')
+(forall (x)
+  (iff 
+    (MalfunctionProcess x)
+    (and 
+      (Malfunction x)
+      (Process x)
+    )
+  )
+)
