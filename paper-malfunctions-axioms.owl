@@ -1,0 +1,479 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://www.w3id.org/MFO"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://www.w3id.org/MFO"
+     versionIRI="https://www.w3id.org/MFO">
+    <Prefix name="" IRI="C:/Users/utente/Desktop/tobu2/paper-malfunctions-axioms.owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>Malfunction Ontology: ontology about failure-related happenings</Literal>
+    </Annotation>
+    <Declaration>
+        <Class abbreviatedIRI=":DownState"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Event"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Failure"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":FailureCondition"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":FailureMechanism"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Fault"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":FunctionCompatible"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Malfunction"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":MalfunctionProcess"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":MereSymptom"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":NonPerformanceEvent"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Occurrent"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Process"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":State"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.loa.istc.cnr.it/engineering-domain/FailureRelatedHappening"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":achieves"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":allows"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":causeOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":disallows"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":facilPreconditionFor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":functionOf_sys"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":incompatibleWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":internalTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":maintains"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":physicalConseqOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":posCauseOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":posCauseOf_cross"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":prevPreconditionFor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI=":prevents"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.loa.istc.cnr.it/engineering-domain/f"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class abbreviatedIRI=":DownState"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI=":State"/>
+            <ObjectComplementOf>
+                <Class abbreviatedIRI=":Fault"/>
+            </ObjectComplementOf>
+            <ObjectComplementOf>
+                <Class abbreviatedIRI=":FunctionCompatible"/>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI=":Failure"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI=":Event"/>
+            <Class abbreviatedIRI=":Malfunction"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI=":achieves"/>
+                <Class abbreviatedIRI=":Fault"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI=":FailureMechanism"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI=":FunctionCompatible"/>
+            <ObjectUnionOf>
+                <Class abbreviatedIRI=":Event"/>
+                <Class abbreviatedIRI=":Process"/>
+            </ObjectUnionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI=":posCauseOf_cross"/>
+                <Class abbreviatedIRI="owl:Thing"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI=":Malfunction"/>
+        <ObjectComplementOf>
+            <Class abbreviatedIRI=":FunctionCompatible"/>
+        </ObjectComplementOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI=":MalfunctionProcess"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI=":Malfunction"/>
+            <Class abbreviatedIRI=":Process"/>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI=":MereSymptom"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI=":FunctionCompatible"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty abbreviatedIRI=":causeOf"/>
+                    <Class abbreviatedIRI=":Failure"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+            <ObjectSomeValuesFrom>
+                <ObjectInverseOf>
+                    <ObjectProperty abbreviatedIRI=":causeOf"/>
+                </ObjectInverseOf>
+                <Class abbreviatedIRI=":Failure"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI=":NonPerformanceEvent"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI=":Event"/>
+            <Class abbreviatedIRI=":Malfunction"/>
+            <ObjectComplementOf>
+                <Class abbreviatedIRI=":Failure"/>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Event"/>
+        <Class abbreviatedIRI=":Occurrent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":FailureCondition"/>
+        <Class abbreviatedIRI=":FunctionCompatible"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":FailureCondition"/>
+        <Class abbreviatedIRI=":State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Fault"/>
+        <Class abbreviatedIRI=":State"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Fault"/>
+        <ObjectSomeValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI=":achieves"/>
+            </ObjectInverseOf>
+            <Class IRI="http://www.loa.istc.cnr.it/engineering-domain/FailureRelatedHappening"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Fault"/>
+        <ObjectSomeValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty abbreviatedIRI=":internalTo"/>
+            </ObjectInverseOf>
+            <Class IRI="http://www.loa.istc.cnr.it/engineering-domain/FailureRelatedHappening"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":FunctionCompatible"/>
+        <Class IRI="http://www.loa.istc.cnr.it/engineering-domain/FailureRelatedHappening"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Malfunction"/>
+        <Class IRI="http://www.loa.istc.cnr.it/engineering-domain/FailureRelatedHappening"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":MalfunctionProcess"/>
+        <Class abbreviatedIRI=":Malfunction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":MalfunctionProcess"/>
+        <Class abbreviatedIRI=":Process"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":Process"/>
+        <Class abbreviatedIRI=":Occurrent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":State"/>
+        <Class abbreviatedIRI=":Occurrent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI=":State"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI=":DownState"/>
+            <Class abbreviatedIRI=":Fault"/>
+            <Class abbreviatedIRI=":FunctionCompatible"/>
+        </ObjectUnionOf>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.loa.istc.cnr.it/engineering-domain/FailureRelatedHappening"/>
+        <Class abbreviatedIRI=":Occurrent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI=":FunctionCompatible"/>
+            <Class abbreviatedIRI=":State"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI=":facilPreconditionFor"/>
+                <Class abbreviatedIRI=":Failure"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+        <Class abbreviatedIRI=":FailureCondition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI=":FunctionCompatible"/>
+            <Class abbreviatedIRI=":State"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI=":posCauseOf_cross"/>
+                <Class abbreviatedIRI=":Failure"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+        <Class abbreviatedIRI=":FailureCondition"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class abbreviatedIRI=":DownState"/>
+        <Class abbreviatedIRI=":Fault"/>
+        <Class abbreviatedIRI=":FunctionCompatible"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI=":Event"/>
+        <Class abbreviatedIRI=":Process"/>
+        <Class abbreviatedIRI=":State"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI=":Failure"/>
+        <Class abbreviatedIRI=":NonPerformanceEvent"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class abbreviatedIRI=":FunctionCompatible"/>
+        <Class abbreviatedIRI=":Malfunction"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":achieves"/>
+        <ObjectProperty abbreviatedIRI=":causeOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":achieves"/>
+        <ObjectProperty abbreviatedIRI=":posCauseOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":allows"/>
+        <ObjectProperty abbreviatedIRI=":causeOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":allows"/>
+        <ObjectProperty abbreviatedIRI=":posCauseOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":disallows"/>
+        <ObjectProperty abbreviatedIRI=":causeOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":posCauseOf"/>
+        <ObjectProperty abbreviatedIRI=":posCauseOf_cross"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI=":prevents"/>
+        <ObjectProperty abbreviatedIRI=":causeOf"/>
+    </SubObjectPropertyOf>
+    <TransitiveObjectProperty>
+        <ObjectProperty abbreviatedIRI=":physicalConseqOf"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty abbreviatedIRI=":posCauseOf_cross"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":achieves"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI=":Event"/>
+            <Class abbreviatedIRI=":Process"/>
+            <Class abbreviatedIRI=":State"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":allows"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI=":Event"/>
+            <Class abbreviatedIRI=":Process"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":causeOf"/>
+        <Class abbreviatedIRI=":Occurrent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":disallows"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI=":Event"/>
+            <Class abbreviatedIRI=":Process"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":facilPreconditionFor"/>
+        <Class abbreviatedIRI=":State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":physicalConseqOf"/>
+        <Class abbreviatedIRI=":Occurrent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":prevPreconditionFor"/>
+        <Class abbreviatedIRI=":State"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI=":prevents"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI=":Event"/>
+            <Class abbreviatedIRI=":Process"/>
+            <Class abbreviatedIRI=":State"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":achieves"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI=":Process"/>
+            <Class abbreviatedIRI=":State"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":allows"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI=":Event"/>
+            <Class abbreviatedIRI=":Process"/>
+            <Class abbreviatedIRI=":State"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":causeOf"/>
+        <Class abbreviatedIRI=":Occurrent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":disallows"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI=":Event"/>
+            <Class abbreviatedIRI=":Process"/>
+            <Class abbreviatedIRI=":State"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":facilPreconditionFor"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI=":Event"/>
+            <Class abbreviatedIRI=":Process"/>
+            <Class abbreviatedIRI=":State"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":physicalConseqOf"/>
+        <Class abbreviatedIRI=":Occurrent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":prevPreconditionFor"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI=":Event"/>
+            <Class abbreviatedIRI=":Process"/>
+            <Class abbreviatedIRI=":State"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI=":prevents"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI=":Process"/>
+            <Class abbreviatedIRI=":State"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty abbreviatedIRI=":achieves"/>
+            <ObjectProperty abbreviatedIRI=":facilPreconditionFor"/>
+        </ObjectPropertyChain>
+        <ObjectProperty abbreviatedIRI=":allows"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty abbreviatedIRI=":achieves"/>
+            <ObjectProperty abbreviatedIRI=":prevPreconditionFor"/>
+        </ObjectPropertyChain>
+        <ObjectProperty abbreviatedIRI=":allows"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty abbreviatedIRI=":incompatibleWith"/>
+            <ObjectProperty abbreviatedIRI=":facilPreconditionFor"/>
+        </ObjectPropertyChain>
+        <ObjectProperty abbreviatedIRI=":prevPreconditionFor"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty abbreviatedIRI=":maintains"/>
+            <ObjectProperty abbreviatedIRI=":facilPreconditionFor"/>
+        </ObjectPropertyChain>
+        <ObjectProperty abbreviatedIRI=":allows"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty abbreviatedIRI=":maintains"/>
+            <ObjectProperty abbreviatedIRI=":prevPreconditionFor"/>
+        </ObjectPropertyChain>
+        <ObjectProperty abbreviatedIRI=":allows"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty abbreviatedIRI=":prevents"/>
+            <ObjectProperty abbreviatedIRI=":facilPreconditionFor"/>
+        </ObjectPropertyChain>
+        <ObjectProperty abbreviatedIRI=":allows"/>
+    </SubObjectPropertyOf>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
