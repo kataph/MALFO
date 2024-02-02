@@ -1,0 +1,100 @@
+## SELECTS all failure conditions
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX malfo: <https://www.w3id.org/MALFO#>
+SELECT ?x 
+WHERE {{
+	?x a malfo:State .
+	?x a malfo:FunctionCompatible .
+	?fa a malfo:Failure .
+	{?x (malfo:achieves|malfo:allows)* ?fa .} 
+	UNION
+	{?x malfo:facilPreconditionFor ?fa .}
+	UNION
+	{?x malfo:prevPreconditionFor ?st .
+	?st malfo:disallows ?fa .}} UNION {?x rdf:type malfo:FailureCondition}
+}
+
+## SELECTS all failure mechanisms
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX malfo: <https://www.w3id.org/MALFO#>
+SELECT ?x
+WHERE {{
+	?x a malfo:State .
+	?x a malfo:FunctionCompatible .
+	?x (malfo:achieves|malfo:allows)* ?fa . ?fa a malfo:Failure .
+	{?x a malfo:Process} 
+	UNION
+	{?x a malfo:Event}} UNION {?x a malfo:FailureMechanism}
+}
+
+## SELECTS all mere symptoms # Complete knowledge about causal consequences of putative mere sympoms is assumed (for the FILTER NOT EXISTS, otherwise some non-mere-symptoms may be returned)
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX malfo: <https://www.w3id.org/MALFO#>
+SELECT ?x
+WHERE {{
+	?x a malfo:State .
+	?x a malfo:FunctionCompatible .
+	?x (malfo:achieves|malfo:allows|malfo:prevents|malfo:disallows) ?fau . ?fau a malfo:Fault
+	FILTER NOT EXISTS {?x (malfo:achieves|malfo:allows|malfo:prevents|malfo:disallows) ?fai . ?fai a malfo:Failure .}} UNION {?x a malfo:MereSymptom}
+}
+
+## SELECTS all malfunctions # Complete knowledge about functional compatibility and high-level-type of putative malfunctions is assumed (for the FILTER NOT EXISTS, otherwise some non-malfunctions may be returned)
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX malfo: <https://www.w3id.org/MALFO#>
+SELECT ?x
+WHERE {{
+	{?x a malfo:FailureRelatedHappening} UNION {?x a malfo:Occurrent} UNION {?x a malfo:State} UNION {?x a malfo:Process} UNION {?x a malfo:Event}
+	FILTER NOT EXISTS {?x a malfo:FunctionCompatible}} UNION {?x a malfo:Malfunction}
+}
+
+## SELECTS all faults # Complete knowledge about functional compatibility of putative faults is assumed (for the FILTER NOT EXISTS, otherwise some non-faults may be returned)
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX malfo: <https://www.w3id.org/MALFO#>
+SELECT ?x
+WHERE {{
+	?x a malfo:State .
+	FILTER NOT EXISTS {?x a malfo:FunctionCompatible .}
+	?z malfo:internalTo ?x . 
+	?z malfo:achieves ?x .} UNION {?x a malfo:Fault}
+}
+
+## SELECTS all down-states # Complete knowledge about functional compatibility of putative down-states  is assumed (for the FILTER NOT EXISTS, otherwise some non-down-states  may be returned)
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX malfo: <https://www.w3id.org/MALFO#>
+SELECT ?x
+WHERE {{
+	?x a malfo:State .
+	FILTER NOT EXISTS {?x a malfo:FunctionCompatible .}
+	FILTER NOT EXISTS {?x a malfo:Fault .}
+	FILTER NOT EXISTS {?z malfo:internalTo ?x . ?z malfo:achieves ?x .}} UNION {?x a malfo:DownState}
+}
+
+## SELECTS all failures # Complete knowledge about functional compatibility of putative failures is assumed (for the FILTER NOT EXISTS, otherwise some non-failures may be returned)
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX malfo: <https://www.w3id.org/MALFO#>
+SELECT ?x
+WHERE {{
+	?x a malfo:Event .
+	?x malfo:achieves ?y . ?y a malfo:Fault .
+	FILTER NOT EXISTS {?x a malfo:FunctionCompatible .}} UNION {?x a malfo:Failure}
+}
+
+## SELECTS all non-performance event # Complete knowledge about functional compatibility of putative non-performance event is assumed (for the FILTER NOT EXISTS, otherwise some non-non-performance-event  may be returned)
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX malfo: <https://www.w3id.org/MALFO#>
+SELECT ?x
+WHERE {{
+	?x a malfo:Event .
+	FILTER NOT EXISTS {?x malfo:achieves ?y . ?y a malfo:Fault .}
+	FILTER NOT EXISTS {?x a malfo:Failure .}
+	FILTER NOT EXISTS {?x a malfo:FunctionCompatible .}} UNION {?x a malfo:NonPerformanceEvent}	
+}
+
+## SELECTS all malfunctions # Complete knowledge about functional compatibility of putative malfunction-processes is assumed (for the FILTER NOT EXISTS, otherwise some non-malfunction-processes may be returned)
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX malfo: <https://www.w3id.org/MALFO#>
+SELECT ?x
+WHERE {{
+	{?x a malfo:Process}
+	FILTER NOT EXISTS {?x a malfo:FunctionCompatible}} UNION {?x a malfo:MalfunctionProcess}
+}
