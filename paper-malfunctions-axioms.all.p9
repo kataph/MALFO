@@ -6,7 +6,7 @@ formulas(sos).
 (all x all y  -(causeOf(x,x))).
 (all x all y  (causeOf(x,y) -> -(causeOf(y,x)))).
 (all x all y  (causeOf(x,y) <-> (achieves(x,y) | prevents(x,y) | allows(x,y) | disallows(x,y)))).
-(all x all y  (posCauseOf(x,y) <-> (achieves(x,y) | allows(x,y)))).
+(all x all y  (posCauseOf(x,y) <-> (achieves(x,y) | allows(x,y)|facilPreconditionFor(x,y)))).
 (all x all y  (achieves(x,y) -> ((Event(x) | Process(x) | State(x)) & (Process(y) | State(y)) & -(State(x) & Process(y))))).
 (all x all y  (prevents(x,y) <-> (exists z  (State(z) & incompatibleWith(z,y) & achieves(x,z))))).
 (all x all y  (prevents(x,y) -> ((Event(x) | Process(x) | State(x)) & (Process(y) | State(y)) & -(State(x) & Process(y))))).
@@ -29,7 +29,7 @@ formulas(sos).
 (all x all y  (posCauseOf(x,y) -> posCauseOf_cross(x,y))).
 (all x all y all z  ((posCauseOf(x,y) & posCauseOf_cross(y,z)) -> posCauseOf_cross(x,z))).
 (all x  (FailureMechanism(x) <-> ((Process(x) | Event(x)) & FunctionCompatible(x) & (exists y  (Failure(y) & posCauseOf_cross(x,y)))))).
-(all x  (FailureCondition(x) <-> (State(x) & FunctionCompatible(x) & (exists y  (Failure(y) & (posCauseOf_cross(x,y) | facilPreconditionFor(x,y) | (exists z  (prevPreconditionFor(x,z) & disallows(z,y))))))))).
+(all x  (FailureCondition(x) <-> (State(x) & FunctionCompatible(x) & (exists y  (Failure(y) & (posCauseOf_cross(x,y) | (exists z  (prevPreconditionFor(x,z) & disallows(z,y))))))))).
 (all x  (MereSymptom(x) <-> (FunctionCompatible(x) & -(exists y  (Failure(y) & causeOf(x,y))) & (exists z  (Fault(z) & causeOf(z,x)))))).
 (all x  (Malfunction(x) <-> -(FunctionCompatible(x)))).
 (all x  (Fault(x) <-> (-(FunctionCompatible(x)) & State(x) & (exists z  (internalTo(z,x) & achieves(z,x)))))).
