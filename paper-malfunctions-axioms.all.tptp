@@ -5,7 +5,7 @@ fof(axiom40, axiom, (! [X] : ! [Y] :  ((causeof(X,Y) => (occurrent(X) & occurren
 fof(axiom50, axiom, (! [X] : ! [Y] :  (~(causeof(X,X))))).
 fof(axiom60, axiom, (! [X] : ! [Y] :  ((causeof(X,Y) => ~(causeof(Y,X)))))).
 fof(axiom70, axiom, (! [X] : ! [Y] :  ((causeof(X,Y) <=> (achieves(X,Y) | prevents(X,Y) | allows(X,Y) | disallows(X,Y)))))).
-fof(axiom80, axiom, (! [X] : ! [Y] :  ((poscauseof(X,Y) <=> (achieves(X,Y) | allows(X,Y)))))).
+fof(axiom80, axiom, (! [X] : ! [Y] :  ((poscauseof(X,Y) <=> (achieves(X,Y) | allows(X,Y) | facilpreconditionfor(X,Y)))))).
 fof(axiom90, axiom, (! [X] : ! [Y] :  ((achieves(X,Y) => ((event(X) | process(X) | state(X)) & (process(Y) | state(Y)) & ~(state(X) & process(Y))))))).
 fof(axiom100, axiom, (! [X] : ! [Y] :  ((prevents(X,Y) <=> (? [Z] :  ((state(Z) & incompatiblewith(Z,Y) & achieves(X,Z)))))))).
 fof(axiom110, axiom, (! [X] : ! [Y] :  ((prevents(X,Y) => ((event(X) | process(X) | state(X)) & (process(Y) | state(Y)) & ~(state(X) & process(Y))))))).
@@ -28,7 +28,7 @@ fof(axiom270, axiom, (! [X] :  ((functioncompatible(X) <=> (occurrent(X) & (! [O
 fof(axiom280, axiom, (! [X] : ! [Y] :  ((poscauseof(X,Y) => 'poscauseof_cross'(X,Y))))).
 fof(axiom290, axiom, (! [X] : ! [Y] : ! [Z] :  (((poscauseof(X,Y) & 'poscauseof_cross'(Y,Z)) => 'poscauseof_cross'(X,Z))))).
 fof(axiom300, axiom, (! [X] :  ((failuremechanism(X) <=> ((process(X) | event(X)) & functioncompatible(X) & (? [Y] :  ((failure(Y) & 'poscauseof_cross'(X,Y))))))))).
-fof(axiom310, axiom, (! [X] :  ((failurecondition(X) <=> (state(X) & functioncompatible(X) & (? [Y] :  ((failure(Y) & ('poscauseof_cross'(X,Y) | facilpreconditionfor(X,Y) | (? [Z] :  ((prevpreconditionfor(X,Z) & disallows(Z,Y))))))))))))).
+fof(axiom310, axiom, (! [X] :  ((failurecondition(X) <=> (state(X) & functioncompatible(X) & (? [Y] :  ((failure(Y) & ('poscauseof_cross'(X,Y) | (? [Z] :  ((prevpreconditionfor(X,Z) & disallows(Z,Y))))))))))))).
 fof(axiom320, axiom, (! [X] :  ((meresymptom(X) <=> (functioncompatible(X) & ~(? [Y] :  ((failure(Y) & causeof(X,Y)))) & (? [Z] :  ((fault(Z) & causeof(Z,X))))))))).
 fof(axiom330, axiom, (! [X] :  ((malfunction(X) <=> ~(functioncompatible(X)))))).
 fof(axiom340, axiom, (! [X] :  ((fault(X) <=> (~(functioncompatible(X)) & state(X) & (? [Z] :  ((internalto(Z,X) & achieves(Z,X))))))))).
