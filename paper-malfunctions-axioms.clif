@@ -28,9 +28,9 @@
 (forall (x y)
   (iff (causeOf x y)(or (achieves x y)(prevents x y)(allows x y)(disallows x y))))
 
-(cl-comment 'Df1: x positively-cause y if and only if it either achieves or allows y')
+(cl-comment 'Df1: x positively-cause y if and only if it either achieves or allows or is a facilitative precondition for y')
 (forall (x y)
-  (iff (posCauseOf x y)(or (achieves x y)(allows x y))))
+  (iff (posCauseOf x y)(or (achieves x y)(allows x y)(facilPreconditionFor x y))))
 
 (cl-comment 'Ax6: restrictions on domain and range of achieves')
 (forall (x y)
@@ -161,7 +161,6 @@
       (exists (y)(and (Failure y)
         (or 
           (posCauseOf_cross x y)
-          (facilPreconditionFor x y)
           (exists (z)(and (prevPreconditionFor x z)(disallows z y)))
         )
       ))
