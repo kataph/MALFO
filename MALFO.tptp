@@ -15,7 +15,7 @@ fof(axiom140, axiom, (! [Z] : ! [Y] : ! [W] :  (((incompatiblewith(Z,W) & prevpr
 fof(axiom150, axiom, (! [Z] : ! [Y] : ! [W] :  (((incompatiblewith(Z,W) & facilpreconditionfor(W,Y)) => prevpreconditionfor(Z,Y))))).
 fof(axiom160, axiom, (! [X] : ! [Y] :  ((allows(X,Y) <=> (? [Z] :  ((((achieves(X,Z) | maintains(X,Z)) & facilpreconditionfor(Z,Y)) | (prevents(X,Z) & prevpreconditionfor(Z,Y) & ~(? [W] :  ((state(W) & achieves(X,W) & prevpreconditionfor(W,Y)))))))))))).
 fof(axiom170, axiom, (! [X] : ! [Y] :  ((allows(X,Y) => ((event(X) | process(X)) & (event(Y) | process(Y) | state(Y))))))).
-fof(axiom180, axiom, (! [X] : ! [Y] :  ((allows(X,Y) <=> (? [Z] :  ((((achieves(X,Z) | maintains(X,Z)) & prevpreconditionfor(Z,Y)) | (prevents(X,Z) & facilpreconditionfor(Z,Y))))))))).
+fof(axiom180, axiom, (! [X] : ! [Y] :  ((disallows(X,Y) <=> (? [Z] :  ((((achieves(X,Z) | maintains(X,Z)) & prevpreconditionfor(Z,Y)) | (prevents(X,Z) & facilpreconditionfor(Z,Y))))))))).
 fof(axiom190, axiom, (! [X] : ! [Y] :  ((disallows(X,Y) => ((event(X) | process(X)) & (event(Y) | process(Y) | state(Y))))))).
 fof(axiom200, axiom, (! [X] : ! [Y] : ! [T] :  ((participatesin(X,Y,T) => (object(X) & occurrent(Y) & time(T)))))).
 fof(axiom210, axiom, (! [X] : ! [Y] :  ((physicalconseqof(X,Y) => (occurrent(X) & occurrent(Y)))))).
