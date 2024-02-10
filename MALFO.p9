@@ -19,12 +19,16 @@ formulas(sos).
 (all x all y  (disallows(x,y) <-> (exists z  (((achieves(x,z) | maintains(x,z)) & prevPreconditionFor(z,y)) | (prevents(x,z) & facilPreconditionFor(z,y)))))).
 (all x all y  (disallows(x,y) -> ((Event(x) | Process(x)) & (Event(y) | Process(y) | State(y))))).
 (all x all y all t  (participatesIn(x,y,t) -> (Object(x) & Occurrent(y) & Time(t)))).
-(all x all y  (physicalConseqOf(x,y) -> (Occurrent(x) & Occurrent(y)))).
-(all x all y all z  ((physicalConseqOf(x,y) & physicalConseqOf(y,z)) -> physicalConseqOf(x,z))).
-(all x all y all z  ((achieves(x,y) & physicalConseqOf(y,z)) -> achieves(x,z))).
-(all x all y all z  ((allows(x,y) & physicalConseqOf(y,z)) -> allows(x,z))).
-(all x all y all z  ((prevents(x,z) & physicalConseqOf(y,z)) -> prevents(x,y))).
-(all x all y all z  ((disallows(x,z) & physicalConseqOf(y,z)) -> disallows(x,y))).
+(all x all y  (hasPhysicalConseq(x,y) -> (Occurrent(x) & Occurrent(y)))).
+(all x all y all z  ((hasPhysicalConseq(x,y) & hasPhysicalConseq(y,z)) -> hasPhysicalConseq(x,z))).
+(all x all y all z  ((achieves(x,y) & hasPhysicalConseq(y,z)) -> achieves(x,z))).
+(all x all y all z  ((allows(x,y) & hasPhysicalConseq(y,z)) -> allows(x,z))).
+(all x all y all z  ((prevents(x,z) & hasPhysicalConseq(y,z)) -> prevents(x,y))).
+(all x all y all z  ((disallows(x,z) & hasPhysicalConseq(y,z)) -> disallows(x,y))).
+(all x all y all z  (hasPhysicalConseq(y,z) & (achieves(x,y)) -> achieves(x,z))).
+(all x all y all z  (hasPhysicalConseq(y,z) & (allows(x,y)) -> allows(x,z))).
+(all x all y all z  (hasPhysicalConseq(y,z) & (prevents(x,z)) -> prevents(x,y))).
+(all x all y all z  (hasPhysicalConseq(y,z) & (disallows(x,z)) -> disallows(x,y))).
 (all x  (FunctionCompatible(x) <-> (Occurrent(x) & (all o all f all b all t  ((participatesIn(o,x,t) & functionOf_sys(f,o) & CF(b,f,t)) -> -(incompatibleWith(x,b))))))).
 (all x all y  (posCauseOf(x,y) -> posCauseOf_cross(x,y))).
 (all x all y all z  ((posCauseOf(x,y) & posCauseOf_cross(y,z)) -> posCauseOf_cross(x,z))).
