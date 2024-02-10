@@ -16,7 +16,7 @@ formulas(sos).
 (all z all y all w  ((incompatibleWith(z,w) & facilPreconditionFor(w,y)) -> prevPreconditionFor(z,y))).
 (all x all y  (allows(x,y) <-> (exists z  (((achieves(x,z) | maintains(x,z)) & facilPreconditionFor(z,y)) | (prevents(x,z) & prevPreconditionFor(z,y) & -(exists w  (State(w) & achieves(x,w) & prevPreconditionFor(w,y)))))))).
 (all x all y  (allows(x,y) -> ((Event(x) | Process(x)) & (Event(y) | Process(y) | State(y))))).
-(all x all y  (allows(x,y) <-> (exists z  (((achieves(x,z) | maintains(x,z)) & prevPreconditionFor(z,y)) | (prevents(x,z) & facilPreconditionFor(z,y)))))).
+(all x all y  (disallows(x,y) <-> (exists z  (((achieves(x,z) | maintains(x,z)) & prevPreconditionFor(z,y)) | (prevents(x,z) & facilPreconditionFor(z,y)))))).
 (all x all y  (disallows(x,y) -> ((Event(x) | Process(x)) & (Event(y) | Process(y) | State(y))))).
 (all x all y all t  (participatesIn(x,y,t) -> (Object(x) & Occurrent(y) & Time(t)))).
 (all x all y  (physicalConseqOf(x,y) -> (Occurrent(x) & Occurrent(y)))).
