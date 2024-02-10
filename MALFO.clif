@@ -73,7 +73,7 @@
 
 (cl-comment 'Df4:  disallows is the negative counterpart of allows, with facilitative and preventive exchanged')
 (forall (x y)
-  (iff (allows x y)(exists (z)(or 
+  (iff (disallows x y)(exists (z)(or 
     (and (or (achieves x z)(maintains x z))(prevPreconditionFor z y))
     (and (prevents x z)(facilPreconditionFor z y))
 ))))
@@ -94,27 +94,44 @@
 
 (cl-comment 'Ax15: The argument of the physical-consequence of relation are occurrents')
 (forall (x y)
-	(if (physicalConseqOf x y)(and (Occurrent x)(Occurrent y))))
+	(if (hasPhysicalConseq x y)(and (Occurrent x)(Occurrent y))))
 
 (cl-comment 'Ax16: Physical-consequence of is transitive')
 (forall (x y z)
-	(if (and (physicalConseqOf x y)(physicalConseqOf y z))(physicalConseqOf x z)))
+	(if (and (hasPhysicalConseq x y)(hasPhysicalConseq y z))(hasPhysicalConseq x z)))
 
 (cl-comment 'Ax17 part1: If x achieves y, which physically-entails z, then x achieves z')
 (forall (x y z)
-	(if (and (achieves x y)(physicalConseqOf y z))(achieves x z)))
+	(if (and (achieves x y)(hasPhysicalConseq y z))(achieves x z)))
 
 (cl-comment 'Ax17 part2: If x allows y, which physically-entails z, then x allows z')
 (forall (x y z)
-	(if (and (allows x y)(physicalConseqOf y z))(allows x z)))
+	(if (and (allows x y)(hasPhysicalConseq y z))(allows x z)))
 
-(cl-comment 'Ax18 part1: If x prevents z, which is physically-entailed by y, then x prevents y')
+(cl-comment 'Ax17 part3: If x prevents y, which is physically-entails z, then x prevents y')
 (forall (x y z)
-	(if (and (prevents x z)(physicalConseqOf y z))(prevents x y)))
+	(if (and (prevents x y)(hasPhysicalConseq y z))(prevents x z)))
 
-(cl-comment 'Ax18 part2: If x disallows z, which is physically-entailed by y, then x disallows y')
+(cl-comment 'Ax17 part4: If x disallows y, which is physically-entails z, then x disallows z')
 (forall (x y z)
-	(if (and (disallows x z)(physicalConseqOf y z))(disallows x y)))
+	(if (and (disallows x y)(hasPhysicalConseq y z))(disallows x z)))
+
+(cl-comment 'Ax18 part1: If x achieves y, which is physically-entailed by z, then z achieves x')
+(forall (x y z)
+	(if (and (achieves x y)(hasPhysicalConseq z x))(achieves z x)))
+
+(cl-comment 'Ax18 part2: If x prevents y, which is physically-entailed by z, then z prevents x')
+(forall (x y z)
+	(if (and (prevents x y)(hasPhysicalConseq z x))(prevents z x)))
+
+(cl-comment 'Ax18 part3: If x allows y, which is physically-entailed by z, then z allows x')
+(forall (x y z)
+	(if (and (allows x y)(hasPhysicalConseq z x))(allows z x)))
+
+(cl-comment 'Ax18 part4: If x disallows y, which is physically-entailed by z, then z disallows x')
+(forall (x y z)
+	(if (and (disallows x y)(hasPhysicalConseq z x))(disallows z x)))
+
 
 
 
