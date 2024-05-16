@@ -17,7 +17,8 @@
 	(if (causeOf x y)(and (Occurrent x)(Occurrent y))))
 
 (cl-comment 'Ax4 part 1: Causation is irreflexive')
-(forall (x y)
+(cl-comment Note that this axioms is entailed by Ax4 part 2.')
+(forall (x)
   (not (causeOf x x)))
 
 (cl-comment 'Ax4 part 2: Causation is asymmetric')
