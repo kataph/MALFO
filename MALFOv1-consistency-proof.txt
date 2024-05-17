@@ -1,0 +1,1668 @@
+% SZS start RequiredInformation
+% Congratulations - you have become a registered power user of SystemOnTPTP, at IP address 212.216.160.132.
+% Please consider donating to the TPTP project - see tptp.org for details.
+% When you donate this message will disappear.
+% If you do not donate a random delay might be added to your processing time.
+% Happy days ... you were not selected for a random delay.
+% SZS end RequiredInformation
+%------------------------------------------------------------------------------
+% File     : Vampire---4.8
+% Problem  : SOT_PX4NjV : v?.?.?
+% Transfm  : none
+% Format   : tptp:raw
+% Command  : run_vampire %s %d THM
+
+% Computer : quoll.cs.miami.edu
+% Model    : x86_64 x86_64
+% CPU      : Intel(R) Xeon(R) CPU E5-4610 0 @ 2.40GHz
+% Memory   : 128720MB
+% OS       : Linux 3.10.0-1160.99.1.el7.x86_64
+% CPULimit : 60s
+% WCLimit  : 0s
+% DateTime : Thu May 16 21:04:40 EDT 2024
+
+% Result   : Satisfiable 0.51s 1.28s
+% Output   : Saturation 0.51s
+% Verified : 
+% SZS Type : ERROR: Analysing output (MakeTreeStats fails)
+
+% Comments : 
+%------------------------------------------------------------------------------
+cnf(u234,axiom,
+    ( ~ achieves(X2,sK3(X1,X0))
+    | ~ sP0(X1,X0)
+    | sP0(X1,X2)
+    | causeof(X0,sK3(X1,X0)) ) ).
+
+cnf(u112,axiom,
+    ( ~ event(X0)
+    | ~ state(X0) ) ).
+
+cnf(u216,axiom,
+    ( ~ incompatiblewith(X2,sK4(X0,X1))
+    | ~ disallows(X0,X1)
+    | facilpreconditionfor(X2,X1)
+    | prevents(X0,sK4(X0,X1)) ) ).
+
+cnf(u139,axiom,
+    ( maintains(X1,sK3(X0,X1))
+    | prevents(X1,sK3(X0,X1))
+    | achieves(X1,sK3(X0,X1))
+    | ~ sP0(X0,X1) ) ).
+
+cnf(u128,axiom,
+    ( achieves(X0,sK1(X0,X1))
+    | ~ prevents(X0,X1) ) ).
+
+cnf(u246,axiom,
+    ( ~ prevents(X1,sK4(X2,X0))
+    | sP0(X0,X1)
+    | prevpreconditionfor(sK2(X0,X1),X0)
+    | causeof(X2,sK4(X2,X0))
+    | ~ disallows(X2,X0) ) ).
+
+cnf(u239,axiom,
+    ( ~ incompatiblewith(X2,sK4(X0,X1))
+    | ~ disallows(X0,X1)
+    | facilpreconditionfor(X2,X1)
+    | causeof(X0,sK4(X0,X1)) ) ).
+
+cnf(u228,axiom,
+    ( ~ causeof(sK4(X0,X1),X0)
+    | ~ disallows(X0,X1)
+    | state(sK4(X0,X1)) ) ).
+
+cnf(u124,axiom,
+    ( ~ achieves(X0,X1)
+    | process(X1)
+    | state(X1) ) ).
+
+cnf(u117,axiom,
+    ( ~ prevents(X0,X1)
+    | causeof(X0,X1) ) ).
+
+cnf(u158,axiom,
+    ( ~ prevpreconditionfor(X2,X1)
+    | disallows(X0,X1)
+    | ~ achieves(X0,X2) ) ).
+
+cnf(u151,axiom,
+    ( ~ sP0(X1,X0)
+    | allows(X0,X1) ) ).
+
+cnf(u140,axiom,
+    ( facilpreconditionfor(sK3(X0,X1),X0)
+    | prevents(X1,sK3(X0,X1))
+    | ~ sP0(X0,X1) ) ).
+
+cnf(u133,axiom,
+    ( ~ facilpreconditionfor(X0,X1)
+    | state(X0) ) ).
+
+cnf(u313,axiom,
+    ( ~ prevpreconditionfor(sK4(X0,X1),X2)
+    | ~ disallows(X0,X1)
+    | facilpreconditionfor(sK4(X0,X1),X1)
+    | disallows(X0,X2) ) ).
+
+cnf(u154,axiom,
+    ( maintains(X0,sK4(X0,X1))
+    | prevents(X0,sK4(X0,X1))
+    | achieves(X0,sK4(X0,X1))
+    | ~ disallows(X0,X1) ) ).
+
+cnf(u147,axiom,
+    ( ~ prevpreconditionfor(X2,X0)
+    | state(sK2(X0,X1))
+    | sP0(X0,X1)
+    | ~ prevents(X1,X2) ) ).
+
+cnf(u129,axiom,
+    ( ~ incompatiblewith(X2,X1)
+    | ~ achieves(X0,X2)
+    | prevents(X0,X1)
+    | ~ state(X2) ) ).
+
+cnf(u256,axiom,
+    ( facilpreconditionfor(sK1(X2,sK4(X0,X1)),X1)
+    | prevents(X0,sK4(X0,X1))
+    | ~ disallows(X0,X1)
+    | ~ prevents(X2,sK4(X0,X1)) ) ).
+
+cnf(u176,axiom,
+    ( ~ process(sK1(X0,X1))
+    | ~ state(X0)
+    | ~ prevents(X0,X1) ) ).
+
+cnf(u159,axiom,
+    ( ~ maintains(X0,X2)
+    | ~ prevpreconditionfor(X2,X1)
+    | disallows(X0,X1) ) ).
+
+cnf(u148,axiom,
+    ( ~ prevpreconditionfor(X2,X0)
+    | achieves(X1,sK2(X0,X1))
+    | sP0(X0,X1)
+    | ~ prevents(X1,X2) ) ).
+
+cnf(u268,axiom,
+    ( ~ facilpreconditionfor(sK3(X1,X0),X2)
+    | ~ sP0(X1,X0)
+    | prevents(X0,sK3(X1,X0))
+    | sP0(X2,X0) ) ).
+
+cnf(u181,axiom,
+    ( ~ achieves(X0,sK1(X1,X2))
+    | prevents(X0,X2)
+    | ~ prevents(X1,X2) ) ).
+
+cnf(u381,axiom,
+    ( ~ prevents(X2,sK4(X0,X1))
+    | ~ disallows(X0,X1)
+    | sP0(X1,X2)
+    | prevents(X0,sK4(X0,X1)) ) ).
+
+cnf(u282,axiom,
+    ( ~ achieves(X2,sK3(X1,X0))
+    | achieves(X0,sK3(X1,X0))
+    | ~ sP0(X1,X0)
+    | disallows(X2,X1)
+    | maintains(X0,sK3(X1,X0)) ) ).
+
+cnf(u222,axiom,
+    ( ~ disallows(X0,X1)
+    | ~ state(X0) ) ).
+
+cnf(u215,axiom,
+    ( ~ achieves(X2,sK4(X0,X1))
+    | ~ disallows(X0,X1)
+    | disallows(X2,X1)
+    | prevents(X0,sK4(X0,X1)) ) ).
+
+cnf(u204,axiom,
+    ( ~ prevents(X2,sK3(X0,X1))
+    | ~ sP0(X0,X1)
+    | disallows(X2,X0)
+    | prevpreconditionfor(sK3(X0,X1),X0) ) ).
+
+cnf(u197,axiom,
+    ( ~ achieves(X2,sK3(X1,X0))
+    | ~ sP0(X1,X0)
+    | sP0(X1,X2)
+    | prevents(X0,sK3(X1,X0)) ) ).
+
+cnf(u177,axiom,
+    ( causeof(X0,sK1(X0,X1))
+    | ~ prevents(X0,X1) ) ).
+
+cnf(u397,axiom,
+    ( ~ prevpreconditionfor(sK3(X1,X2),X3)
+    | ~ sP0(X1,X2)
+    | ~ prevents(X0,sK3(X1,X2))
+    | facilpreconditionfor(sK1(X0,sK3(X1,X2)),X1)
+    | disallows(X2,X3) ) ).
+
+cnf(u398,axiom,
+    ( ~ facilpreconditionfor(sK3(X1,X2),X3)
+    | ~ sP0(X1,X2)
+    | ~ prevents(X0,sK3(X1,X2))
+    | facilpreconditionfor(sK1(X0,sK3(X1,X2)),X1)
+    | sP0(X3,X2) ) ).
+
+cnf(u267,axiom,
+    ( ~ prevpreconditionfor(sK3(X1,X0),X2)
+    | ~ sP0(X1,X0)
+    | prevents(X0,sK3(X1,X0))
+    | disallows(X0,X2) ) ).
+
+cnf(u237,axiom,
+    ( ~ prevents(X2,sK4(X0,X1))
+    | ~ disallows(X0,X1)
+    | state(sK2(X1,X2))
+    | sP0(X1,X2)
+    | causeof(X0,sK4(X0,X1)) ) ).
+
+cnf(u393,axiom,
+    ( ~ achieves(X3,sK1(X2,sK3(X1,X0)))
+    | ~ sP0(X1,X0)
+    | achieves(X0,sK3(X1,X0))
+    | ~ prevents(X2,sK3(X1,X0))
+    | sP0(X1,X3)
+    | maintains(X0,sK3(X1,X0)) ) ).
+
+cnf(u279,axiom,
+    ( ~ prevents(X2,sK3(X1,X0))
+    | achieves(X0,sK3(X1,X0))
+    | ~ sP0(X1,X0)
+    | prevpreconditionfor(sK2(X1,X2),X1)
+    | sP0(X1,X2)
+    | maintains(X0,sK3(X1,X0)) ) ).
+
+cnf(u233,axiom,
+    ( ~ prevents(X2,sK3(X1,X0))
+    | ~ sP0(X1,X0)
+    | disallows(X2,X1)
+    | causeof(X0,sK3(X1,X0)) ) ).
+
+cnf(u230,axiom,
+    ( ~ achieves(X2,sK4(X0,X1))
+    | ~ disallows(X0,X1)
+    | sP0(X1,X2)
+    | prevpreconditionfor(sK4(X0,X1),X1) ) ).
+
+cnf(u126,axiom,
+    ( state(sK1(X0,X1))
+    | ~ prevents(X0,X1) ) ).
+
+cnf(u119,axiom,
+    ( ~ disallows(X0,X1)
+    | causeof(X0,X1) ) ).
+
+cnf(u332,axiom,
+    ( ~ achieves(X3,sK1(X2,sK4(X0,X1)))
+    | ~ disallows(X0,X1)
+    | ~ prevents(X2,sK4(X0,X1))
+    | sP0(X1,X3)
+    | prevents(X0,sK4(X0,X1)) ) ).
+
+cnf(u416,axiom,
+    ( ~ prevents(X2,sK3(X0,X1))
+    | achieves(X1,sK3(X0,X1))
+    | ~ sP0(X0,X1)
+    | sP0(X0,X2)
+    | maintains(X1,sK3(X0,X1)) ) ).
+
+cnf(u142,axiom,
+    ( facilpreconditionfor(sK3(X0,X1),X0)
+    | prevpreconditionfor(sK3(X0,X1),X0)
+    | ~ sP0(X0,X1) ) ).
+
+cnf(u135,axiom,
+    ( ~ prevpreconditionfor(X0,X1)
+    | state(X0) ) ).
+
+cnf(u275,axiom,
+    ( ~ prevents(X2,sK4(X0,X1))
+    | facilpreconditionfor(sK1(X2,sK4(X0,X1)),X1)
+    | causeof(X0,sK4(X0,X1))
+    | ~ disallows(X0,X1) ) ).
+
+cnf(u226,axiom,
+    ( causeof(X0,sK4(X0,X1))
+    | state(sK4(X0,X1))
+    | ~ disallows(X0,X1) ) ).
+
+cnf(u115,axiom,
+    ( ~ causeof(X1,X0)
+    | ~ causeof(X0,X1) ) ).
+
+cnf(u157,axiom,
+    ( facilpreconditionfor(sK4(X0,X1),X1)
+    | prevpreconditionfor(sK4(X0,X1),X1)
+    | ~ disallows(X0,X1) ) ).
+
+cnf(u138,axiom,
+    ( ~ incompatiblewith(X0,X2)
+    | ~ facilpreconditionfor(X2,X1)
+    | prevpreconditionfor(X0,X1) ) ).
+
+cnf(u131,axiom,
+    ( ~ prevents(X0,X1)
+    | process(X1)
+    | state(X1) ) ).
+
+cnf(u241,axiom,
+    ( ~ causeof(sK4(X0,X1),X0)
+    | ~ disallows(X0,X1)
+    | prevpreconditionfor(sK4(X0,X1),X1) ) ).
+
+cnf(u127,axiom,
+    ( incompatiblewith(sK1(X0,X1),X1)
+    | ~ prevents(X0,X1) ) ).
+
+cnf(u331,axiom,
+    ( ~ prevents(X3,sK1(X2,sK4(X0,X1)))
+    | ~ disallows(X0,X1)
+    | ~ prevents(X2,sK4(X0,X1))
+    | disallows(X3,X1)
+    | prevents(X0,sK4(X0,X1)) ) ).
+
+cnf(u160,axiom,
+    ( ~ facilpreconditionfor(X2,X1)
+    | disallows(X0,X1)
+    | ~ prevents(X0,X2) ) ).
+
+cnf(u132,axiom,
+    ( ~ prevents(X0,X1)
+    | ~ state(X0)
+    | ~ process(X1) ) ).
+
+cnf(u190,axiom,
+    ( ~ prevents(X4,sK1(X3,sK1(X0,X1)))
+    | ~ facilpreconditionfor(X1,X2)
+    | ~ prevents(X3,sK1(X0,X1))
+    | disallows(X4,X2)
+    | ~ prevents(X0,X1) ) ).
+
+cnf(u183,axiom,
+    ( ~ incompatiblewith(X3,sK1(X2,X0))
+    | ~ prevents(X2,X0)
+    | facilpreconditionfor(X3,X1)
+    | ~ facilpreconditionfor(X0,X1) ) ).
+
+cnf(u146,axiom,
+    ( ~ maintains(X1,X2)
+    | ~ facilpreconditionfor(X2,X0)
+    | sP0(X0,X1) ) ).
+
+cnf(u179,axiom,
+    ( prevpreconditionfor(sK1(X2,X0),X1)
+    | ~ facilpreconditionfor(X0,X1)
+    | ~ prevents(X2,X0) ) ).
+
+cnf(u161,axiom,
+    ( ~ disallows(X0,X1)
+    | event(X0)
+    | process(X0) ) ).
+
+cnf(u392,axiom,
+    ( ~ prevents(X3,sK1(X2,sK3(X1,X0)))
+    | ~ sP0(X1,X0)
+    | achieves(X0,sK3(X1,X0))
+    | ~ prevents(X2,sK3(X1,X0))
+    | disallows(X3,X1)
+    | maintains(X0,sK3(X1,X0)) ) ).
+
+cnf(u361,axiom,
+    ( facilpreconditionfor(sK1(X2,sK3(X1,X0)),X1)
+    | maintains(X0,sK3(X1,X0))
+    | ~ sP0(X1,X0)
+    | achieves(X0,sK3(X1,X0))
+    | ~ prevents(X2,sK3(X1,X0)) ) ).
+
+cnf(u221,axiom,
+    ( process(sK4(X0,X1))
+    | ~ disallows(X0,X1)
+    | state(sK4(X0,X1)) ) ).
+
+cnf(u202,axiom,
+    ( process(sK3(X0,X1))
+    | ~ sP0(X0,X1)
+    | state(sK3(X0,X1)) ) ).
+
+cnf(u191,axiom,
+    ( ~ achieves(X4,sK1(X3,sK1(X0,X1)))
+    | ~ facilpreconditionfor(X1,X2)
+    | ~ prevents(X3,sK1(X0,X1))
+    | sP0(X2,X4)
+    | ~ prevents(X0,X1) ) ).
+
+cnf(u217,axiom,
+    ( prevents(X0,sK4(X0,X1))
+    | ~ disallows(X0,X1)
+    | state(sK4(X0,X1)) ) ).
+
+cnf(u214,axiom,
+    ( ~ prevents(X2,sK4(X0,X1))
+    | ~ disallows(X0,X1)
+    | state(sK2(X1,X2))
+    | sP0(X1,X2)
+    | prevents(X0,sK4(X0,X1)) ) ).
+
+cnf(u207,axiom,
+    ( state(sK3(X0,X1))
+    | ~ sP0(X0,X1) ) ).
+
+cnf(u196,axiom,
+    ( ~ prevents(X2,sK3(X1,X0))
+    | ~ sP0(X1,X0)
+    | disallows(X2,X1)
+    | prevents(X0,sK3(X1,X0)) ) ).
+
+cnf(u247,axiom,
+    ( ~ prevents(X1,sK4(X2,X0))
+    | sP0(X0,X1)
+    | prevpreconditionfor(sK2(X0,X1),X0)
+    | prevents(X2,sK4(X2,X0))
+    | ~ disallows(X2,X0) ) ).
+
+cnf(u314,axiom,
+    ( ~ facilpreconditionfor(sK4(X0,X1),X2)
+    | ~ disallows(X0,X1)
+    | facilpreconditionfor(sK4(X0,X1),X1)
+    | sP0(X2,X0) ) ).
+
+cnf(u286,axiom,
+    ( ~ prevpreconditionfor(sK3(X0,X1),X2)
+    | ~ sP0(X0,X1)
+    | prevpreconditionfor(sK3(X0,X1),X0)
+    | disallows(X1,X2) ) ).
+
+cnf(u229,axiom,
+    ( ~ prevents(X2,sK4(X0,X1))
+    | ~ disallows(X0,X1)
+    | disallows(X2,X1)
+    | prevpreconditionfor(sK4(X0,X1),X1) ) ).
+
+cnf(u236,axiom,
+    ( ~ causeof(sK3(X0,X1),X1)
+    | ~ sP0(X0,X1)
+    | facilpreconditionfor(sK3(X0,X1),X0) ) ).
+
+cnf(u125,axiom,
+    ( ~ achieves(X0,X1)
+    | ~ state(X0)
+    | ~ process(X1) ) ).
+
+cnf(u203,axiom,
+    ( ~ sP0(X0,X1)
+    | ~ state(X1) ) ).
+
+cnf(u299,axiom,
+    ( ~ facilpreconditionfor(sK4(X0,X1),X2)
+    | ~ disallows(X0,X1)
+    | prevents(X0,sK4(X0,X1))
+    | sP0(X2,X0) ) ).
+
+cnf(u141,axiom,
+    ( maintains(X1,sK3(X0,X1))
+    | prevpreconditionfor(sK3(X0,X1),X0)
+    | achieves(X1,sK3(X0,X1))
+    | ~ sP0(X0,X1) ) ).
+
+cnf(u281,axiom,
+    ( ~ prevents(X2,sK3(X1,X0))
+    | achieves(X0,sK3(X1,X0))
+    | ~ sP0(X1,X0)
+    | state(sK2(X1,X2))
+    | sP0(X1,X2)
+    | maintains(X0,sK3(X1,X0)) ) ).
+
+cnf(u243,axiom,
+    ( ~ prevents(X0,sK4(X2,X1))
+    | sP0(X1,X0)
+    | achieves(X0,sK2(X1,X0))
+    | causeof(X2,sK4(X2,X1))
+    | ~ disallows(X2,X1) ) ).
+
+cnf(u232,axiom,
+    ( state(sK4(X0,X1))
+    | ~ disallows(X0,X1) ) ).
+
+cnf(u118,axiom,
+    ( ~ allows(X0,X1)
+    | causeof(X0,X1) ) ).
+
+cnf(u111,axiom,
+    ( ~ process(X0)
+    | ~ state(X0) ) ).
+
+cnf(u155,axiom,
+    ( prevpreconditionfor(sK4(X0,X1),X1)
+    | prevents(X0,sK4(X0,X1))
+    | ~ disallows(X0,X1) ) ).
+
+cnf(u137,axiom,
+    ( ~ prevpreconditionfor(X2,X1)
+    | facilpreconditionfor(X0,X1)
+    | ~ incompatiblewith(X0,X2) ) ).
+
+cnf(u244,axiom,
+    ( ~ prevents(X0,sK4(X2,X1))
+    | sP0(X1,X0)
+    | achieves(X0,sK2(X1,X0))
+    | prevents(X2,sK4(X2,X1))
+    | ~ disallows(X2,X1) ) ).
+
+cnf(u114,axiom,
+    ~ causeof(X0,X0) ).
+
+cnf(u174,axiom,
+    ( ~ sP0(X0,X1)
+    | ~ achieves(X1,X5)
+    | facilpreconditionfor(sK3(X0,X1),X0)
+    | ~ prevpreconditionfor(X5,X0) ) ).
+
+cnf(u156,axiom,
+    ( maintains(X0,sK4(X0,X1))
+    | facilpreconditionfor(sK4(X0,X1),X1)
+    | achieves(X0,sK4(X0,X1))
+    | ~ disallows(X0,X1) ) ).
+
+cnf(u149,axiom,
+    ( ~ prevpreconditionfor(X2,X0)
+    | prevpreconditionfor(sK2(X0,X1),X0)
+    | sP0(X0,X1)
+    | ~ prevents(X1,X2) ) ).
+
+cnf(u189,axiom,
+    ( facilpreconditionfor(sK1(X2,sK1(X0,X1)),X3)
+    | ~ prevents(X0,X1)
+    | ~ facilpreconditionfor(X1,X3)
+    | ~ prevents(X2,sK1(X0,X1)) ) ).
+
+cnf(u152,axiom,
+    ( ~ allows(X0,X1)
+    | event(X0)
+    | process(X0) ) ).
+
+cnf(u145,axiom,
+    ( ~ facilpreconditionfor(X2,X0)
+    | sP0(X0,X1)
+    | ~ achieves(X1,X2) ) ).
+
+cnf(u205,axiom,
+    ( ~ achieves(X2,sK3(X0,X1))
+    | ~ sP0(X0,X1)
+    | sP0(X0,X2)
+    | prevpreconditionfor(sK3(X0,X1),X0) ) ).
+
+cnf(u182,axiom,
+    ( ~ achieves(X3,sK1(X2,X0))
+    | ~ prevents(X2,X0)
+    | disallows(X3,X1)
+    | ~ facilpreconditionfor(X0,X1) ) ).
+
+cnf(u175,axiom,
+    ( ~ sP0(X0,X1)
+    | ~ achieves(X1,X5)
+    | maintains(X1,sK3(X0,X1))
+    | achieves(X1,sK3(X0,X1))
+    | ~ prevpreconditionfor(X5,X0) ) ).
+
+cnf(u201,axiom,
+    ( facilpreconditionfor(sK3(X0,X1),X0)
+    | causeof(X1,sK3(X0,X1))
+    | ~ sP0(X0,X1) ) ).
+
+cnf(u198,axiom,
+    ( prevents(X0,sK3(X1,X0))
+    | ~ sP0(X1,X0)
+    | state(sK3(X1,X0)) ) ).
+
+cnf(u178,axiom,
+    ( ~ causeof(sK1(X0,X1),X0)
+    | ~ prevents(X0,X1) ) ).
+
+cnf(u280,axiom,
+    ( ~ prevents(X2,sK3(X1,X0))
+    | achieves(X0,sK3(X1,X0))
+    | ~ sP0(X1,X0)
+    | achieves(X2,sK2(X1,X2))
+    | sP0(X1,X2)
+    | maintains(X0,sK3(X1,X0)) ) ).
+
+cnf(u287,axiom,
+    ( ~ facilpreconditionfor(sK3(X0,X1),X2)
+    | ~ sP0(X0,X1)
+    | prevpreconditionfor(sK3(X0,X1),X0)
+    | sP0(X2,X1) ) ).
+
+cnf(u298,axiom,
+    ( ~ prevpreconditionfor(sK4(X0,X1),X2)
+    | ~ disallows(X0,X1)
+    | prevents(X0,sK4(X0,X1))
+    | disallows(X0,X2) ) ).
+
+cnf(u238,axiom,
+    ( ~ achieves(X2,sK4(X0,X1))
+    | ~ disallows(X0,X1)
+    | disallows(X2,X1)
+    | causeof(X0,sK4(X0,X1)) ) ).
+
+cnf(u220,axiom,
+    ( prevpreconditionfor(sK4(X0,X1),X1)
+    | causeof(X0,sK4(X0,X1))
+    | ~ disallows(X0,X1) ) ).
+
+cnf(u116,axiom,
+    ( ~ achieves(X0,X1)
+    | causeof(X0,X1) ) ).
+
+cnf(u194,axiom,
+    ( ~ prevents(X2,sK1(X3,X0))
+    | ~ facilpreconditionfor(X0,X1)
+    | sP0(X1,X2)
+    | ~ prevents(X3,X0) ) ).
+
+cnf(u309,axiom,
+    ( ~ prevents(X2,sK4(X0,X1))
+    | achieves(X0,sK4(X0,X1))
+    | ~ disallows(X0,X1)
+    | disallows(X2,X1)
+    | maintains(X0,sK4(X0,X1)) ) ).
+
+cnf(u283,axiom,
+    ( ~ incompatiblewith(X2,sK3(X1,X0))
+    | achieves(X0,sK3(X1,X0))
+    | ~ sP0(X1,X0)
+    | facilpreconditionfor(X2,X1)
+    | maintains(X0,sK3(X1,X0)) ) ).
+
+cnf(u310,axiom,
+    ( ~ achieves(X2,sK4(X0,X1))
+    | achieves(X0,sK4(X0,X1))
+    | ~ disallows(X0,X1)
+    | sP0(X1,X2)
+    | maintains(X0,sK4(X0,X1)) ) ).
+
+
+%------------------------------------------------------------------------------
+%----ORIGINAL SYSTEM OUTPUT
+% Running first-order theorem proving
+% Running: /home/tptp/Systems/Vampire---4.8/vampire --input_syntax tptp --proof tptp --output_axiom_names on --mode portfolio --schedule file --schedule_file /home/tptp/Systems/Vampire---4.8/quickGreedyProduceRating_steal_pow3.txt --cores 8 -m 12000 -t 60 /tmp/tmp.2mGwiPsL5c/Vampire---4.8_58723
+% % (58786)lrs+1011_1:1_sil=8000:sp=occurrence:nwc=10.0:i=78:ss=axioms:sgt=8_0 on Vampire---4 for (596ds/78Mi)
+% % (58790)lrs+21_1:5_sil=2000:sos=on:urr=on:newcnf=on:slsq=on:i=83:slsql=off:bd=off:nm=2:ss=axioms:st=1.5:sp=const_min:gsp=on:rawr=on_0 on Vampire---4 for (596ds/83Mi)
+% % (58786)Refutation not found, incomplete strategy% (58786)------------------------------
+% % (58786)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58786)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58786)Memory used [KB]: 954
+% % (58786)Time elapsed: 0.002 s
+% % (58786)Instructions burned: 2 (million)
+% % (58786)------------------------------
+% % (58786)------------------------------
+% % (58784)dis-1011_2:1_sil=2000:lsd=20:nwc=5.0:flr=on:mep=off:st=3.0:i=34:sd=1:ep=RS:ss=axioms_0 on Vampire---4 for (596ds/34Mi)
+% % (58787)ott+1011_1:1_sil=2000:urr=on:i=33:sd=1:kws=inv_frequency:ss=axioms:sup=off_0 on Vampire---4 for (596ds/33Mi)
+% % (58790)Refutation not found, incomplete strategy% (58790)------------------------------
+% % (58790)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58790)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58791)lrs-21_1:1_to=lpo:sil=2000:sp=frequency:sos=on:lma=on:i=56:sd=2:ss=axioms:ep=R_0 on Vampire---4 for (596ds/56Mi)
+% % (58790)Memory used [KB]: 954
+% % (58790)Time elapsed: 0.002 s
+% % (58790)Instructions burned: 2 (million)
+% % (58790)------------------------------
+% % (58790)------------------------------
+% % (58787)Refutation not found, incomplete strategy% (58787)------------------------------
+% % (58787)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58791)Refutation not found, incomplete strategy% (58791)------------------------------
+% % (58791)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58784)Refutation not found, incomplete strategy% (58784)------------------------------
+% % (58784)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58791)Termination reason: Refutation not found, incomplete strategy
+% % (58787)Termination reason: Refutation not found, incomplete strategy
+% % (58784)Termination reason: Refutation not found, incomplete strategy
+% 
+% 
+% 
+% % (58791)Memory used [KB]: 954
+% % (58787)Memory used [KB]: 954
+% % (58784)Memory used [KB]: 954
+% % (58791)Time elapsed: 0.003 s
+% % (58787)Time elapsed: 0.002 s
+% % (58784)Time elapsed: 0.003 s
+% % (58791)Instructions burned: 2 (million)
+% % (58787)Instructions burned: 2 (million)
+% % (58784)Instructions burned: 2 (million)
+% % (58789)lrs+1002_1:16_to=lpo:sil=32000:sp=unary_frequency:sos=on:i=45:bd=off:ss=axioms_0 on Vampire---4 for (596ds/45Mi)
+% % (58791)------------------------------
+% % (58791)------------------------------
+% % (58787)------------------------------
+% % (58787)------------------------------
+% % (58784)------------------------------
+% % (58784)------------------------------
+% % (58788)lrs+2_1:1_sil=16000:fde=none:sos=all:nwc=5.0:i=34:ep=RS:s2pl=on:lma=on:afp=100000_0 on Vampire---4 for (596ds/34Mi)
+% % (58785)lrs+1011_461:32768_sil=16000:irw=on:sp=frequency:lsd=20:fd=preordered:nwc=10.0:s2agt=32:alpa=false:cond=fast:s2a=on:i=51:s2at=3.0:awrs=decay:awrsf=691:bd=off:nm=20:fsr=off:amm=sco:uhcvi=on:rawr=on_0 on Vampire---4 for (596ds/51Mi)
+% % (58789)Refutation not found, incomplete strategy% (58789)------------------------------
+% % (58789)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58789)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58789)Memory used [KB]: 954
+% % (58789)Time elapsed: 0.003 s
+% % (58789)Instructions burned: 2 (million)
+% % (58789)------------------------------
+% % (58789)------------------------------
+% % (58788)Refutation not found, incomplete strategy% (58788)------------------------------
+% % (58788)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58788)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58788)Memory used [KB]: 1103
+% % (58788)Time elapsed: 0.006 s
+% % (58788)Instructions burned: 4 (million)
+% % (58792)lrs+21_1:16_sil=2000:sp=occurrence:urr=on:flr=on:i=55:sd=1:nm=0:ins=3:ss=included:rawr=on:br=off_0 on Vampire---4 for (596ds/55Mi)
+% % (58788)------------------------------
+% % (58788)------------------------------
+% % (58796)lrs-1010_1:1_to=lpo:sil=2000:sp=reverse_arity:sos=on:urr=ec_only:i=518:sd=2:bd=off:ss=axioms:sgt=16_0 on Vampire---4 for (596ds/518Mi)
+% % (58795)lrs-1011_1:1_sil=4000:plsq=on:plsqr=32,1:sp=frequency:plsql=on:nwc=10.0:i=52:aac=none:afr=on:ss=axioms:er=filter:sgt=16:rawr=on:etr=on:lma=on_0 on Vampire---4 for (596ds/52Mi)
+% % (58794)lrs+1010_1:2_sil=4000:tgt=ground:nwc=10.0:st=2.0:i=208:sd=1:bd=off:ss=axioms_0 on Vampire---4 for (596ds/208Mi)
+% % (58785)Refutation not found, incomplete strategy% (58785)------------------------------
+% % (58785)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58785)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58785)Memory used [KB]: 1073
+% % (58785)Time elapsed: 0.007 s
+% % (58785)Instructions burned: 5 (million)
+% % (58793)dis+3_25:4_sil=16000:sos=all:erd=off:i=50:s2at=4.0:bd=off:nm=60:sup=off:cond=on:av=off:ins=2:nwc=10.0:etr=on:to=lpo:s2agt=20:fd=off:bsr=unit_only:slsq=on:slsqr=28,19:awrs=converge:awrsf=500:tgt=ground:bs=unit_only_0 on Vampire---4 for (596ds/50Mi)
+% % (58794)Refutation not found, incomplete strategy% (58794)------------------------------
+% % (58794)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58796)Refutation not found, incomplete strategy% (58796)------------------------------
+% % (58796)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58794)Termination reason: Refutation not found, incomplete strategy
+% % (58796)Termination reason: Refutation not found, incomplete strategy
+% 
+% 
+% % (58794)Memory used [KB]: 954
+% % (58796)Memory used [KB]: 954
+% % (58794)Time elapsed: 0.002 s
+% % (58796)Time elapsed: 0.002 s
+% % (58794)Instructions burned: 2 (million)
+% % (58796)Instructions burned: 2 (million)
+% % (58795)Refutation not found, incomplete strategy% (58795)------------------------------
+% % (58795)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58785)------------------------------
+% % (58785)------------------------------
+% % (58795)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58795)Memory used [KB]: 954
+% % (58795)Time elapsed: 0.002 s
+% % (58795)Instructions burned: 2 (million)
+% % (58796)------------------------------
+% % (58796)------------------------------
+% % (58795)------------------------------
+% % (58795)------------------------------
+% % (58794)------------------------------
+% % (58794)------------------------------
+% % (58797)lrs+1011_87677:1048576_sil=8000:sos=on:spb=non_intro:nwc=10.0:kmz=on:i=42:ep=RS:nm=0:ins=1:uhcvi=on:rawr=on:fde=unused:afp=2000:afq=1.444:plsq=on:nicw=on_0 on Vampire---4 for (596ds/42Mi)
+% % (58792)Refutation not found, incomplete strategy% (58792)------------------------------
+% % (58792)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58792)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58792)Memory used [KB]: 1121
+% % (58792)Time elapsed: 0.006 s
+% % (58792)Instructions burned: 5 (million)
+% % (58798)dis+1011_1258907:1048576_bsr=unit_only:to=lpo:drc=off:sil=2000:tgt=full:fde=none:sp=frequency:spb=goal:rnwc=on:nwc=6.70083:sac=on:newcnf=on:st=2:i=243:bs=unit_only:sd=3:afp=300:awrs=decay:awrsf=218:nm=16:ins=3:afq=3.76821:afr=on:ss=axioms:sgt=5:rawr=on:add=off:bsd=on_0 on Vampire---4 for (596ds/243Mi)
+% % (58793)Refutation not found, incomplete strategy% (58793)------------------------------
+% % (58793)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58793)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58793)Memory used [KB]: 1106
+% % (58793)Time elapsed: 0.008 s
+% % (58793)Instructions burned: 4 (million)
+% % (58792)------------------------------
+% % (58792)------------------------------
+% % (58798)Refutation not found, incomplete strategy% (58798)------------------------------
+% % (58798)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58798)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58798)Memory used [KB]: 955
+% % (58798)Time elapsed: 0.005 s
+% % (58798)Instructions burned: 2 (million)
+% % (58799)lrs+1011_2:9_sil=2000:lsd=10:newcnf=on:i=117:sd=2:awrs=decay:ss=included:amm=off:ep=R_0 on Vampire---4 for (596ds/117Mi)
+% % (58793)------------------------------
+% % (58793)------------------------------
+% % (58798)------------------------------
+% % (58798)------------------------------
+% % (58797)Refutation not found, incomplete strategy% (58797)------------------------------
+% % (58797)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58797)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58797)Memory used [KB]: 1058
+% % (58797)Time elapsed: 0.007 s
+% % (58797)Instructions burned: 4 (million)
+% % (58802)lrs+1666_1:1_sil=4000:sp=occurrence:sos=on:urr=on:newcnf=on:i=62:amm=off:ep=R:erd=off:nm=0:plsq=on:plsqr=14,1_0 on Vampire---4 for (596ds/62Mi)
+% % (58797)------------------------------
+% % (58797)------------------------------
+% % (58802)Refutation not found, incomplete strategy% (58802)------------------------------
+% % (58802)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58802)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58802)Memory used [KB]: 1083
+% % (58802)Time elapsed: 0.002 s
+% % (58802)Instructions burned: 4 (million)
+% % (58799)Refutation not found, incomplete strategy% (58799)------------------------------
+% % (58799)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58800)dis+1011_11:1_sil=2000:avsq=on:i=143:avsqr=1,16:ep=RS:rawr=on:aac=none:lsd=100:mep=off:fde=none:newcnf=on:bsr=unit_only_0 on Vampire---4 for (596ds/143Mi)
+% % (58799)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58799)Memory used [KB]: 1054
+% % (58799)Time elapsed: 0.007 s
+% % (58799)Instructions burned: 5 (million)
+% % (58801)lrs+1011_1:2_to=lpo:sil=8000:plsqc=1:plsq=on:plsqr=326,59:sp=weighted_frequency:plsql=on:nwc=10.0:newcnf=on:i=93:awrs=converge:awrsf=200:bd=off:ins=1:rawr=on:alpa=false:avsq=on:avsqr=1,16_0 on Vampire---4 for (596ds/93Mi)
+% % (58802)------------------------------
+% % (58802)------------------------------
+% % (58799)------------------------------
+% % (58799)------------------------------
+% % (58804)dis+1011_1:1_sil=16000:nwc=7.0:s2agt=64:s2a=on:i=1919:ss=axioms:sgt=8:lsd=50:sd=7_0 on Vampire---4 for (596ds/1919Mi)
+% % (58804)Refutation not found, incomplete strategy% (58804)------------------------------
+% % (58804)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58804)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58804)Memory used [KB]: 954
+% % (58804)Time elapsed: 0.002 s
+% % (58804)Instructions burned: 2 (million)
+% % (58804)------------------------------
+% % (58804)------------------------------
+% % (58803)lrs+21_2461:262144_anc=none:drc=off:sil=2000:sp=occurrence:nwc=6.0:updr=off:st=3.0:i=32:sd=2:afp=4000:erml=3:nm=14:afq=2.0:uhcvi=on:ss=included:er=filter:abs=on:nicw=on:ile=on:sims=off:s2a=on:s2agt=50:s2at=-1.0:plsq=on:plsql=on:plsqc=2:plsqr=1,32:newcnf=on:bd=off:to=lpo_0 on Vampire---4 for (596ds/32Mi)
+% % (58805)ott-32_5:1_sil=4000:sp=occurrence:urr=full:rp=on:nwc=5.0:newcnf=on:st=5.0:s2pl=on:i=55:sd=2:ins=2:ss=included:rawr=on:anc=none:sos=on:s2agt=8:spb=intro:ep=RS:avsq=on:avsqr=27,155:lma=on_0 on Vampire---4 for (596ds/55Mi)
+% % (58807)lrs+1011_6929:65536_anc=all_dependent:sil=2000:fde=none:plsqc=1:plsq=on:plsqr=19,8:plsql=on:nwc=3.0:i=46:afp=4000:ep=R:nm=3:fsr=off:afr=on:aer=off:gsp=on_0 on Vampire---4 for (596ds/46Mi)
+% % (58806)lrs-1011_1:1_sil=2000:sos=on:urr=on:i=53:sd=1:bd=off:ins=3:av=off:ss=axioms:sgt=16:gsp=on:lsd=10_0 on Vampire---4 for (596ds/53Mi)
+% % (58801)Refutation not found, incomplete strategy% (58801)------------------------------
+% % (58801)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58801)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58801)Memory used [KB]: 1071
+% % (58801)Time elapsed: 0.005 s
+% % (58801)Instructions burned: 5 (million)
+% % (58801)------------------------------
+% % (58801)------------------------------
+% % (58806)Refutation not found, incomplete strategy% (58806)------------------------------
+% % (58806)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58806)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58806)Memory used [KB]: 954
+% % (58806)Time elapsed: 0.002 s
+% % (58806)Instructions burned: 2 (million)
+% % (58806)------------------------------
+% % (58806)------------------------------
+% % (58809)ott+1011_9:29_slsqr=3,2:sil=2000:tgt=ground:lsd=10:lcm=predicate:avsqc=4:slsq=on:avsq=on:i=35:s2at=4.0:add=large:sd=1:avsqr=1,16:aer=off:ss=axioms:sgt=100:rawr=on:s2a=on:sac=on:afp=1:nwc=10.0:nm=64:bd=preordered:abs=on:rnwc=on:er=filter:nicw=on:spb=non_intro:lma=on_0 on Vampire---4 for (596ds/35Mi)
+% % (58805)Refutation not found, incomplete strategy% (58805)------------------------------
+% % (58805)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58805)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58805)Memory used [KB]: 1090
+% % (58805)Time elapsed: 0.004 s
+% % (58805)Instructions burned: 4 (million)
+% % (58808)dis+10_3:31_sil=2000:sp=frequency:abs=on:acc=on:lcm=reverse:nwc=3.0:alpa=random:st=3.0:i=102:sd=1:nm=4:ins=1:aer=off:ss=axioms_0 on Vampire---4 for (596ds/102Mi)
+% % (58809)Refutation not found, incomplete strategy% (58809)------------------------------
+% % (58809)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58809)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58809)Memory used [KB]: 955
+% % (58809)Time elapsed: 0.002 s
+% % (58809)Instructions burned: 2 (million)
+% % (58805)------------------------------
+% % (58805)------------------------------
+% % (58809)------------------------------
+% % (58809)------------------------------
+% % (58807)Refutation not found, incomplete strategy% (58807)------------------------------
+% % (58807)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58807)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58807)Memory used [KB]: 1127
+% % (58807)Time elapsed: 0.004 s
+% % (58807)Instructions burned: 6 (million)
+% % (58808)Refutation not found, incomplete strategy% (58808)------------------------------
+% % (58808)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58808)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58808)Memory used [KB]: 954
+% % (58808)Time elapsed: 0.003 s
+% % (58808)Instructions burned: 2 (million)
+% % (58807)------------------------------
+% % (58807)------------------------------
+% % (58808)------------------------------
+% % (58808)------------------------------
+% % (58810)dis+1003_1:1024_sil=4000:urr=on:newcnf=on:i=87:av=off:fsr=off:bce=on_0 on Vampire---4 for (596ds/87Mi)
+% % (58800)Refutation not found, incomplete strategy% (58800)------------------------------
+% % (58800)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58800)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58800)Memory used [KB]: 1144
+% % (58800)Time elapsed: 0.011 s
+% % (58800)Instructions burned: 13 (million)
+% % (58800)------------------------------
+% % (58800)------------------------------
+% % (58814)lrs+1010_1:512_sil=8000:tgt=ground:spb=units:gs=on:lwlo=on:nicw=on:gsem=on:st=1.5:i=40:nm=21:ss=included:nwc=5.3:afp=4000:afq=1.38:ins=1:bs=unit_only:awrs=converge:awrsf=10:bce=on_0 on Vampire---4 for (596ds/40Mi)
+% % (58815)ott+1011_1:3_drc=off:sil=4000:tgt=ground:fde=unused:plsq=on:sp=unary_first:fd=preordered:nwc=10.0:i=360:ins=1:rawr=on:bd=preordered_0 on Vampire---4 for (596ds/360Mi)
+% % (58811)dis+1010_12107:524288_anc=none:drc=encompass:sil=2000:bsd=on:rp=on:nwc=10.0:alpa=random:i=109:kws=precedence:awrs=decay:awrsf=2:nm=16:ins=3:rawr=on:s2a=on:s2at=4.5:acc=on:flr=on_0 on Vampire---4 for (596ds/109Mi)
+% % (58812)lrs+1002_1:16_sil=2000:sp=occurrence:sos=on:i=161:aac=none:bd=off:ss=included:sd=5:st=2.5:sup=off_0 on Vampire---4 for (596ds/161Mi)
+% % (58813)lrs-1002_2:9_anc=none:sil=2000:plsqc=1:plsq=on:avsql=on:plsqr=2859761,1048576:erd=off:rp=on:nwc=21.7107:newcnf=on:avsq=on:i=69:aac=none:avsqr=6317,1048576:ep=RS:fsr=off:rawr=on:afp=50:afq=2.133940627822616:sac=on_0 on Vampire---4 for (596ds/69Mi)
+% % (58815)Refutation not found, incomplete strategy% (58815)------------------------------
+% % (58815)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58815)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58815)Memory used [KB]: 1076
+% % (58815)Time elapsed: 0.004 s
+% % (58815)Instructions burned: 5 (million)
+% % (58815)------------------------------
+% % (58815)------------------------------
+% % (58812)Refutation not found, incomplete strategy% (58812)------------------------------
+% % (58812)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58812)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58812)Memory used [KB]: 1055
+% % (58812)Time elapsed: 0.004 s
+% % (58812)Instructions burned: 4 (million)
+% % (58812)------------------------------
+% % (58812)------------------------------
+% % (58816)dis+10_1:4_to=lpo:sil=2000:sos=on:spb=goal:rp=on:sac=on:newcnf=on:i=161:ss=axioms:aac=none_0 on Vampire---4 for (596ds/161Mi)
+% % (58816)Refutation not found, incomplete strategy% (58816)------------------------------
+% % (58816)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58816)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58816)Memory used [KB]: 954
+% % (58816)Time elapsed: 0.004 s
+% % (58816)Instructions burned: 2 (million)
+% % (58816)------------------------------
+% % (58816)------------------------------
+% % (58814)Refutation not found, incomplete strategy% (58814)------------------------------
+% % (58814)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58814)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58814)Memory used [KB]: 1167
+% % (58814)Time elapsed: 0.009 s
+% % (58814)Instructions burned: 14 (million)
+% % (58814)------------------------------
+% % (58814)------------------------------
+% % (58817)lrs+1011_1:20_sil=4000:tgt=ground:i=80:sd=1:bd=off:nm=32:av=off:ss=axioms:lsd=60_0 on Vampire---4 for (595ds/80Mi)
+% % (58818)lrs+11_1:2_slsqr=1,2:sil=2000:sp=const_frequency:kmz=on:newcnf=on:slsq=on:i=37:s2at=1.5:awrs=converge:nm=2:uhcvi=on:ss=axioms:sgt=20:afp=10000:fs=off:fsr=off:bd=off:s2agt=5:fd=off:add=off:erd=off:foolp=on:nwc=10.0:rp=on_0 on Vampire---4 for (595ds/37Mi)
+% % (58817)Refutation not found, incomplete strategy% (58817)------------------------------
+% % (58817)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58817)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58817)Memory used [KB]: 954
+% % (58817)Time elapsed: 0.003 s
+% % (58817)Instructions burned: 2 (million)
+% % (58817)------------------------------
+% % (58817)------------------------------
+% % (58818)Refutation not found, incomplete strategy% (58818)------------------------------
+% % (58818)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58818)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58818)Memory used [KB]: 955
+% % (58818)Time elapsed: 0.003 s
+% % (58818)Instructions burned: 2 (million)
+% % (58818)------------------------------
+% % (58818)------------------------------
+% % (58820)dis-1011_1:32_to=lpo:drc=off:sil=2000:sp=reverse_arity:sos=on:foolp=on:lsd=20:nwc=1.49509792053687:s2agt=30:avsq=on:s2a=on:s2pl=no:i=47:s2at=5.0:avsqr=5593,1048576:nm=0:fsr=off:amm=sco:rawr=on:awrs=converge:awrsf=427:ss=included:sd=1:slsq=on:fd=off_0 on Vampire---4 for (595ds/47Mi)
+% % (58819)lrs+1011_1:2_drc=encompass:sil=4000:fde=unused:sos=on:sac=on:newcnf=on:i=55:sd=10:bd=off:ins=1:uhcvi=on:ss=axioms:spb=non_intro:st=3.0:erd=off:s2a=on:nwc=3.0_0 on Vampire---4 for (595ds/55Mi)
+% % (58819)Refutation not found, incomplete strategy% (58819)------------------------------
+% % (58819)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58819)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58819)Memory used [KB]: 954
+% % (58819)Time elapsed: 0.004 s
+% % (58819)Instructions burned: 2 (million)
+% % (58820)Refutation not found, incomplete strategy% (58820)------------------------------
+% % (58820)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58820)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58820)Memory used [KB]: 1059
+% % (58820)Time elapsed: 0.003 s
+% % (58820)Instructions burned: 4 (million)
+% % (58820)------------------------------
+% % (58820)------------------------------
+% % (58819)------------------------------
+% % (58819)------------------------------
+% % (58803)Instruction limit reached!
+% % (58803)------------------------------
+% % (58803)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58803)Termination reason: Unknown
+% % (58803)Termination phase: Saturation
+% 
+% % (58803)Memory used [KB]: 1299
+% % (58803)Time elapsed: 0.027 s
+% % (58803)Instructions burned: 33 (million)
+% % (58803)------------------------------
+% % (58803)------------------------------
+% % (58822)dis+1011_1:1_sil=4000:s2agt=4:slsqc=3:slsq=on:i=132:bd=off:av=off:sup=off:ss=axioms:st=3.0_0 on Vampire---4 for (595ds/132Mi)
+% % (58822)Refutation not found, incomplete strategy% (58822)------------------------------
+% % (58822)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58822)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58822)Memory used [KB]: 954
+% % (58822)Time elapsed: 0.003 s
+% % (58822)Instructions burned: 2 (million)
+% % (58821)lrs+10_1:1024_sil=2000:st=2.0:i=32:sd=2:ss=included:ep=R_0 on Vampire---4 for (595ds/32Mi)
+% % (58822)------------------------------
+% % (58822)------------------------------
+% % (58823)dis-1011_1:1024_sil=2000:fde=unused:sos=on:nwc=10.0:i=54:uhcvi=on:ss=axioms:ep=RS:av=off:sp=occurrence:fsr=off:awrs=decay:awrsf=200_0 on Vampire---4 for (595ds/54Mi)
+% % (58823)Refutation not found, incomplete strategy% (58823)------------------------------
+% % (58823)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58823)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58823)Memory used [KB]: 954
+% % (58823)Time elapsed: 0.002 s
+% % (58823)Instructions burned: 2 (million)
+% % (58823)------------------------------
+% % (58823)------------------------------
+% % (58824)lrs+1011_1:2_to=lpo:drc=off:sil=2000:sp=const_min:urr=on:lcm=predicate:nwc=16.7073:updr=off:newcnf=on:i=82:av=off:rawr=on:ss=included:st=5.0:erd=off:flr=on_0 on Vampire---4 for (595ds/82Mi)
+% % (58826)ott+1002_2835555:1048576_to=lpo:sil=2000:sos=on:fs=off:nwc=10.3801:avsqc=3:updr=off:avsq=on:st=2:s2a=on:i=177:s2at=3:afp=10000:aac=none:avsqr=13357983,1048576:awrs=converge:awrsf=460:bd=off:nm=13:ins=2:fsr=off:amm=sco:afq=1.16719:ss=axioms:rawr=on:fd=off_0 on Vampire---4 for (595ds/177Mi)
+% % (58825)lrs+11_1:32_sil=2000:sp=occurrence:lsd=20:rp=on:i=119:sd=1:nm=0:av=off:ss=included:nwc=10.0:flr=on_0 on Vampire---4 for (595ds/119Mi)
+% % (58826)Refutation not found, incomplete strategy% (58826)------------------------------
+% % (58826)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58826)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58826)Memory used [KB]: 953
+% % (58826)Time elapsed: 0.002 s
+% % (58826)Instructions burned: 2 (million)
+% % (58826)------------------------------
+% % (58826)------------------------------
+% % (58827)lrs+1002_263:262144_sfv=off:to=lpo:drc=encompass:sil=2000:tgt=full:fde=none:bsd=on:sp=const_frequency:spb=units:fd=preordered:nwc=12.504039574721643:lwlo=on:i=117:awrs=converge:awrsf=1360:bsdmm=3:bd=off:nm=11:fsd=on:amm=off:uhcvi=on:afr=on:rawr=on:fsdmm=1:updr=off:sac=on:fdi=16_0 on Vampire---4 for (595ds/117Mi)
+% % (58828)dis+1011_1:128_sil=2000:plsq=on:sp=frequency:plsql=on:nicw=on:i=49:kws=precedence:bd=off:fsr=off:ss=axioms:sgt=64:sd=3_0 on Vampire---4 for (595ds/49Mi)
+% % (58824)Refutation not found, incomplete strategy% (58824)------------------------------
+% % (58824)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58824)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58824)Memory used [KB]: 1145
+% % (58824)Time elapsed: 0.030 s
+% % (58824)Instructions burned: 9 (million)
+% % (58828)Refutation not found, incomplete strategy% (58828)------------------------------
+% % (58828)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58828)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58828)Memory used [KB]: 954
+% % (58828)Time elapsed: 0.001 s
+% % (58828)Instructions burned: 2 (million)
+% % (58824)------------------------------
+% % (58824)------------------------------
+% % (58828)------------------------------
+% % (58828)------------------------------
+% % (58813)Instruction limit reached!
+% % (58813)------------------------------
+% % (58813)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58813)Termination reason: Unknown
+% % (58813)Termination phase: Saturation
+% 
+% % (58813)Memory used [KB]: 1220
+% % (58813)Time elapsed: 0.031 s
+% % (58813)Instructions burned: 70 (million)
+% % (58813)------------------------------
+% % (58813)------------------------------
+% % (58810)Instruction limit reached!
+% % (58810)------------------------------
+% % (58810)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58810)Termination reason: Unknown
+% % (58810)Termination phase: Saturation
+% 
+% % (58810)Memory used [KB]: 1507
+% % (58810)Time elapsed: 0.034 s
+% % (58810)Instructions burned: 87 (million)
+% % (58810)------------------------------
+% % (58810)------------------------------
+% % (58829)lrs-1011_8:1_sil=2000:spb=goal:urr=on:sac=on:i=51:afp=10000:fsr=off:ss=axioms:avsq=on:avsqr=17819,524288:bd=off:bsd=on:fd=off:sims=off:rawr=on:alpa=true:bsr=on:aer=off_0 on Vampire---4 for (595ds/51Mi)
+% % (58831)lrs+11_10:1_to=lpo:drc=off:sil=4000:sp=const_min:fd=preordered:rp=on:st=3.0:s2a=on:i=56:s2at=2.0:ss=axioms:er=known:sup=off:sd=1_0 on Vampire---4 for (595ds/56Mi)
+% % (58830)lrs+1011_1:1024_sil=8000:sp=unary_first:nwc=10.0:st=3.0:s2a=on:i=149:s2at=5.0:awrs=converge:awrsf=390:ep=R:av=off:ss=axioms:s2agt=32_0 on Vampire---4 for (595ds/149Mi)
+% % (58829)Refutation not found, incomplete strategy% (58829)------------------------------
+% % (58829)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58829)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58829)Memory used [KB]: 955
+% % (58829)Time elapsed: 0.002 s
+% % (58829)Instructions burned: 2 (million)
+% % (58830)Refutation not found, incomplete strategy% (58830)------------------------------
+% % (58830)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58830)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58830)Memory used [KB]: 954
+% % (58830)Time elapsed: 0.002 s
+% % (58830)Instructions burned: 2 (million)
+% % (58831)Refutation not found, incomplete strategy% (58831)------------------------------
+% % (58831)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58831)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58831)Memory used [KB]: 954
+% % (58831)Time elapsed: 0.003 s
+% % (58831)Instructions burned: 2 (million)
+% % (58832)lrs+1011_4:1_bsr=on:sil=32000:sos=all:urr=on:br=off:s2a=on:i=289:s2at=2.0:bd=off:gsp=on:ss=axioms:sgt=8:sd=1:fsr=off_0 on Vampire---4 for (595ds/289Mi)
+% % (58829)------------------------------
+% % (58829)------------------------------
+% % (58830)------------------------------
+% % (58830)------------------------------
+% % (58831)------------------------------
+% % (58831)------------------------------
+% % (58832)Refutation not found, incomplete strategy% (58832)------------------------------
+% % (58832)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58832)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58832)Memory used [KB]: 954
+% % (58832)Time elapsed: 0.003 s
+% % (58832)Instructions burned: 2 (million)
+% % (58832)------------------------------
+% % (58832)------------------------------
+% % (58833)ott-1011_16:1_sil=2000:sp=const_max:urr=on:lsd=20:st=3.0:i=206:ss=axioms:gsp=on:rp=on:sos=on:fd=off:aac=none_0 on Vampire---4 for (595ds/206Mi)
+% % (58834)ott+1004_1:2_bsr=unit_only:slsqr=1,8:to=lpo:sil=2000:plsqc=2:plsq=on:sp=reverse_frequency:acc=on:nwc=6.4:slsq=on:st=2.0:i=50:s2at=3.0:bd=off:ins=4:ss=axioms:sgt=10:plsql=on:rawr=on:aer=off:slsqc=2:afp=4000:afq=2.0:bce=on:gs=on:lma=on:br=off:gsaa=full_model:add=off_0 on Vampire---4 for (595ds/50Mi)
+% % (58835)lrs+1011_1:1_to=lpo:drc=off:sil=2000:tgt=full:i=1483:fd=preordered_0 on Vampire---4 for (595ds/1483Mi)
+% % (58833)Refutation not found, incomplete strategy% (58833)------------------------------
+% % (58833)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58833)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58833)Memory used [KB]: 954
+% % (58833)Time elapsed: 0.002 s
+% % (58833)Instructions burned: 2 (million)
+% % (58833)------------------------------
+% % (58833)------------------------------
+% % (58834)Refutation not found, incomplete strategy% (58834)------------------------------
+% % (58834)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58834)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58834)Memory used [KB]: 955
+% % (58834)Time elapsed: 0.002 s
+% % (58834)Instructions burned: 2 (million)
+% % (58834)------------------------------
+% % (58834)------------------------------
+% % (58835)Refutation not found, incomplete strategy% (58835)------------------------------
+% % (58835)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58835)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58835)Memory used [KB]: 1075
+% % (58835)Time elapsed: 0.004 s
+% % (58835)Instructions burned: 5 (million)
+% % (58835)------------------------------
+% % (58835)------------------------------
+% % (58836)dis+1010_1:3_sil=2000:tgt=ground:sp=const_max:nwc=5.0:s2a=on:i=67:nm=16:av=off:bd=off_0 on Vampire---4 for (595ds/67Mi)
+% % (58821)Instruction limit reached!
+% % (58821)------------------------------
+% % (58821)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58821)Termination reason: Unknown
+% % (58821)Termination phase: Saturation
+% 
+% % (58821)Memory used [KB]: 1304
+% % (58821)Time elapsed: 0.049 s
+% % (58821)Instructions burned: 32 (million)
+% % (58821)------------------------------
+% % (58821)------------------------------
+% % (58837)lrs+1011_1:1_sil=64000:tgt=full:plsqc=1:plsq=on:plsqr=32,1:sp=occurrence:sos=on:lsd=20:st=5.0:i=67:sd=2:nm=4:av=off:fsr=off:ss=axioms:er=tagged:gs=on:sgt=8:nwc=3.0:bd=off_0 on Vampire---4 for (595ds/67Mi)
+% % (58838)dis+1002_1:1024_sil=2000:sac=on:slsq=on:i=52:nm=16:sfv=off:slsqc=1:urr=ec_only:bd=off_0 on Vampire---4 for (595ds/52Mi)
+% % (58839)lrs+1010_1:1_to=lpo:sil=2000:plsq=on:plsqr=32,1:sos=on:i=366:sd=2:ss=axioms_0 on Vampire---4 for (595ds/366Mi)
+% % (58837)Refutation not found, incomplete strategy% (58837)------------------------------
+% % (58837)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58837)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58837)Memory used [KB]: 954
+% % (58837)Time elapsed: 0.004 s
+% % (58837)Instructions burned: 2 (million)
+% % (58839)Refutation not found, incomplete strategy% (58839)------------------------------
+% % (58839)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58839)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58839)Memory used [KB]: 954
+% % (58839)Time elapsed: 0.001 s
+% % (58839)Instructions burned: 2 (million)
+% % (58837)------------------------------
+% % (58837)------------------------------
+% % (58839)------------------------------
+% % (58839)------------------------------
+% % (58840)lrs+1011_4:1_to=lpo:drc=off:sil=8000:sp=frequency:abs=on:urr=on:lsd=10:nwc=5.0:s2agt=4:newcnf=on:st=5.0:s2a=on:i=863:ss=axioms:aac=none:br=off:bd=preordered_0 on Vampire---4 for (595ds/863Mi)
+% % (58840)Refutation not found, incomplete strategy% (58840)------------------------------
+% % (58840)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58840)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58840)Memory used [KB]: 955
+% % (58840)Time elapsed: 0.002 s
+% % (58840)Instructions burned: 2 (million)
+% % (58840)------------------------------
+% % (58840)------------------------------
+% % (58843)lrs-1010_1:8_sil=2000:sos=on:i=1548:sd=1:ins=3:ss=included_0 on Vampire---4 for (595ds/1548Mi)
+% % (58841)lrs+1011_1:1_sil=16000:fde=unused:plsqc=1:plsq=on:plsqr=32,1:sos=on:nwc=10.0:i=163:kws=frequency:nm=2:lsd=1:bd=off_0 on Vampire---4 for (595ds/163Mi)
+% % (58842)lrs+33_1:1_sil=4000:sp=reverse_frequency:sos=all:i=77:sd=2:bd=off:nm=2:av=off:fsr=off:ss=axioms:sgt=10:rawr=on:sup=off:to=lpo:fs=off_0 on Vampire---4 for (595ds/77Mi)
+% % (58842)Refutation not found, incomplete strategy% (58842)------------------------------
+% % (58842)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58842)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58842)Memory used [KB]: 954
+% % (58842)Time elapsed: 0.002 s
+% % (58842)Instructions burned: 2 (million)
+% % (58842)------------------------------
+% % (58842)------------------------------
+% % (58843)Refutation not found, incomplete strategy% (58843)------------------------------
+% % (58843)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58843)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58843)Memory used [KB]: 1055
+% % (58843)Time elapsed: 0.003 s
+% % (58843)Instructions burned: 4 (million)
+% % (58843)------------------------------
+% % (58843)------------------------------
+% % (58841)Refutation not found, incomplete strategy% (58841)------------------------------
+% % (58841)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58841)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58841)Memory used [KB]: 1112
+% % (58841)Time elapsed: 0.004 s
+% % (58841)Instructions burned: 4 (million)
+% % (58841)------------------------------
+% % (58841)------------------------------
+% % (58845)dis+1010_111129:1048576_sfv=off:drc=encompass:sil=2000:tgt=full:sp=reverse_arity:spb=goal:rnwc=on:fd=preordered:rp=on:nwc=6.5667:i=1376:kws=arity_squared:bd=off:nm=0:uhcvi=on:rawr=on:av=off:erd=off:cond=on:lcm=reverse_0 on Vampire---4 for (595ds/1376Mi)
+% % (58844)lrs+1010_974213:1048576_nwc=9.0:s2a=on:i=76:bd=off:lwlo=on:fd=off:sil=256000:s2agt=10:sims=off:nm=9:sp=const_min:rp=on:er=known:cond=fast:bce=on:abs=on:irw=on:amm=sco:afp=2000:updr=off:add=off:to=lpo:awrs=decay:awrsf=260:rawr=on:afq=2.0:uhcvi=on_0 on Vampire---4 for (595ds/76Mi)
+% % (58846)lrs-1002_3:2_sil=2000:sos=on:fd=off:nwc=10.0:flr=on:i=117:nm=16:fsr=off:sup=off:ss=axioms:fs=off:bd=off:fde=none:erd=off_0 on Vampire---4 for (595ds/117Mi)
+% % (58846)Refutation not found, incomplete strategy% (58846)------------------------------
+% % (58846)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58846)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58846)Memory used [KB]: 954
+% % (58846)Time elapsed: 0.002 s
+% % (58846)Instructions burned: 2 (million)
+% % (58846)------------------------------
+% % (58846)------------------------------
+% % (58811)Instruction limit reached!
+% % (58811)------------------------------
+% % (58811)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58811)Termination reason: Unknown
+% % (58811)Termination phase: Saturation
+% 
+% % (58811)Memory used [KB]: 1452
+% % (58811)Time elapsed: 0.065 s
+% % (58811)Instructions burned: 110 (million)
+% % (58811)------------------------------
+% % (58811)------------------------------
+% % (58847)ott+1011_47:51_anc=all_dependent:slsqr=853,231:sil=4000:sp=reverse_frequency:foolp=on:spb=non_intro:abs=on:s2agt=50:slsqc=1:slsq=on:st=4.0:i=59:s2at=1.5:sd=7:kws=inv_frequency:afp=2000:nm=14:ins=2:afq=1.2:uhcvi=on:afr=on:gsp=on:ss=axioms:sgt=100:rawr=on:tgt=ground:awrs=converge:awrsf=390:bs=unit_only:add=off:flr=on:plsq=on:plsqc=1:plsqr=6705511,1048576:bd=preordered:newcnf=on:nwc=5.0_0 on Vampire---4 for (595ds/59Mi)
+% % (58847)Refutation not found, incomplete strategy% (58847)------------------------------
+% % (58847)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58847)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58847)Memory used [KB]: 956
+% % (58847)Time elapsed: 0.003 s
+% % (58847)Instructions burned: 2 (million)
+% % (58848)lrs+1002_1:1_sfv=off:drc=encompass:sil=2000:fde=unused:sp=frequency:nwc=10.0:flr=on:st=1.5:i=151:bd=off:nm=0:ins=4:fsr=off:fsd=on:ss=axioms:s2a=on:s2agt=32:to=lpo:aac=none:sims=off_0 on Vampire---4 for (595ds/151Mi)
+% % (58847)------------------------------
+% % (58847)------------------------------
+% % (58848)Refutation not found, incomplete strategy% (58848)------------------------------
+% % (58848)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58848)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58848)Memory used [KB]: 955
+% % (58848)Time elapsed: 0.003 s
+% % (58848)Instructions burned: 2 (million)
+% % (58848)------------------------------
+% % (58848)------------------------------
+% % (58849)lrs+11_1:1_sos=on:urr=on:s2a=on:i=260:sd=1:aac=none:ss=axioms:gsp=on:sil=128000:nm=3:bce=on:fd=preordered:alpa=true:etr=on:bd=off:lcm=predicate_0 on Vampire---4 for (595ds/260Mi)
+% % (58849)Refutation not found, incomplete strategy% (58849)------------------------------
+% % (58849)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58849)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58849)Memory used [KB]: 954
+% % (58849)Time elapsed: 0.002 s
+% % (58849)Instructions burned: 2 (million)
+% % (58849)------------------------------
+% % (58849)------------------------------
+% % (58850)dis+1010_1:1_drc=off:sil=32000:rp=on:cond=fast:i=1797:av=off:newcnf=on:bd=off:sfv=off:plsq=on:plsqr=1,32:erd=off_0 on Vampire---4 for (595ds/1797Mi)
+% % (58838)Instruction limit reached!
+% % (58838)------------------------------
+% % (58838)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58838)Termination reason: Unknown
+% % (58838)Termination phase: Saturation
+% 
+% % (58838)Memory used [KB]: 1331
+% % (58838)Time elapsed: 0.034 s
+% % (58838)Instructions burned: 53 (million)
+% % (58838)------------------------------
+% % (58838)------------------------------
+% % (58851)lrs-1010_1:8_sil=2000:spb=intro:acc=on:rp=on:i=200:sd=1:bd=off:uhcvi=on:ss=axioms:sgt=32:rawr=on:erd=off:alpa=true:anc=none:afp=2000_0 on Vampire---4 for (595ds/200Mi)
+% % (58851)Refutation not found, incomplete strategy% (58851)------------------------------
+% % (58851)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58851)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58851)Memory used [KB]: 954
+% % (58851)Time elapsed: 0.003 s
+% % (58851)Instructions burned: 2 (million)
+% % (58851)------------------------------
+% % (58851)------------------------------
+% % (58852)lrs+1002_1:8_sil=4000:sos=on:nicw=on:st=2.5:i=356:ss=included:sd=7:ep=RS:erd=off_0 on Vampire---4 for (595ds/356Mi)
+% % (58825)Instruction limit reached!
+% % (58825)------------------------------
+% % (58825)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58825)Termination reason: Unknown
+% % (58825)Termination phase: Saturation
+% 
+% % (58825)Memory used [KB]: 1358
+% % (58825)Time elapsed: 0.088 s
+% % (58825)Instructions burned: 120 (million)
+% % (58825)------------------------------
+% % (58825)------------------------------
+% % (58836)Instruction limit reached!
+% % (58836)------------------------------
+% % (58836)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58836)Termination reason: Unknown
+% % (58836)Termination phase: Saturation
+% 
+% % (58836)Memory used [KB]: 1450
+% % (58836)Time elapsed: 0.045 s
+% % (58836)Instructions burned: 67 (million)
+% % (58836)------------------------------
+% % (58836)------------------------------
+% % (58853)lrs+1011_1:4_bsr=unit_only:to=lpo:sil=2000:plsqc=4:plsq=on:sp=occurrence:plsql=on:alpa=false:i=75:afp=10:afq=2.0:ss=axioms:rawr=on:fd=off_0 on Vampire---4 for (595ds/75Mi)
+% % (58852)Refutation not found, incomplete strategy% (58852)------------------------------
+% % (58852)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58852)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58852)Memory used [KB]: 1055
+% % (58852)Time elapsed: 0.005 s
+% % (58852)Instructions burned: 4 (million)
+% % (58853)Refutation not found, incomplete strategy% (58853)------------------------------
+% % (58853)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58853)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58853)Memory used [KB]: 954
+% % (58853)Time elapsed: 0.002 s
+% % (58853)Instructions burned: 2 (million)
+% % (58852)------------------------------
+% % (58852)------------------------------
+% % (58853)------------------------------
+% % (58853)------------------------------
+% % (58854)dis+1011_13623:1048576_drc=off:sil=2000:fde=unused:bsd=on:sp=const_min:br=off:fd=preordered:gs=on:nwc=17.1261:gsem=off:i=578:kws=inv_frequency:nm=4:rawr=on:bd=off:fsr=off:bsdmm=1:av=off_0 on Vampire---4 for (595ds/578Mi)
+% % (58855)ott-1011_3:2_to=lpo:drc=off:sil=2000:sims=off:sos=on:lma=on:spb=goal_then_units:lcm=predicate:fd=preordered:rp=on:newcnf=on:avsq=on:i=251:ins=1:fsr=off:avsqc=4:aac=none:plsq=on:plsqc=1:plsqr=32,1:fs=off_0 on Vampire---4 for (595ds/251Mi)
+% % (58856)dis+1010_1:1_sil=2000:tgt=full:rp=on:gs=on:nwc=5.0:i=93:abs=on:sos=on_0 on Vampire---4 for (595ds/93Mi)
+% % (58857)lrs+1010_1:8_sil=4000:sos=on:urr=on:rnwc=on:nwc=10.0:i=37:sup=off:kws=frequency_0 on Vampire---4 for (595ds/37Mi)
+% % (58854)Refutation not found, incomplete strategy% (58854)------------------------------
+% % (58854)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58854)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58854)Memory used [KB]: 1073
+% % (58854)Time elapsed: 0.005 s
+% % (58854)Instructions burned: 5 (million)
+% % (58854)------------------------------
+% % (58854)------------------------------
+% % (58855)Refutation not found, incomplete strategy% (58855)------------------------------
+% % (58855)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58855)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58855)Memory used [KB]: 1047
+% % (58855)Time elapsed: 0.004 s
+% % (58855)Instructions burned: 4 (million)
+% % (58855)------------------------------
+% % (58855)------------------------------
+% % (58856)Refutation not found, incomplete strategy% (58856)------------------------------
+% % (58856)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58856)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58856)Memory used [KB]: 1060
+% % (58856)Time elapsed: 0.003 s
+% % (58856)Instructions burned: 3 (million)
+% % (58856)------------------------------
+% % (58856)------------------------------
+% % (58857)Refutation not found, incomplete strategy% (58857)------------------------------
+% % (58857)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58857)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58857)Memory used [KB]: 1103
+% % (58857)Time elapsed: 0.003 s
+% % (58857)Instructions burned: 4 (million)
+% % (58857)------------------------------
+% % (58857)------------------------------
+% % (58859)dis+1011_1:1024_drc=off:sil=2000:urr=ec_only:br=off:sac=on:i=209:fsr=off_0 on Vampire---4 for (595ds/209Mi)
+% % (58858)lrs+1010_1:1_sil=2000:sos=all:kmz=on:cond=fast:i=132:kws=inv_frequency:av=off:gsp=on:rawr=on:s2a=on:s2at=2.0_0 on Vampire---4 for (595ds/132Mi)
+% % (58861)dis+10_1:1_sil=2000:nwc=5.0:s2agt=32:s2a=on:i=54:nm=4:alpa=true_0 on Vampire---4 for (595ds/54Mi)
+% % (58860)lrs+11_7:12_sil=2000:sp=occurrence:sos=on:erd=off:lcm=reverse:gs=on:st=5.0:i=100:awrs=converge:bd=off:ss=axioms:fs=off:fsr=off:rawr=on_0 on Vampire---4 for (595ds/100Mi)
+% % (58859)Refutation not found, incomplete strategy% (58859)------------------------------
+% % (58859)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58859)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58859)Memory used [KB]: 1119
+% % (58859)Time elapsed: 0.004 s
+% % (58859)Instructions burned: 5 (million)
+% % (58859)------------------------------
+% % (58859)------------------------------
+% % (58858)Refutation not found, incomplete strategy% (58858)------------------------------
+% % (58858)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58858)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58858)Memory used [KB]: 1104
+% % (58858)Time elapsed: 0.004 s
+% % (58858)Instructions burned: 4 (million)
+% % (58860)Refutation not found, incomplete strategy% (58860)------------------------------
+% % (58860)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58860)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58860)Memory used [KB]: 954
+% % (58860)Time elapsed: 0.002 s
+% % (58860)Instructions burned: 2 (million)
+% % (58858)------------------------------
+% % (58858)------------------------------
+% % (58860)------------------------------
+% % (58860)------------------------------
+% % (58827)Instruction limit reached!
+% % (58827)------------------------------
+% % (58827)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58827)Termination reason: Unknown
+% % (58827)Termination phase: Saturation
+% 
+% % (58827)Memory used [KB]: 1741
+% % (58827)Time elapsed: 0.104 s
+% % (58827)Instructions burned: 118 (million)
+% % (58827)------------------------------
+% % (58827)------------------------------
+% % (58850)Refutation not found, incomplete strategy% (58850)------------------------------
+% % (58850)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58850)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58850)Memory used [KB]: 1228
+% % (58850)Time elapsed: 0.030 s
+% % (58850)Instructions burned: 41 (million)
+% % (58850)------------------------------
+% % (58850)------------------------------
+% % (58862)lrs-1011_1:1_to=lpo:drc=off:sil=2000:sp=const_min:sos=on:lsd=10:sac=on:i=62:br=off:newcnf=on_0 on Vampire---4 for (595ds/62Mi)
+% % (58863)lrs+10_8:1_to=lpo:drc=encompass:sil=4000:sos=on:urr=on:newcnf=on:i=2265:sd=2:nm=2:ss=axioms:sgt=32:sup=off:bd=off_0 on Vampire---4 for (595ds/2265Mi)
+% % (58864)lrs+1011_1:128_sil=2000:lsd=10:newcnf=on:i=91:bd=off:fsd=on:ss=axioms:plsq=on:plsqr=9200103,131072:sd=1:lma=on_0 on Vampire---4 for (595ds/91Mi)
+% % (58863)Refutation not found, incomplete strategy% (58863)------------------------------
+% % (58863)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58863)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58863)Memory used [KB]: 954
+% % (58863)Time elapsed: 0.002 s
+% % (58863)Instructions burned: 2 (million)
+% % (58864)Refutation not found, incomplete strategy% (58864)------------------------------
+% % (58864)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58864)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58864)Memory used [KB]: 954
+% % (58864)Time elapsed: 0.002 s
+% % (58864)Instructions burned: 2 (million)
+% % (58863)------------------------------
+% % (58863)------------------------------
+% % (58864)------------------------------
+% % (58864)------------------------------
+% % (58862)Refutation not found, incomplete strategy% (58862)------------------------------
+% % (58862)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58862)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58862)Memory used [KB]: 1036
+% % (58862)Time elapsed: 0.003 s
+% % (58862)Instructions burned: 3 (million)
+% % (58862)------------------------------
+% % (58862)------------------------------
+% % (58865)ott+1011_7:2_anc=all:to=lpo:sil=2000:tgt=full:plsq=on:sos=on:spb=intro:fd=preordered:rp=on:i=83:uhcvi=on:rawr=on:fs=off:fsr=off:lsd=1:erd=off:aac=none:plsqc=2:newcnf=on:abs=on:bd=off_0 on Vampire---4 for (594ds/83Mi)
+% % (58866)dis+1010_1:1_to=lpo:sil=2000:plsq=on:plsqr=32,1:sos=on:spb=goal:rp=on:i=123:bd=off:ins=4:ss=axioms:sgt=32:acc=on:fde=none_0 on Vampire---4 for (594ds/123Mi)
+% % (58844)Instruction limit reached!
+% % (58844)------------------------------
+% % (58844)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58844)Termination reason: Unknown
+% % (58844)Termination phase: Saturation
+% 
+% % (58844)Memory used [KB]: 1525
+% % (58844)Time elapsed: 0.050 s
+% % (58844)Instructions burned: 76 (million)
+% % (58844)------------------------------
+% % (58844)------------------------------
+% % (58866)Refutation not found, incomplete strategy% (58866)------------------------------
+% % (58866)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58866)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58866)Memory used [KB]: 954
+% % (58866)Time elapsed: 0.002 s
+% % (58866)Instructions burned: 2 (million)
+% % (58869)dis+1002_1:1_sil=2000:tgt=full:spb=goal:avsq=on:i=259:avsqr=19,107:er=known:rawr=on:nwc=3.7:cond=fast:abs=on_0 on Vampire---4 for (594ds/259Mi)
+% % (58866)------------------------------
+% % (58866)------------------------------
+% % (58867)dis-1003_1:1_drc=off:sil=2000:sos=all:i=84:av=off:irw=on:plsq=on:plsqc=1:plsqr=32,1:sfv=off_0 on Vampire---4 for (594ds/84Mi)
+% % (58868)lrs+2_1:1_sil=2000:urr=on:flr=on:s2a=on:i=85:s2at=5.0:sd=1:ss=axioms:sgt=8:gsp=on:br=off_0 on Vampire---4 for (594ds/85Mi)
+% % (58865)Refutation not found, incomplete strategy% (58865)------------------------------
+% % (58865)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58865)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58865)Memory used [KB]: 1045
+% % (58865)Time elapsed: 0.003 s
+% % (58865)Instructions burned: 4 (million)
+% % (58865)------------------------------
+% % (58865)------------------------------
+% % (58868)Refutation not found, incomplete strategy% (58868)------------------------------
+% % (58868)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58868)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58868)Memory used [KB]: 954
+% % (58868)Time elapsed: 0.002 s
+% % (58868)Instructions burned: 2 (million)
+% % (58868)------------------------------
+% % (58868)------------------------------
+% % (58867)Refutation not found, incomplete strategy% (58867)------------------------------
+% % (58867)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58867)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58867)Memory used [KB]: 1103
+% % (58867)Time elapsed: 0.003 s
+% % (58867)Instructions burned: 4 (million)
+% % (58867)------------------------------
+% % (58867)------------------------------
+% % (58870)lrs+1010_1:1_to=lpo:sil=32000:plsq=on:plsqr=32,1:sp=frequency:sos=on:erd=off:newcnf=on:i=106:bd=off:rawr=on:sup=off_0 on Vampire---4 for (594ds/106Mi)
+% % (58871)lrs+1010_1:28_sil=2000:s2agt=16:st=3.0:s2a=on:i=278:sd=3:ss=axioms:av=off:slsq=on_0 on Vampire---4 for (594ds/278Mi)
+% % (58871)Refutation not found, incomplete strategy% (58871)------------------------------
+% % (58871)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58871)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58871)Memory used [KB]: 954
+% % (58871)Time elapsed: 0.002 s
+% % (58871)Instructions burned: 2 (million)
+% % (58872)lrs+1011_1:10_to=lpo:sil=2000:nwc=5.0:st=5.0:i=151:nm=2:av=off:ss=included:bd=preordered:uhcvi=on:irw=on_0 on Vampire---4 for (594ds/151Mi)
+% % (58871)------------------------------
+% % (58871)------------------------------
+% % (58870)Refutation not found, incomplete strategy% (58870)------------------------------
+% % (58870)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58870)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58870)Memory used [KB]: 1036
+% % (58870)Time elapsed: 0.002 s
+% % (58870)Instructions burned: 3 (million)
+% % (58870)------------------------------
+% % (58870)------------------------------
+% % (58873)lrs+2_1:28_bsr=unit_only:slsqr=1,2:to=lpo:sil=4000:fde=none:sp=unary_first:spb=goal_then_units:slsqc=1:slsq=on:i=97:s2at=2.0:slsql=off:bd=off:nm=3:av=off:fsd=on:s2agt=32_0 on Vampire---4 for (594ds/97Mi)
+% % (58872)Refutation not found, incomplete strategy% (58872)------------------------------
+% % (58872)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58872)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58872)Memory used [KB]: 1130
+% % (58872)Time elapsed: 0.004 s
+% % (58872)Instructions burned: 6 (million)
+% % (58872)------------------------------
+% % (58872)------------------------------
+% % (58874)dis+1011_1:1_sil=2000:sos=on:lsd=100:rp=on:nwc=10.0:s2agt=16:newcnf=on:i=464:bd=off:fsr=off:rawr=on:avsq=on:avsql=on:avsqr=117,449:s2a=on:bs=on_0 on Vampire---4 for (594ds/464Mi)
+% % (58876)dis-1011_1:4_sil=2000:tgt=ground:s2a=on:i=1993:ep=RS:fsr=off:s2at=2.0:av=off:ss=axioms:st=1.5_0 on Vampire---4 for (594ds/1993Mi)
+% % (58875)dis+666_17:28_sil=4000:sp=const_frequency:lcm=reverse:nwc=15.189:avsqc=3:avsq=on:s2a=on:i=79:s2at=2.5:bs=on:ins=2:fsd=on:rawr=on:to=lpo:s2agt=8:sac=on:bd=off_0 on Vampire---4 for (594ds/79Mi)
+% % (58876)Refutation not found, incomplete strategy% (58876)------------------------------
+% % (58876)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58876)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58876)Memory used [KB]: 954
+% % (58876)Time elapsed: 0.002 s
+% % (58876)Instructions burned: 2 (million)
+% % (58876)------------------------------
+% % (58876)------------------------------
+% % (58861)Instruction limit reached!
+% % (58861)------------------------------
+% % (58861)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58861)Termination reason: Unknown
+% % (58861)Termination phase: Saturation
+% 
+% % (58861)Memory used [KB]: 1378
+% % (58861)Time elapsed: 0.046 s
+% % (58861)Instructions burned: 54 (million)
+% % (58861)------------------------------
+% % (58861)------------------------------
+% % (58877)lrs+1011_1:1_sil=64000:i=101:sd=2:ep=R:ss=axioms_0 on Vampire---4 for (594ds/101Mi)
+% % (58874)Refutation not found, incomplete strategy% (58874)------------------------------
+% % (58874)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58877)Refutation not found, incomplete strategy% (58877)------------------------------
+% % (58877)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58877)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58874)Termination reason: Refutation not found, incomplete strategy
+% % (58877)Memory used [KB]: 954
+% 
+% % (58877)Time elapsed: 0.004 s
+% % (58874)Memory used [KB]: 1092
+% % (58877)Instructions burned: 2 (million)
+% % (58874)Time elapsed: 0.007 s
+% % (58874)Instructions burned: 4 (million)
+% % (58877)------------------------------
+% % (58877)------------------------------
+% % (58874)------------------------------
+% % (58874)------------------------------
+% % (58878)dis-1010_1:1_bsr=unit_only:to=lpo:sil=256000:fde=none:plsq=on:plsqr=205,29:sp=occurrence:sos=on:abs=on:newcnf=on:st=6.0:i=4978:sd=2:bd=off:amm=off:ss=axioms:rawr=on_0 on Vampire---4 for (594ds/4978Mi)
+% % (58878)Refutation not found, incomplete strategy% (58878)------------------------------
+% % (58878)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58878)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58878)Memory used [KB]: 954
+% % (58878)Time elapsed: 0.003 s
+% % (58878)Instructions burned: 2 (million)
+% % (58879)lrs+1002_14319:131072_to=lpo:drc=encompass:sil=2000:tgt=ground:fde=none:sp=const_max:sos=on:spb=units:lcm=predicate:nwc=7.734471748972603:flr=on:newcnf=on:i=169:add=large:awrs=decay:awrsf=1079:bd=off:nm=2:ins=1:fsr=off:uhcvi=on:rawr=on:anc=all_dependent:aac=none:fs=off_0 on Vampire---4 for (594ds/169Mi)
+% % (58878)------------------------------
+% % (58878)------------------------------
+% % (58879)Refutation not found, incomplete strategy% (58879)------------------------------
+% % (58879)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58879)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58879)Memory used [KB]: 1037
+% % (58879)Time elapsed: 0.003 s
+% % (58879)Instructions burned: 3 (million)
+% % (58880)ott+2_27871:262144_drc=encompass:sil=2000:plsqc=1:plsq=on:ile=on:plsqr=9426019,262144:sp=const_frequency:foolp=on:bce=on:rnwc=on:gs=on:nwc=12.5427:i=178:gsaa=from_current:erml=3:bd=off:nm=10:uhcvi=on:gsp=on:er=known:rawr=on:fd=preordered:alpa=true_0 on Vampire---4 for (594ds/178Mi)
+% % (58879)------------------------------
+% % (58879)------------------------------
+% % (58881)dis+21_1:1_to=lpo:drc=off:sil=2000:etr=on:sp=const_frequency:sos=all:fs=off:spb=goal_then_units:s2a=on:i=111:s2at=3.0:fsr=off_0 on Vampire---4 for (594ds/111Mi)
+% % (58881)Refutation not found, incomplete strategy% (58881)------------------------------
+% % (58881)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58881)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58881)Memory used [KB]: 1055
+% % (58881)Time elapsed: 0.004 s
+% % (58881)Instructions burned: 4 (million)
+% % (58882)lrs+1011_3:1_slsqr=1,2:sil=2000:tgt=full:plsq=on:plsqr=173,396:spb=goal:bce=on:newcnf=on:slsq=on:st=3.5:i=243:add=off:bs=on:fsr=off:ss=axioms:rawr=on:afp=1:afq=2.9664927043397338_0 on Vampire---4 for (594ds/243Mi)
+% % (58881)------------------------------
+% % (58881)------------------------------
+% % (58882)Refutation not found, incomplete strategy% (58882)------------------------------
+% % (58882)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58882)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58882)Memory used [KB]: 955
+% % (58882)Time elapsed: 0.002 s
+% % (58882)Instructions burned: 2 (million)
+% % (58882)------------------------------
+% % (58882)------------------------------
+% % (58883)lrs+1011_1:32_sil=2000:tgt=ground:acc=model:lsd=10:nwc=1.1:flr=on:s2pl=no:i=229:bd=off:gsp=on:rawr=on_0 on Vampire---4 for (594ds/229Mi)
+% % (58884)lrs+1002_63:8_sil=4000:sp=frequency:urr=on:lcm=reverse:nwc=10.0:flr=on:i=306:fdi=1:fsr=off:br=off_0 on Vampire---4 for (594ds/306Mi)
+% % (58883)Refutation not found, incomplete strategy% (58883)------------------------------
+% % (58883)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58883)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58883)Memory used [KB]: 1138
+% % (58883)Time elapsed: 0.005 s
+% % (58883)Instructions burned: 6 (million)
+% % (58883)------------------------------
+% % (58883)------------------------------
+% % (58884)Refutation not found, incomplete strategy% (58884)------------------------------
+% % (58884)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58884)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58884)Memory used [KB]: 1137
+% % (58884)Time elapsed: 0.004 s
+% % (58884)Instructions burned: 5 (million)
+% % (58884)------------------------------
+% % (58884)------------------------------
+% % (58885)dis+22_1:32_sil=2000:fde=none:nwc=10.0:slsqc=3:slsq=on:i=118:slsql=off:nm=16:fsr=off:fsd=on:ss=axioms_0 on Vampire---4 for (594ds/118Mi)
+% % (58885)Refutation not found, incomplete strategy% (58885)------------------------------
+% % (58885)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58885)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (58885)Memory used [KB]: 954
+% % (58885)Time elapsed: 0.002 s
+% % (58885)Instructions burned: 2 (million)
+% % (58885)------------------------------
+% % (58885)------------------------------
+% % (58880)First to succeed.
+% % (58880)Solution written to "/tmp/tmp.2mGwiPsL5c/vampire-proof-58783"
+% % (58886)dis-1011_1:2_to=lpo:sil=2000:plsq=on:plsqr=473,226:etr=on:erd=off:i=85:bd=off:amm=off:ss=axioms:sgt=64:rawr=on:add=large:fd=off_0 on Vampire---4 for (594ds/85Mi)
+% % (58887)lrs+11_1:1_drc=off:sil=4000:fde=unused:sp=unary_frequency:sos=on:fs=off:nwc=17.7715:flr=on:avsq=on:i=182:kws=precedence:avsqr=18,127:bd=off:nm=16:fsr=off:uhcvi=on:rawr=on:s2pl=no:s2agt=8:ss=axioms:sd=1:st=3.5:aac=none:afp=50:afq=2.0_0 on Vampire---4 for (594ds/182Mi)
+% % SZS status Satisfiable for Vampire---4
+% % (58880)# SZS output start Saturation.
+% See solution above
+% % (58880)------------------------------
+% % (58880)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (58880)Termination reason: Satisfiable
+% 
+% % (58880)Memory used [KB]: 1187
+% % (58880)Time elapsed: 0.015 s
+% % (58880)Instructions burned: 17 (million)
+% % (58783)Success in time 0.553 s
+% % Vampire---4.8 exiting
+% 
+%------------------------------------------------------------------------------
