@@ -1,0 +1,5400 @@
+% SZS start RequiredInformation
+% Congratulations - you have become a registered power user of SystemOnTPTP, at IP address 212.216.160.132.
+% Please consider donating to the TPTP project - see tptp.org for details.
+% When you donate this message will disappear.
+% If you do not donate a random delay might be added to your processing time.
+% Happy days ... you were not selected for a random delay.
+% SZS end RequiredInformation
+%------------------------------------------------------------------------------
+% File     : Vampire---4.8
+% Problem  : SOT_JGtqqO : v?.?.?
+% Transfm  : none
+% Format   : tptp:raw
+% Command  : run_vampire %s %d THM
+
+% Computer : quoll.cs.miami.edu
+% Model    : x86_64 x86_64
+% CPU      : Intel(R) Xeon(R) CPU E5-4610 0 @ 2.40GHz
+% Memory   : 128720MB
+% OS       : Linux 3.10.0-1160.99.1.el7.x86_64
+% CPULimit : 60s
+% WCLimit  : 0s
+% DateTime : Thu May 16 21:18:32 EDT 2024
+
+% Result   : Satisfiable 2.64s 1.54s
+% Output   : Saturation 2.64s
+% Verified : 
+% SZS Type : ERROR: Analysing output (MakeTreeStats fails)
+
+% Comments : 
+%------------------------------------------------------------------------------
+cnf(u516,axiom,
+    ( ~ facilpreconditionfor(sK29(sK23,sK31(sK23)),X0)
+    | prevpreconditionfor(sK23,X0) ) ).
+
+cnf(u1402,axiom,
+    ( ~ prevpreconditionfor(sK26(sK35(sK18),sK18),X0)
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18))
+    | achieves(sK35(sK18),sK26(sK35(sK18),sK18))
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | sP6(X0,sK26(sK35(sK18),sK18),sK35(sK18)) ) ).
+
+cnf(u972,axiom,
+    ( ~ state(sK21)
+    | state(sK29(sK37(sK21),sK31(sK37(sK21)))) ) ).
+
+cnf(u1246,axiom,
+    ( sP10(sK18,sK35(sK18))
+    | process(sK35(sK18))
+    | event(sK35(sK18))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18)) ) ).
+
+cnf(u436,axiom,
+    internalto(sK36(sK37(sK21)),sK37(sK21)) ).
+
+cnf(u1088,axiom,
+    ( ~ facilpreconditionfor(sK27(sK18,sK35(sK18)),X0)
+    | achieves(sK35(sK18),sK18)
+    | facilpreconditionfor(sK27(sK18,sK35(sK18)),sK18)
+    | achieves(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | allows(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | sP4(X0,sK27(sK18,sK35(sK18)),sK35(sK18)) ) ).
+
+cnf(u1296,axiom,
+    causeof(sK36(sK37(sK32(sK16))),sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))) ).
+
+cnf(u781,axiom,
+    ( ~ poscauseof_cross(sK24(sK36(sK19),sK29(sK19,sK31(sK19))),X0)
+    | poscauseof_cross(sK36(sK19),X0) ) ).
+
+cnf(u322,axiom,
+    ( ~ event(X0)
+    | ~ sP8(X0)
+    | malfunction(X0)
+    | sP9(X0) ) ).
+
+cnf(u421,axiom,
+    functionincompatible(sK34(sK17),sK31(sK34(sK17))) ).
+
+cnf(u810,axiom,
+    ( ~ facilpreconditionfor(sK29(sK37(sK21),sK31(sK37(sK21))),X0)
+    | sP7(X0,sK21) ) ).
+
+cnf(u667,axiom,
+    ( ~ prevpreconditionfor(sK37(sK32(sK16)),X0)
+    | sP6(X0,sK37(sK32(sK16)),sK36(sK37(sK32(sK16)))) ) ).
+
+cnf(u552,axiom,
+    ( ~ failure(sK37(sK21))
+    | sP8(sK36(sK37(sK21))) ) ).
+
+cnf(u242,axiom,
+    ~ causeof(X0,X0) ).
+
+cnf(u602,axiom,
+    cf(sK29(sK37(sK21),sK31(sK37(sK21))),sK31(sK37(sK21)),sK30(sK37(sK21),sK31(sK37(sK21)))) ).
+
+cnf(u1008,axiom,
+    ( sP1(sK24(sK35(sK18),sK18),sK35(sK18))
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | event(sK35(sK18)) ) ).
+
+cnf(u971,axiom,
+    ( ~ state(sK36(sK37(sK21)))
+    | state(sK29(sK37(sK21),sK31(sK37(sK21)))) ) ).
+
+cnf(u344,axiom,
+    ( ~ fault(X0)
+    | malfunction(X0) ) ).
+
+cnf(u435,axiom,
+    internalto(sK36(sK19),sK19) ).
+
+cnf(u1311,axiom,
+    ( ~ sP8(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))
+    | state(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))
+    | malfunction(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))
+    | sP9(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))) ) ).
+
+cnf(u374,axiom,
+    state(sK19) ).
+
+cnf(u329,axiom,
+    ( ~ sP10(X0,X1)
+    | poscauseof_cross(X1,X0)
+    | disallows(sK33(X0,X1),X0) ) ).
+
+cnf(u817,axiom,
+    ~ causeof(sK29(sK37(sK21),sK31(sK37(sK21))),sK21) ).
+
+cnf(u591,axiom,
+    ( ~ failure(sK37(sK32(sK16)))
+    | sP8(sK32(sK16)) ) ).
+
+cnf(u526,axiom,
+    ~ causeof(sK37(sK21),sK36(sK37(sK21))) ).
+
+cnf(u982,axiom,
+    ( ~ hasphysicalconseq(X0,sK35(sK18))
+    | process(sK35(sK18))
+    | state(sK24(sK35(sK18),sK18))
+    | event(sK35(sK18))
+    | achieves(X0,sK35(sK18)) ) ).
+
+cnf(u1023,axiom,
+    ( event(sK35(sK18))
+    | process(sK18)
+    | state(sK18)
+    | process(sK35(sK18)) ) ).
+
+cnf(u268,axiom,
+    ( ~ prevpreconditionfor(X0,X1)
+    | process(X1)
+    | event(X1)
+    | state(X1) ) ).
+
+cnf(u359,axiom,
+    ( ~ sP14(X0)
+    | event(X0) ) ).
+
+cnf(u724,axiom,
+    ( ~ state(sK19)
+    | prevents(sK36(sK19),sK29(sK19,sK31(sK19))) ) ).
+
+cnf(u282,axiom,
+    ( sP3(X0,X1)
+    | prevpreconditionfor(sK25(X0,X1),X0) ) ).
+
+cnf(u381,axiom,
+    malfunction(sK20) ).
+
+cnf(u1364,axiom,
+    ( maintains(sK35(sK18),sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18))
+    | achieves(sK35(sK18),sK26(sK35(sK18),sK18))
+    | prevents(sK35(sK18),sK18) ) ).
+
+cnf(u1045,axiom,
+    ( ~ prevpreconditionfor(sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),X0)
+    | sP6(X0,sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),sK34(sK17)) ) ).
+
+cnf(u627,axiom,
+    ( ~ malfunction(sK36(sK19))
+    | ~ fault(sK19)
+    | ~ event(sK36(sK19))
+    | failure(sK36(sK19)) ) ).
+
+cnf(u1018,axiom,
+    ( ~ poscauseof_cross(sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21)))),X0)
+    | poscauseof_cross(sK36(sK37(sK21)),X0) ) ).
+
+cnf(u1156,axiom,
+    sP1(sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),sK32(sK16)) ).
+
+cnf(u562,axiom,
+    functionof_sys(sK31(sK32(sK16)),sK28(sK32(sK16),sK31(sK32(sK16)))) ).
+
+cnf(u989,axiom,
+    state(sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))) ).
+
+cnf(u931,axiom,
+    ( sP1(sK18,sK35(sK18))
+    | event(sK35(sK18))
+    | state(sK35(sK18))
+    | process(sK35(sK18)) ) ).
+
+cnf(u304,axiom,
+    ( ~ disallows(X0,X1)
+    | ~ hasphysicalconseq(X1,X2)
+    | disallows(X0,X2) ) ).
+
+cnf(u267,axiom,
+    ( ~ prevpreconditionfor(X0,X1)
+    | state(X0) ) ).
+
+cnf(u1059,axiom,
+    ~ event(sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))) ).
+
+cnf(u1559,axiom,
+    ( ~ fault(sK18)
+    | failure(sK35(sK18))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK35(sK18))
+    | process(sK35(sK18)) ) ).
+
+cnf(u289,axiom,
+    ( ~ sP7(X0,X1)
+    | sP6(X0,sK27(X0,X1),X1)
+    | facilpreconditionfor(sK27(X0,X1),X0) ) ).
+
+cnf(u1363,axiom,
+    ( prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | state(sK26(sK35(sK18),sK18)) ) ).
+
+cnf(u233,axiom,
+    meresymptom(sK18) ).
+
+cnf(u593,axiom,
+    cf(sK29(sK15,sK31(sK15)),sK31(sK15),sK30(sK15,sK31(sK15))) ).
+
+cnf(u942,axiom,
+    ( maintains(sK33(sK34(sK17),sK17),sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | facilpreconditionfor(sK27(sK34(sK17),sK33(sK34(sK17),sK17)),sK34(sK17))
+    | achieves(sK33(sK34(sK17),sK17),sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | sP8(sK17) ) ).
+
+cnf(u855,axiom,
+    poscauseof_cross(sK21,sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21))))) ).
+
+cnf(u897,axiom,
+    ( ~ facilpreconditionfor(sK18,X0)
+    | event(sK35(sK18))
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | sP7(X0,sK35(sK18)) ) ).
+
+cnf(u319,axiom,
+    ( ~ sP9(X0)
+    | ~ malfunction(X0) ) ).
+
+cnf(u1302,axiom,
+    ( ~ fault(sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))))
+    | failure(sK36(sK37(sK32(sK16))))
+    | ~ event(sK36(sK37(sK32(sK16))))
+    | ~ malfunction(sK36(sK37(sK32(sK16)))) ) ).
+
+cnf(u734,axiom,
+    state(sK24(sK36(sK19),sK29(sK19,sK31(sK19)))) ).
+
+cnf(u476,axiom,
+    ( ~ prevpreconditionfor(X2,X1)
+    | ~ achieves(X0,X2)
+    | ~ state(X2)
+    | achieves(X0,sK25(X1,X0)) ) ).
+
+cnf(u1042,axiom,
+    causeof(sK34(sK17),sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))) ).
+
+cnf(u1324,axiom,
+    ( ~ failure(sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))))
+    | sP8(sK36(sK37(sK32(sK16)))) ) ).
+
+cnf(u517,axiom,
+    ( ~ prevpreconditionfor(sK29(sK23,sK31(sK23)),X0)
+    | facilpreconditionfor(sK23,X0) ) ).
+
+cnf(u1116,axiom,
+    ( ~ achieves(X0,sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21)))))
+    | prevents(X0,sK29(sK37(sK21),sK31(sK37(sK21))))
+    | ~ state(sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21))))) ) ).
+
+cnf(u461,axiom,
+    state(sK37(sK32(sK16))) ).
+
+cnf(u1064,axiom,
+    ( ~ disallows(sK18,X0)
+    | achieves(sK35(sK18),sK18)
+    | facilpreconditionfor(sK27(sK18,sK35(sK18)),sK18)
+    | allows(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | sP10(X0,sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u949,axiom,
+    ( maintains(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | allows(sK35(sK18),sK18) ) ).
+
+cnf(u1309,axiom,
+    ( ~ state(sK36(sK37(sK32(sK16))))
+    | state(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))) ) ).
+
+cnf(u642,axiom,
+    ( ~ hasphysicalconseq(sK37(sK34(sK17)),X0)
+    | achieves(sK36(sK37(sK34(sK17))),X0) ) ).
+
+cnf(u475,axiom,
+    sP10(sK37(sK21),sK21) ).
+
+cnf(u553,axiom,
+    sP10(sK37(sK21),sK36(sK37(sK21))) ).
+
+cnf(u857,axiom,
+    sP10(sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21)))),sK21) ).
+
+cnf(u694,axiom,
+    sP10(sK37(sK32(sK16)),sK36(sK37(sK32(sK16)))) ).
+
+cnf(u1054,axiom,
+    ( ~ achieves(X0,sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | sP8(sK17)
+    | facilpreconditionfor(sK27(sK34(sK17),sK33(sK34(sK17),sK17)),sK34(sK17))
+    | ~ state(sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | achieves(X0,sK25(sK34(sK17),X0)) ) ).
+
+cnf(u399,axiom,
+    malfunction(sK35(sK18)) ).
+
+cnf(u1458,axiom,
+    ( sP1(sK18,sK35(sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | state(sK26(sK35(sK18),sK18)) ) ).
+
+cnf(u1352,axiom,
+    ( prevpreconditionfor(sK26(sK35(sK18),sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | facilpreconditionfor(sK26(sK35(sK18),sK18),sK18) ) ).
+
+cnf(u725,axiom,
+    ( ~ state(sK16)
+    | malfunction(sK16)
+    | failurecondition(sK16) ) ).
+
+cnf(u1213,axiom,
+    state(sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))) ).
+
+cnf(u1272,axiom,
+    sP1(sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),sK36(sK37(sK34(sK17)))) ).
+
+cnf(u1033,axiom,
+    ( ~ facilpreconditionfor(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))),X0)
+    | sP7(X0,sK36(sK37(sK34(sK17)))) ) ).
+
+cnf(u723,axiom,
+    ( ~ cf(X0,X1,sK30(sK22,sK31(sK22)))
+    | ~ incompatiblewith(sK22,X0)
+    | ~ functionof_sys(X1,sK28(sK22,sK31(sK22)))
+    | functionincompatible(sK22,X1) ) ).
+
+cnf(u1465,axiom,
+    ( ~ poscauseof_cross(sK18,X0)
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | poscauseof_cross(sK26(sK35(sK18),sK18),X0) ) ).
+
+cnf(u1099,axiom,
+    sP10(sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),sK34(sK17)) ).
+
+cnf(u400,axiom,
+    ~ failuremechanism(sK18) ).
+
+cnf(u1063,axiom,
+    ( ~ achieves(X0,sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | facilpreconditionfor(sK27(sK18,sK35(sK18)),sK18)
+    | allows(sK35(sK18),sK18)
+    | ~ state(sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK18)
+    | state(sK25(sK18,X0)) ) ).
+
+cnf(u831,axiom,
+    causeof(sK21,sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21))))) ).
+
+cnf(u647,axiom,
+    ( ~ failure(sK34(sK17))
+    | sP8(sK17)
+    | prevpreconditionfor(sK17,sK33(sK34(sK17),sK17)) ) ).
+
+cnf(u532,axiom,
+    ( ~ hasphysicalconseq(X0,sK36(sK19))
+    | achieves(X0,sK36(sK19)) ) ).
+
+cnf(u1290,axiom,
+    ~ causeof(sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),sK36(sK37(sK34(sK17)))) ).
+
+cnf(u988,axiom,
+    causeof(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))) ).
+
+cnf(u324,axiom,
+    ( ~ sP8(X0)
+    | poscauseof_cross(X0,sK32(X0)) ) ).
+
+cnf(u1210,axiom,
+    ( sP10(sK24(sK35(sK18),sK18),sK35(sK18))
+    | event(sK35(sK18))
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18) ) ).
+
+cnf(u244,axiom,
+    ( ~ causeof(X0,X1)
+    | allows(X0,X1)
+    | prevents(X0,X1)
+    | achieves(X0,X1)
+    | disallows(X0,X1) ) ).
+
+cnf(u1312,axiom,
+    ( ~ event(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))
+    | state(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))) ) ).
+
+cnf(u338,axiom,
+    ( ~ sP12(X0)
+    | ~ failurecondition(X0) ) ).
+
+cnf(u437,axiom,
+    internalto(sK36(sK37(sK34(sK17))),sK37(sK34(sK17))) ).
+
+cnf(u797,axiom,
+    ( ~ achieves(X0,sK24(sK36(sK19),sK29(sK19,sK31(sK19))))
+    | prevents(X0,sK29(sK19,sK31(sK19)))
+    | ~ state(sK24(sK36(sK19),sK29(sK19,sK31(sK19)))) ) ).
+
+cnf(u683,axiom,
+    ( event(sK36(sK37(sK32(sK16))))
+    | process(sK36(sK37(sK32(sK16))))
+    | state(sK36(sK37(sK32(sK16)))) ) ).
+
+cnf(u1297,axiom,
+    sP1(sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),sK36(sK37(sK32(sK16)))) ).
+
+cnf(u618,axiom,
+    ( ~ failure(sK32(sK16))
+    | failurecondition(sK16)
+    | malfunction(sK16)
+    | ~ state(sK16) ) ).
+
+cnf(u896,axiom,
+    ( ~ sP3(X0,sK35(sK18))
+    | event(sK35(sK18))
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | ~ prevpreconditionfor(sK18,X0)
+    | sP5(sK35(sK18),X0,sK18) ) ).
+
+cnf(u987,axiom,
+    prevents(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))) ).
+
+cnf(u360,axiom,
+    ( ~ sP14(X0)
+    | ~ failure(X0) ) ).
+
+cnf(u323,axiom,
+    ( ~ sP8(X0)
+    | failure(sK32(X0)) ) ).
+
+cnf(u1327,axiom,
+    ( ~ failure(sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))))
+    | failurecondition(sK36(sK37(sK32(sK16))))
+    | malfunction(sK36(sK37(sK32(sK16))))
+    | ~ state(sK36(sK37(sK32(sK16)))) ) ).
+
+cnf(u262,axiom,
+    ( ~ sP2(X0,X1)
+    | process(X0)
+    | state(X0) ) ).
+
+cnf(u345,axiom,
+    ( ~ fault(X0)
+    | state(X0) ) ).
+
+cnf(u1271,axiom,
+    causeof(sK36(sK37(sK34(sK17))),sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))) ).
+
+cnf(u649,axiom,
+    cf(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))),sK31(sK37(sK34(sK17))),sK30(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))) ).
+
+cnf(u542,axiom,
+    sP1(sK37(sK32(sK16)),sK32(sK16)) ).
+
+cnf(u998,axiom,
+    ( ~ facilpreconditionfor(sK18,X0)
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | event(sK35(sK18))
+    | prevpreconditionfor(sK24(sK35(sK18),sK18),X0) ) ).
+
+cnf(u911,axiom,
+    ( ~ state(sK37(sK34(sK17)))
+    | prevents(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))) ) ).
+
+cnf(u284,axiom,
+    ( ~ sP4(X1,X2,X0)
+    | allows(X0,X1) ) ).
+
+cnf(u375,axiom,
+    ~ event(sK19) ).
+
+cnf(u1358,axiom,
+    ( facilpreconditionfor(sK26(sK35(sK18),sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | state(sK26(sK35(sK18),sK18)) ) ).
+
+cnf(u740,axiom,
+    ( ~ hasphysicalconseq(sK29(sK19,sK31(sK19)),X0)
+    | prevents(sK36(sK19),X0) ) ).
+
+cnf(u298,axiom,
+    ( ~ disallows(X0,X1)
+    | event(X0)
+    | process(X0) ) ).
+
+cnf(u269,axiom,
+    ( ~ incompatiblewith(X0,X2)
+    | ~ prevpreconditionfor(X2,X1)
+    | facilpreconditionfor(X0,X1) ) ).
+
+cnf(u1380,axiom,
+    ( maintains(sK35(sK18),sK26(sK35(sK18),sK18))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18))
+    | achieves(sK35(sK18),sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u515,axiom,
+    ( ~ prevpreconditionfor(sK29(sK21,sK31(sK21)),X0)
+    | facilpreconditionfor(sK21,X0) ) ).
+
+cnf(u1061,axiom,
+    ( ~ achieves(X0,sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | facilpreconditionfor(sK27(sK18,sK35(sK18)),sK18)
+    | allows(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | ~ state(sK27(sK18,sK35(sK18)))
+    | prevpreconditionfor(sK25(sK18,X0),sK18) ) ).
+
+cnf(u701,axiom,
+    ( ~ achieves(X0,sK37(sK21))
+    | prevents(X0,sK29(sK37(sK21),sK31(sK37(sK21))))
+    | ~ state(sK37(sK21)) ) ).
+
+cnf(u1172,axiom,
+    ( poscauseof_cross(sK17,sK32(sK17))
+    | state(sK27(sK34(sK17),sK33(sK34(sK17),sK17))) ) ).
+
+cnf(u856,axiom,
+    ( ~ failure(sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21)))))
+    | sP8(sK21) ) ).
+
+cnf(u947,axiom,
+    ( prevpreconditionfor(sK27(sK18,sK35(sK18)),sK18)
+    | prevents(sK35(sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | facilpreconditionfor(sK27(sK18,sK35(sK18)),sK18)
+    | allows(sK35(sK18),sK18) ) ).
+
+cnf(u1005,axiom,
+    ~ event(sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))) ).
+
+cnf(u283,axiom,
+    ( ~ allows(X0,X1)
+    | sP4(X1,sK26(X0,X1),X0)
+    | sP5(X0,X1,sK26(X0,X1)) ) ).
+
+cnf(u305,axiom,
+    ( ~ achieves(X0,X1)
+    | ~ hasphysicalconseq(X2,X0)
+    | achieves(X2,X0) ) ).
+
+cnf(u1379,axiom,
+    ( achieves(sK35(sK18),sK18)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | process(sK18)
+    | state(sK18) ) ).
+
+cnf(u249,axiom,
+    ( ~ sP0(X0,X1)
+    | ~ achieves(X1,X0) ) ).
+
+cnf(u1535,axiom,
+    ( ~ failure(sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | sP8(sK26(sK35(sK18),sK18))
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18)) ) ).
+
+cnf(u871,axiom,
+    ( ~ prevpreconditionfor(sK29(sK37(sK21),sK31(sK37(sK21))),X0)
+    | ~ sP3(X0,sK36(sK37(sK21)))
+    | sP5(sK36(sK37(sK21)),X0,sK29(sK37(sK21),sK31(sK37(sK21)))) ) ).
+
+cnf(u958,axiom,
+    ( ~ prevpreconditionfor(sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21)))),X0)
+    | sP6(X0,sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21)))),sK36(sK37(sK21))) ) ).
+
+cnf(u913,axiom,
+    ( sP1(sK18,sK35(sK18))
+    | state(sK18)
+    | process(sK18)
+    | event(sK18) ) ).
+
+cnf(u700,axiom,
+    ( ~ prevpreconditionfor(sK29(sK34(sK17),sK31(sK34(sK17))),X0)
+    | facilpreconditionfor(sK34(sK17),X0) ) ).
+
+cnf(u750,axiom,
+    ( ~ cf(X0,X1,sK30(sK37(sK21),sK31(sK37(sK21))))
+    | ~ incompatiblewith(sK37(sK21),X0)
+    | ~ functionof_sys(X1,sK28(sK37(sK21),sK31(sK37(sK21))))
+    | functionincompatible(sK37(sK21),X1) ) ).
+
+cnf(u455,axiom,
+    sP10(sK32(sK16),sK16) ).
+
+cnf(u1058,axiom,
+    ( facilpreconditionfor(sK27(sK34(sK17),sK33(sK34(sK17),sK17)),sK34(sK17))
+    | sP8(sK17)
+    | state(sK27(sK34(sK17),sK33(sK34(sK17),sK17))) ) ).
+
+cnf(u533,axiom,
+    ( ~ hasphysicalconseq(X0,sK36(sK37(sK21)))
+    | achieves(X0,sK36(sK37(sK21))) ) ).
+
+cnf(u477,axiom,
+    ( ~ prevpreconditionfor(X2,X0)
+    | ~ achieves(X1,X2)
+    | ~ state(X2)
+    | prevpreconditionfor(sK25(X0,X1),X0) ) ).
+
+cnf(u866,axiom,
+    causeof(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21)))) ).
+
+cnf(u1080,axiom,
+    ( ~ achieves(X0,sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | allows(sK35(sK18),sK18)
+    | ~ state(sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK18)
+    | state(sK25(sK18,X0)) ) ).
+
+cnf(u1325,axiom,
+    sP10(sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),sK36(sK37(sK32(sK16)))) ).
+
+cnf(u1408,axiom,
+    ( sP1(sK18,sK35(sK18))
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK24(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u658,axiom,
+    ( event(sK36(sK37(sK34(sK17))))
+    | process(sK36(sK37(sK34(sK17))))
+    | state(sK36(sK37(sK34(sK17)))) ) ).
+
+cnf(u1269,axiom,
+    ( ~ failure(sK18)
+    | prevents(sK35(sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | sP8(sK35(sK18))
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u1089,axiom,
+    ( ~ poscauseof_cross(sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),X0)
+    | poscauseof_cross(sK34(sK17),X0) ) ).
+
+cnf(u1339,axiom,
+    ( ~ prevpreconditionfor(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))),X0)
+    | facilpreconditionfor(sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),X0) ) ).
+
+cnf(u1155,axiom,
+    causeof(sK32(sK16),sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))) ).
+
+cnf(u569,axiom,
+    ( ~ prevpreconditionfor(sK37(sK21),X0)
+    | sP6(X0,sK37(sK21),sK21) ) ).
+
+cnf(u385,axiom,
+    sP14(sK22) ).
+
+cnf(u873,axiom,
+    ( ~ hasphysicalconseq(sK29(sK37(sK21),sK31(sK37(sK21))),X0)
+    | prevents(sK36(sK37(sK21)),X0) ) ).
+
+cnf(u582,axiom,
+    participatesin(sK28(sK19,sK31(sK19)),sK19,sK30(sK19,sK31(sK19))) ).
+
+cnf(u796,axiom,
+    ( ~ cf(X0,X1,sK30(sK35(sK18),sK31(sK35(sK18))))
+    | ~ incompatiblewith(sK35(sK18),X0)
+    | ~ functionof_sys(X1,sK28(sK35(sK18),sK31(sK35(sK18))))
+    | functionincompatible(sK35(sK18),X1) ) ).
+
+cnf(u1070,axiom,
+    ( ~ disallows(sK34(sK17),X0)
+    | sP8(sK17)
+    | prevents(sK33(sK34(sK17),sK17),sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | sP10(X0,sK27(sK34(sK17),sK33(sK34(sK17),sK17))) ) ).
+
+cnf(u415,axiom,
+    functionincompatible(sK19,sK31(sK19)) ).
+
+cnf(u1346,axiom,
+    ( sP3(sK18,sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | facilpreconditionfor(sK26(sK35(sK18),sK18),sK18) ) ).
+
+cnf(u1368,axiom,
+    ( achieves(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK24(sK35(sK18),sK18)) ) ).
+
+cnf(u741,axiom,
+    ( ~ hasphysicalconseq(X0,sK36(sK19))
+    | prevents(X0,sK36(sK19)) ) ).
+
+cnf(u1101,axiom,
+    ( ~ facilpreconditionfor(sK27(sK34(sK17),sK33(sK34(sK17),sK17)),X0)
+    | achieves(sK33(sK34(sK17),sK17),sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | sP8(sK17)
+    | prevents(sK33(sK34(sK17),sK17),sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | sP4(X0,sK27(sK34(sK17),sK33(sK34(sK17),sK17)),sK33(sK34(sK17),sK17)) ) ).
+
+cnf(u795,axiom,
+    ( ~ prevpreconditionfor(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))),X0)
+    | facilpreconditionfor(sK37(sK32(sK16)),X0) ) ).
+
+cnf(u1049,axiom,
+    poscauseof(sK34(sK17),sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))) ).
+
+cnf(u1353,axiom,
+    ( ~ achieves(X0,sK26(sK35(sK18),sK18))
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | facilpreconditionfor(sK26(sK35(sK18),sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | ~ state(sK26(sK35(sK18),sK18))
+    | prevpreconditionfor(sK25(sK18,X0),sK18) ) ).
+
+cnf(u1115,axiom,
+    ( sP10(sK18,sK35(sK18))
+    | event(sK35(sK18))
+    | process(sK35(sK18))
+    | state(sK24(sK35(sK18),sK18)) ) ).
+
+cnf(u416,axiom,
+    functionincompatible(sK20,sK31(sK20)) ).
+
+cnf(u1079,axiom,
+    ( ~ achieves(X0,sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | allows(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | ~ state(sK27(sK18,sK35(sK18)))
+    | achieves(X0,sK25(sK18,X0)) ) ).
+
+cnf(u1419,axiom,
+    ( ~ achieves(sK35(sK18),X0)
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK26(sK35(sK18),sK18))
+    | maintains(sK35(sK18),sK26(sK35(sK18),sK18))
+    | achieves(sK35(sK18),sK18)
+    | ~ state(X0)
+    | ~ prevpreconditionfor(X0,sK18) ) ).
+
+cnf(u446,axiom,
+    ( ~ allows(X0,X1)
+    | poscauseof(X0,X1) ) ).
+
+cnf(u806,axiom,
+    incompatiblewith(sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21)))),sK29(sK37(sK21),sK31(sK37(sK21)))) ).
+
+cnf(u663,axiom,
+    ( ~ sP8(sK36(sK19))
+    | state(sK36(sK19))
+    | process(sK36(sK19))
+    | malfunction(sK36(sK19))
+    | sP9(sK36(sK19)) ) ).
+
+cnf(u548,axiom,
+    ( ~ poscauseof_cross(sK37(sK21),X0)
+    | poscauseof_cross(sK21,X0) ) ).
+
+cnf(u1306,axiom,
+    ( ~ achieves(X0,sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))))
+    | prevents(X0,sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))
+    | ~ state(sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))) ) ).
+
+cnf(u1004,axiom,
+    ( process(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))
+    | state(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))) ) ).
+
+cnf(u1278,axiom,
+    poscauseof(sK36(sK37(sK34(sK17))),sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))) ).
+
+cnf(u340,axiom,
+    ( ~ sP12(X0)
+    | sP11(X0) ) ).
+
+cnf(u1098,axiom,
+    ( ~ failure(sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))))
+    | sP8(sK34(sK17)) ) ).
+
+cnf(u354,axiom,
+    ( ~ failure(X0)
+    | event(X0) ) ).
+
+cnf(u325,axiom,
+    ( ~ poscauseof_cross(X0,X1)
+    | sP8(X0)
+    | ~ failure(X1) ) ).
+
+cnf(u1120,axiom,
+    ( sP1(sK18,sK35(sK18))
+    | event(sK35(sK18))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | process(sK35(sK18)) ) ).
+
+cnf(u813,axiom,
+    ( sP6(sK18,sK27(sK18,sK35(sK18)),sK35(sK18))
+    | allows(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | facilpreconditionfor(sK27(sK18,sK35(sK18)),sK18) ) ).
+
+cnf(u699,axiom,
+    ( ~ facilpreconditionfor(sK29(sK34(sK17),sK31(sK34(sK17))),X0)
+    | prevpreconditionfor(sK34(sK17),X0) ) ).
+
+cnf(u634,axiom,
+    ( disallows(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | allows(sK35(sK18),sK18) ) ).
+
+cnf(u1003,axiom,
+    ( ~ process(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))
+    | ~ state(sK34(sK17)) ) ).
+
+cnf(u376,axiom,
+    ~ process(sK19) ).
+
+cnf(u339,axiom,
+    ( ~ sP12(X0)
+    | ~ failuremechanism(X0) ) ).
+
+cnf(u1257,axiom,
+    ( poscauseof_cross(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK18)
+    | achieves(sK35(sK18),sK18) ) ).
+
+cnf(u704,axiom,
+    ( prevpreconditionfor(sK17,sK33(sK34(sK17),sK17))
+    | sP8(sK17) ) ).
+
+cnf(u1343,axiom,
+    ( sP4(sK18,sK26(sK35(sK18),sK18),sK35(sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18)) ) ).
+
+cnf(u278,axiom,
+    ( ~ maintains(X2,X1)
+    | ~ facilpreconditionfor(X1,X0)
+    | sP4(X0,X1,X2) ) ).
+
+cnf(u361,axiom,
+    ( ~ nonperformanceevent(X0)
+    | sP14(X0) ) ).
+
+cnf(u1159,axiom,
+    ( ~ hasphysicalconseq(sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),X0)
+    | achieves(sK32(sK16),X0) ) ).
+
+cnf(u665,axiom,
+    sP1(sK37(sK32(sK16)),sK36(sK37(sK32(sK16)))) ).
+
+cnf(u558,axiom,
+    ( ~ facilpreconditionfor(sK37(sK34(sK17)),X0)
+    | sP4(X0,sK37(sK34(sK17)),sK34(sK17)) ) ).
+
+cnf(u1014,axiom,
+    ( poscauseof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | event(sK35(sK18)) ) ).
+
+cnf(u927,axiom,
+    ( achieves(sK35(sK18),sK18)
+    | process(sK35(sK18))
+    | event(sK35(sK18))
+    | process(sK18)
+    | state(sK18) ) ).
+
+cnf(u300,axiom,
+    ( ~ hasphysicalconseq(X0,X1)
+    | ~ hasphysicalconseq(X1,X2)
+    | hasphysicalconseq(X0,X2) ) ).
+
+cnf(u263,axiom,
+    ( ~ sP2(X0,X1)
+    | ~ state(X1)
+    | ~ process(X0) ) ).
+
+cnf(u1374,axiom,
+    ( ~ hasphysicalconseq(sK18,X0)
+    | achieves(sK35(sK18),sK18)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),X0) ) ).
+
+cnf(u756,axiom,
+    ( allows(sK35(sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | process(sK18)
+    | event(sK18)
+    | state(sK18) ) ).
+
+cnf(u314,axiom,
+    ( ~ malfunction(X0)
+    | functionincompatible(X0,sK31(X0)) ) ).
+
+cnf(u285,axiom,
+    ( ~ sP5(X0,X1,X2)
+    | allows(X0,X1) ) ).
+
+cnf(u1396,axiom,
+    ( poscauseof(sK26(sK35(sK18),sK18),sK18)
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18))
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u531,axiom,
+    ~ causeof(sK37(sK34(sK17)),sK34(sK17)) ).
+
+cnf(u1188,axiom,
+    ( ~ poscauseof_cross(sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),X0)
+    | poscauseof_cross(sK32(sK16),X0) ) ).
+
+cnf(u589,axiom,
+    participatesin(sK28(sK35(sK18),sK31(sK35(sK18))),sK35(sK18),sK30(sK35(sK18),sK31(sK35(sK18)))) ).
+
+cnf(u1077,axiom,
+    ~ causeof(sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),sK34(sK17)) ).
+
+cnf(u872,axiom,
+    ( ~ facilpreconditionfor(sK29(sK37(sK21),sK31(sK37(sK21))),X0)
+    | sP7(X0,sK36(sK37(sK21))) ) ).
+
+cnf(u835,axiom,
+    ( ~ hasphysicalconseq(sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21)))),X0)
+    | achieves(sK21,X0) ) ).
+
+cnf(u299,axiom,
+    ( ~ disallows(X0,X1)
+    | process(X1)
+    | event(X1)
+    | state(X1) ) ).
+
+cnf(u664,axiom,
+    causeof(sK36(sK37(sK32(sK16))),sK37(sK32(sK16))) ).
+
+cnf(u243,axiom,
+    ( ~ causeof(X0,X1)
+    | ~ causeof(X1,X0) ) ).
+
+cnf(u714,axiom,
+    ( ~ hasphysicalconseq(sK34(sK17),X0)
+    | sP8(sK17)
+    | disallows(sK33(sK34(sK17),sK17),X0) ) ).
+
+cnf(u456,axiom,
+    ~ causeof(sK18,sK35(sK18)) ).
+
+cnf(u1423,axiom,
+    ( ~ prevpreconditionfor(sK26(sK35(sK18),sK18),X0)
+    | prevents(sK35(sK18),sK18)
+    | prevpreconditionfor(sK26(sK35(sK18),sK18),sK18)
+    | achieves(sK35(sK18),sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | sP6(X0,sK26(sK35(sK18),sK18),sK35(sK18)) ) ).
+
+cnf(u486,axiom,
+    incompatiblewith(sK20,sK29(sK20,sK31(sK20))) ).
+
+cnf(u846,axiom,
+    ( prevents(sK35(sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | event(sK35(sK18))
+    | process(sK35(sK18)) ) ).
+
+cnf(u1334,axiom,
+    ( ~ achieves(X0,sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))))
+    | prevents(X0,sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))
+    | ~ state(sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))) ) ).
+
+cnf(u588,axiom,
+    participatesin(sK28(sK34(sK17),sK31(sK34(sK17))),sK34(sK17),sK30(sK34(sK17),sK31(sK34(sK17)))) ).
+
+cnf(u766,axiom,
+    ( ~ prevpreconditionfor(sK24(sK36(sK19),sK29(sK19,sK31(sK19))),X0)
+    | sP6(X0,sK24(sK36(sK19),sK29(sK19,sK31(sK19))),sK36(sK19)) ) ).
+
+cnf(u1126,axiom,
+    ( poscauseof(sK35(sK18),sK18)
+    | event(sK35(sK18))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | process(sK35(sK18)) ) ).
+
+cnf(u508,axiom,
+    incompatiblewith(sK37(sK21),sK29(sK37(sK21),sK31(sK37(sK21)))) ).
+
+cnf(u471,axiom,
+    ( ~ failure(sK19)
+    | sP8(sK36(sK19)) ) ).
+
+cnf(u1074,axiom,
+    sP10(sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21)))),sK36(sK37(sK21))) ).
+
+cnf(u549,axiom,
+    ( ~ poscauseof_cross(sK37(sK34(sK17)),X0)
+    | poscauseof_cross(sK34(sK17),X0) ) ).
+
+cnf(u394,axiom,
+    event(sK32(sK16)) ).
+
+cnf(u739,axiom,
+    ( ~ facilpreconditionfor(sK29(sK19,sK31(sK19)),X0)
+    | sP7(X0,sK36(sK19)) ) ).
+
+cnf(u1341,axiom,
+    ( sP4(sK18,sK26(sK35(sK18),sK18),sK35(sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | sP3(sK18,sK35(sK18)) ) ).
+
+cnf(u1424,axiom,
+    ( ~ facilpreconditionfor(sK26(sK35(sK18),sK18),X0)
+    | prevents(sK35(sK18),sK18)
+    | prevpreconditionfor(sK26(sK35(sK18),sK18),sK18)
+    | achieves(sK35(sK18),sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | sP4(X0,sK26(sK35(sK18),sK18),sK35(sK18)) ) ).
+
+cnf(u674,axiom,
+    sP10(sK37(sK34(sK17)),sK36(sK37(sK34(sK17)))) ).
+
+cnf(u1157,axiom,
+    ( ~ facilpreconditionfor(sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),X0)
+    | sP4(X0,sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),sK32(sK16)) ) ).
+
+cnf(u507,axiom,
+    ( ~ prevpreconditionfor(sK29(sK15,sK31(sK15)),X0)
+    | facilpreconditionfor(sK15,X0) ) ).
+
+cnf(u1105,axiom,
+    ( ~ achieves(X0,sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21)))))
+    | prevents(X0,sK29(sK37(sK21),sK31(sK37(sK21))))
+    | ~ state(sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21))))) ) ).
+
+cnf(u1171,axiom,
+    ( sP8(sK17)
+    | state(sK27(sK34(sK17),sK33(sK34(sK17),sK17))) ) ).
+
+cnf(u401,axiom,
+    fault(sK37(sK21)) ).
+
+cnf(u1135,axiom,
+    ( poscauseof_cross(sK35(sK18),sK24(sK35(sK18),sK18))
+    | achieves(sK35(sK18),sK18)
+    | event(sK35(sK18))
+    | process(sK35(sK18)) ) ).
+
+cnf(u238,axiom,
+    malfunctionprocess(sK23) ).
+
+cnf(u705,axiom,
+    ( ~ achieves(X0,sK17)
+    | sP8(sK17)
+    | ~ state(sK17)
+    | prevpreconditionfor(sK25(sK33(sK34(sK17),sK17),X0),sK33(sK34(sK17),sK17)) ) ).
+
+cnf(u598,axiom,
+    cf(sK29(sK23,sK31(sK23)),sK31(sK23),sK30(sK23,sK31(sK23))) ).
+
+cnf(u812,axiom,
+    ( ~ hasphysicalconseq(X0,sK21)
+    | prevents(X0,sK21) ) ).
+
+cnf(u431,axiom,
+    sP10(sK34(sK17),sK17) ).
+
+cnf(u1414,axiom,
+    ( poscauseof(sK35(sK18),sK18)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK24(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u1154,axiom,
+    ~ process(sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))) ).
+
+cnf(u1436,axiom,
+    ( ~ facilpreconditionfor(sK26(sK35(sK18),sK18),X0)
+    | prevents(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18))
+    | achieves(sK35(sK18),sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | sP4(X0,sK26(sK35(sK18),sK18),sK35(sK18)) ) ).
+
+cnf(u1384,axiom,
+    ( sP1(sK18,sK35(sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | process(sK18)
+    | state(sK18)
+    | state(sK26(sK35(sK18),sK18)) ) ).
+
+cnf(u757,axiom,
+    ( allows(sK35(sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | event(sK35(sK18))
+    | process(sK35(sK18)) ) ).
+
+cnf(u1117,axiom,
+    ( ~ facilpreconditionfor(sK29(sK37(sK21),sK31(sK37(sK21))),X0)
+    | prevpreconditionfor(sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21)))),X0) ) ).
+
+cnf(u811,axiom,
+    ( ~ hasphysicalconseq(sK29(sK37(sK21),sK31(sK37(sK21))),X0)
+    | prevents(sK21,X0) ) ).
+
+cnf(u962,axiom,
+    poscauseof(sK36(sK37(sK21)),sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21))))) ).
+
+cnf(u1421,axiom,
+    ( ~ poscauseof_cross(sK18,X0)
+    | state(sK24(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | state(sK26(sK35(sK18),sK18))
+    | poscauseof_cross(sK35(sK18),X0) ) ).
+
+cnf(u512,axiom,
+    ( ~ facilpreconditionfor(sK29(sK19,sK31(sK19)),X0)
+    | prevpreconditionfor(sK19,X0) ) ).
+
+cnf(u1369,axiom,
+    ( incompatiblewith(sK24(sK35(sK18),sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u1131,axiom,
+    ( ~ process(sK24(sK35(sK18),sK18))
+    | achieves(sK35(sK18),sK18)
+    | event(sK35(sK18))
+    | ~ state(sK35(sK18))
+    | process(sK35(sK18)) ) ).
+
+cnf(u432,axiom,
+    ( ~ achieves(X0,X1)
+    | poscauseof(X0,X1) ) ).
+
+cnf(u1435,axiom,
+    ( ~ prevpreconditionfor(sK26(sK35(sK18),sK18),X0)
+    | prevents(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18))
+    | achieves(sK35(sK18),sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | sP6(X0,sK26(sK35(sK18),sK18),sK35(sK18)) ) ).
+
+cnf(u1399,axiom,
+    ( ~ event(sK18)
+    | state(sK18)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u334,axiom,
+    ( ~ failurecondition(X0)
+    | failure(sK34(X0)) ) ).
+
+cnf(u822,axiom,
+    ~ process(sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21))))) ).
+
+cnf(u564,axiom,
+    ( ~ poscauseof_cross(sK37(sK32(sK16)),X0)
+    | poscauseof_cross(sK32(sK16),X0) ) ).
+
+cnf(u356,axiom,
+    ( ~ failure(X0)
+    | achieves(X0,sK37(X0)) ) ).
+
+cnf(u1114,axiom,
+    ( ~ failure(sK18)
+    | event(sK35(sK18))
+    | process(sK35(sK18))
+    | sP8(sK35(sK18))
+    | state(sK24(sK35(sK18),sK18)) ) ).
+
+cnf(u370,axiom,
+    sP12(sK18) ).
+
+cnf(u341,axiom,
+    ( ~ sP11(X0)
+    | malfunction(sK35(X0)) ) ).
+
+cnf(u1136,axiom,
+    ( ~ state(sK37(sK32(sK16)))
+    | prevents(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))) ) ).
+
+cnf(u587,axiom,
+    participatesin(sK28(sK32(sK16),sK31(sK32(sK16))),sK32(sK16),sK30(sK32(sK16),sK31(sK32(sK16)))) ).
+
+cnf(u522,axiom,
+    ( ~ hasphysicalconseq(sK19,X0)
+    | achieves(sK36(sK19),X0) ) ).
+
+cnf(u928,axiom,
+    ( achieves(sK35(sK18),sK18)
+    | process(sK35(sK18))
+    | event(sK35(sK18))
+    | state(sK35(sK18)) ) ).
+
+cnf(u1019,axiom,
+    poscauseof_cross(sK36(sK37(sK21)),sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21))))) ).
+
+cnf(u264,axiom,
+    ( ~ prevents(X0,X1)
+    | sP2(X1,X0) ) ).
+
+cnf(u355,axiom,
+    ( ~ failure(X0)
+    | fault(sK37(X0)) ) ).
+
+cnf(u1273,axiom,
+    ( ~ facilpreconditionfor(sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),X0)
+    | sP4(X0,sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),sK36(sK37(sK34(sK17)))) ) ).
+
+cnf(u720,axiom,
+    ( ~ facilpreconditionfor(sK29(sK35(sK18),sK31(sK35(sK18))),X0)
+    | prevpreconditionfor(sK35(sK18),X0) ) ).
+
+cnf(u294,axiom,
+    ( ~ achieves(X2,X1)
+    | ~ prevpreconditionfor(X1,X0)
+    | sP6(X0,X1,X2) ) ).
+
+cnf(u377,axiom,
+    sP13(sK20) ).
+
+cnf(u1175,axiom,
+    ( ~ process(sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | failure(sK32(sK17)) ) ).
+
+cnf(u639,axiom,
+    sP1(sK37(sK34(sK17)),sK36(sK37(sK34(sK17)))) ).
+
+cnf(u681,axiom,
+    ~ causeof(sK37(sK32(sK16)),sK36(sK37(sK32(sK16)))) ).
+
+cnf(u574,axiom,
+    ~ causeof(sK37(sK32(sK16)),sK32(sK16)) ).
+
+cnf(u902,axiom,
+    ( ~ cf(X0,X1,sK30(sK32(sK16),sK31(sK32(sK16))))
+    | ~ incompatiblewith(sK32(sK16),X0)
+    | ~ functionof_sys(X1,sK28(sK32(sK16),sK31(sK32(sK16))))
+    | functionincompatible(sK32(sK16),X1) ) ).
+
+cnf(u943,axiom,
+    ( prevpreconditionfor(sK27(sK34(sK17),sK33(sK34(sK17),sK17)),sK34(sK17))
+    | facilpreconditionfor(sK27(sK34(sK17),sK33(sK34(sK17),sK17)),sK34(sK17))
+    | sP8(sK17) ) ).
+
+cnf(u316,axiom,
+    ( ~ poscauseof(X0,X1)
+    | poscauseof_cross(X0,X1) ) ).
+
+cnf(u279,axiom,
+    ( ~ sP3(X0,X1)
+    | ~ achieves(X1,X3)
+    | ~ state(X3)
+    | ~ prevpreconditionfor(X3,X0) ) ).
+
+cnf(u644,axiom,
+    ( ~ malfunction(sK36(sK37(sK34(sK17))))
+    | ~ fault(sK37(sK34(sK17)))
+    | ~ event(sK36(sK37(sK34(sK17))))
+    | failure(sK36(sK37(sK34(sK17)))) ) ).
+
+cnf(u301,axiom,
+    ( ~ achieves(X0,X1)
+    | ~ hasphysicalconseq(X1,X2)
+    | achieves(X0,X2) ) ).
+
+cnf(u1284,axiom,
+    ( ~ sP8(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))
+    | state(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))
+    | malfunction(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))
+    | sP9(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))) ) ).
+
+cnf(u547,axiom,
+    ( ~ poscauseof_cross(sK37(sK21),X0)
+    | poscauseof_cross(sK36(sK37(sK21)),X0) ) ).
+
+cnf(u245,axiom,
+    ( ~ achieves(X0,X1)
+    | causeof(X0,X1) ) ).
+
+cnf(u605,axiom,
+    ( poscauseof_cross(sK17,sK34(sK17))
+    | prevpreconditionfor(sK17,sK33(sK34(sK17),sK17)) ) ).
+
+cnf(u1204,axiom,
+    ( ~ state(sK35(sK18))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | process(sK35(sK18))
+    | event(sK35(sK18))
+    | ~ process(sK18) ) ).
+
+cnf(u450,axiom,
+    ~ causeof(sK19,sK36(sK19)) ).
+
+cnf(u1216,axiom,
+    sP2(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))),sK36(sK37(sK32(sK16)))) ).
+
+cnf(u909,axiom,
+    ( achieves(sK35(sK18),sK18)
+    | event(sK18)
+    | state(sK18)
+    | process(sK18) ) ).
+
+cnf(u315,axiom,
+    ( ~ functionincompatible(X0,X1)
+    | malfunction(X0) ) ).
+
+cnf(u730,axiom,
+    ( ~ causeof(sK34(sK17),sK33(sK34(sK17),sK17))
+    | sP8(sK17) ) ).
+
+cnf(u1409,axiom,
+    ( ~ facilpreconditionfor(sK18,X0)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK24(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | sP4(X0,sK18,sK35(sK18)) ) ).
+
+cnf(u472,axiom,
+    sP10(sK19,sK36(sK19)) ).
+
+cnf(u1283,axiom,
+    ( ~ state(sK34(sK17))
+    | state(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))) ) ).
+
+cnf(u1227,axiom,
+    ~ process(sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))) ).
+
+cnf(u513,axiom,
+    ( ~ prevpreconditionfor(sK29(sK19,sK31(sK19)),X0)
+    | facilpreconditionfor(sK19,X0) ) ).
+
+cnf(u1439,axiom,
+    ( achieves(sK35(sK18),sK18)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18)) ) ).
+
+cnf(u502,axiom,
+    sP1(sK37(sK34(sK17)),sK34(sK17)) ).
+
+cnf(u719,axiom,
+    ( ~ achieves(X0,sK35(sK18))
+    | prevents(X0,sK29(sK35(sK18),sK31(sK35(sK18))))
+    | ~ state(sK35(sK18)) ) ).
+
+cnf(u1142,axiom,
+    achieves(sK32(sK16),sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))) ).
+
+cnf(u396,axiom,
+    failure(sK34(sK17)) ).
+
+cnf(u487,axiom,
+    incompatiblewith(sK21,sK29(sK21,sK31(sK21))) ).
+
+cnf(u565,axiom,
+    poscauseof_cross(sK32(sK16),sK37(sK32(sK16))) ).
+
+cnf(u1492,axiom,
+    ( ~ poscauseof_cross(sK18,X0)
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | poscauseof_cross(sK35(sK18),X0) ) ).
+
+cnf(u410,axiom,
+    state(sK37(sK34(sK17))) ).
+
+cnf(u509,axiom,
+    functionof_sys(sK31(sK37(sK21)),sK28(sK37(sK21),sK31(sK37(sK21)))) ).
+
+cnf(u770,axiom,
+    poscauseof(sK36(sK19),sK24(sK36(sK19),sK29(sK19,sK31(sK19)))) ).
+
+cnf(u869,axiom,
+    achieves(sK36(sK37(sK21)),sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21))))) ).
+
+cnf(u755,axiom,
+    ( ~ hasphysicalconseq(sK18,X0)
+    | achieves(sK35(sK18),sK18)
+    | allows(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | disallows(sK35(sK18),X0) ) ).
+
+cnf(u690,axiom,
+    ( ~ state(sK36(sK37(sK34(sK17))))
+    | ~ failure(sK37(sK34(sK17)))
+    | malfunction(sK36(sK37(sK34(sK17))))
+    | failurecondition(sK36(sK37(sK34(sK17)))) ) ).
+
+cnf(u1173,axiom,
+    ( state(sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | failure(sK32(sK17)) ) ).
+
+cnf(u395,axiom,
+    malfunction(sK32(sK16)) ).
+
+cnf(u1121,axiom,
+    ( ~ facilpreconditionfor(sK18,X0)
+    | event(sK35(sK18))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | process(sK35(sK18))
+    | sP4(X0,sK18,sK35(sK18)) ) ).
+
+cnf(u1491,axiom,
+    ( sP10(sK18,sK26(sK35(sK18),sK18))
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18))
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18) ) ).
+
+cnf(u417,axiom,
+    functionincompatible(sK21,sK31(sK21)) ).
+
+cnf(u1151,axiom,
+    ( ~ process(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))
+    | ~ state(sK32(sK16)) ) ).
+
+cnf(u777,axiom,
+    ~ causeof(sK24(sK36(sK19),sK29(sK19,sK31(sK19))),sK36(sK19)) ).
+
+cnf(u254,axiom,
+    ( ~ sP1(X0,X1)
+    | process(X0)
+    | state(X0) ) ).
+
+cnf(u721,axiom,
+    ( ~ prevpreconditionfor(sK29(sK35(sK18),sK31(sK35(sK18))),X0)
+    | facilpreconditionfor(sK35(sK18),X0) ) ).
+
+cnf(u447,axiom,
+    sP1(sK37(sK21),sK21) ).
+
+cnf(u1378,axiom,
+    ( ~ state(sK35(sK18))
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | ~ process(sK18) ) ).
+
+cnf(u1222,axiom,
+    ~ causeof(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))),sK36(sK37(sK32(sK16)))) ).
+
+cnf(u645,axiom,
+    poscauseof(sK36(sK37(sK34(sK17))),sK37(sK34(sK17))) ).
+
+cnf(u978,axiom,
+    ( sP1(sK18,sK35(sK18))
+    | process(sK35(sK18))
+    | state(sK24(sK35(sK18),sK18))
+    | event(sK35(sK18)) ) ).
+
+cnf(u1081,axiom,
+    ( ~ disallows(sK18,X0)
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | allows(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | sP10(X0,sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u984,axiom,
+    ( poscauseof(sK35(sK18),sK18)
+    | process(sK35(sK18))
+    | state(sK24(sK35(sK18),sK18))
+    | event(sK35(sK18)) ) ).
+
+cnf(u1147,axiom,
+    ( ~ hasphysicalconseq(X0,sK32(sK16))
+    | prevents(X0,sK32(sK16)) ) ).
+
+cnf(u1287,axiom,
+    ( ~ facilpreconditionfor(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))),X0)
+    | prevpreconditionfor(sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),X0) ) ).
+
+cnf(u350,axiom,
+    ( ~ sP13(X0)
+    | state(X0) ) ).
+
+cnf(u695,axiom,
+    ( ~ state(sK36(sK37(sK32(sK16))))
+    | ~ failure(sK37(sK32(sK16)))
+    | malfunction(sK36(sK37(sK32(sK16))))
+    | failurecondition(sK36(sK37(sK32(sK16)))) ) ).
+
+cnf(u1338,axiom,
+    ( ~ facilpreconditionfor(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))),X0)
+    | prevpreconditionfor(sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),X0) ) ).
+
+cnf(u1182,axiom,
+    ( sP10(sK32(sK17),sK17)
+    | state(sK27(sK34(sK17),sK33(sK34(sK17),sK17))) ) ).
+
+cnf(u372,axiom,
+    malfunction(sK19) ).
+
+cnf(u1542,axiom,
+    ( ~ prevpreconditionfor(sK18,X0)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | sP5(sK35(sK18),X0,sK18)
+    | state(sK25(X0,sK35(sK18))) ) ).
+
+cnf(u258,axiom,
+    ( ~ prevents(X0,X1)
+    | incompatiblewith(sK24(X0,X1),X1) ) ).
+
+cnf(u357,axiom,
+    ( ~ achieves(X0,X1)
+    | failure(X0)
+    | ~ fault(X1)
+    | ~ event(X0)
+    | ~ malfunction(X0) ) ).
+
+cnf(u280,axiom,
+    ( sP3(X0,X1)
+    | state(sK25(X0,X1)) ) ).
+
+cnf(u371,axiom,
+    sP11(sK18) ).
+
+cnf(u736,axiom,
+    achieves(sK36(sK19),sK24(sK36(sK19),sK29(sK19,sK31(sK19)))) ).
+
+cnf(u310,axiom,
+    ( ~ functionincompatible(X0,X1)
+    | functionof_sys(X1,sK28(X0,X1)) ) ).
+
+cnf(u265,axiom,
+    ( ~ facilpreconditionfor(X0,X1)
+    | state(X0) ) ).
+
+cnf(u1191,axiom,
+    sP10(sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),sK32(sK16)) ).
+
+cnf(u527,axiom,
+    poscauseof_cross(sK34(sK17),sK37(sK34(sK17))) ).
+
+cnf(u1495,axiom,
+    ( sP10(sK24(sK35(sK18),sK18),sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u868,axiom,
+    incompatiblewith(sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21)))),sK29(sK37(sK21),sK31(sK37(sK21)))) ).
+
+cnf(u959,axiom,
+    ( ~ hasphysicalconseq(sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21)))),X0)
+    | achieves(sK36(sK37(sK21)),X0) ) ).
+
+cnf(u295,axiom,
+    ( ~ maintains(X2,X1)
+    | ~ prevpreconditionfor(X1,X0)
+    | sP6(X0,X1,X2) ) ).
+
+cnf(u239,axiom,
+    ( ~ state(X0)
+    | ~ process(X0) ) ).
+
+cnf(u452,axiom,
+    ( ~ facilpreconditionfor(X0,X1)
+    | poscauseof(X0,X1) ) ).
+
+cnf(u317,axiom,
+    ( ~ poscauseof(X0,X1)
+    | ~ poscauseof_cross(X1,X2)
+    | poscauseof_cross(X0,X2) ) ).
+
+cnf(u1300,axiom,
+    ( ~ hasphysicalconseq(sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),X0)
+    | achieves(sK36(sK37(sK32(sK16))),X0) ) ).
+
+cnf(u1440,axiom,
+    ( sP1(sK24(sK35(sK18),sK18),sK35(sK18))
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18) ) ).
+
+cnf(u621,axiom,
+    ( ~ state(sK36(sK37(sK21)))
+    | ~ failure(sK37(sK21))
+    | malfunction(sK36(sK37(sK21)))
+    | failurecondition(sK36(sK37(sK21))) ) ).
+
+cnf(u1092,axiom,
+    ( ~ facilpreconditionfor(sK27(sK18,sK35(sK18)),X0)
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | allows(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | sP4(X0,sK27(sK18,sK35(sK18)),sK35(sK18)) ) ).
+
+cnf(u466,axiom,
+    poscauseof(sK36(sK19),sK19) ).
+
+cnf(u867,axiom,
+    state(sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21))))) ).
+
+cnf(u1232,axiom,
+    ( ~ hasphysicalconseq(sK18,X0)
+    | achieves(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK18)
+    | allows(sK35(sK18),X0) ) ).
+
+cnf(u1285,axiom,
+    ( ~ event(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))
+    | state(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))) ) ).
+
+cnf(u746,axiom,
+    ( process(sK29(sK19,sK31(sK19)))
+    | state(sK29(sK19,sK31(sK19))) ) ).
+
+cnf(u1425,axiom,
+    ( ~ failure(sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | state(sK26(sK35(sK18),sK18))
+    | sP8(sK35(sK18))
+    | state(sK24(sK35(sK18),sK18)) ) ).
+
+cnf(u488,axiom,
+    incompatiblewith(sK22,sK29(sK22,sK31(sK22))) ).
+
+cnf(u1299,axiom,
+    ( ~ prevpreconditionfor(sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),X0)
+    | sP6(X0,sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),sK36(sK37(sK32(sK16)))) ) ).
+
+cnf(u791,axiom,
+    ( poscauseof_cross(sK17,sK32(sK17))
+    | process(sK33(sK34(sK17),sK17))
+    | event(sK33(sK34(sK17),sK17)) ) ).
+
+cnf(u390,axiom,
+    process(sK23) ).
+
+cnf(u473,axiom,
+    ( ~ prevpreconditionfor(X1,X2)
+    | ~ state(X1)
+    | ~ achieves(X0,X1)
+    | state(sK25(X2,X0)) ) ).
+
+cnf(u878,axiom,
+    ( sP10(sK32(sK17),sK17)
+    | event(sK33(sK34(sK17),sK17))
+    | process(sK33(sK34(sK17),sK17)) ) ).
+
+cnf(u833,axiom,
+    ( ~ facilpreconditionfor(sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21)))),X0)
+    | sP4(X0,sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21)))),sK21) ) ).
+
+cnf(u735,axiom,
+    incompatiblewith(sK24(sK36(sK19),sK29(sK19,sK31(sK19))),sK29(sK19,sK31(sK19))) ).
+
+cnf(u670,axiom,
+    ( ~ malfunction(sK36(sK37(sK32(sK16))))
+    | ~ fault(sK37(sK32(sK16)))
+    | ~ event(sK36(sK37(sK32(sK16))))
+    | failure(sK36(sK37(sK32(sK16)))) ) ).
+
+cnf(u1030,axiom,
+    achieves(sK36(sK37(sK34(sK17))),sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))) ).
+
+cnf(u412,axiom,
+    ~ event(sK37(sK34(sK17))) ).
+
+cnf(u503,axiom,
+    causeof(sK34(sK17),sK37(sK34(sK17))) ).
+
+cnf(u1486,axiom,
+    ( poscauseof_cross(sK35(sK18),sK24(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | state(sK26(sK35(sK18),sK18)) ) ).
+
+cnf(u1052,axiom,
+    ( ~ prevpreconditionfor(sK18,X0)
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | event(sK35(sK18))
+    | sP5(sK35(sK18),X0,sK18)
+    | state(sK25(X0,sK35(sK18))) ) ).
+
+cnf(u1536,axiom,
+    ( sP10(sK18,sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18)) ) ).
+
+cnf(u397,axiom,
+    event(sK34(sK17)) ).
+
+cnf(u786,axiom,
+    ( ~ failure(sK24(sK36(sK19),sK29(sK19,sK31(sK19))))
+    | sP8(sK36(sK19)) ) ).
+
+cnf(u643,axiom,
+    ( ~ hasphysicalconseq(X0,sK36(sK37(sK34(sK17))))
+    | achieves(X0,sK36(sK37(sK34(sK17)))) ) ).
+
+cnf(u578,axiom,
+    ( ~ achieves(X0,sK21)
+    | prevents(X0,sK29(sK21,sK31(sK21)))
+    | ~ state(sK21) ) ).
+
+cnf(u1189,axiom,
+    poscauseof_cross(sK32(sK16),sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))) ).
+
+cnf(u320,axiom,
+    ( ~ sP9(X0)
+    | sP8(X0) ) ).
+
+cnf(u411,axiom,
+    malfunction(sK37(sK34(sK17))) ).
+
+cnf(u1137,axiom,
+    ( ~ state(sK37(sK32(sK16)))
+    | prevents(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))) ) ).
+
+cnf(u1493,axiom,
+    ( poscauseof_cross(sK35(sK18),sK18)
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u240,axiom,
+    ( ~ state(X0)
+    | ~ event(X0) ) ).
+
+cnf(u433,axiom,
+    causeof(sK35(sK18),sK18) ).
+
+cnf(u1039,axiom,
+    ( ~ process(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))
+    | ~ state(sK36(sK37(sK34(sK17)))) ) ).
+
+cnf(u793,axiom,
+    ( ~ achieves(X0,sK37(sK32(sK16)))
+    | prevents(X0,sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))
+    | ~ state(sK37(sK32(sK16))) ) ).
+
+cnf(u737,axiom,
+    sP2(sK29(sK19,sK31(sK19)),sK36(sK19)) ).
+
+cnf(u999,axiom,
+    ( ~ prevpreconditionfor(sK18,X0)
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | event(sK35(sK18))
+    | facilpreconditionfor(sK24(sK35(sK18),sK18),X0) ) ).
+
+cnf(u335,axiom,
+    ( ~ failurecondition(X0)
+    | sP10(sK34(X0),X0) ) ).
+
+cnf(u1446,axiom,
+    ( poscauseof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18) ) ).
+
+cnf(u1394,axiom,
+    ( process(sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | state(sK18)
+    | state(sK26(sK35(sK18),sK18)) ) ).
+
+cnf(u1468,axiom,
+    ( ~ process(sK24(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | ~ state(sK35(sK18))
+    | state(sK26(sK35(sK18),sK18)) ) ).
+
+cnf(u1288,axiom,
+    ( ~ prevpreconditionfor(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))),X0)
+    | facilpreconditionfor(sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),X0) ) ).
+
+cnf(u661,axiom,
+    ( ~ poscauseof_cross(sK37(sK34(sK17)),X0)
+    | poscauseof_cross(sK36(sK37(sK34(sK17))),X0) ) ).
+
+cnf(u1149,axiom,
+    ~ causeof(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))),sK32(sK16)) ).
+
+cnf(u994,axiom,
+    ( ~ facilpreconditionfor(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))),X0)
+    | sP7(X0,sK34(sK17)) ) ).
+
+cnf(u1208,axiom,
+    ( poscauseof_cross(sK35(sK18),sK18)
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | process(sK35(sK18))
+    | event(sK35(sK18)) ) ).
+
+cnf(u544,axiom,
+    ( ~ facilpreconditionfor(sK29(sK20,sK31(sK20)),X0)
+    | prevpreconditionfor(sK20,X0) ) ).
+
+cnf(u1035,axiom,
+    ( ~ hasphysicalconseq(X0,sK36(sK37(sK34(sK17))))
+    | prevents(X0,sK36(sK37(sK34(sK17)))) ) ).
+
+cnf(u1217,axiom,
+    ( ~ prevpreconditionfor(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))),X0)
+    | ~ sP3(X0,sK36(sK37(sK32(sK16))))
+    | sP5(sK36(sK37(sK32(sK16))),X0,sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))) ) ).
+
+cnf(u1303,axiom,
+    poscauseof(sK36(sK37(sK32(sK16))),sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))) ).
+
+cnf(u366,axiom,
+    sP8(sK16) ).
+
+cnf(u1001,axiom,
+    ~ causeof(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))),sK34(sK17)) ).
+
+cnf(u583,axiom,
+    participatesin(sK28(sK20,sK31(sK20)),sK20,sK30(sK20,sK31(sK20))) ).
+
+cnf(u924,axiom,
+    ( ~ sP8(sK18)
+    | state(sK18)
+    | process(sK18)
+    | malfunction(sK18)
+    | sP9(sK18) ) ).
+
+cnf(u260,axiom,
+    ( ~ incompatiblewith(X2,X1)
+    | ~ achieves(X0,X2)
+    | prevents(X0,X1)
+    | ~ state(X2) ) ).
+
+cnf(u1146,axiom,
+    ( ~ hasphysicalconseq(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))),X0)
+    | prevents(sK32(sK16),X0) ) ).
+
+cnf(u716,axiom,
+    ( sP8(sK17)
+    | event(sK33(sK34(sK17),sK17))
+    | process(sK33(sK34(sK17),sK17)) ) ).
+
+cnf(u274,axiom,
+    ( ~ prevents(X0,X2)
+    | ~ sP3(X1,X0)
+    | ~ prevpreconditionfor(X2,X1)
+    | sP5(X0,X1,X2) ) ).
+
+cnf(u373,axiom,
+    ~ malfunction(sK16) ).
+
+cnf(u1496,axiom,
+    ( ~ failure(sK18)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | sP8(sK35(sK18))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18)) ) ).
+
+cnf(u1229,axiom,
+    ( sP5(sK35(sK18),sK18,sK26(sK35(sK18),sK18))
+    | achieves(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | sP4(sK18,sK26(sK35(sK18),sK18),sK35(sK18))
+    | prevents(sK35(sK18),sK18) ) ).
+
+cnf(u554,axiom,
+    ( ~ failure(sK37(sK34(sK17)))
+    | sP8(sK34(sK17)) ) ).
+
+cnf(u832,axiom,
+    sP1(sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21)))),sK21) ).
+
+cnf(u923,axiom,
+    ( event(sK18)
+    | process(sK18)
+    | state(sK18) ) ).
+
+cnf(u296,axiom,
+    ( ~ disallows(X0,X1)
+    | sP7(X1,X0) ) ).
+
+cnf(u259,axiom,
+    ( ~ prevents(X0,X1)
+    | achieves(X0,sK24(X0,X1)) ) ).
+
+cnf(u752,axiom,
+    ( ~ facilpreconditionfor(sK29(sK32(sK16),sK31(sK32(sK16))),X0)
+    | prevpreconditionfor(sK32(sK16),X0) ) ).
+
+cnf(u1537,axiom,
+    ( ~ state(sK26(sK35(sK18),sK18))
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | failurecondition(sK26(sK35(sK18),sK18))
+    | ~ failure(sK18)
+    | malfunction(sK26(sK35(sK18),sK18))
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18)) ) ).
+
+cnf(u281,axiom,
+    ( sP3(X0,X1)
+    | achieves(X1,sK25(X0,X1)) ) ).
+
+cnf(u1207,axiom,
+    ( ~ poscauseof_cross(sK18,X0)
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | process(sK35(sK18))
+    | event(sK35(sK18))
+    | poscauseof_cross(sK35(sK18),X0) ) ).
+
+cnf(u543,axiom,
+    causeof(sK32(sK16),sK37(sK32(sK16))) ).
+
+cnf(u585,axiom,
+    participatesin(sK28(sK22,sK31(sK22)),sK22,sK30(sK22,sK31(sK22))) ).
+
+cnf(u311,axiom,
+    ( ~ functionincompatible(X0,X1)
+    | cf(sK29(X0,X1),X1,sK30(X0,X1)) ) ).
+
+cnf(u1294,axiom,
+    ( ~ poscauseof_cross(sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),X0)
+    | poscauseof_cross(sK36(sK37(sK34(sK17))),X0) ) ).
+
+cnf(u676,axiom,
+    participatesin(sK28(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))),sK37(sK32(sK16)),sK30(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))) ).
+
+cnf(u255,axiom,
+    ( ~ sP1(X0,X1)
+    | ~ state(X1)
+    | ~ process(X0) ) ).
+
+cnf(u1434,axiom,
+    ( ~ prevpreconditionfor(sK18,X0)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | facilpreconditionfor(sK24(sK35(sK18),sK18),X0) ) ).
+
+cnf(u468,axiom,
+    poscauseof_cross(sK36(sK19),sK19) ).
+
+cnf(u1226,axiom,
+    ~ event(sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))) ).
+
+cnf(u792,axiom,
+    ( event(sK33(sK34(sK17),sK17))
+    | process(sK33(sK34(sK17),sK17))
+    | failure(sK32(sK17)) ) ).
+
+cnf(u482,axiom,
+    functionof_sys(sK31(sK22),sK28(sK22,sK31(sK22))) ).
+
+cnf(u453,axiom,
+    ~ causeof(sK37(sK21),sK21) ).
+
+cnf(u941,axiom,
+    ( event(sK35(sK18))
+    | state(sK35(sK18))
+    | process(sK35(sK18)) ) ).
+
+cnf(u584,axiom,
+    participatesin(sK28(sK21,sK31(sK21)),sK21,sK30(sK21,sK31(sK21))) ).
+
+cnf(u1547,axiom,
+    ( ~ state(sK26(sK35(sK18),sK18))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18))
+    | failurecondition(sK26(sK35(sK18),sK18))
+    | ~ failure(sK18)
+    | malfunction(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u1441,axiom,
+    ( ~ facilpreconditionfor(sK24(sK35(sK18),sK18),X0)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | sP4(X0,sK24(sK35(sK18),sK18),sK35(sK18)) ) ).
+
+cnf(u504,axiom,
+    incompatiblewith(sK34(sK17),sK29(sK34(sK17),sK31(sK34(sK17)))) ).
+
+cnf(u467,axiom,
+    poscauseof(sK21,sK37(sK21)) ).
+
+cnf(u545,axiom,
+    ( ~ prevpreconditionfor(sK29(sK20,sK31(sK20)),X0)
+    | facilpreconditionfor(sK20,X0) ) ).
+
+cnf(u807,axiom,
+    achieves(sK21,sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21))))) ).
+
+cnf(u406,axiom,
+    ~ event(sK37(sK21)) ).
+
+cnf(u489,axiom,
+    incompatiblewith(sK23,sK29(sK23,sK31(sK23))) ).
+
+cnf(u894,axiom,
+    ( achieves(sK35(sK18),sK24(sK35(sK18),sK18))
+    | event(sK35(sK18))
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18) ) ).
+
+cnf(u751,axiom,
+    ( ~ achieves(X0,sK32(sK16))
+    | prevents(X0,sK29(sK32(sK16),sK31(sK32(sK16))))
+    | ~ state(sK32(sK16)) ) ).
+
+cnf(u686,axiom,
+    ( ~ cf(X0,X1,sK30(sK21,sK31(sK21)))
+    | ~ incompatiblewith(sK21,X0)
+    | ~ functionof_sys(X1,sK28(sK21,sK31(sK21)))
+    | functionincompatible(sK21,X1) ) ).
+
+cnf(u964,axiom,
+    ( sP1(sK18,sK35(sK18))
+    | event(sK35(sK18))
+    | process(sK18)
+    | state(sK18)
+    | process(sK35(sK18)) ) ).
+
+cnf(u1046,axiom,
+    ( ~ hasphysicalconseq(sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),X0)
+    | achieves(sK34(sK17),X0) ) ).
+
+cnf(u391,axiom,
+    ~ event(sK23) ).
+
+cnf(u1552,axiom,
+    ( ~ fault(sK18)
+    | failure(sK35(sK18))
+    | state(sK24(sK35(sK18),sK18))
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | state(sK35(sK18))
+    | process(sK35(sK18)) ) ).
+
+cnf(u1068,axiom,
+    ( ~ achieves(X0,sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | sP8(sK17)
+    | prevents(sK33(sK34(sK17),sK17),sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | ~ state(sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | achieves(X0,sK25(sK34(sK17),X0)) ) ).
+
+cnf(u442,axiom,
+    causeof(sK36(sK19),sK19) ).
+
+cnf(u413,axiom,
+    ~ process(sK37(sK34(sK17))) ).
+
+cnf(u802,axiom,
+    ( ~ state(sK37(sK21))
+    | prevents(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21)))) ) ).
+
+cnf(u773,axiom,
+    ( ~ event(sK29(sK19,sK31(sK19)))
+    | state(sK29(sK19,sK31(sK19))) ) ).
+
+cnf(u234,axiom,
+    fault(sK19) ).
+
+cnf(u717,axiom,
+    ( sP7(sK34(sK17),sK33(sK34(sK17),sK17))
+    | sP8(sK17) ) ).
+
+cnf(u594,axiom,
+    cf(sK29(sK19,sK31(sK19)),sK31(sK19),sK30(sK19,sK31(sK19))) ).
+
+cnf(u336,axiom,
+    ( ~ sP10(X1,X0)
+    | failurecondition(X0)
+    | ~ failure(X1)
+    | malfunction(X0)
+    | ~ state(X0) ) ).
+
+cnf(u427,axiom,
+    ( event(sK16)
+    | process(sK16) ) ).
+
+cnf(u1025,axiom,
+    prevents(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))) ).
+
+cnf(u1091,axiom,
+    ( ~ prevpreconditionfor(sK27(sK18,sK35(sK18)),X0)
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | allows(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | sP6(X0,sK27(sK18,sK35(sK18)),sK35(sK18)) ) ).
+
+cnf(u321,axiom,
+    ( ~ process(X0)
+    | ~ sP8(X0)
+    | malfunction(X0)
+    | sP9(X0) ) ).
+
+cnf(u1055,axiom,
+    ( ~ achieves(X0,sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | sP8(sK17)
+    | ~ state(sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | facilpreconditionfor(sK27(sK34(sK17),sK33(sK34(sK17),sK17)),sK34(sK17))
+    | state(sK25(sK34(sK17),X0)) ) ).
+
+cnf(u809,axiom,
+    ( ~ prevpreconditionfor(sK29(sK37(sK21),sK31(sK37(sK21))),X0)
+    | ~ sP3(X0,sK21)
+    | sP5(sK21,X0,sK29(sK37(sK21),sK31(sK37(sK21)))) ) ).
+
+cnf(u753,axiom,
+    ( ~ prevpreconditionfor(sK29(sK32(sK16),sK31(sK32(sK16))),X0)
+    | facilpreconditionfor(sK32(sK16),X0) ) ).
+
+cnf(u518,axiom,
+    poscauseof_cross(sK36(sK37(sK21)),sK37(sK21)) ).
+
+cnf(u974,axiom,
+    ( ~ event(sK29(sK37(sK21),sK31(sK37(sK21))))
+    | state(sK29(sK37(sK21),sK31(sK37(sK21)))) ) ).
+
+cnf(u351,axiom,
+    ( ~ sP13(X0)
+    | ~ fault(X0) ) ).
+
+cnf(u1462,axiom,
+    ( ~ hasphysicalconseq(X0,sK35(sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | state(sK26(sK35(sK18),sK18))
+    | achieves(X0,sK35(sK18)) ) ).
+
+cnf(u1282,axiom,
+    ( ~ state(sK36(sK37(sK34(sK17))))
+    | state(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))) ) ).
+
+cnf(u1356,axiom,
+    ( ~ disallows(sK18,X0)
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | facilpreconditionfor(sK26(sK35(sK18),sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | sP10(X0,sK26(sK35(sK18),sK18)) ) ).
+
+cnf(u1304,axiom,
+    ( ~ failure(sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))))
+    | sP8(sK36(sK37(sK34(sK17)))) ) ).
+
+cnf(u677,axiom,
+    incompatiblewith(sK37(sK32(sK16)),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))) ).
+
+cnf(u1037,axiom,
+    ~ causeof(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))),sK36(sK37(sK34(sK17)))) ).
+
+cnf(u1096,axiom,
+    ( ~ prevpreconditionfor(sK27(sK34(sK17),sK33(sK34(sK17),sK17)),X0)
+    | achieves(sK33(sK34(sK17),sK17),sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | sP8(sK17)
+    | facilpreconditionfor(sK27(sK34(sK17),sK33(sK34(sK17),sK17)),sK34(sK17))
+    | sP6(X0,sK27(sK34(sK17),sK33(sK34(sK17),sK17)),sK33(sK34(sK17),sK17)) ) ).
+
+cnf(u1010,axiom,
+    ( ~ prevpreconditionfor(sK24(sK35(sK18),sK18),X0)
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | event(sK35(sK18))
+    | sP6(X0,sK24(sK35(sK18),sK18),sK35(sK18)) ) ).
+
+cnf(u981,axiom,
+    ( ~ hasphysicalconseq(sK18,X0)
+    | process(sK35(sK18))
+    | state(sK24(sK35(sK18),sK18))
+    | event(sK35(sK18))
+    | achieves(sK35(sK18),X0) ) ).
+
+cnf(u560,axiom,
+    ( ~ facilpreconditionfor(sK37(sK21),X0)
+    | sP4(X0,sK37(sK21),sK36(sK37(sK21))) ) ).
+
+cnf(u1051,axiom,
+    ( ~ prevpreconditionfor(sK18,X0)
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | event(sK35(sK18))
+    | sP5(sK35(sK18),X0,sK18)
+    | achieves(sK35(sK18),sK25(X0,sK35(sK18))) ) ).
+
+cnf(u1233,axiom,
+    ( ~ hasphysicalconseq(X0,sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK18)
+    | allows(X0,sK35(sK18)) ) ).
+
+cnf(u1355,axiom,
+    ( ~ achieves(X0,sK26(sK35(sK18),sK18))
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | facilpreconditionfor(sK26(sK35(sK18),sK18),sK18)
+    | ~ state(sK26(sK35(sK18),sK18))
+    | achieves(sK35(sK18),sK18)
+    | state(sK25(sK18,X0)) ) ).
+
+cnf(u1319,axiom,
+    ( ~ poscauseof_cross(sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),X0)
+    | poscauseof_cross(sK36(sK37(sK32(sK16))),X0) ) ).
+
+cnf(u382,axiom,
+    event(sK21) ).
+
+cnf(u599,axiom,
+    cf(sK29(sK32(sK16),sK31(sK32(sK16))),sK31(sK32(sK16)),sK30(sK32(sK16),sK31(sK32(sK16)))) ).
+
+cnf(u726,axiom,
+    ( sP6(sK34(sK17),sK27(sK34(sK17),sK33(sK34(sK17),sK17)),sK33(sK34(sK17),sK17))
+    | sP8(sK17)
+    | facilpreconditionfor(sK27(sK34(sK17),sK33(sK34(sK17),sK17)),sK34(sK17)) ) ).
+
+cnf(u1214,axiom,
+    incompatiblewith(sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))) ).
+
+cnf(u276,axiom,
+    ( ~ sP4(X0,X1,X2)
+    | facilpreconditionfor(X1,X0) ) ).
+
+cnf(u1034,axiom,
+    ( ~ hasphysicalconseq(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))),X0)
+    | prevents(sK36(sK37(sK34(sK17))),X0) ) ).
+
+cnf(u732,axiom,
+    prevents(sK36(sK19),sK29(sK19,sK31(sK19))) ).
+
+cnf(u1490,axiom,
+    ( ~ failure(sK18)
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18))
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | sP8(sK26(sK35(sK18),sK18))
+    | achieves(sK35(sK18),sK18) ) ).
+
+cnf(u290,axiom,
+    ( ~ sP6(X0,X2,X1)
+    | sP7(X0,X1) ) ).
+
+cnf(u261,axiom,
+    ( ~ sP2(X0,X1)
+    | process(X1)
+    | event(X1)
+    | state(X1) ) ).
+
+cnf(u1056,axiom,
+    ( ~ disallows(sK34(sK17),X0)
+    | sP8(sK17)
+    | facilpreconditionfor(sK27(sK34(sK17),sK33(sK34(sK17),sK17)),sK34(sK17))
+    | sP10(X0,sK27(sK34(sK17),sK33(sK34(sK17),sK17))) ) ).
+
+cnf(u1245,axiom,
+    ( ~ failure(sK18)
+    | process(sK35(sK18))
+    | event(sK35(sK18))
+    | sP8(sK35(sK18))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18)) ) ).
+
+cnf(u570,axiom,
+    ( ~ prevpreconditionfor(sK37(sK32(sK16)),X0)
+    | sP6(X0,sK37(sK32(sK16)),sK32(sK16)) ) ).
+
+cnf(u848,axiom,
+    ~ causeof(sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21)))),sK21) ).
+
+cnf(u312,axiom,
+    ( ~ functionincompatible(X0,X1)
+    | incompatiblewith(X0,sK29(X0,X1)) ) ).
+
+cnf(u275,axiom,
+    ( ~ sP4(X0,X1,X2)
+    | achieves(X2,X1)
+    | maintains(X2,X1) ) ).
+
+cnf(u640,axiom,
+    ( ~ facilpreconditionfor(sK37(sK34(sK17)),X0)
+    | sP4(X0,sK37(sK34(sK17)),sK36(sK37(sK34(sK17)))) ) ).
+
+cnf(u1497,axiom,
+    ( sP10(sK18,sK35(sK18))
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18)) ) ).
+
+cnf(u297,axiom,
+    ( ~ sP7(X1,X0)
+    | disallows(X0,X1) ) ).
+
+cnf(u559,axiom,
+    ( ~ facilpreconditionfor(sK19,X0)
+    | sP4(X0,sK19,sK36(sK19)) ) ).
+
+cnf(u241,axiom,
+    ( ~ process(X0)
+    | ~ event(X0) ) ).
+
+cnf(u601,axiom,
+    cf(sK29(sK35(sK18),sK31(sK35(sK18))),sK31(sK35(sK18)),sK30(sK35(sK18),sK31(sK35(sK18)))) ).
+
+cnf(u772,axiom,
+    ( ~ sP8(sK29(sK19,sK31(sK19)))
+    | state(sK29(sK19,sK31(sK19)))
+    | malfunction(sK29(sK19,sK31(sK19)))
+    | sP9(sK29(sK19,sK31(sK19))) ) ).
+
+cnf(u462,axiom,
+    malfunction(sK37(sK32(sK16))) ).
+
+cnf(u863,axiom,
+    ( ~ sP8(sK33(sK34(sK17),sK17))
+    | failure(sK32(sK17))
+    | process(sK33(sK34(sK17),sK17))
+    | malfunction(sK33(sK34(sK17),sK17))
+    | sP9(sK33(sK34(sK17),sK17)) ) ).
+
+cnf(u950,axiom,
+    ( prevpreconditionfor(sK27(sK18,sK35(sK18)),sK18)
+    | prevents(sK35(sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | allows(sK35(sK18),sK18) ) ).
+
+cnf(u1310,axiom,
+    ( ~ state(sK32(sK16))
+    | state(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))) ) ).
+
+cnf(u484,axiom,
+    incompatiblewith(sK15,sK29(sK15,sK31(sK15))) ).
+
+cnf(u1344,axiom,
+    ( sP3(sK18,sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK26(sK35(sK18),sK18))
+    | maintains(sK35(sK18),sK26(sK35(sK18),sK18)) ) ).
+
+cnf(u808,axiom,
+    sP2(sK29(sK37(sK21),sK31(sK37(sK21))),sK21) ).
+
+cnf(u525,axiom,
+    ( ~ hasphysicalconseq(sK37(sK34(sK17)),X0)
+    | achieves(sK34(sK17),X0) ) ).
+
+cnf(u771,axiom,
+    ( ~ state(sK36(sK19))
+    | state(sK29(sK19,sK31(sK19))) ) ).
+
+cnf(u498,axiom,
+    poscauseof(sK36(sK37(sK21)),sK37(sK21)) ).
+
+cnf(u469,axiom,
+    poscauseof_cross(sK21,sK37(sK21)) ).
+
+cnf(u858,axiom,
+    ( ~ cf(X0,X1,sK30(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))
+    | ~ incompatiblewith(sK37(sK34(sK17)),X0)
+    | ~ functionof_sys(X1,sK28(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))
+    | functionincompatible(sK37(sK34(sK17)),X1) ) ).
+
+cnf(u957,axiom,
+    ( ~ facilpreconditionfor(sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21)))),X0)
+    | sP4(X0,sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21)))),sK36(sK37(sK21))) ) ).
+
+cnf(u600,axiom,
+    cf(sK29(sK34(sK17),sK31(sK34(sK17))),sK31(sK34(sK17)),sK30(sK34(sK17),sK31(sK34(sK17)))) ).
+
+cnf(u650,axiom,
+    participatesin(sK28(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))),sK37(sK34(sK17)),sK30(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))) ).
+
+cnf(u392,axiom,
+    ~ failurecondition(sK18) ).
+
+cnf(u483,axiom,
+    functionof_sys(sK31(sK23),sK28(sK23,sK31(sK23))) ).
+
+cnf(u1275,axiom,
+    ( ~ hasphysicalconseq(sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),X0)
+    | achieves(sK36(sK37(sK34(sK17))),X0) ) ).
+
+cnf(u561,axiom,
+    incompatiblewith(sK32(sK16),sK29(sK32(sK16),sK31(sK32(sK16)))) ).
+
+cnf(u422,axiom,
+    functionincompatible(sK35(sK18),sK31(sK35(sK18))) ).
+
+cnf(u505,axiom,
+    functionof_sys(sK31(sK34(sK17)),sK28(sK34(sK17),sK31(sK34(sK17)))) ).
+
+cnf(u782,axiom,
+    poscauseof_cross(sK36(sK19),sK24(sK36(sK19),sK29(sK19,sK31(sK19)))) ).
+
+cnf(u865,axiom,
+    prevents(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21)))) ).
+
+cnf(u767,axiom,
+    ( ~ hasphysicalconseq(sK24(sK36(sK19),sK29(sK19,sK31(sK19))),X0)
+    | achieves(sK36(sK19),X0) ) ).
+
+cnf(u524,axiom,
+    ( ~ hasphysicalconseq(sK37(sK21),X0)
+    | achieves(sK21,X0) ) ).
+
+cnf(u702,axiom,
+    ( ~ facilpreconditionfor(sK29(sK37(sK21),sK31(sK37(sK21))),X0)
+    | prevpreconditionfor(sK37(sK21),X0) ) ).
+
+cnf(u980,axiom,
+    ( ~ prevpreconditionfor(sK18,X0)
+    | process(sK35(sK18))
+    | state(sK24(sK35(sK18),sK18))
+    | event(sK35(sK18))
+    | sP6(X0,sK18,sK35(sK18)) ) ).
+
+cnf(u1062,axiom,
+    ( ~ achieves(X0,sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | facilpreconditionfor(sK27(sK18,sK35(sK18)),sK18)
+    | allows(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | ~ state(sK27(sK18,sK35(sK18)))
+    | achieves(X0,sK25(sK18,X0)) ) ).
+
+cnf(u444,axiom,
+    achieves(sK32(sK16),sK37(sK32(sK16))) ).
+
+cnf(u407,axiom,
+    ~ process(sK37(sK21)) ).
+
+cnf(u236,axiom,
+    failure(sK21) ).
+
+cnf(u330,axiom,
+    ( ~ poscauseof_cross(X1,X0)
+    | sP10(X0,X1) ) ).
+
+cnf(u429,axiom,
+    poscauseof_cross(sK16,sK32(sK16)) ).
+
+cnf(u1412,axiom,
+    ( ~ hasphysicalconseq(X0,sK35(sK18))
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK24(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(X0,sK35(sK18)) ) ).
+
+cnf(u675,axiom,
+    cf(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))),sK31(sK37(sK32(sK16))),sK30(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))) ).
+
+cnf(u250,axiom,
+    ( ~ sP0(X0,X1)
+    | ~ allows(X1,X0) ) ).
+
+cnf(u733,axiom,
+    causeof(sK36(sK19),sK29(sK19,sK31(sK19))) ).
+
+cnf(u1093,axiom,
+    ( ~ failure(sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21)))))
+    | failurecondition(sK36(sK37(sK21)))
+    | malfunction(sK36(sK37(sK21)))
+    | ~ state(sK36(sK37(sK21))) ) ).
+
+cnf(u979,axiom,
+    ( ~ facilpreconditionfor(sK18,X0)
+    | process(sK35(sK18))
+    | state(sK24(sK35(sK18),sK18))
+    | event(sK35(sK18))
+    | sP4(X0,sK18,sK35(sK18)) ) ).
+
+cnf(u352,axiom,
+    ( ~ downstate(X0)
+    | sP13(X0) ) ).
+
+cnf(u443,axiom,
+    achieves(sK21,sK37(sK21)) ).
+
+cnf(u1107,axiom,
+    ( ~ prevpreconditionfor(sK29(sK37(sK21),sK31(sK37(sK21))),X0)
+    | facilpreconditionfor(sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21)))),X0) ) ).
+
+cnf(u337,axiom,
+    ( ~ sP12(X0)
+    | ~ malfunction(X0) ) ).
+
+cnf(u1411,axiom,
+    ( ~ hasphysicalconseq(sK18,X0)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK24(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),X0) ) ).
+
+cnf(u641,axiom,
+    ( ~ prevpreconditionfor(sK37(sK34(sK17)),X0)
+    | sP6(X0,sK37(sK34(sK17)),sK36(sK37(sK34(sK17)))) ) ).
+
+cnf(u534,axiom,
+    ( ~ hasphysicalconseq(X0,sK21)
+    | achieves(X0,sK21) ) ).
+
+cnf(u990,axiom,
+    incompatiblewith(sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))) ).
+
+cnf(u367,axiom,
+    state(sK17) ).
+
+cnf(u1350,axiom,
+    ( maintains(sK35(sK18),sK26(sK35(sK18),sK18))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | prevpreconditionfor(sK26(sK35(sK18),sK18),sK18)
+    | achieves(sK35(sK18),sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u1298,axiom,
+    ( ~ facilpreconditionfor(sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),X0)
+    | sP4(X0,sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),sK36(sK37(sK32(sK16)))) ) ).
+
+cnf(u1270,axiom,
+    ( sP10(sK18,sK35(sK18))
+    | prevents(sK35(sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u1090,axiom,
+    poscauseof_cross(sK34(sK17),sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))) ).
+
+cnf(u1372,axiom,
+    ( ~ sP3(X0,sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | ~ prevpreconditionfor(sK18,X0)
+    | sP5(sK35(sK18),X0,sK18) ) ).
+
+cnf(u1320,axiom,
+    poscauseof_cross(sK36(sK37(sK32(sK16))),sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))) ).
+
+cnf(u693,axiom,
+    ( ~ failure(sK37(sK32(sK16)))
+    | sP8(sK36(sK37(sK32(sK16)))) ) ).
+
+cnf(u1164,axiom,
+    ~ causeof(sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),sK32(sK16)) ).
+
+cnf(u1053,axiom,
+    ( ~ achieves(X0,sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | sP8(sK17)
+    | facilpreconditionfor(sK27(sK34(sK17),sK33(sK34(sK17),sK17)),sK34(sK17))
+    | ~ state(sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | prevpreconditionfor(sK25(sK34(sK17),X0),sK34(sK17)) ) ).
+
+cnf(u1112,axiom,
+    ( ~ poscauseof_cross(sK18,X0)
+    | state(sK24(sK35(sK18),sK18))
+    | event(sK35(sK18))
+    | process(sK35(sK18))
+    | poscauseof_cross(sK35(sK18),X0) ) ).
+
+cnf(u898,axiom,
+    ( ~ hasphysicalconseq(sK18,X0)
+    | event(sK35(sK18))
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),X0) ) ).
+
+cnf(u997,axiom,
+    ( ~ achieves(X0,sK24(sK35(sK18),sK18))
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | event(sK35(sK18))
+    | prevents(X0,sK18)
+    | ~ state(sK24(sK35(sK18),sK18)) ) ).
+
+cnf(u1305,axiom,
+    sP10(sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),sK36(sK37(sK34(sK17)))) ).
+
+cnf(u1067,axiom,
+    ( ~ achieves(X0,sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | sP8(sK17)
+    | prevents(sK33(sK34(sK17),sK17),sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | ~ state(sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | prevpreconditionfor(sK25(sK34(sK17),X0),sK34(sK17)) ) ).
+
+cnf(u1371,axiom,
+    ( sP2(sK18,sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u1335,axiom,
+    ( ~ facilpreconditionfor(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))),X0)
+    | prevpreconditionfor(sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),X0) ) ).
+
+cnf(u270,axiom,
+    ( ~ incompatiblewith(X0,X2)
+    | ~ facilpreconditionfor(X2,X1)
+    | prevpreconditionfor(X0,X1) ) ).
+
+cnf(u956,axiom,
+    sP1(sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21)))),sK36(sK37(sK21))) ).
+
+cnf(u292,axiom,
+    ( ~ sP6(X0,X1,X2)
+    | achieves(X2,X1)
+    | maintains(X2,X1) ) ).
+
+cnf(u1050,axiom,
+    ( ~ prevpreconditionfor(sK18,X0)
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | event(sK35(sK18))
+    | sP5(sK35(sK18),X0,sK18)
+    | prevpreconditionfor(sK25(X0,sK35(sK18)),X0) ) ).
+
+cnf(u748,axiom,
+    ~ event(sK24(sK36(sK19),sK29(sK19,sK31(sK19)))) ).
+
+cnf(u1124,axiom,
+    ( ~ hasphysicalconseq(X0,sK35(sK18))
+    | event(sK35(sK18))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | process(sK35(sK18))
+    | achieves(X0,sK35(sK18)) ) ).
+
+cnf(u306,axiom,
+    ( ~ prevents(X0,X1)
+    | ~ hasphysicalconseq(X2,X0)
+    | prevents(X2,X0) ) ).
+
+cnf(u277,axiom,
+    ( ~ achieves(X2,X1)
+    | ~ facilpreconditionfor(X1,X0)
+    | sP4(X0,X1,X2) ) ).
+
+cnf(u523,axiom,
+    ( ~ hasphysicalconseq(sK37(sK21),X0)
+    | achieves(sK36(sK37(sK21)),X0) ) ).
+
+cnf(u955,axiom,
+    causeof(sK36(sK37(sK21)),sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21))))) ).
+
+cnf(u291,axiom,
+    ( ~ prevents(X1,X2)
+    | ~ facilpreconditionfor(X2,X0)
+    | sP7(X0,X1) ) ).
+
+cnf(u1209,axiom,
+    ( ~ failure(sK24(sK35(sK18),sK18))
+    | event(sK35(sK18))
+    | process(sK35(sK18))
+    | sP8(sK35(sK18))
+    | achieves(sK35(sK18),sK18) ) ).
+
+cnf(u656,axiom,
+    ( ~ failure(sK34(sK17))
+    | sP8(sK17)
+    | disallows(sK33(sK34(sK17),sK17),sK34(sK17)) ) ).
+
+cnf(u448,axiom,
+    causeof(sK21,sK37(sK21)) ).
+
+cnf(u313,axiom,
+    ( ~ participatesin(X2,X0,X4)
+    | ~ incompatiblewith(X0,X3)
+    | ~ cf(X3,X1,X4)
+    | ~ functionof_sys(X1,X2)
+    | functionincompatible(X0,X1) ) ).
+
+cnf(u575,axiom,
+    ( ~ achieves(X0,sK15)
+    | prevents(X0,sK29(sK15,sK31(sK15)))
+    | ~ state(sK15) ) ).
+
+cnf(u617,axiom,
+    ( ~ state(sK36(sK19))
+    | ~ failure(sK19)
+    | malfunction(sK36(sK19))
+    | failurecondition(sK36(sK19)) ) ).
+
+cnf(u788,axiom,
+    ( ~ failure(sK24(sK36(sK19),sK29(sK19,sK31(sK19))))
+    | failurecondition(sK36(sK19))
+    | malfunction(sK36(sK19))
+    | ~ state(sK36(sK19)) ) ).
+
+cnf(u478,axiom,
+    functionof_sys(sK31(sK15),sK28(sK15,sK31(sK15))) ).
+
+cnf(u838,axiom,
+    poscauseof(sK21,sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21))))) ).
+
+cnf(u580,axiom,
+    ( ~ achieves(X0,sK23)
+    | prevents(X0,sK29(sK23,sK31(sK23)))
+    | ~ state(sK23) ) ).
+
+cnf(u1466,axiom,
+    ( poscauseof_cross(sK26(sK35(sK18),sK18),sK18)
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18) ) ).
+
+cnf(u500,axiom,
+    causeof(sK36(sK37(sK21)),sK37(sK21)) ).
+
+cnf(u463,axiom,
+    ~ event(sK37(sK32(sK16))) ).
+
+cnf(u1152,axiom,
+    ( process(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))
+    | state(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))) ) ).
+
+cnf(u541,axiom,
+    poscauseof(sK32(sK16),sK37(sK32(sK16))) ).
+
+cnf(u787,axiom,
+    sP10(sK24(sK36(sK19),sK29(sK19,sK31(sK19))),sK36(sK19)) ).
+
+cnf(u386,axiom,
+    ~ malfunction(sK18) ).
+
+cnf(u485,axiom,
+    incompatiblewith(sK19,sK29(sK19,sK31(sK19))) ).
+
+cnf(u874,axiom,
+    ( ~ hasphysicalconseq(X0,sK36(sK37(sK21)))
+    | prevents(X0,sK36(sK37(sK21))) ) ).
+
+cnf(u1041,axiom,
+    ( ~ cf(X0,X1,sK30(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))
+    | ~ incompatiblewith(sK37(sK32(sK16)),X0)
+    | ~ functionof_sys(X1,sK28(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))
+    | functionincompatible(sK37(sK32(sK16)),X1) ) ).
+
+cnf(u731,axiom,
+    ( ~ sP8(sK36(sK37(sK21)))
+    | state(sK36(sK37(sK21)))
+    | process(sK36(sK37(sK21)))
+    | malfunction(sK36(sK37(sK21)))
+    | sP9(sK36(sK37(sK21))) ) ).
+
+cnf(u1333,axiom,
+    ( sP4(sK18,sK26(sK35(sK18),sK18),sK35(sK18))
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18)) ) ).
+
+cnf(u666,axiom,
+    ( ~ facilpreconditionfor(sK37(sK32(sK16)),X0)
+    | sP4(X0,sK37(sK32(sK16)),sK36(sK37(sK32(sK16)))) ) ).
+
+cnf(u408,axiom,
+    ~ fault(sK20) ).
+
+cnf(u499,axiom,
+    sP1(sK37(sK21),sK36(sK37(sK21))) ).
+
+cnf(u1375,axiom,
+    ( ~ hasphysicalconseq(X0,sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | prevents(X0,sK35(sK18)) ) ).
+
+cnf(u438,axiom,
+    achieves(sK36(sK19),sK19) ).
+
+cnf(u393,axiom,
+    failure(sK32(sK16)) ).
+
+cnf(u798,axiom,
+    ( ~ facilpreconditionfor(sK29(sK19,sK31(sK19)),X0)
+    | prevpreconditionfor(sK24(sK36(sK19),sK29(sK19,sK31(sK19))),X0) ) ).
+
+cnf(u540,axiom,
+    ( ~ hasphysicalconseq(sK37(sK32(sK16)),X0)
+    | achieves(sK32(sK16),X0) ) ).
+
+cnf(u655,axiom,
+    ~ causeof(sK37(sK34(sK17)),sK36(sK37(sK34(sK17)))) ).
+
+cnf(u230,axiom,
+    malfunction(sK15) ).
+
+cnf(u590,axiom,
+    participatesin(sK28(sK37(sK21),sK31(sK37(sK21))),sK37(sK21),sK30(sK37(sK21),sK31(sK37(sK21)))) ).
+
+cnf(u996,axiom,
+    ( ~ hasphysicalconseq(X0,sK34(sK17))
+    | prevents(X0,sK34(sK17)) ) ).
+
+cnf(u1078,axiom,
+    ( ~ achieves(X0,sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | allows(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | ~ state(sK27(sK18,sK35(sK18)))
+    | prevpreconditionfor(sK25(sK18,X0),sK18) ) ).
+
+cnf(u332,axiom,
+    ( ~ failurecondition(X0)
+    | state(X0) ) ).
+
+cnf(u423,axiom,
+    functionincompatible(sK37(sK21),sK31(sK37(sK21))) ).
+
+cnf(u252,axiom,
+    ( sP0(X1,X0)
+    | poscauseof(X0,X1) ) ).
+
+cnf(u346,axiom,
+    ( ~ fault(X0)
+    | internalto(sK36(X0),X0) ) ).
+
+cnf(u445,axiom,
+    achieves(sK34(sK17),sK37(sK34(sK17))) ).
+
+cnf(u1428,axiom,
+    ( poscauseof_cross(sK26(sK35(sK18),sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18))
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u805,axiom,
+    state(sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21))))) ).
+
+cnf(u749,axiom,
+    ~ process(sK24(sK36(sK19),sK29(sK19,sK31(sK19)))) ).
+
+cnf(u1220,axiom,
+    ( ~ hasphysicalconseq(X0,sK36(sK37(sK32(sK16))))
+    | prevents(X0,sK36(sK37(sK32(sK16)))) ) ).
+
+cnf(u1109,axiom,
+    ( ~ state(sK35(sK18))
+    | state(sK24(sK35(sK18),sK18))
+    | event(sK35(sK18))
+    | process(sK35(sK18))
+    | ~ process(sK18) ) ).
+
+cnf(u995,axiom,
+    ( ~ hasphysicalconseq(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))),X0)
+    | prevents(sK34(sK17),X0) ) ).
+
+cnf(u368,axiom,
+    ~ event(sK17) ).
+
+cnf(u331,axiom,
+    ( ~ prevpreconditionfor(X1,X2)
+    | ~ disallows(X2,X0)
+    | sP10(X0,X1) ) ).
+
+cnf(u1413,axiom,
+    ( ~ malfunction(sK35(sK18))
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK24(sK35(sK18),sK18))
+    | failure(sK35(sK18))
+    | ~ fault(sK18)
+    | ~ event(sK35(sK18))
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u1123,axiom,
+    ( ~ hasphysicalconseq(sK18,X0)
+    | event(sK35(sK18))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),X0) ) ).
+
+cnf(u353,axiom,
+    ( ~ failure(X0)
+    | malfunction(X0) ) ).
+
+cnf(u1087,axiom,
+    ( ~ prevpreconditionfor(sK27(sK18,sK35(sK18)),X0)
+    | achieves(sK35(sK18),sK18)
+    | facilpreconditionfor(sK27(sK18,sK35(sK18)),sK18)
+    | achieves(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | allows(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | sP6(X0,sK27(sK18,sK35(sK18)),sK35(sK18)) ) ).
+
+cnf(u1427,axiom,
+    ( ~ poscauseof_cross(sK18,X0)
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18))
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | poscauseof_cross(sK26(sK35(sK18),sK18),X0) ) ).
+
+cnf(u550,axiom,
+    ( ~ facilpreconditionfor(sK29(sK22,sK31(sK22)),X0)
+    | prevpreconditionfor(sK22,X0) ) ).
+
+cnf(u961,axiom,
+    ( ~ fault(sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21)))))
+    | failure(sK36(sK37(sK21)))
+    | ~ event(sK36(sK37(sK21)))
+    | ~ malfunction(sK36(sK37(sK21))) ) ).
+
+cnf(u1006,axiom,
+    ~ process(sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))) ).
+
+cnf(u383,axiom,
+    ~ event(sK20) ).
+
+cnf(u1366,axiom,
+    ( facilpreconditionfor(sK26(sK35(sK18),sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18))
+    | prevents(sK35(sK18),sK18) ) ).
+
+cnf(u1314,axiom,
+    ~ causeof(sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),sK36(sK37(sK32(sK16)))) ).
+
+cnf(u1158,axiom,
+    ( ~ prevpreconditionfor(sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),X0)
+    | sP6(X0,sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),sK32(sK16)) ) ).
+
+cnf(u1106,axiom,
+    ( ~ facilpreconditionfor(sK29(sK37(sK21),sK31(sK37(sK21))),X0)
+    | prevpreconditionfor(sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21)))),X0) ) ).
+
+cnf(u1336,axiom,
+    ( ~ prevpreconditionfor(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))),X0)
+    | facilpreconditionfor(sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),X0) ) ).
+
+cnf(u581,axiom,
+    participatesin(sK28(sK15,sK31(sK15)),sK15,sK30(sK15,sK31(sK15))) ).
+
+cnf(u1180,axiom,
+    ( allows(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u1069,axiom,
+    ( ~ achieves(X0,sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | sP8(sK17)
+    | ~ state(sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | prevents(sK33(sK34(sK17),sK17),sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | state(sK25(sK34(sK17),X0)) ) ).
+
+cnf(u1373,axiom,
+    ( ~ facilpreconditionfor(sK18,X0)
+    | achieves(sK35(sK18),sK18)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | sP7(X0,sK35(sK18)) ) ).
+
+cnf(u235,axiom,
+    downstate(sK20) ).
+
+cnf(u706,axiom,
+    ( ~ achieves(X0,sK17)
+    | sP8(sK17)
+    | ~ state(sK17)
+    | achieves(X0,sK25(sK33(sK34(sK17),sK17),X0)) ) ).
+
+cnf(u1321,axiom,
+    ( ~ failure(sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))))
+    | failurecondition(sK36(sK37(sK34(sK17))))
+    | malfunction(sK36(sK37(sK34(sK17))))
+    | ~ state(sK36(sK37(sK34(sK17)))) ) ).
+
+cnf(u1083,axiom,
+    ( allows(sK35(sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u286,axiom,
+    ( ~ allows(X0,X1)
+    | event(X0)
+    | process(X0) ) ).
+
+cnf(u758,axiom,
+    ( sP7(sK18,sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | allows(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18) ) ).
+
+cnf(u1118,axiom,
+    ( ~ prevpreconditionfor(sK29(sK37(sK21),sK31(sK37(sK21))),X0)
+    | facilpreconditionfor(sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21)))),X0) ) ).
+
+cnf(u308,axiom,
+    ( ~ disallows(X0,X1)
+    | ~ hasphysicalconseq(X2,X0)
+    | disallows(X2,X0) ) ).
+
+cnf(u1066,axiom,
+    ( facilpreconditionfor(sK27(sK18,sK35(sK18)),sK18)
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | allows(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u764,axiom,
+    sP1(sK24(sK36(sK19),sK29(sK19,sK31(sK19))),sK36(sK19)) ).
+
+cnf(u1140,axiom,
+    state(sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))) ).
+
+cnf(u293,axiom,
+    ( ~ sP6(X0,X1,X2)
+    | prevpreconditionfor(X1,X0) ) ).
+
+cnf(u539,axiom,
+    ( ~ hasphysicalconseq(X0,sK32(sK16))
+    | achieves(X0,sK32(sK16)) ) ).
+
+cnf(u1416,axiom,
+    ( ~ state(sK35(sK18))
+    | state(sK24(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | state(sK26(sK35(sK18),sK18))
+    | ~ process(sK18) ) ).
+
+cnf(u1277,axiom,
+    ( ~ fault(sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))))
+    | failure(sK36(sK37(sK34(sK17))))
+    | ~ event(sK36(sK37(sK34(sK17))))
+    | ~ malfunction(sK36(sK37(sK34(sK17)))) ) ).
+
+cnf(u880,axiom,
+    ( ~ process(sK29(sK37(sK21),sK31(sK37(sK21))))
+    | ~ state(sK36(sK37(sK21))) ) ).
+
+cnf(u307,axiom,
+    ( ~ allows(X0,X1)
+    | ~ hasphysicalconseq(X2,X0)
+    | allows(X2,X0) ) ).
+
+cnf(u1097,axiom,
+    ( ~ facilpreconditionfor(sK27(sK34(sK17),sK33(sK34(sK17),sK17)),X0)
+    | achieves(sK33(sK34(sK17),sK17),sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | sP8(sK17)
+    | facilpreconditionfor(sK27(sK34(sK17),sK33(sK34(sK17),sK17)),sK34(sK17))
+    | sP4(X0,sK27(sK34(sK17),sK33(sK34(sK17),sK17)),sK33(sK34(sK17),sK17)) ) ).
+
+cnf(u464,axiom,
+    ~ process(sK37(sK32(sK16))) ).
+
+cnf(u804,axiom,
+    causeof(sK21,sK29(sK37(sK21),sK31(sK37(sK21)))) ).
+
+cnf(u895,axiom,
+    ( sP2(sK18,sK35(sK18))
+    | event(sK35(sK18))
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18) ) ).
+
+cnf(u854,axiom,
+    ( ~ poscauseof_cross(sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21)))),X0)
+    | poscauseof_cross(sK21,X0) ) ).
+
+cnf(u1342,axiom,
+    ( sP4(sK18,sK26(sK35(sK18),sK18),sK35(sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | prevpreconditionfor(sK26(sK35(sK18),sK18),sK18) ) ).
+
+cnf(u711,axiom,
+    ( disallows(sK33(sK34(sK17),sK17),sK34(sK17))
+    | sP8(sK17) ) ).
+
+cnf(u596,axiom,
+    cf(sK29(sK21,sK31(sK21)),sK31(sK21),sK30(sK21,sK31(sK21))) ).
+
+cnf(u1354,axiom,
+    ( ~ achieves(X0,sK26(sK35(sK18),sK18))
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | facilpreconditionfor(sK26(sK35(sK18),sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | ~ state(sK26(sK35(sK18),sK18))
+    | achieves(X0,sK25(sK18,X0)) ) ).
+
+cnf(u388,axiom,
+    malfunction(sK22) ).
+
+cnf(u479,axiom,
+    functionof_sys(sK31(sK19),sK28(sK19,sK31(sK19))) ).
+
+cnf(u1274,axiom,
+    ( ~ prevpreconditionfor(sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),X0)
+    | sP6(X0,sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),sK36(sK37(sK34(sK17)))) ) ).
+
+cnf(u557,axiom,
+    ( ~ facilpreconditionfor(sK37(sK32(sK16)),X0)
+    | sP4(X0,sK37(sK32(sK16)),sK32(sK16)) ) ).
+
+cnf(u803,axiom,
+    prevents(sK21,sK29(sK37(sK21),sK31(sK37(sK21)))) ).
+
+cnf(u402,axiom,
+    fault(sK37(sK32(sK16))) ).
+
+cnf(u501,axiom,
+    poscauseof(sK34(sK17),sK37(sK34(sK17))) ).
+
+cnf(u747,axiom,
+    ( ~ cf(X0,X1,sK30(sK34(sK17),sK31(sK34(sK17))))
+    | ~ incompatiblewith(sK34(sK17),X0)
+    | ~ functionof_sys(X1,sK28(sK34(sK17),sK31(sK34(sK17))))
+    | functionincompatible(sK34(sK17),X1) ) ).
+
+cnf(u682,axiom,
+    ( ~ cf(X0,X1,sK30(sK19,sK31(sK19)))
+    | ~ incompatiblewith(sK19,X0)
+    | ~ functionof_sys(X1,sK28(sK19,sK31(sK19)))
+    | functionincompatible(sK19,X1) ) ).
+
+cnf(u424,axiom,
+    functionincompatible(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))) ).
+
+cnf(u387,axiom,
+    event(sK22) ).
+
+cnf(u769,axiom,
+    ( ~ fault(sK24(sK36(sK19),sK29(sK19,sK31(sK19))))
+    | failure(sK36(sK19))
+    | ~ event(sK36(sK19))
+    | ~ malfunction(sK36(sK19)) ) ).
+
+cnf(u326,axiom,
+    ( ~ failuremechanism(X0)
+    | sP9(X0) ) ).
+
+cnf(u409,axiom,
+    ~ failure(sK22) ).
+
+cnf(u814,axiom,
+    ( sP6(sK18,sK27(sK18,sK35(sK18)),sK35(sK18))
+    | allows(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u671,axiom,
+    poscauseof(sK36(sK37(sK32(sK16))),sK37(sK32(sK16))) ).
+
+cnf(u556,axiom,
+    ( ~ facilpreconditionfor(sK37(sK21),X0)
+    | sP4(X0,sK37(sK21),sK21) ) ).
+
+cnf(u246,axiom,
+    ( ~ prevents(X0,X1)
+    | causeof(X0,X1) ) ).
+
+cnf(u713,axiom,
+    ( ~ hasphysicalconseq(X0,sK33(sK34(sK17),sK17))
+    | sP8(sK17)
+    | disallows(X0,sK33(sK34(sK17),sK17)) ) ).
+
+cnf(u1012,axiom,
+    ( ~ hasphysicalconseq(X0,sK35(sK18))
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | event(sK35(sK18))
+    | achieves(X0,sK35(sK18)) ) ).
+
+cnf(u348,axiom,
+    ( ~ internalto(X1,X0)
+    | ~ achieves(X1,X0)
+    | fault(X0)
+    | ~ state(X0)
+    | ~ malfunction(X0) ) ).
+
+cnf(u439,axiom,
+    achieves(sK36(sK37(sK21)),sK37(sK21)) ).
+
+cnf(u1422,axiom,
+    ( poscauseof_cross(sK35(sK18),sK18)
+    | state(sK24(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | state(sK26(sK35(sK18),sK18)) ) ).
+
+cnf(u362,axiom,
+    ( ~ malfunctionprocess(X0)
+    | malfunction(X0) ) ).
+
+cnf(u333,axiom,
+    ( ~ failurecondition(X0)
+    | ~ malfunction(X0) ) ).
+
+cnf(u1444,axiom,
+    ( ~ hasphysicalconseq(X0,sK35(sK18))
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | achieves(X0,sK35(sK18)) ) ).
+
+cnf(u821,axiom,
+    ~ event(sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21))))) ).
+
+cnf(u579,axiom,
+    ( ~ achieves(X0,sK22)
+    | prevents(X0,sK29(sK22,sK31(sK22)))
+    | ~ state(sK22) ) ).
+
+cnf(u765,axiom,
+    ( ~ facilpreconditionfor(sK24(sK36(sK19),sK29(sK19,sK31(sK19))),X0)
+    | sP4(X0,sK24(sK36(sK19),sK29(sK19,sK31(sK19))),sK36(sK19)) ) ).
+
+cnf(u514,axiom,
+    ( ~ facilpreconditionfor(sK29(sK21,sK31(sK21)),X0)
+    | prevpreconditionfor(sK21,X0) ) ).
+
+cnf(u1011,axiom,
+    ( ~ hasphysicalconseq(sK24(sK35(sK18),sK18),X0)
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | event(sK35(sK18))
+    | achieves(sK35(sK18),X0) ) ).
+
+cnf(u256,axiom,
+    ( ~ achieves(X0,X1)
+    | sP1(X1,X0) ) ).
+
+cnf(u347,axiom,
+    ( ~ fault(X0)
+    | achieves(sK36(X0),X0) ) ).
+
+cnf(u1139,axiom,
+    causeof(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))) ).
+
+cnf(u369,axiom,
+    ~ process(sK17) ).
+
+cnf(u1443,axiom,
+    ( ~ hasphysicalconseq(sK24(sK35(sK18),sK18),X0)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | achieves(sK35(sK18),X0) ) ).
+
+cnf(u673,axiom,
+    ( ~ failure(sK37(sK34(sK17)))
+    | sP8(sK36(sK37(sK34(sK17)))) ) ).
+
+cnf(u271,axiom,
+    ( ~ sP5(X0,X1,X2)
+    | prevents(X0,X2) ) ).
+
+cnf(u1382,axiom,
+    ( facilpreconditionfor(sK26(sK35(sK18),sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u1174,axiom,
+    ( ~ event(sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | failure(sK32(sK17)) ) ).
+
+cnf(u1122,axiom,
+    ( ~ prevpreconditionfor(sK18,X0)
+    | event(sK35(sK18))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | process(sK35(sK18))
+    | sP6(X0,sK18,sK35(sK18)) ) ).
+
+cnf(u237,axiom,
+    nonperformanceevent(sK22) ).
+
+cnf(u597,axiom,
+    cf(sK29(sK22,sK31(sK22)),sK31(sK22),sK30(sK22,sK31(sK22))) ).
+
+cnf(u1196,axiom,
+    ( sP5(sK35(sK18),sK18,sK26(sK35(sK18),sK18))
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | sP4(sK18,sK26(sK35(sK18),sK18),sK35(sK18))
+    | achieves(sK35(sK18),sK18) ) ).
+
+cnf(u1144,axiom,
+    ( ~ prevpreconditionfor(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))),X0)
+    | ~ sP3(X0,sK32(sK16))
+    | sP5(sK32(sK16),X0,sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))) ) ).
+
+cnf(u901,axiom,
+    ~ process(sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21))))) ).
+
+cnf(u251,axiom,
+    ( ~ sP0(X0,X1)
+    | ~ facilpreconditionfor(X1,X0) ) ).
+
+cnf(u722,axiom,
+    ( ~ cf(X0,X1,sK30(sK20,sK31(sK20)))
+    | ~ incompatiblewith(sK20,X0)
+    | ~ functionof_sys(X1,sK28(sK20,sK31(sK20)))
+    | functionincompatible(sK20,X1) ) ).
+
+cnf(u1337,axiom,
+    ( ~ achieves(X0,sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))))
+    | prevents(X0,sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))
+    | ~ state(sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))) ) ).
+
+cnf(u1153,axiom,
+    ~ event(sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))) ).
+
+cnf(u1403,axiom,
+    ( ~ facilpreconditionfor(sK26(sK35(sK18),sK18),X0)
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18))
+    | achieves(sK35(sK18),sK26(sK35(sK18),sK18))
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | sP4(X0,sK26(sK35(sK18),sK18),sK35(sK18)) ) ).
+
+cnf(u1219,axiom,
+    ( ~ hasphysicalconseq(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))),X0)
+    | prevents(sK36(sK37(sK32(sK16))),X0) ) ).
+
+cnf(u302,axiom,
+    ( ~ allows(X0,X1)
+    | ~ hasphysicalconseq(X1,X2)
+    | allows(X0,X2) ) ).
+
+cnf(u519,axiom,
+    ( event(sK36(sK37(sK21)))
+    | process(sK36(sK37(sK21)))
+    | state(sK36(sK37(sK21))) ) ).
+
+cnf(u646,axiom,
+    ( ~ cf(X0,X1,sK30(sK15,sK31(sK15)))
+    | ~ incompatiblewith(sK15,X0)
+    | ~ functionof_sys(X1,sK28(sK15,sK31(sK15)))
+    | functionincompatible(sK15,X1) ) ).
+
+cnf(u1134,axiom,
+    ( ~ poscauseof_cross(sK24(sK35(sK18),sK18),X0)
+    | achieves(sK35(sK18),sK18)
+    | event(sK35(sK18))
+    | process(sK35(sK18))
+    | poscauseof_cross(sK35(sK18),X0) ) ).
+
+cnf(u652,axiom,
+    functionof_sys(sK31(sK37(sK34(sK17))),sK28(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))) ).
+
+cnf(u1410,axiom,
+    ( ~ prevpreconditionfor(sK18,X0)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK24(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | sP6(X0,sK18,sK35(sK18)) ) ).
+
+cnf(u1028,axiom,
+    state(sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))) ).
+
+cnf(u555,axiom,
+    sP10(sK37(sK34(sK17)),sK34(sK17)) ).
+
+cnf(u1432,axiom,
+    ( ~ achieves(X0,sK24(sK35(sK18),sK18))
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | prevents(X0,sK18)
+    | ~ state(sK24(sK35(sK18),sK18)) ) ).
+
+cnf(u1224,axiom,
+    ( ~ process(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))
+    | ~ state(sK36(sK37(sK32(sK16)))) ) ).
+
+cnf(u1113,axiom,
+    ( poscauseof_cross(sK35(sK18),sK18)
+    | state(sK24(sK35(sK18),sK18))
+    | event(sK35(sK18))
+    | process(sK35(sK18)) ) ).
+
+cnf(u688,axiom,
+    poscauseof_cross(sK36(sK37(sK32(sK16))),sK37(sK32(sK16))) ).
+
+cnf(u480,axiom,
+    functionof_sys(sK31(sK20),sK28(sK20,sK31(sK20))) ).
+
+cnf(u1143,axiom,
+    sP2(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))),sK32(sK16)) ).
+
+cnf(u820,axiom,
+    ( process(sK29(sK37(sK21),sK31(sK37(sK21))))
+    | state(sK29(sK37(sK21),sK31(sK37(sK21)))) ) ).
+
+cnf(u783,axiom,
+    ( ~ achieves(X0,sK37(sK34(sK17)))
+    | prevents(X0,sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))
+    | ~ state(sK37(sK34(sK17))) ) ).
+
+cnf(u870,axiom,
+    sP2(sK29(sK37(sK21),sK31(sK37(sK21))),sK36(sK37(sK21))) ).
+
+cnf(u727,axiom,
+    ( sP6(sK34(sK17),sK27(sK34(sK17),sK33(sK34(sK17),sK17)),sK33(sK34(sK17),sK17))
+    | sP8(sK17)
+    | prevents(sK33(sK34(sK17),sK17),sK27(sK34(sK17),sK33(sK34(sK17),sK17))) ) ).
+
+cnf(u612,axiom,
+    ( poscauseof_cross(sK17,sK34(sK17))
+    | disallows(sK33(sK34(sK17),sK17),sK34(sK17)) ) ).
+
+cnf(u1370,axiom,
+    ( achieves(sK35(sK18),sK24(sK35(sK18),sK18))
+    | achieves(sK35(sK18),sK18)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u404,axiom,
+    state(sK37(sK21)) ).
+
+cnf(u1162,axiom,
+    poscauseof(sK32(sK16),sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))) ).
+
+cnf(u573,axiom,
+    ( ~ prevpreconditionfor(sK37(sK21),X0)
+    | sP6(X0,sK37(sK21),sK36(sK37(sK21))) ) ).
+
+cnf(u819,axiom,
+    ( ~ process(sK29(sK37(sK21),sK31(sK37(sK21))))
+    | ~ state(sK21) ) ).
+
+cnf(u418,axiom,
+    functionincompatible(sK22,sK31(sK22)) ).
+
+cnf(u389,axiom,
+    malfunction(sK23) ).
+
+cnf(u1073,axiom,
+    ( ~ failure(sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21)))))
+    | sP8(sK36(sK37(sK21))) ) ).
+
+cnf(u763,axiom,
+    causeof(sK36(sK19),sK24(sK36(sK19),sK29(sK19,sK31(sK19)))) ).
+
+cnf(u698,axiom,
+    ( ~ achieves(X0,sK34(sK17))
+    | prevents(X0,sK29(sK34(sK17),sK31(sK34(sK17))))
+    | ~ state(sK34(sK17)) ) ).
+
+cnf(u976,axiom,
+    ( ~ sP8(sK36(sK37(sK32(sK16))))
+    | state(sK36(sK37(sK32(sK16))))
+    | process(sK36(sK37(sK32(sK16))))
+    | malfunction(sK36(sK37(sK32(sK16))))
+    | sP9(sK36(sK37(sK32(sK16)))) ) ).
+
+cnf(u440,axiom,
+    achieves(sK36(sK37(sK34(sK17))),sK37(sK34(sK17))) ).
+
+cnf(u403,axiom,
+    fault(sK37(sK34(sK17))) ).
+
+cnf(u232,axiom,
+    failurecondition(sK17) ).
+
+cnf(u342,axiom,
+    ( ~ sP11(X0)
+    | causeof(sK35(X0),X0) ) ).
+
+cnf(u830,axiom,
+    ( prevents(sK35(sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | process(sK18)
+    | event(sK18)
+    | state(sK18) ) ).
+
+cnf(u785,axiom,
+    ( ~ prevpreconditionfor(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))),X0)
+    | facilpreconditionfor(sK37(sK34(sK17)),X0) ) ).
+
+cnf(u687,axiom,
+    ( ~ poscauseof_cross(sK37(sK32(sK16)),X0)
+    | poscauseof_cross(sK36(sK37(sK32(sK16))),X0) ) ).
+
+cnf(u572,axiom,
+    ( ~ prevpreconditionfor(sK19,X0)
+    | sP6(X0,sK19,sK36(sK19)) ) ).
+
+cnf(u900,axiom,
+    ~ event(sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21))))) ).
+
+cnf(u991,axiom,
+    achieves(sK34(sK17),sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))) ).
+
+cnf(u364,axiom,
+    sP9(sK16) ).
+
+cnf(u327,axiom,
+    ( ~ sP9(X0)
+    | failuremechanism(X0) ) ).
+
+cnf(u1540,axiom,
+    ( ~ prevpreconditionfor(sK18,X0)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | sP5(sK35(sK18),X0,sK18)
+    | prevpreconditionfor(sK25(X0,sK35(sK18)),X0) ) ).
+
+cnf(u378,axiom,
+    malfunction(sK21) ).
+
+cnf(u349,axiom,
+    ( ~ sP13(X0)
+    | malfunction(X0) ) ).
+
+cnf(u1460,axiom,
+    ( ~ prevpreconditionfor(sK18,X0)
+    | state(sK27(sK18,sK35(sK18)))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | state(sK26(sK35(sK18),sK18))
+    | sP6(X0,sK18,sK35(sK18)) ) ).
+
+cnf(u595,axiom,
+    cf(sK29(sK20,sK31(sK20)),sK31(sK20),sK30(sK20,sK31(sK20))) ).
+
+cnf(u1141,axiom,
+    incompatiblewith(sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))) ).
+
+cnf(u899,axiom,
+    ( ~ hasphysicalconseq(X0,sK35(sK18))
+    | event(sK35(sK18))
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | prevents(X0,sK35(sK18)) ) ).
+
+cnf(u986,axiom,
+    ~ causeof(sK24(sK36(sK37(sK21)),sK29(sK37(sK21),sK31(sK37(sK21)))),sK36(sK37(sK21))) ).
+
+cnf(u272,axiom,
+    ( ~ sP5(X0,X1,X2)
+    | prevpreconditionfor(X2,X1) ) ).
+
+cnf(u363,axiom,
+    ( ~ malfunctionprocess(X0)
+    | process(X0) ) ).
+
+cnf(u1445,axiom,
+    ( ~ fault(sK24(sK35(sK18),sK18))
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | failure(sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | ~ event(sK35(sK18))
+    | ~ malfunction(sK35(sK18)) ) ).
+
+cnf(u1027,axiom,
+    causeof(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))) ).
+
+cnf(u257,axiom,
+    ( ~ prevents(X0,X1)
+    | state(sK24(X0,X1)) ) ).
+
+cnf(u1459,axiom,
+    ( ~ facilpreconditionfor(sK18,X0)
+    | state(sK27(sK18,sK35(sK18)))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | state(sK26(sK35(sK18),sK18))
+    | sP4(X0,sK18,sK35(sK18)) ) ).
+
+cnf(u689,axiom,
+    ( ~ cf(X0,X1,sK30(sK23,sK31(sK23)))
+    | ~ incompatiblewith(sK23,X0)
+    | ~ functionof_sys(X1,sK28(sK23,sK31(sK23)))
+    | functionincompatible(sK23,X1) ) ).
+
+cnf(u993,axiom,
+    ( ~ prevpreconditionfor(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))),X0)
+    | ~ sP3(X0,sK34(sK17))
+    | sP5(sK34(sK17),X0,sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))) ) ).
+
+cnf(u910,axiom,
+    ( ~ state(sK37(sK34(sK17)))
+    | prevents(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))) ) ).
+
+cnf(u287,axiom,
+    ( ~ allows(X0,X1)
+    | process(X1)
+    | event(X1)
+    | state(X1) ) ).
+
+cnf(u1398,axiom,
+    ( ~ sP8(sK18)
+    | state(sK18)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | malfunction(sK18)
+    | sP9(sK18) ) ).
+
+cnf(u231,axiom,
+    failuremechanism(sK16) ).
+
+cnf(u1190,axiom,
+    ( ~ failure(sK24(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))))
+    | sP8(sK32(sK16)) ) ).
+
+cnf(u1550,axiom,
+    ( ~ event(sK35(sK18))
+    | state(sK24(sK35(sK18),sK18))
+    | failure(sK35(sK18))
+    | ~ fault(sK18)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u1138,axiom,
+    prevents(sK32(sK16),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))) ).
+
+cnf(u309,axiom,
+    ( ~ functionincompatible(X0,X1)
+    | participatesin(sK28(X0,X1),X0,sK30(X0,X1)) ) ).
+
+cnf(u253,axiom,
+    ( ~ sP1(X0,X1)
+    | process(X1)
+    | event(X1)
+    | state(X1) ) ).
+
+cnf(u1212,axiom,
+    causeof(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))) ).
+
+cnf(u946,axiom,
+    ( maintains(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | facilpreconditionfor(sK27(sK18,sK35(sK18)),sK18)
+    | achieves(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | allows(sK35(sK18),sK18) ) ).
+
+cnf(u1032,axiom,
+    ( ~ prevpreconditionfor(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))),X0)
+    | ~ sP3(X0,sK36(sK37(sK34(sK17))))
+    | sP5(sK36(sK37(sK34(sK17))),X0,sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))) ) ).
+
+cnf(u1405,axiom,
+    ( poscauseof(sK26(sK35(sK18),sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18) ) ).
+
+cnf(u1488,axiom,
+    ( ~ state(sK35(sK18))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | ~ process(sK18) ) ).
+
+cnf(u738,axiom,
+    ( ~ prevpreconditionfor(sK29(sK19,sK31(sK19)),X0)
+    | ~ sP3(X0,sK36(sK19))
+    | sP5(sK36(sK19),X0,sK29(sK19,sK31(sK19))) ) ).
+
+cnf(u318,axiom,
+    ( ~ sP9(X0)
+    | process(X0)
+    | event(X0) ) ).
+
+cnf(u465,axiom,
+    functionincompatible(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))) ).
+
+cnf(u1199,axiom,
+    ( ~ hasphysicalconseq(sK18,X0)
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | allows(sK35(sK18),X0) ) ).
+
+cnf(u953,axiom,
+    ( prevpreconditionfor(sK27(sK34(sK17),sK33(sK34(sK17),sK17)),sK34(sK17))
+    | prevents(sK33(sK34(sK17),sK17),sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | sP8(sK17) ) ).
+
+cnf(u535,axiom,
+    ( ~ hasphysicalconseq(X0,sK34(sK17))
+    | achieves(X0,sK34(sK17)) ) ).
+
+cnf(u662,axiom,
+    poscauseof_cross(sK36(sK37(sK34(sK17))),sK37(sK34(sK17))) ).
+
+cnf(u876,axiom,
+    ~ causeof(sK29(sK37(sK21),sK31(sK37(sK21))),sK36(sK37(sK21))) ).
+
+cnf(u668,axiom,
+    ( ~ hasphysicalconseq(sK37(sK32(sK16)),X0)
+    | achieves(sK36(sK37(sK32(sK16))),X0) ) ).
+
+cnf(u1426,axiom,
+    ( sP10(sK18,sK35(sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK24(sK35(sK18),sK18)) ) ).
+
+cnf(u1044,axiom,
+    ( ~ facilpreconditionfor(sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),X0)
+    | sP4(X0,sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),sK34(sK17)) ) ).
+
+cnf(u1218,axiom,
+    ( ~ facilpreconditionfor(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))),X0)
+    | sP7(X0,sK36(sK37(sK32(sK16)))) ) ).
+
+cnf(u571,axiom,
+    ( ~ prevpreconditionfor(sK37(sK34(sK17)),X0)
+    | sP6(X0,sK37(sK34(sK17)),sK34(sK17)) ) ).
+
+cnf(u784,axiom,
+    ( ~ facilpreconditionfor(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))),X0)
+    | prevpreconditionfor(sK37(sK34(sK17)),X0) ) ).
+
+cnf(u1541,axiom,
+    ( ~ prevpreconditionfor(sK18,X0)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | sP5(sK35(sK18),X0,sK18)
+    | achieves(sK35(sK18),sK25(X0,sK35(sK18))) ) ).
+
+cnf(u1485,axiom,
+    ( ~ poscauseof_cross(sK24(sK35(sK18),sK18),X0)
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | state(sK26(sK35(sK18),sK18))
+    | poscauseof_cross(sK35(sK18),X0) ) ).
+
+cnf(u576,axiom,
+    ( ~ achieves(X0,sK19)
+    | prevents(X0,sK29(sK19,sK31(sK19)))
+    | ~ state(sK19) ) ).
+
+cnf(u1433,axiom,
+    ( ~ facilpreconditionfor(sK18,X0)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | prevpreconditionfor(sK24(sK35(sK18),sK18),X0) ) ).
+
+cnf(u496,axiom,
+    ( event(sK36(sK19))
+    | process(sK36(sK19))
+    | state(sK36(sK19)) ) ).
+
+cnf(u1031,axiom,
+    sP2(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))),sK36(sK37(sK34(sK17)))) ).
+
+cnf(u537,axiom,
+    functionof_sys(sK31(sK35(sK18)),sK28(sK35(sK18),sK31(sK35(sK18)))) ).
+
+cnf(u1463,axiom,
+    ( ~ malfunction(sK35(sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | failure(sK35(sK18))
+    | ~ fault(sK18)
+    | ~ event(sK35(sK18))
+    | state(sK26(sK35(sK18),sK18)) ) ).
+
+cnf(u398,axiom,
+    malfunction(sK34(sK17)) ).
+
+cnf(u799,axiom,
+    ( ~ prevpreconditionfor(sK29(sK19,sK31(sK19)),X0)
+    | facilpreconditionfor(sK24(sK36(sK19),sK29(sK19,sK31(sK19))),X0) ) ).
+
+cnf(u886,axiom,
+    ( sP2(sK18,sK35(sK18))
+    | process(sK18)
+    | event(sK18)
+    | state(sK18)
+    | achieves(sK35(sK18),sK18) ) ).
+
+cnf(u743,axiom,
+    ~ causeof(sK29(sK19,sK31(sK19)),sK36(sK19)) ).
+
+cnf(u628,axiom,
+    ( ~ malfunction(sK36(sK37(sK21)))
+    | ~ fault(sK37(sK21))
+    | ~ event(sK36(sK37(sK21)))
+    | failure(sK36(sK37(sK21))) ) ).
+
+cnf(u420,axiom,
+    functionincompatible(sK32(sK16),sK31(sK32(sK16))) ).
+
+cnf(u1200,axiom,
+    ( ~ hasphysicalconseq(X0,sK35(sK18))
+    | prevents(sK35(sK18),sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | allows(X0,sK35(sK18)) ) ).
+
+cnf(u405,axiom,
+    malfunction(sK37(sK21)) ).
+
+cnf(u794,axiom,
+    ( ~ facilpreconditionfor(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))),X0)
+    | prevpreconditionfor(sK37(sK32(sK16)),X0) ) ).
+
+cnf(u893,axiom,
+    ( incompatiblewith(sK24(sK35(sK18),sK18),sK18)
+    | event(sK35(sK18))
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18) ) ).
+
+cnf(u651,axiom,
+    incompatiblewith(sK37(sK34(sK17)),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))) ).
+
+cnf(u536,axiom,
+    incompatiblewith(sK35(sK18),sK29(sK35(sK18),sK31(sK35(sK18)))) ).
+
+cnf(u586,axiom,
+    participatesin(sK28(sK23,sK31(sK23)),sK23,sK30(sK23,sK31(sK23))) ).
+
+cnf(u992,axiom,
+    sP2(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))),sK34(sK17)) ).
+
+cnf(u328,axiom,
+    ( ~ sP10(X0,X1)
+    | poscauseof_cross(X1,X0)
+    | prevpreconditionfor(X1,sK33(X0,X1)) ) ).
+
+cnf(u419,axiom,
+    functionincompatible(sK23,sK31(sK23)) ).
+
+cnf(u248,axiom,
+    ( ~ disallows(X0,X1)
+    | causeof(X0,X1) ) ).
+
+cnf(u1295,axiom,
+    poscauseof_cross(sK36(sK37(sK34(sK17))),sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))) ).
+
+cnf(u358,axiom,
+    ( ~ sP14(X0)
+    | malfunction(X0) ) ).
+
+cnf(u441,axiom,
+    sP1(sK19,sK36(sK19)) ).
+
+cnf(u801,axiom,
+    ( ~ state(sK37(sK21))
+    | prevents(sK21,sK29(sK37(sK21),sK31(sK37(sK21)))) ) ).
+
+cnf(u703,axiom,
+    ( ~ prevpreconditionfor(sK29(sK37(sK21),sK31(sK37(sK21))),X0)
+    | facilpreconditionfor(sK37(sK21),X0) ) ).
+
+cnf(u745,axiom,
+    ( ~ process(sK29(sK19,sK31(sK19)))
+    | ~ state(sK36(sK19)) ) ).
+
+cnf(u638,axiom,
+    causeof(sK36(sK37(sK34(sK17))),sK37(sK34(sK17))) ).
+
+cnf(u1007,axiom,
+    ( achieves(sK35(sK18),sK18)
+    | process(sK35(sK18))
+    | event(sK35(sK18))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18)) ) ).
+
+cnf(u380,axiom,
+    state(sK20) ).
+
+cnf(u343,axiom,
+    ( ~ meresymptom(X0)
+    | sP12(X0) ) ).
+
+cnf(u708,axiom,
+    ( ~ disallows(sK33(sK34(sK17),sK17),X0)
+    | sP8(sK17)
+    | sP10(X0,sK17) ) ).
+
+cnf(u266,axiom,
+    ( ~ facilpreconditionfor(X0,X1)
+    | process(X1)
+    | event(X1)
+    | state(X1) ) ).
+
+cnf(u1348,axiom,
+    ( ~ achieves(sK35(sK18),X0)
+    | prevents(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | facilpreconditionfor(sK26(sK35(sK18),sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | ~ state(X0)
+    | ~ prevpreconditionfor(X0,sK18) ) ).
+
+cnf(u1029,axiom,
+    incompatiblewith(sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))) ).
+
+cnf(u669,axiom,
+    ( ~ hasphysicalconseq(X0,sK36(sK37(sK32(sK16))))
+    | achieves(X0,sK36(sK37(sK32(sK16)))) ) ).
+
+cnf(u546,axiom,
+    ( ~ poscauseof_cross(sK19,X0)
+    | poscauseof_cross(sK36(sK19),X0) ) ).
+
+cnf(u952,axiom,
+    ( maintains(sK33(sK34(sK17),sK17),sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | prevents(sK33(sK34(sK17),sK17),sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | achieves(sK33(sK34(sK17),sK17),sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | sP8(sK17) ) ).
+
+cnf(u973,axiom,
+    ( ~ sP8(sK29(sK37(sK21),sK31(sK37(sK21))))
+    | state(sK29(sK37(sK21),sK31(sK37(sK21))))
+    | malfunction(sK29(sK37(sK21),sK31(sK37(sK21))))
+    | sP9(sK29(sK37(sK21),sK31(sK37(sK21)))) ) ).
+
+cnf(u288,axiom,
+    ( ~ sP7(X0,X1)
+    | sP6(X0,sK27(X0,X1),X1)
+    | prevents(X1,sK27(X0,X1)) ) ).
+
+cnf(u379,axiom,
+    ~ malfunction(sK17) ).
+
+cnf(u1461,axiom,
+    ( ~ hasphysicalconseq(sK18,X0)
+    | state(sK27(sK18,sK35(sK18)))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | state(sK26(sK35(sK18),sK18))
+    | achieves(sK35(sK18),X0) ) ).
+
+cnf(u1043,axiom,
+    sP1(sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),sK34(sK17)) ).
+
+cnf(u273,axiom,
+    ( ~ sP5(X0,X1,X2)
+    | sP3(X1,X0) ) ).
+
+cnf(u577,axiom,
+    ( ~ achieves(X0,sK20)
+    | prevents(X0,sK29(sK20,sK31(sK20)))
+    | ~ state(sK20) ) ).
+
+cnf(u1009,axiom,
+    ( ~ facilpreconditionfor(sK24(sK35(sK18),sK18),X0)
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | event(sK35(sK18))
+    | sP4(X0,sK24(sK35(sK18),sK18),sK35(sK18)) ) ).
+
+cnf(u926,axiom,
+    ( ~ state(sK35(sK18))
+    | process(sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | event(sK35(sK18))
+    | ~ process(sK18) ) ).
+
+cnf(u303,axiom,
+    ( ~ prevents(X0,X1)
+    | ~ hasphysicalconseq(X1,X2)
+    | prevents(X0,X2) ) ).
+
+cnf(u1286,axiom,
+    ( ~ achieves(X0,sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))))
+    | prevents(X0,sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))
+    | ~ state(sK24(sK34(sK17),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))) ) ).
+
+cnf(u247,axiom,
+    ( ~ allows(X0,X1)
+    | causeof(X0,X1) ) ).
+
+cnf(u718,axiom,
+    ( causeof(sK33(sK34(sK17),sK17),sK34(sK17))
+    | sP8(sK17) ) ).
+
+cnf(u460,axiom,
+    internalto(sK36(sK37(sK32(sK16))),sK37(sK32(sK16))) ).
+
+cnf(u1308,axiom,
+    ( ~ prevpreconditionfor(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))),X0)
+    | facilpreconditionfor(sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),X0) ) ).
+
+cnf(u1100,axiom,
+    ( ~ prevpreconditionfor(sK27(sK34(sK17),sK33(sK34(sK17),sK17)),X0)
+    | achieves(sK33(sK34(sK17),sK17),sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | sP8(sK17)
+    | prevents(sK33(sK34(sK17),sK17),sK27(sK34(sK17),sK33(sK34(sK17),sK17)))
+    | sP6(X0,sK27(sK34(sK17),sK33(sK34(sK17),sK17)),sK33(sK34(sK17),sK17)) ) ).
+
+cnf(u474,axiom,
+    ( ~ failure(sK37(sK21))
+    | sP8(sK21) ) ).
+
+cnf(u834,axiom,
+    ( ~ prevpreconditionfor(sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21)))),X0)
+    | sP6(X0,sK24(sK21,sK29(sK37(sK21),sK31(sK37(sK21)))),sK21) ) ).
+
+cnf(u754,axiom,
+    ( ~ hasphysicalconseq(X0,sK35(sK18))
+    | achieves(sK35(sK18),sK18)
+    | allows(sK35(sK18),sK18)
+    | prevents(sK35(sK18),sK18)
+    | disallows(X0,sK35(sK18)) ) ).
+
+cnf(u459,axiom,
+    achieves(sK36(sK37(sK32(sK16))),sK37(sK32(sK16))) ).
+
+cnf(u1307,axiom,
+    ( ~ facilpreconditionfor(sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))),X0)
+    | prevpreconditionfor(sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17))))),X0) ) ).
+
+cnf(u481,axiom,
+    functionof_sys(sK31(sK21),sK28(sK21,sK31(sK21))) ).
+
+cnf(u1215,axiom,
+    achieves(sK36(sK37(sK32(sK16))),sK24(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))))) ).
+
+cnf(u551,axiom,
+    ( ~ prevpreconditionfor(sK29(sK22,sK31(sK22)),X0)
+    | facilpreconditionfor(sK22,X0) ) ).
+
+cnf(u678,axiom,
+    functionof_sys(sK31(sK37(sK32(sK16))),sK28(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))) ).
+
+cnf(u892,axiom,
+    ( achieves(sK35(sK18),sK18)
+    | event(sK35(sK18))
+    | process(sK35(sK18))
+    | state(sK24(sK35(sK18),sK18)) ) ).
+
+cnf(u511,axiom,
+    ( ~ facilpreconditionfor(sK29(sK15,sK31(sK15)),X0)
+    | prevpreconditionfor(sK15,X0) ) ).
+
+cnf(u1494,axiom,
+    ( ~ failure(sK24(sK35(sK18),sK18))
+    | achieves(sK35(sK18),sK18)
+    | state(sK26(sK35(sK18),sK18))
+    | sP8(sK35(sK18))
+    | state(sK27(sK18,sK35(sK18))) ) ).
+
+cnf(u1442,axiom,
+    ( ~ prevpreconditionfor(sK24(sK35(sK18),sK18),X0)
+    | state(sK26(sK35(sK18),sK18))
+    | state(sK27(sK18,sK35(sK18)))
+    | achieves(sK35(sK18),sK18)
+    | sP6(X0,sK24(sK35(sK18),sK18),sK35(sK18)) ) ).
+
+cnf(u1060,axiom,
+    ~ process(sK24(sK36(sK37(sK34(sK17))),sK29(sK37(sK34(sK17)),sK31(sK37(sK34(sK17)))))) ).
+
+cnf(u1234,axiom,
+    ( poscauseof(sK35(sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK18) ) ).
+
+cnf(u1464,axiom,
+    ( poscauseof(sK35(sK18),sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | state(sK26(sK35(sK18),sK18)) ) ).
+
+cnf(u800,axiom,
+    ( ~ sP8(sK36(sK37(sK34(sK17))))
+    | state(sK36(sK37(sK34(sK17))))
+    | process(sK36(sK37(sK34(sK17))))
+    | malfunction(sK36(sK37(sK34(sK17))))
+    | sP9(sK36(sK37(sK34(sK17)))) ) ).
+
+cnf(u1557,axiom,
+    ( ~ event(sK35(sK18))
+    | causeof(sK35(sK18),sK24(sK35(sK18),sK18))
+    | failure(sK35(sK18))
+    | ~ fault(sK18)
+    | state(sK27(sK18,sK35(sK18)))
+    | state(sK26(sK35(sK18),sK18)) ) ).
+
+cnf(u1256,axiom,
+    ( ~ poscauseof_cross(sK18,X0)
+    | state(sK27(sK18,sK35(sK18)))
+    | prevents(sK35(sK18),sK18)
+    | achieves(sK35(sK18),sK18)
+    | poscauseof_cross(sK35(sK18),X0) ) ).
+
+cnf(u1145,axiom,
+    ( ~ facilpreconditionfor(sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16)))),X0)
+    | sP7(X0,sK32(sK16)) ) ).
+
+cnf(u707,axiom,
+    ( ~ achieves(X0,sK17)
+    | ~ state(sK17)
+    | sP8(sK17)
+    | state(sK25(sK33(sK34(sK17),sK17),X0)) ) ).
+
+cnf(u592,axiom,
+    sP10(sK37(sK32(sK16)),sK32(sK16)) ).
+
+cnf(u1211,axiom,
+    prevents(sK36(sK37(sK32(sK16))),sK29(sK37(sK32(sK16)),sK31(sK37(sK32(sK16))))) ).
+
+cnf(u384,axiom,
+    ~ process(sK20) ).
+
+cnf(u414,axiom,
+    functionincompatible(sK15,sK31(sK15)) ).
+
+
+%------------------------------------------------------------------------------
+%----ORIGINAL SYSTEM OUTPUT
+% Running first-order theorem proving
+% Running: /home/tptp/Systems/Vampire---4.8/vampire --input_syntax tptp --proof tptp --output_axiom_names on --mode portfolio --schedule file --schedule_file /home/tptp/Systems/Vampire---4.8/quickGreedyProduceRating_steal_pow3.txt --cores 8 -m 12000 -t 60 /tmp/tmp.AgbssofhyZ/Vampire---4.8_62068
+% % (62136)lrs+1011_1:1_sil=8000:sp=occurrence:nwc=10.0:i=78:ss=axioms:sgt=8_0 on Vampire---4 for (596ds/78Mi)
+% % (62141)lrs-21_1:1_to=lpo:sil=2000:sp=frequency:sos=on:lma=on:i=56:sd=2:ss=axioms:ep=R_0 on Vampire---4 for (596ds/56Mi)
+% % (62138)lrs+2_1:1_sil=16000:fde=none:sos=all:nwc=5.0:i=34:ep=RS:s2pl=on:lma=on:afp=100000_0 on Vampire---4 for (596ds/34Mi)
+% % (62134)dis-1011_2:1_sil=2000:lsd=20:nwc=5.0:flr=on:mep=off:st=3.0:i=34:sd=1:ep=RS:ss=axioms_0 on Vampire---4 for (596ds/34Mi)
+% % (62136)Refutation not found, incomplete strategy% (62136)------------------------------
+% % (62136)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62136)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62136)Memory used [KB]: 957
+% % (62136)Time elapsed: 0.003 s
+% % (62136)Instructions burned: 2 (million)
+% % (62140)lrs+21_1:5_sil=2000:sos=on:urr=on:newcnf=on:slsq=on:i=83:slsql=off:bd=off:nm=2:ss=axioms:st=1.5:sp=const_min:gsp=on:rawr=on_0 on Vampire---4 for (596ds/83Mi)
+% % (62136)------------------------------
+% % (62136)------------------------------
+% % (62134)Refutation not found, incomplete strategy% (62134)------------------------------
+% % (62134)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62141)Refutation not found, incomplete strategy% (62141)------------------------------
+% % (62141)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62141)Termination reason: Refutation not found, incomplete strategy
+% % (62134)Termination reason: Refutation not found, incomplete strategy
+% 
+% 
+% % (62141)Memory used [KB]: 957
+% % (62134)Memory used [KB]: 957
+% % (62134)Time elapsed: 0.003 s
+% % (62141)Time elapsed: 0.003 s
+% % (62134)Instructions burned: 2 (million)
+% % (62141)Instructions burned: 2 (million)
+% % (62140)Refutation not found, incomplete strategy% (62140)------------------------------
+% % (62140)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62140)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62140)Memory used [KB]: 957
+% % (62140)Time elapsed: 0.002 s
+% % (62140)Instructions burned: 2 (million)
+% % (62137)ott+1011_1:1_sil=2000:urr=on:i=33:sd=1:kws=inv_frequency:ss=axioms:sup=off_0 on Vampire---4 for (596ds/33Mi)
+% % (62134)------------------------------
+% % (62134)------------------------------
+% % (62141)------------------------------
+% % (62141)------------------------------
+% % (62140)------------------------------
+% % (62140)------------------------------
+% % (62137)Refutation not found, incomplete strategy% (62137)------------------------------
+% % (62137)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62137)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62137)Memory used [KB]: 957
+% % (62137)Time elapsed: 0.002 s
+% % (62137)Instructions burned: 2 (million)
+% % (62138)Refutation not found, incomplete strategy% (62138)------------------------------
+% % (62138)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62138)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62138)Memory used [KB]: 1124
+% % (62138)Time elapsed: 0.004 s
+% % (62138)Instructions burned: 5 (million)
+% % (62135)lrs+1011_461:32768_sil=16000:irw=on:sp=frequency:lsd=20:fd=preordered:nwc=10.0:s2agt=32:alpa=false:cond=fast:s2a=on:i=51:s2at=3.0:awrs=decay:awrsf=691:bd=off:nm=20:fsr=off:amm=sco:uhcvi=on:rawr=on_0 on Vampire---4 for (596ds/51Mi)
+% % (62139)lrs+1002_1:16_to=lpo:sil=32000:sp=unary_frequency:sos=on:i=45:bd=off:ss=axioms_0 on Vampire---4 for (596ds/45Mi)
+% % (62137)------------------------------
+% % (62137)------------------------------
+% % (62138)------------------------------
+% % (62138)------------------------------
+% % (62139)Refutation not found, incomplete strategy% (62139)------------------------------
+% % (62139)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62139)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62139)Memory used [KB]: 957
+% % (62139)Time elapsed: 0.004 s
+% % (62139)Instructions burned: 2 (million)
+% % (62142)lrs+21_1:16_sil=2000:sp=occurrence:urr=on:flr=on:i=55:sd=1:nm=0:ins=3:ss=included:rawr=on:br=off_0 on Vampire---4 for (596ds/55Mi)
+% % (62139)------------------------------
+% % (62139)------------------------------
+% % (62143)dis+3_25:4_sil=16000:sos=all:erd=off:i=50:s2at=4.0:bd=off:nm=60:sup=off:cond=on:av=off:ins=2:nwc=10.0:etr=on:to=lpo:s2agt=20:fd=off:bsr=unit_only:slsq=on:slsqr=28,19:awrs=converge:awrsf=500:tgt=ground:bs=unit_only_0 on Vampire---4 for (596ds/50Mi)
+% % (62146)lrs-1010_1:1_to=lpo:sil=2000:sp=reverse_arity:sos=on:urr=ec_only:i=518:sd=2:bd=off:ss=axioms:sgt=16_0 on Vampire---4 for (596ds/518Mi)
+% % (62145)lrs-1011_1:1_sil=4000:plsq=on:plsqr=32,1:sp=frequency:plsql=on:nwc=10.0:i=52:aac=none:afr=on:ss=axioms:er=filter:sgt=16:rawr=on:etr=on:lma=on_0 on Vampire---4 for (596ds/52Mi)
+% % (62146)Refutation not found, incomplete strategy% (62146)------------------------------
+% % (62146)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62146)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62146)Memory used [KB]: 957
+% % (62146)Time elapsed: 0.002 s
+% % (62146)Instructions burned: 2 (million)
+% % (62146)------------------------------
+% % (62146)------------------------------
+% % (62143)Refutation not found, incomplete strategy% (62143)------------------------------
+% % (62143)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62143)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62143)Memory used [KB]: 1127
+% % (62143)Time elapsed: 0.003 s
+% % (62143)Instructions burned: 6 (million)
+% % (62143)------------------------------
+% % (62143)------------------------------
+% % (62145)Refutation not found, incomplete strategy% (62145)------------------------------
+% % (62145)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62145)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62145)Memory used [KB]: 957
+% % (62145)Time elapsed: 0.003 s
+% % (62145)Instructions burned: 2 (million)
+% % (62144)lrs+1010_1:2_sil=4000:tgt=ground:nwc=10.0:st=2.0:i=208:sd=1:bd=off:ss=axioms_0 on Vampire---4 for (596ds/208Mi)
+% % (62147)lrs+1011_87677:1048576_sil=8000:sos=on:spb=non_intro:nwc=10.0:kmz=on:i=42:ep=RS:nm=0:ins=1:uhcvi=on:rawr=on:fde=unused:afp=2000:afq=1.444:plsq=on:nicw=on_0 on Vampire---4 for (596ds/42Mi)
+% % (62145)------------------------------
+% % (62145)------------------------------
+% % (62144)Refutation not found, incomplete strategy% (62144)------------------------------
+% % (62144)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62144)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62144)Memory used [KB]: 957
+% % (62144)Time elapsed: 0.004 s
+% % (62144)Instructions burned: 2 (million)
+% % (62148)dis+1011_1258907:1048576_bsr=unit_only:to=lpo:drc=off:sil=2000:tgt=full:fde=none:sp=frequency:spb=goal:rnwc=on:nwc=6.70083:sac=on:newcnf=on:st=2:i=243:bs=unit_only:sd=3:afp=300:awrs=decay:awrsf=218:nm=16:ins=3:afq=3.76821:afr=on:ss=axioms:sgt=5:rawr=on:add=off:bsd=on_0 on Vampire---4 for (596ds/243Mi)
+% % (62144)------------------------------
+% % (62144)------------------------------
+% % (62148)Refutation not found, incomplete strategy% (62148)------------------------------
+% % (62148)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62148)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62148)Memory used [KB]: 958
+% % (62148)Time elapsed: 0.002 s
+% % (62148)Instructions burned: 2 (million)
+% % (62148)------------------------------
+% % (62148)------------------------------
+% % (62149)lrs+1011_2:9_sil=2000:lsd=10:newcnf=on:i=117:sd=2:awrs=decay:ss=included:amm=off:ep=R_0 on Vampire---4 for (596ds/117Mi)
+% % (62150)dis+1011_11:1_sil=2000:avsq=on:i=143:avsqr=1,16:ep=RS:rawr=on:aac=none:lsd=100:mep=off:fde=none:newcnf=on:bsr=unit_only_0 on Vampire---4 for (596ds/143Mi)
+% % (62152)lrs+1011_1:2_to=lpo:sil=8000:plsqc=1:plsq=on:plsqr=326,59:sp=weighted_frequency:plsql=on:nwc=10.0:newcnf=on:i=93:awrs=converge:awrsf=200:bd=off:ins=1:rawr=on:alpa=false:avsq=on:avsqr=1,16_0 on Vampire---4 for (596ds/93Mi)
+% % (62147)Refutation not found, incomplete strategy% (62147)------------------------------
+% % (62147)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62147)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62147)Memory used [KB]: 1122
+% % (62147)Time elapsed: 0.006 s
+% % (62147)Instructions burned: 5 (million)
+% % (62147)------------------------------
+% % (62147)------------------------------
+% % (62153)lrs+1666_1:1_sil=4000:sp=occurrence:sos=on:urr=on:newcnf=on:i=62:amm=off:ep=R:erd=off:nm=0:plsq=on:plsqr=14,1_0 on Vampire---4 for (596ds/62Mi)
+% % (62153)Refutation not found, incomplete strategy% (62153)------------------------------
+% % (62153)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62153)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62153)Memory used [KB]: 1112
+% % (62153)Time elapsed: 0.005 s
+% % (62153)Instructions burned: 5 (million)
+% % (62153)------------------------------
+% % (62153)------------------------------
+% % (62154)lrs+21_2461:262144_anc=none:drc=off:sil=2000:sp=occurrence:nwc=6.0:updr=off:st=3.0:i=32:sd=2:afp=4000:erml=3:nm=14:afq=2.0:uhcvi=on:ss=included:er=filter:abs=on:nicw=on:ile=on:sims=off:s2a=on:s2agt=50:s2at=-1.0:plsq=on:plsql=on:plsqc=2:plsqr=1,32:newcnf=on:bd=off:to=lpo_0 on Vampire---4 for (596ds/32Mi)
+% % (62155)dis+1011_1:1_sil=16000:nwc=7.0:s2agt=64:s2a=on:i=1919:ss=axioms:sgt=8:lsd=50:sd=7_0 on Vampire---4 for (596ds/1919Mi)
+% % (62155)Refutation not found, incomplete strategy% (62155)------------------------------
+% % (62155)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62155)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62155)Memory used [KB]: 957
+% % (62155)Time elapsed: 0.003 s
+% % (62155)Instructions burned: 2 (million)
+% % (62155)------------------------------
+% % (62155)------------------------------
+% % (62156)ott-32_5:1_sil=4000:sp=occurrence:urr=full:rp=on:nwc=5.0:newcnf=on:st=5.0:s2pl=on:i=55:sd=2:ins=2:ss=included:rawr=on:anc=none:sos=on:s2agt=8:spb=intro:ep=RS:avsq=on:avsqr=27,155:lma=on_0 on Vampire---4 for (596ds/55Mi)
+% % (62157)lrs-1011_1:1_sil=2000:sos=on:urr=on:i=53:sd=1:bd=off:ins=3:av=off:ss=axioms:sgt=16:gsp=on:lsd=10_0 on Vampire---4 for (596ds/53Mi)
+% % (62157)Refutation not found, incomplete strategy% (62157)------------------------------
+% % (62157)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62157)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62157)Memory used [KB]: 957
+% % (62157)Time elapsed: 0.002 s
+% % (62157)Instructions burned: 2 (million)
+% % (62157)------------------------------
+% % (62157)------------------------------
+% % (62156)Refutation not found, incomplete strategy% (62156)------------------------------
+% % (62156)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62156)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62156)Memory used [KB]: 1129
+% % (62156)Time elapsed: 0.004 s
+% % (62156)Instructions burned: 5 (million)
+% % (62156)------------------------------
+% % (62156)------------------------------
+% % (62142)Instruction limit reached!
+% % (62142)------------------------------
+% % (62142)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62142)Termination reason: Unknown
+% % (62142)Termination phase: Saturation
+% 
+% % (62142)Memory used [KB]: 1985
+% % (62142)Time elapsed: 0.025 s
+% % (62142)Instructions burned: 56 (million)
+% % (62142)------------------------------
+% % (62142)------------------------------
+% % (62159)dis+10_3:31_sil=2000:sp=frequency:abs=on:acc=on:lcm=reverse:nwc=3.0:alpa=random:st=3.0:i=102:sd=1:nm=4:ins=1:aer=off:ss=axioms_0 on Vampire---4 for (596ds/102Mi)
+% % (62158)lrs+1011_6929:65536_anc=all_dependent:sil=2000:fde=none:plsqc=1:plsq=on:plsqr=19,8:plsql=on:nwc=3.0:i=46:afp=4000:ep=R:nm=3:fsr=off:afr=on:aer=off:gsp=on_0 on Vampire---4 for (596ds/46Mi)
+% % (62159)Refutation not found, incomplete strategy% (62159)------------------------------
+% % (62159)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62159)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62159)Memory used [KB]: 957
+% % (62159)Time elapsed: 0.002 s
+% % (62159)Instructions burned: 2 (million)
+% % (62159)------------------------------
+% % (62159)------------------------------
+% % (62160)ott+1011_9:29_slsqr=3,2:sil=2000:tgt=ground:lsd=10:lcm=predicate:avsqc=4:slsq=on:avsq=on:i=35:s2at=4.0:add=large:sd=1:avsqr=1,16:aer=off:ss=axioms:sgt=100:rawr=on:s2a=on:sac=on:afp=1:nwc=10.0:nm=64:bd=preordered:abs=on:rnwc=on:er=filter:nicw=on:spb=non_intro:lma=on_0 on Vampire---4 for (596ds/35Mi)
+% % (62160)Refutation not found, incomplete strategy% (62160)------------------------------
+% % (62160)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62160)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62160)Memory used [KB]: 958
+% % (62160)Time elapsed: 0.002 s
+% % (62160)Instructions burned: 2 (million)
+% % (62161)dis+1003_1:1024_sil=4000:urr=on:newcnf=on:i=87:av=off:fsr=off:bce=on_0 on Vampire---4 for (596ds/87Mi)
+% % (62160)------------------------------
+% % (62160)------------------------------
+% % (62162)dis+1010_12107:524288_anc=none:drc=encompass:sil=2000:bsd=on:rp=on:nwc=10.0:alpa=random:i=109:kws=precedence:awrs=decay:awrsf=2:nm=16:ins=3:rawr=on:s2a=on:s2at=4.5:acc=on:flr=on_0 on Vampire---4 for (596ds/109Mi)
+% % (62154)Instruction limit reached!
+% % (62154)------------------------------
+% % (62154)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62154)Termination reason: Unknown
+% % (62154)Termination phase: Saturation
+% 
+% % (62154)Memory used [KB]: 1309
+% % (62154)Time elapsed: 0.026 s
+% % (62154)Instructions burned: 32 (million)
+% % (62154)------------------------------
+% % (62154)------------------------------
+% % (62163)lrs+1002_1:16_sil=2000:sp=occurrence:sos=on:i=161:aac=none:bd=off:ss=included:sd=5:st=2.5:sup=off_0 on Vampire---4 for (595ds/161Mi)
+% % (62152)Instruction limit reached!
+% % (62152)------------------------------
+% % (62152)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62152)Termination reason: Unknown
+% % (62152)Termination phase: Saturation
+% 
+% % (62152)Memory used [KB]: 1653
+% % (62152)Time elapsed: 0.037 s
+% % (62152)Instructions burned: 95 (million)
+% % (62152)------------------------------
+% % (62152)------------------------------
+% % (62163)Refutation not found, incomplete strategy% (62163)------------------------------
+% % (62163)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62163)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62163)Memory used [KB]: 1124
+% % (62163)Time elapsed: 0.004 s
+% % (62163)Instructions burned: 5 (million)
+% % (62163)------------------------------
+% % (62163)------------------------------
+% % (62164)lrs-1002_2:9_anc=none:sil=2000:plsqc=1:plsq=on:avsql=on:plsqr=2859761,1048576:erd=off:rp=on:nwc=21.7107:newcnf=on:avsq=on:i=69:aac=none:avsqr=6317,1048576:ep=RS:fsr=off:rawr=on:afp=50:afq=2.133940627822616:sac=on_0 on Vampire---4 for (595ds/69Mi)
+% % (62135)Instruction limit reached!
+% % (62135)------------------------------
+% % (62135)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62150)Refutation not found, incomplete strategy% (62150)------------------------------
+% % (62150)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62135)Termination reason: Unknown
+% % (62135)Termination phase: Saturation
+% 
+% % (62150)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62135)Memory used [KB]: 2067
+% % (62150)Memory used [KB]: 2018
+% % (62135)Time elapsed: 0.050 s
+% % (62150)Time elapsed: 0.041 s
+% % (62135)Instructions burned: 51 (million)
+% % (62135)------------------------------
+% % (62135)------------------------------
+% % (62150)Instructions burned: 75 (million)
+% % (62150)------------------------------
+% % (62150)------------------------------
+% % (62165)lrs+1010_1:512_sil=8000:tgt=ground:spb=units:gs=on:lwlo=on:nicw=on:gsem=on:st=1.5:i=40:nm=21:ss=included:nwc=5.3:afp=4000:afq=1.38:ins=1:bs=unit_only:awrs=converge:awrsf=10:bce=on_0 on Vampire---4 for (595ds/40Mi)
+% % (62166)ott+1011_1:3_drc=off:sil=4000:tgt=ground:fde=unused:plsq=on:sp=unary_first:fd=preordered:nwc=10.0:i=360:ins=1:rawr=on:bd=preordered_0 on Vampire---4 for (595ds/360Mi)
+% % (62167)dis+10_1:4_to=lpo:sil=2000:sos=on:spb=goal:rp=on:sac=on:newcnf=on:i=161:ss=axioms:aac=none_0 on Vampire---4 for (595ds/161Mi)
+% % (62167)Refutation not found, incomplete strategy% (62167)------------------------------
+% % (62167)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62167)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62167)Memory used [KB]: 957
+% % (62167)Time elapsed: 0.002 s
+% % (62167)Instructions burned: 2 (million)
+% % (62167)------------------------------
+% % (62167)------------------------------
+% % (62168)lrs+1011_1:20_sil=4000:tgt=ground:i=80:sd=1:bd=off:nm=32:av=off:ss=axioms:lsd=60_0 on Vampire---4 for (595ds/80Mi)
+% % (62168)Refutation not found, incomplete strategy% (62168)------------------------------
+% % (62168)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62168)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62168)Memory used [KB]: 957
+% % (62168)Time elapsed: 0.001 s
+% % (62168)Instructions burned: 2 (million)
+% % (62168)------------------------------
+% % (62168)------------------------------
+% % (62149)Instruction limit reached!
+% % (62149)------------------------------
+% % (62149)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62149)Termination reason: Unknown
+% % (62149)Termination phase: Saturation
+% 
+% % (62149)Memory used [KB]: 2203
+% % (62149)Time elapsed: 0.058 s
+% % (62149)Instructions burned: 118 (million)
+% % (62149)------------------------------
+% % (62149)------------------------------
+% % (62169)lrs+11_1:2_slsqr=1,2:sil=2000:sp=const_frequency:kmz=on:newcnf=on:slsq=on:i=37:s2at=1.5:awrs=converge:nm=2:uhcvi=on:ss=axioms:sgt=20:afp=10000:fs=off:fsr=off:bd=off:s2agt=5:fd=off:add=off:erd=off:foolp=on:nwc=10.0:rp=on_0 on Vampire---4 for (595ds/37Mi)
+% % (62169)Refutation not found, incomplete strategy% (62169)------------------------------
+% % (62169)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62169)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62169)Memory used [KB]: 958
+% % (62169)Time elapsed: 0.002 s
+% % (62169)Instructions burned: 2 (million)
+% % (62169)------------------------------
+% % (62169)------------------------------
+% % (62158)Instruction limit reached!
+% % (62158)------------------------------
+% % (62158)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62158)Termination reason: Unknown
+% % (62158)Termination phase: Saturation
+% 
+% % (62158)Memory used [KB]: 2279
+% % (62158)Time elapsed: 0.041 s
+% % (62158)Instructions burned: 47 (million)
+% % (62158)------------------------------
+% % (62158)------------------------------
+% % (62170)lrs+1011_1:2_drc=encompass:sil=4000:fde=unused:sos=on:sac=on:newcnf=on:i=55:sd=10:bd=off:ins=1:uhcvi=on:ss=axioms:spb=non_intro:st=3.0:erd=off:s2a=on:nwc=3.0_0 on Vampire---4 for (595ds/55Mi)
+% % (62170)Refutation not found, incomplete strategy% (62170)------------------------------
+% % (62170)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62170)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62170)Memory used [KB]: 957
+% % (62170)Time elapsed: 0.003 s
+% % (62170)Instructions burned: 2 (million)
+% % (62170)------------------------------
+% % (62170)------------------------------
+% % (62171)dis-1011_1:32_to=lpo:drc=off:sil=2000:sp=reverse_arity:sos=on:foolp=on:lsd=20:nwc=1.49509792053687:s2agt=30:avsq=on:s2a=on:s2pl=no:i=47:s2at=5.0:avsqr=5593,1048576:nm=0:fsr=off:amm=sco:rawr=on:awrs=converge:awrsf=427:ss=included:sd=1:slsq=on:fd=off_0 on Vampire---4 for (595ds/47Mi)
+% % (62172)lrs+10_1:1024_sil=2000:st=2.0:i=32:sd=2:ss=included:ep=R_0 on Vampire---4 for (595ds/32Mi)
+% % (62171)Refutation not found, incomplete strategy% (62171)------------------------------
+% % (62171)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62171)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62171)Memory used [KB]: 1124
+% % (62171)Time elapsed: 0.006 s
+% % (62171)Instructions burned: 5 (million)
+% % (62173)dis+1011_1:1_sil=4000:s2agt=4:slsqc=3:slsq=on:i=132:bd=off:av=off:sup=off:ss=axioms:st=3.0_0 on Vampire---4 for (595ds/132Mi)
+% % (62171)------------------------------
+% % (62171)------------------------------
+% % (62161)Instruction limit reached!
+% % (62161)------------------------------
+% % (62161)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62161)Termination reason: Unknown
+% % (62161)Termination phase: Saturation
+% 
+% % (62161)Memory used [KB]: 1960
+% % (62161)Time elapsed: 0.066 s
+% % (62161)Instructions burned: 87 (million)
+% % (62161)------------------------------
+% % (62161)------------------------------
+% % (62173)Refutation not found, incomplete strategy% (62173)------------------------------
+% % (62173)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62173)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62173)Memory used [KB]: 957
+% % (62173)Time elapsed: 0.002 s
+% % (62173)Instructions burned: 2 (million)
+% % (62173)------------------------------
+% % (62173)------------------------------
+% % (62165)Instruction limit reached!
+% % (62165)------------------------------
+% % (62165)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62165)Termination reason: Unknown
+% % (62165)Termination phase: Saturation
+% 
+% % (62165)Memory used [KB]: 1654
+% % (62165)Time elapsed: 0.029 s
+% % (62165)Instructions burned: 40 (million)
+% % (62165)------------------------------
+% % (62165)------------------------------
+% % (62174)dis-1011_1:1024_sil=2000:fde=unused:sos=on:nwc=10.0:i=54:uhcvi=on:ss=axioms:ep=RS:av=off:sp=occurrence:fsr=off:awrs=decay:awrsf=200_0 on Vampire---4 for (595ds/54Mi)
+% % (62174)Refutation not found, incomplete strategy% (62174)------------------------------
+% % (62174)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62174)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62174)Memory used [KB]: 957
+% % (62174)Time elapsed: 0.001 s
+% % (62174)Instructions burned: 2 (million)
+% % (62175)lrs+1011_1:2_to=lpo:drc=off:sil=2000:sp=const_min:urr=on:lcm=predicate:nwc=16.7073:updr=off:newcnf=on:i=82:av=off:rawr=on:ss=included:st=5.0:erd=off:flr=on_0 on Vampire---4 for (595ds/82Mi)
+% % (62174)------------------------------
+% % (62174)------------------------------
+% % (62176)lrs+11_1:32_sil=2000:sp=occurrence:lsd=20:rp=on:i=119:sd=1:nm=0:av=off:ss=included:nwc=10.0:flr=on_0 on Vampire---4 for (595ds/119Mi)
+% % (62177)ott+1002_2835555:1048576_to=lpo:sil=2000:sos=on:fs=off:nwc=10.3801:avsqc=3:updr=off:avsq=on:st=2:s2a=on:i=177:s2at=3:afp=10000:aac=none:avsqr=13357983,1048576:awrs=converge:awrsf=460:bd=off:nm=13:ins=2:fsr=off:amm=sco:afq=1.16719:ss=axioms:rawr=on:fd=off_0 on Vampire---4 for (595ds/177Mi)
+% % (62177)Refutation not found, incomplete strategy% (62177)------------------------------
+% % (62177)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62177)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62177)Memory used [KB]: 956
+% % (62177)Time elapsed: 0.002 s
+% % (62177)Instructions burned: 2 (million)
+% % (62177)------------------------------
+% % (62177)------------------------------
+% % (62178)lrs+1002_263:262144_sfv=off:to=lpo:drc=encompass:sil=2000:tgt=full:fde=none:bsd=on:sp=const_frequency:spb=units:fd=preordered:nwc=12.504039574721643:lwlo=on:i=117:awrs=converge:awrsf=1360:bsdmm=3:bd=off:nm=11:fsd=on:amm=off:uhcvi=on:afr=on:rawr=on:fsdmm=1:updr=off:sac=on:fdi=16_0 on Vampire---4 for (595ds/117Mi)
+% % (62164)Instruction limit reached!
+% % (62164)------------------------------
+% % (62164)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62164)Termination reason: Unknown
+% % (62164)Termination phase: Saturation
+% 
+% % (62164)Memory used [KB]: 1382
+% % (62164)Time elapsed: 0.038 s
+% % (62164)Instructions burned: 71 (million)
+% % (62164)------------------------------
+% % (62164)------------------------------
+% % (62179)dis+1011_1:128_sil=2000:plsq=on:sp=frequency:plsql=on:nicw=on:i=49:kws=precedence:bd=off:fsr=off:ss=axioms:sgt=64:sd=3_0 on Vampire---4 for (595ds/49Mi)
+% % (62179)Refutation not found, incomplete strategy% (62179)------------------------------
+% % (62179)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62179)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62179)Memory used [KB]: 958
+% % (62179)Time elapsed: 0.002 s
+% % (62179)Instructions burned: 2 (million)
+% % (62179)------------------------------
+% % (62179)------------------------------
+% % (62180)lrs-1011_8:1_sil=2000:spb=goal:urr=on:sac=on:i=51:afp=10000:fsr=off:ss=axioms:avsq=on:avsqr=17819,524288:bd=off:bsd=on:fd=off:sims=off:rawr=on:alpa=true:bsr=on:aer=off_0 on Vampire---4 for (595ds/51Mi)
+% % (62180)Refutation not found, incomplete strategy% (62180)------------------------------
+% % (62180)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62180)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62180)Memory used [KB]: 958
+% % (62180)Time elapsed: 0.005 s
+% % (62180)Instructions burned: 2 (million)
+% % (62180)------------------------------
+% % (62180)------------------------------
+% % (62181)lrs+1011_1:1024_sil=8000:sp=unary_first:nwc=10.0:st=3.0:s2a=on:i=149:s2at=5.0:awrs=converge:awrsf=390:ep=R:av=off:ss=axioms:s2agt=32_0 on Vampire---4 for (595ds/149Mi)
+% % (62181)Refutation not found, incomplete strategy% (62181)------------------------------
+% % (62181)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62181)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62181)Memory used [KB]: 957
+% % (62181)Time elapsed: 0.001 s
+% % (62181)Instructions burned: 2 (million)
+% % (62181)------------------------------
+% % (62181)------------------------------
+% % (62172)Instruction limit reached!
+% % (62172)------------------------------
+% % (62172)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62172)Termination reason: Unknown
+% % (62172)Termination phase: Saturation
+% 
+% % (62172)Memory used [KB]: 1395
+% % (62172)Time elapsed: 0.025 s
+% % (62172)Instructions burned: 32 (million)
+% % (62172)------------------------------
+% % (62172)------------------------------
+% % (62182)lrs+11_10:1_to=lpo:drc=off:sil=4000:sp=const_min:fd=preordered:rp=on:st=3.0:s2a=on:i=56:s2at=2.0:ss=axioms:er=known:sup=off:sd=1_0 on Vampire---4 for (595ds/56Mi)
+% % (62182)Refutation not found, incomplete strategy% (62182)------------------------------
+% % (62182)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62182)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62182)Memory used [KB]: 958
+% % (62182)Time elapsed: 0.002 s
+% % (62182)Instructions burned: 2 (million)
+% % (62182)------------------------------
+% % (62182)------------------------------
+% % (62183)lrs+1011_4:1_bsr=on:sil=32000:sos=all:urr=on:br=off:s2a=on:i=289:s2at=2.0:bd=off:gsp=on:ss=axioms:sgt=8:sd=1:fsr=off_0 on Vampire---4 for (595ds/289Mi)
+% % (62183)Refutation not found, incomplete strategy% (62183)------------------------------
+% % (62183)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62183)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62183)Memory used [KB]: 957
+% % (62183)Time elapsed: 0.002 s
+% % (62183)Instructions burned: 2 (million)
+% % (62183)------------------------------
+% % (62183)------------------------------
+% % (62184)ott-1011_16:1_sil=2000:sp=const_max:urr=on:lsd=20:st=3.0:i=206:ss=axioms:gsp=on:rp=on:sos=on:fd=off:aac=none_0 on Vampire---4 for (595ds/206Mi)
+% % (62185)ott+1004_1:2_bsr=unit_only:slsqr=1,8:to=lpo:sil=2000:plsqc=2:plsq=on:sp=reverse_frequency:acc=on:nwc=6.4:slsq=on:st=2.0:i=50:s2at=3.0:bd=off:ins=4:ss=axioms:sgt=10:plsql=on:rawr=on:aer=off:slsqc=2:afp=4000:afq=2.0:bce=on:gs=on:lma=on:br=off:gsaa=full_model:add=off_0 on Vampire---4 for (595ds/50Mi)
+% % (62184)Refutation not found, incomplete strategy% (62184)------------------------------
+% % (62184)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62184)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62184)Memory used [KB]: 958
+% % (62184)Time elapsed: 0.002 s
+% % (62184)Instructions burned: 2 (million)
+% % (62185)Refutation not found, incomplete strategy% (62185)------------------------------
+% % (62185)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62185)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62185)Memory used [KB]: 958
+% % (62185)Time elapsed: 0.001 s
+% % (62185)Instructions burned: 2 (million)
+% % (62184)------------------------------
+% % (62184)------------------------------
+% % (62185)------------------------------
+% % (62185)------------------------------
+% % (62186)lrs+1011_1:1_to=lpo:drc=off:sil=2000:tgt=full:i=1483:fd=preordered_0 on Vampire---4 for (595ds/1483Mi)
+% % (62187)dis+1010_1:3_sil=2000:tgt=ground:sp=const_max:nwc=5.0:s2a=on:i=67:nm=16:av=off:bd=off_0 on Vampire---4 for (595ds/67Mi)
+% % (62188)lrs+1011_1:1_sil=64000:tgt=full:plsqc=1:plsq=on:plsqr=32,1:sp=occurrence:sos=on:lsd=20:st=5.0:i=67:sd=2:nm=4:av=off:fsr=off:ss=axioms:er=tagged:gs=on:sgt=8:nwc=3.0:bd=off_0 on Vampire---4 for (595ds/67Mi)
+% % (62188)Refutation not found, incomplete strategy% (62188)------------------------------
+% % (62188)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62188)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62188)Memory used [KB]: 958
+% % (62188)Time elapsed: 0.002 s
+% % (62188)Instructions burned: 2 (million)
+% % (62188)------------------------------
+% % (62188)------------------------------
+% % (62162)Instruction limit reached!
+% % (62162)------------------------------
+% % (62162)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62162)Termination reason: Unknown
+% % (62162)Termination phase: Saturation
+% 
+% % (62162)Memory used [KB]: 1902
+% % (62162)Time elapsed: 0.096 s
+% % (62162)Instructions burned: 110 (million)
+% % (62162)------------------------------
+% % (62162)------------------------------
+% % (62189)dis+1002_1:1024_sil=2000:sac=on:slsq=on:i=52:nm=16:sfv=off:slsqc=1:urr=ec_only:bd=off_0 on Vampire---4 for (595ds/52Mi)
+% % (62190)lrs+1010_1:1_to=lpo:sil=2000:plsq=on:plsqr=32,1:sos=on:i=366:sd=2:ss=axioms_0 on Vampire---4 for (595ds/366Mi)
+% % (62190)Refutation not found, incomplete strategy% (62190)------------------------------
+% % (62190)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62190)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62190)Memory used [KB]: 957
+% % (62190)Time elapsed: 0.002 s
+% % (62190)Instructions burned: 2 (million)
+% % (62190)------------------------------
+% % (62190)------------------------------
+% % (62191)lrs+1011_4:1_to=lpo:drc=off:sil=8000:sp=frequency:abs=on:urr=on:lsd=10:nwc=5.0:s2agt=4:newcnf=on:st=5.0:s2a=on:i=863:ss=axioms:aac=none:br=off:bd=preordered_0 on Vampire---4 for (595ds/863Mi)
+% % (62175)Instruction limit reached!
+% % (62175)------------------------------
+% % (62175)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62175)Termination reason: Unknown
+% % (62175)Termination phase: Saturation
+% 
+% % (62175)Memory used [KB]: 2181
+% % (62175)Time elapsed: 0.046 s
+% % (62175)Instructions burned: 82 (million)
+% % (62175)------------------------------
+% % (62175)------------------------------
+% % (62191)Refutation not found, incomplete strategy% (62191)------------------------------
+% % (62191)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62191)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62191)Memory used [KB]: 958
+% % (62191)Time elapsed: 0.003 s
+% % (62191)Instructions burned: 2 (million)
+% % (62191)------------------------------
+% % (62191)------------------------------
+% % (62192)lrs+1011_1:1_sil=16000:fde=unused:plsqc=1:plsq=on:plsqr=32,1:sos=on:nwc=10.0:i=163:kws=frequency:nm=2:lsd=1:bd=off_0 on Vampire---4 for (595ds/163Mi)
+% % (62193)lrs+33_1:1_sil=4000:sp=reverse_frequency:sos=all:i=77:sd=2:bd=off:nm=2:av=off:fsr=off:ss=axioms:sgt=10:rawr=on:sup=off:to=lpo:fs=off_0 on Vampire---4 for (595ds/77Mi)
+% % (62193)Refutation not found, incomplete strategy% (62193)------------------------------
+% % (62193)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62193)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62193)Memory used [KB]: 957
+% % (62193)Time elapsed: 0.001 s
+% % (62193)Instructions burned: 2 (million)
+% % (62192)Refutation not found, incomplete strategy% (62192)------------------------------
+% % (62192)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62192)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62192)Memory used [KB]: 1136
+% % (62192)Time elapsed: 0.004 s
+% % (62192)Instructions burned: 6 (million)
+% % (62193)------------------------------
+% % (62193)------------------------------
+% % (62192)------------------------------
+% % (62192)------------------------------
+% % (62195)lrs+1010_974213:1048576_nwc=9.0:s2a=on:i=76:bd=off:lwlo=on:fd=off:sil=256000:s2agt=10:sims=off:nm=9:sp=const_min:rp=on:er=known:cond=fast:bce=on:abs=on:irw=on:amm=sco:afp=2000:updr=off:add=off:to=lpo:awrs=decay:awrsf=260:rawr=on:afq=2.0:uhcvi=on_0 on Vampire---4 for (595ds/76Mi)
+% % (62187)Instruction limit reached!
+% % (62187)------------------------------
+% % (62187)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62187)Termination reason: Unknown
+% % (62187)Termination phase: Saturation
+% 
+% % (62187)Memory used [KB]: 1516
+% % (62187)Time elapsed: 0.030 s
+% % (62187)Instructions burned: 68 (million)
+% % (62187)------------------------------
+% % (62187)------------------------------
+% % (62176)Instruction limit reached!
+% % (62176)------------------------------
+% % (62176)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62176)Termination reason: Unknown
+% % (62176)Termination phase: Saturation
+% 
+% % (62176)Memory used [KB]: 1901
+% % (62176)Time elapsed: 0.057 s
+% % (62176)Instructions burned: 121 (million)
+% % (62176)------------------------------
+% % (62176)------------------------------
+% % (62194)lrs-1010_1:8_sil=2000:sos=on:i=1548:sd=1:ins=3:ss=included_0 on Vampire---4 for (595ds/1548Mi)
+% % (62178)Instruction limit reached!
+% % (62178)------------------------------
+% % (62178)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62178)Termination reason: Unknown
+% % (62178)Termination phase: Saturation
+% 
+% % (62178)Memory used [KB]: 1733
+% % (62178)Time elapsed: 0.054 s
+% % (62178)Instructions burned: 118 (million)
+% % (62178)------------------------------
+% % (62178)------------------------------
+% % (62194)Refutation not found, incomplete strategy% (62194)------------------------------
+% % (62194)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62194)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62194)Memory used [KB]: 1124
+% % (62194)Time elapsed: 0.005 s
+% % (62194)Instructions burned: 5 (million)
+% % (62196)dis+1010_111129:1048576_sfv=off:drc=encompass:sil=2000:tgt=full:sp=reverse_arity:spb=goal:rnwc=on:fd=preordered:rp=on:nwc=6.5667:i=1376:kws=arity_squared:bd=off:nm=0:uhcvi=on:rawr=on:av=off:erd=off:cond=on:lcm=reverse_0 on Vampire---4 for (594ds/1376Mi)
+% % (62194)------------------------------
+% % (62194)------------------------------
+% % (62197)lrs-1002_3:2_sil=2000:sos=on:fd=off:nwc=10.0:flr=on:i=117:nm=16:fsr=off:sup=off:ss=axioms:fs=off:bd=off:fde=none:erd=off_0 on Vampire---4 for (594ds/117Mi)
+% % (62197)Refutation not found, incomplete strategy% (62197)------------------------------
+% % (62197)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62197)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62197)Memory used [KB]: 957
+% % (62197)Time elapsed: 0.002 s
+% % (62197)Instructions burned: 2 (million)
+% % (62198)ott+1011_47:51_anc=all_dependent:slsqr=853,231:sil=4000:sp=reverse_frequency:foolp=on:spb=non_intro:abs=on:s2agt=50:slsqc=1:slsq=on:st=4.0:i=59:s2at=1.5:sd=7:kws=inv_frequency:afp=2000:nm=14:ins=2:afq=1.2:uhcvi=on:afr=on:gsp=on:ss=axioms:sgt=100:rawr=on:tgt=ground:awrs=converge:awrsf=390:bs=unit_only:add=off:flr=on:plsq=on:plsqc=1:plsqr=6705511,1048576:bd=preordered:newcnf=on:nwc=5.0_0 on Vampire---4 for (594ds/59Mi)
+% % (62197)------------------------------
+% % (62197)------------------------------
+% % (62198)Refutation not found, incomplete strategy% (62198)------------------------------
+% % (62198)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62198)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62198)Memory used [KB]: 959
+% % (62198)Time elapsed: 0.002 s
+% % (62198)Instructions burned: 2 (million)
+% % (62198)------------------------------
+% % (62198)------------------------------
+% % (62189)Instruction limit reached!
+% % (62189)------------------------------
+% % (62189)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62189)Termination reason: Unknown
+% % (62189)Termination phase: Saturation
+% 
+% % (62189)Memory used [KB]: 1505
+% % (62189)Time elapsed: 0.051 s
+% % (62189)Instructions burned: 53 (million)
+% % (62189)------------------------------
+% % (62189)------------------------------
+% % (62199)lrs+1002_1:1_sfv=off:drc=encompass:sil=2000:fde=unused:sp=frequency:nwc=10.0:flr=on:st=1.5:i=151:bd=off:nm=0:ins=4:fsr=off:fsd=on:ss=axioms:s2a=on:s2agt=32:to=lpo:aac=none:sims=off_0 on Vampire---4 for (594ds/151Mi)
+% % (62199)Refutation not found, incomplete strategy% (62199)------------------------------
+% % (62199)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62199)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62199)Memory used [KB]: 958
+% % (62200)lrs+11_1:1_sos=on:urr=on:s2a=on:i=260:sd=1:aac=none:ss=axioms:gsp=on:sil=128000:nm=3:bce=on:fd=preordered:alpa=true:etr=on:bd=off:lcm=predicate_0 on Vampire---4 for (594ds/260Mi)
+% % (62199)Time elapsed: 0.003 s
+% % (62199)Instructions burned: 2 (million)
+% % (62199)------------------------------
+% % (62199)------------------------------
+% % (62200)Refutation not found, incomplete strategy% (62200)------------------------------
+% % (62200)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62200)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62200)Memory used [KB]: 958
+% % (62200)Time elapsed: 0.001 s
+% % (62200)Instructions burned: 2 (million)
+% % (62200)------------------------------
+% % (62200)------------------------------
+% % (62201)dis+1010_1:1_drc=off:sil=32000:rp=on:cond=fast:i=1797:av=off:newcnf=on:bd=off:sfv=off:plsq=on:plsqr=1,32:erd=off_0 on Vampire---4 for (594ds/1797Mi)
+% % (62202)lrs-1010_1:8_sil=2000:spb=intro:acc=on:rp=on:i=200:sd=1:bd=off:uhcvi=on:ss=axioms:sgt=32:rawr=on:erd=off:alpa=true:anc=none:afp=2000_0 on Vampire---4 for (594ds/200Mi)
+% % (62202)Refutation not found, incomplete strategy% (62202)------------------------------
+% % (62202)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62202)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62202)Memory used [KB]: 958
+% % (62202)Time elapsed: 0.003 s
+% % (62202)Instructions burned: 2 (million)
+% % (62202)------------------------------
+% % (62202)------------------------------
+% % (62203)lrs+1002_1:8_sil=4000:sos=on:nicw=on:st=2.5:i=356:ss=included:sd=7:ep=RS:erd=off_0 on Vampire---4 for (594ds/356Mi)
+% % (62204)lrs+1011_1:4_bsr=unit_only:to=lpo:sil=2000:plsqc=4:plsq=on:sp=occurrence:plsql=on:alpa=false:i=75:afp=10:afq=2.0:ss=axioms:rawr=on:fd=off_0 on Vampire---4 for (594ds/75Mi)
+% % (62204)Refutation not found, incomplete strategy% (62204)------------------------------
+% % (62204)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62204)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62204)Memory used [KB]: 957
+% % (62204)Time elapsed: 0.002 s
+% % (62204)Instructions burned: 2 (million)
+% % (62204)------------------------------
+% % (62204)------------------------------
+% % (62203)Refutation not found, incomplete strategy% (62203)------------------------------
+% % (62203)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62203)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62203)Memory used [KB]: 1124
+% % (62203)Time elapsed: 0.005 s
+% % (62203)Instructions burned: 5 (million)
+% % (62203)------------------------------
+% % (62203)------------------------------
+% % (62205)dis+1011_13623:1048576_drc=off:sil=2000:fde=unused:bsd=on:sp=const_min:br=off:fd=preordered:gs=on:nwc=17.1261:gsem=off:i=578:kws=inv_frequency:nm=4:rawr=on:bd=off:fsr=off:bsdmm=1:av=off_0 on Vampire---4 for (594ds/578Mi)
+% % (62206)ott-1011_3:2_to=lpo:drc=off:sil=2000:sims=off:sos=on:lma=on:spb=goal_then_units:lcm=predicate:fd=preordered:rp=on:newcnf=on:avsq=on:i=251:ins=1:fsr=off:avsqc=4:aac=none:plsq=on:plsqc=1:plsqr=32,1:fs=off_0 on Vampire---4 for (594ds/251Mi)
+% % (62206)Refutation not found, incomplete strategy% (62206)------------------------------
+% % (62206)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62206)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62206)Memory used [KB]: 1083
+% % (62206)Time elapsed: 0.003 s
+% % (62206)Instructions burned: 5 (million)
+% % (62206)------------------------------
+% % (62206)------------------------------
+% % (62207)dis+1010_1:1_sil=2000:tgt=full:rp=on:gs=on:nwc=5.0:i=93:abs=on:sos=on_0 on Vampire---4 for (594ds/93Mi)
+% % (62205)Refutation not found, incomplete strategy% (62205)------------------------------
+% % (62205)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62205)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62205)Memory used [KB]: 1161
+% % (62205)Time elapsed: 0.009 s
+% % (62205)Instructions burned: 8 (million)
+% % (62205)------------------------------
+% % (62205)------------------------------
+% % (62208)lrs+1010_1:8_sil=4000:sos=on:urr=on:rnwc=on:nwc=10.0:i=37:sup=off:kws=frequency_0 on Vampire---4 for (594ds/37Mi)
+% % (62207)Refutation not found, incomplete strategy% (62207)------------------------------
+% % (62207)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62207)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62207)Memory used [KB]: 1138
+% % (62207)Time elapsed: 0.006 s
+% % (62207)Instructions burned: 5 (million)
+% % (62207)------------------------------
+% % (62207)------------------------------
+% % (62208)Refutation not found, incomplete strategy% (62208)------------------------------
+% % (62208)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62208)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62208)Memory used [KB]: 1124
+% % (62208)Time elapsed: 0.004 s
+% % (62208)Instructions burned: 5 (million)
+% % (62208)------------------------------
+% % (62208)------------------------------
+% % (62209)lrs+1010_1:1_sil=2000:sos=all:kmz=on:cond=fast:i=132:kws=inv_frequency:av=off:gsp=on:rawr=on:s2a=on:s2at=2.0_0 on Vampire---4 for (594ds/132Mi)
+% % (62210)dis+1011_1:1024_drc=off:sil=2000:urr=ec_only:br=off:sac=on:i=209:fsr=off_0 on Vampire---4 for (594ds/209Mi)
+% % (62195)Instruction limit reached!
+% % (62195)------------------------------
+% % (62195)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62195)Termination reason: Unknown
+% % (62195)Termination phase: Saturation
+% 
+% % (62195)Memory used [KB]: 1580
+% % (62195)Time elapsed: 0.039 s
+% % (62195)Instructions burned: 77 (million)
+% % (62195)------------------------------
+% % (62195)------------------------------
+% % (62209)Refutation not found, incomplete strategy% (62209)------------------------------
+% % (62209)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62209)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62209)Memory used [KB]: 1127
+% % (62209)Time elapsed: 0.006 s
+% % (62209)Instructions burned: 6 (million)
+% % (62209)------------------------------
+% % (62209)------------------------------
+% % (62211)lrs+11_7:12_sil=2000:sp=occurrence:sos=on:erd=off:lcm=reverse:gs=on:st=5.0:i=100:awrs=converge:bd=off:ss=axioms:fs=off:fsr=off:rawr=on_0 on Vampire---4 for (594ds/100Mi)
+% % (62211)Refutation not found, incomplete strategy% (62211)------------------------------
+% % (62211)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62211)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62211)Memory used [KB]: 957
+% % (62211)Time elapsed: 0.003 s
+% % (62211)Instructions burned: 2 (million)
+% % (62211)------------------------------
+% % (62211)------------------------------
+% % (62210)Refutation not found, incomplete strategy% (62210)------------------------------
+% % (62210)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62210)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62210)Memory used [KB]: 1144
+% % (62210)Time elapsed: 0.007 s
+% % (62210)Instructions burned: 7 (million)
+% % (62210)------------------------------
+% % (62210)------------------------------
+% % (62212)dis+10_1:1_sil=2000:nwc=5.0:s2agt=32:s2a=on:i=54:nm=4:alpa=true_0 on Vampire---4 for (594ds/54Mi)
+% % (62214)lrs+10_8:1_to=lpo:drc=encompass:sil=4000:sos=on:urr=on:newcnf=on:i=2265:sd=2:nm=2:ss=axioms:sgt=32:sup=off:bd=off_0 on Vampire---4 for (594ds/2265Mi)
+% % (62214)Refutation not found, incomplete strategy% (62214)------------------------------
+% % (62214)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62214)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62214)Memory used [KB]: 957
+% % (62214)Time elapsed: 0.002 s
+% % (62214)Instructions burned: 2 (million)
+% % (62213)lrs-1011_1:1_to=lpo:drc=off:sil=2000:sp=const_min:sos=on:lsd=10:sac=on:i=62:br=off:newcnf=on_0 on Vampire---4 for (594ds/62Mi)
+% % (62214)------------------------------
+% % (62214)------------------------------
+% % (62215)lrs+1011_1:128_sil=2000:lsd=10:newcnf=on:i=91:bd=off:fsd=on:ss=axioms:plsq=on:plsqr=9200103,131072:sd=1:lma=on_0 on Vampire---4 for (594ds/91Mi)
+% % (62215)Refutation not found, incomplete strategy% (62215)------------------------------
+% % (62215)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62215)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62215)Memory used [KB]: 958
+% % (62215)Time elapsed: 0.003 s
+% % (62215)Instructions burned: 2 (million)
+% % (62215)------------------------------
+% % (62215)------------------------------
+% % (62213)Refutation not found, incomplete strategy% (62213)------------------------------
+% % (62213)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62213)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62213)Memory used [KB]: 1064
+% % (62213)Time elapsed: 0.005 s
+% % (62213)Instructions burned: 4 (million)
+% % (62213)------------------------------
+% % (62213)------------------------------
+% % (62216)ott+1011_7:2_anc=all:to=lpo:sil=2000:tgt=full:plsq=on:sos=on:spb=intro:fd=preordered:rp=on:i=83:uhcvi=on:rawr=on:fs=off:fsr=off:lsd=1:erd=off:aac=none:plsqc=2:newcnf=on:abs=on:bd=off_0 on Vampire---4 for (594ds/83Mi)
+% % (62217)dis+1010_1:1_to=lpo:sil=2000:plsq=on:plsqr=32,1:sos=on:spb=goal:rp=on:i=123:bd=off:ins=4:ss=axioms:sgt=32:acc=on:fde=none_0 on Vampire---4 for (594ds/123Mi)
+% % (62217)Refutation not found, incomplete strategy% (62217)------------------------------
+% % (62217)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62217)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62217)Memory used [KB]: 957
+% % (62217)Time elapsed: 0.002 s
+% % (62217)Instructions burned: 2 (million)
+% % (62217)------------------------------
+% % (62217)------------------------------
+% % (62216)Refutation not found, incomplete strategy% (62216)------------------------------
+% % (62216)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62216)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62216)Memory used [KB]: 1085
+% % (62216)Time elapsed: 0.003 s
+% % (62216)Instructions burned: 5 (million)
+% % (62216)------------------------------
+% % (62216)------------------------------
+% % (62218)dis-1003_1:1_drc=off:sil=2000:sos=all:i=84:av=off:irw=on:plsq=on:plsqc=1:plsqr=32,1:sfv=off_0 on Vampire---4 for (594ds/84Mi)
+% % (62219)lrs+2_1:1_sil=2000:urr=on:flr=on:s2a=on:i=85:s2at=5.0:sd=1:ss=axioms:sgt=8:gsp=on:br=off_0 on Vampire---4 for (594ds/85Mi)
+% % (62218)Refutation not found, incomplete strategy% (62218)------------------------------
+% % (62218)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62218)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62218)Memory used [KB]: 1124
+% % (62218)Time elapsed: 0.004 s
+% % (62218)Instructions burned: 5 (million)
+% % (62219)Refutation not found, incomplete strategy% (62219)------------------------------
+% % (62219)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62219)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62219)Memory used [KB]: 957
+% % (62219)Time elapsed: 0.002 s
+% % (62219)Instructions burned: 2 (million)
+% % (62218)------------------------------
+% % (62218)------------------------------
+% % (62219)------------------------------
+% % (62219)------------------------------
+% % (62220)dis+1002_1:1_sil=2000:tgt=full:spb=goal:avsq=on:i=259:avsqr=19,107:er=known:rawr=on:nwc=3.7:cond=fast:abs=on_0 on Vampire---4 for (594ds/259Mi)
+% % (62166)Instruction limit reached!
+% % (62166)------------------------------
+% % (62166)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62166)Termination reason: Unknown
+% % (62166)Termination phase: Saturation
+% 
+% % (62166)Memory used [KB]: 2675
+% % (62166)Time elapsed: 0.138 s
+% % (62166)Instructions burned: 362 (million)
+% % (62166)------------------------------
+% % (62166)------------------------------
+% % (62222)lrs+1010_1:28_sil=2000:s2agt=16:st=3.0:s2a=on:i=278:sd=3:ss=axioms:av=off:slsq=on_0 on Vampire---4 for (594ds/278Mi)
+% % (62221)lrs+1010_1:1_to=lpo:sil=32000:plsq=on:plsqr=32,1:sp=frequency:sos=on:erd=off:newcnf=on:i=106:bd=off:rawr=on:sup=off_0 on Vampire---4 for (594ds/106Mi)
+% % (62222)Refutation not found, incomplete strategy% (62222)------------------------------
+% % (62222)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62222)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62222)Memory used [KB]: 957
+% % (62222)Time elapsed: 0.002 s
+% % (62222)Instructions burned: 2 (million)
+% % (62222)------------------------------
+% % (62222)------------------------------
+% % (62221)Refutation not found, incomplete strategy% (62221)------------------------------
+% % (62221)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62221)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62221)Memory used [KB]: 1112
+% % (62221)Time elapsed: 0.004 s
+% % (62221)Instructions burned: 4 (million)
+% % (62221)------------------------------
+% % (62221)------------------------------
+% % (62224)lrs+2_1:28_bsr=unit_only:slsqr=1,2:to=lpo:sil=4000:fde=none:sp=unary_first:spb=goal_then_units:slsqc=1:slsq=on:i=97:s2at=2.0:slsql=off:bd=off:nm=3:av=off:fsd=on:s2agt=32_0 on Vampire---4 for (594ds/97Mi)
+% % (62223)lrs+1011_1:10_to=lpo:sil=2000:nwc=5.0:st=5.0:i=151:nm=2:av=off:ss=included:bd=preordered:uhcvi=on:irw=on_0 on Vampire---4 for (594ds/151Mi)
+% % (62212)Instruction limit reached!
+% % (62212)------------------------------
+% % (62212)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62212)Termination reason: Unknown
+% % (62212)Termination phase: Saturation
+% 
+% % (62212)Memory used [KB]: 1531
+% % (62212)Time elapsed: 0.027 s
+% % (62212)Instructions burned: 54 (million)
+% % (62212)------------------------------
+% % (62212)------------------------------
+% % (62225)dis+1011_1:1_sil=2000:sos=on:lsd=100:rp=on:nwc=10.0:s2agt=16:newcnf=on:i=464:bd=off:fsr=off:rawr=on:avsq=on:avsql=on:avsqr=117,449:s2a=on:bs=on_0 on Vampire---4 for (594ds/464Mi)
+% % (62226)dis+666_17:28_sil=4000:sp=const_frequency:lcm=reverse:nwc=15.189:avsqc=3:avsq=on:s2a=on:i=79:s2at=2.5:bs=on:ins=2:fsd=on:rawr=on:to=lpo:s2agt=8:sac=on:bd=off_0 on Vampire---4 for (594ds/79Mi)
+% % (62225)Refutation not found, incomplete strategy% (62225)------------------------------
+% % (62225)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62225)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62225)Memory used [KB]: 1131
+% % (62225)Time elapsed: 0.005 s
+% % (62225)Instructions burned: 5 (million)
+% % (62225)------------------------------
+% % (62225)------------------------------
+% % (62227)dis-1011_1:4_sil=2000:tgt=ground:s2a=on:i=1993:ep=RS:fsr=off:s2at=2.0:av=off:ss=axioms:st=1.5_0 on Vampire---4 for (594ds/1993Mi)
+% % (62227)Refutation not found, incomplete strategy% (62227)------------------------------
+% % (62227)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62227)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62227)Memory used [KB]: 957
+% % (62227)Time elapsed: 0.003 s
+% % (62227)Instructions burned: 2 (million)
+% % (62227)------------------------------
+% % (62227)------------------------------
+% % (62228)lrs+1011_1:1_sil=64000:i=101:sd=2:ep=R:ss=axioms_0 on Vampire---4 for (594ds/101Mi)
+% % (62228)Refutation not found, incomplete strategy% (62228)------------------------------
+% % (62228)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62228)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62228)Memory used [KB]: 957
+% % (62228)Time elapsed: 0.002 s
+% % (62228)Instructions burned: 2 (million)
+% % (62228)------------------------------
+% % (62228)------------------------------
+% % (62229)dis-1010_1:1_bsr=unit_only:to=lpo:sil=256000:fde=none:plsq=on:plsqr=205,29:sp=occurrence:sos=on:abs=on:newcnf=on:st=6.0:i=4978:sd=2:bd=off:amm=off:ss=axioms:rawr=on_0 on Vampire---4 for (594ds/4978Mi)
+% % (62229)Refutation not found, incomplete strategy% (62229)------------------------------
+% % (62229)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62229)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62229)Memory used [KB]: 957
+% % (62229)Time elapsed: 0.003 s
+% % (62229)Instructions burned: 2 (million)
+% % (62229)------------------------------
+% % (62229)------------------------------
+% % (62230)lrs+1002_14319:131072_to=lpo:drc=encompass:sil=2000:tgt=ground:fde=none:sp=const_max:sos=on:spb=units:lcm=predicate:nwc=7.734471748972603:flr=on:newcnf=on:i=169:add=large:awrs=decay:awrsf=1079:bd=off:nm=2:ins=1:fsr=off:uhcvi=on:rawr=on:anc=all_dependent:aac=none:fs=off_0 on Vampire---4 for (594ds/169Mi)
+% % (62230)Refutation not found, incomplete strategy% (62230)------------------------------
+% % (62230)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62230)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62230)Memory used [KB]: 1066
+% % (62230)Time elapsed: 0.003 s
+% % (62230)Instructions burned: 4 (million)
+% % (62230)------------------------------
+% % (62230)------------------------------
+% % (62231)ott+2_27871:262144_drc=encompass:sil=2000:plsqc=1:plsq=on:ile=on:plsqr=9426019,262144:sp=const_frequency:foolp=on:bce=on:rnwc=on:gs=on:nwc=12.5427:i=178:gsaa=from_current:erml=3:bd=off:nm=10:uhcvi=on:gsp=on:er=known:rawr=on:fd=preordered:alpa=true_0 on Vampire---4 for (594ds/178Mi)
+% % (62224)Instruction limit reached!
+% % (62224)------------------------------
+% % (62224)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62224)Termination reason: Unknown
+% % (62224)Termination phase: Saturation
+% 
+% % (62224)Memory used [KB]: 2052
+% % (62224)Time elapsed: 0.045 s
+% % (62224)Instructions burned: 99 (million)
+% % (62224)------------------------------
+% % (62224)------------------------------
+% % (62226)Instruction limit reached!
+% % (62226)------------------------------
+% % (62226)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62226)Termination reason: Unknown
+% % (62226)Termination phase: Saturation
+% 
+% % (62226)Memory used [KB]: 2066
+% % (62226)Time elapsed: 0.043 s
+% % (62226)Instructions burned: 80 (million)
+% % (62226)------------------------------
+% % (62226)------------------------------
+% % (62232)dis+21_1:1_to=lpo:drc=off:sil=2000:etr=on:sp=const_frequency:sos=all:fs=off:spb=goal_then_units:s2a=on:i=111:s2at=3.0:fsr=off_0 on Vampire---4 for (593ds/111Mi)
+% % (62232)Refutation not found, incomplete strategy% (62232)------------------------------
+% % (62232)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62232)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62232)Memory used [KB]: 1124
+% % (62232)Time elapsed: 0.004 s
+% % (62232)Instructions burned: 5 (million)
+% % (62232)------------------------------
+% % (62232)------------------------------
+% % (62233)lrs+1011_3:1_slsqr=1,2:sil=2000:tgt=full:plsq=on:plsqr=173,396:spb=goal:bce=on:newcnf=on:slsq=on:st=3.5:i=243:add=off:bs=on:fsr=off:ss=axioms:rawr=on:afp=1:afq=2.9664927043397338_0 on Vampire---4 for (593ds/243Mi)
+% % (62233)Refutation not found, incomplete strategy% (62233)------------------------------
+% % (62233)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62233)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62233)Memory used [KB]: 958
+% % (62233)Time elapsed: 0.002 s
+% % (62233)Instructions burned: 2 (million)
+% % (62233)------------------------------
+% % (62233)------------------------------
+% % (62234)lrs+1011_1:32_sil=2000:tgt=ground:acc=model:lsd=10:nwc=1.1:flr=on:s2pl=no:i=229:bd=off:gsp=on:rawr=on_0 on Vampire---4 for (593ds/229Mi)
+% % (62235)lrs+1002_63:8_sil=4000:sp=frequency:urr=on:lcm=reverse:nwc=10.0:flr=on:i=306:fdi=1:fsr=off:br=off_0 on Vampire---4 for (593ds/306Mi)
+% % (62235)Refutation not found, incomplete strategy% (62235)------------------------------
+% % (62235)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62235)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62235)Memory used [KB]: 1707
+% % (62235)Time elapsed: 0.035 s
+% % (62235)Instructions burned: 59 (million)
+% % (62235)------------------------------
+% % (62235)------------------------------
+% % (62223)Instruction limit reached!
+% % (62223)------------------------------
+% % (62223)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62223)Termination reason: Unknown
+% % (62223)Termination phase: Saturation
+% 
+% % (62223)Memory used [KB]: 1843
+% % (62223)Time elapsed: 0.094 s
+% % (62223)Instructions burned: 152 (million)
+% % (62223)------------------------------
+% % (62223)------------------------------
+% % (62236)dis+22_1:32_sil=2000:fde=none:nwc=10.0:slsqc=3:slsq=on:i=118:slsql=off:nm=16:fsr=off:fsd=on:ss=axioms_0 on Vampire---4 for (593ds/118Mi)
+% % (62236)Refutation not found, incomplete strategy% (62236)------------------------------
+% % (62236)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62236)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62236)Memory used [KB]: 957
+% % (62236)Time elapsed: 0.003 s
+% % (62236)Instructions burned: 2 (million)
+% % (62236)------------------------------
+% % (62236)------------------------------
+% % (62237)dis-1011_1:2_to=lpo:sil=2000:plsq=on:plsqr=473,226:etr=on:erd=off:i=85:bd=off:amm=off:ss=axioms:sgt=64:rawr=on:add=large:fd=off_0 on Vampire---4 for (593ds/85Mi)
+% % (62237)Refutation not found, incomplete strategy% (62237)------------------------------
+% % (62237)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62237)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62237)Memory used [KB]: 958
+% % (62237)Time elapsed: 0.001 s
+% % (62237)Instructions burned: 2 (million)
+% % (62237)------------------------------
+% % (62237)------------------------------
+% % (62238)lrs+11_1:1_drc=off:sil=4000:fde=unused:sp=unary_frequency:sos=on:fs=off:nwc=17.7715:flr=on:avsq=on:i=182:kws=precedence:avsqr=18,127:bd=off:nm=16:fsr=off:uhcvi=on:rawr=on:s2pl=no:s2agt=8:ss=axioms:sd=1:st=3.5:aac=none:afp=50:afq=2.0_0 on Vampire---4 for (593ds/182Mi)
+% % (62238)Refutation not found, incomplete strategy% (62238)------------------------------
+% % (62238)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62238)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62238)Memory used [KB]: 959
+% % (62238)Time elapsed: 0.003 s
+% % (62238)Instructions burned: 2 (million)
+% % (62238)------------------------------
+% % (62238)------------------------------
+% % (62239)lrs-32_1:4_to=lpo:drc=off:sil=2000:sp=reverse_arity:spb=goal_then_units:urr=on:nwc=2.0:i=134:ss=included:st=2.0:bd=preordered_0 on Vampire---4 for (593ds/134Mi)
+% % (62240)dis+1011_1:1_sil=2000:sos=on:newcnf=on:i=181:sd=2:ep=R:ss=axioms_0 on Vampire---4 for (593ds/181Mi)
+% % (62240)Refutation not found, incomplete strategy% (62240)------------------------------
+% % (62240)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62240)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62240)Memory used [KB]: 958
+% % (62240)Time elapsed: 0.004 s
+% % (62240)Instructions burned: 2 (million)
+% % (62240)------------------------------
+% % (62240)------------------------------
+% % (62241)dis-11_4:1_to=lpo:sil=2000:fde=unused:sims=off:sp=occurrence:lma=on:spb=goal_then_units:abs=on:fd=off:flr=on:avsq=on:i=61:avsqr=1137305,524288:bd=off:uhcvi=on:awrs=decay:sos=on:bsd=on:afp=50:afq=1.3:nwc=10.053150171695567_0 on Vampire---4 for (593ds/61Mi)
+% % (62241)Refutation not found, incomplete strategy% (62241)------------------------------
+% % (62241)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62241)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62241)Memory used [KB]: 1143
+% % (62241)Time elapsed: 0.006 s
+% % (62241)Instructions burned: 5 (million)
+% % (62241)------------------------------
+% % (62241)------------------------------
+% % (62231)Instruction limit reached!
+% % (62231)------------------------------
+% % (62231)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62231)Termination reason: Unknown
+% % (62231)Termination phase: Saturation
+% 
+% % (62231)Memory used [KB]: 2371
+% % (62231)Time elapsed: 0.090 s
+% % (62231)Instructions burned: 179 (million)
+% % (62231)------------------------------
+% % (62231)------------------------------
+% % (62242)dis+1010_1:1_sil=2000:nwc=5.0:i=135:nm=4:av=off:rp=on:ep=R_0 on Vampire---4 for (593ds/135Mi)
+% % (62243)dis+1010_6843:1048576_to=lpo:sil=4000:bsd=on:sp=unary_frequency:sos=on:spb=non_intro:nwc=1.63121:newcnf=on:s2a=on:i=94:s2at=4.5:awrs=decay:awrsf=1049:bsdmm=1:bd=preordered:nm=2:av=off:gsp=on:s2pl=no_0 on Vampire---4 for (593ds/94Mi)
+% % (62220)Instruction limit reached!
+% % (62220)------------------------------
+% % (62220)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62220)Termination reason: Unknown
+% % (62220)Termination phase: Saturation
+% 
+% % (62220)Memory used [KB]: 2256
+% % (62220)Time elapsed: 0.166 s
+% % (62220)Instructions burned: 261 (million)
+% % (62220)------------------------------
+% % (62220)------------------------------
+% % (62243)Refutation not found, incomplete strategy% (62243)------------------------------
+% % (62243)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62243)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62243)Memory used [KB]: 1121
+% % (62243)Time elapsed: 0.005 s
+% % (62243)Instructions burned: 6 (million)
+% % (62243)------------------------------
+% % (62243)------------------------------
+% % (62244)lrs+1_1:1_sil=4000:plsqc=1:plsq=on:plsqr=108,31:sos=on:st=5.0:i=111:sd=2:bd=off:fsr=off:ss=axioms:rawr=on:bce=on:aac=none:afr=on_0 on Vampire---4 for (593ds/111Mi)
+% % (62244)Refutation not found, incomplete strategy% (62244)------------------------------
+% % (62244)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62244)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62244)Memory used [KB]: 958
+% % (62244)Time elapsed: 0.002 s
+% % (62244)Instructions burned: 2 (million)
+% % (62244)------------------------------
+% % (62244)------------------------------
+% % (62245)dis+1011_2:3_sil=2000:tgt=ground:fde=none:sos=on:lsd=1:alpa=random:i=371:kws=inv_arity_squared:gsp=on:bsd=on_0 on Vampire---4 for (593ds/371Mi)
+% % (62246)dis+33_1:1_to=lpo:sil=16000:plsq=on:nwc=3.0:s2agt=16:s2a=on:i=1643:s2at=5.5:nm=2:av=off:fsr=off:s2pl=no:ep=RS:erd=off_0 on Vampire---4 for (593ds/1643Mi)
+% % (62245)Refutation not found, incomplete strategy% (62245)------------------------------
+% % (62245)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62245)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62245)Memory used [KB]: 1131
+% % (62245)Time elapsed: 0.007 s
+% % (62245)Instructions burned: 6 (million)
+% % (62245)------------------------------
+% % (62245)------------------------------
+% % (62247)lrs+1010_3:1_slsqr=4009667,65536:sil=4000:slsqc=3:slsq=on:i=143:slsql=off:ep=RST:nm=6:anc=none:avsq=on:plsq=on:plsqr=32,1_0 on Vampire---4 for (592ds/143Mi)
+% % (62234)Instruction limit reached!
+% % (62234)------------------------------
+% % (62234)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62234)Termination reason: Unknown
+% % (62234)Termination phase: Saturation
+% 
+% % (62234)Memory used [KB]: 3663
+% % (62234)Time elapsed: 0.104 s
+% % (62234)Instructions burned: 230 (million)
+% % (62234)------------------------------
+% % (62234)------------------------------
+% % (62248)lrs+1011_1:64_sil=2000:fde=none:sos=on:urr=ec_only:nwc=10.0:i=225:nm=19:gsp=on:ss=axioms:bd=off_0 on Vampire---4 for (592ds/225Mi)
+% % (62248)Refutation not found, incomplete strategy% (62248)------------------------------
+% % (62248)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62248)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62248)Memory used [KB]: 958
+% % (62248)Time elapsed: 0.002 s
+% % (62248)Instructions burned: 2 (million)
+% % (62248)------------------------------
+% % (62248)------------------------------
+% % (62239)Instruction limit reached!
+% % (62239)------------------------------
+% % (62239)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62239)Termination reason: Unknown
+% % (62239)Termination phase: Saturation
+% 
+% % (62239)Memory used [KB]: 2405
+% % (62239)Time elapsed: 0.065 s
+% % (62239)Instructions burned: 134 (million)
+% % (62239)------------------------------
+% % (62239)------------------------------
+% % (62249)lrs+1002_1:128_to=lpo:sil=2000:plsq=on:plsqr=7,2:sos=on:spb=units:fd=preordered:nwc=5.0:i=89:bd=off:nm=4:av=off:rawr=on:newcnf=on:fs=off:fsr=off_0 on Vampire---4 for (592ds/89Mi)
+% % (62249)Refutation not found, incomplete strategy% (62249)------------------------------
+% % (62249)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62249)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62249)Memory used [KB]: 1064
+% % (62249)Time elapsed: 0.004 s
+% % (62249)Instructions burned: 4 (million)
+% % (62249)------------------------------
+% % (62249)------------------------------
+% % (62250)lrs+1011_2:3_drc=off:sil=2000:tgt=ground:fde=none:sp=occurrence:urr=ec_only:lsd=100:i=149:bd=off:rawr=on:ins=4:av=off_0 on Vampire---4 for (592ds/149Mi)
+% % (62246)First to succeed.
+% % (62251)dis+1002_50821:131072_drc=encompass:sil=4000:irw=on:fde=unused:etr=on:sp=occurrence:lma=on:spb=intro:urr=ec_only:nwc=14.514:s2agt=20:sac=on:s2a=on:s2pl=no:i=217:kws=precedence:awrs=decay:awrsf=404:nm=4:uhcvi=on:ss=axioms:rawr=on:nicw=on:afp=10:afq=2.1363337302905383:slsq=on:slsqc=1:slsqr=101081,131072:sup=off:amm=off:flr=on_0 on Vampire---4 for (592ds/217Mi)
+% % (62251)Refutation not found, incomplete strategy% (62251)------------------------------
+% % (62251)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62251)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62251)Memory used [KB]: 959
+% % (62251)Time elapsed: 0.002 s
+% % (62251)Instructions burned: 2 (million)
+% % (62251)------------------------------
+% % (62251)------------------------------
+% % (62252)lrs+1011_1:1_sil=8000:nicw=on:i=1513:sd=1:ss=axioms:sgt=64_0 on Vampire---4 for (592ds/1513Mi)
+% % (62252)Refutation not found, incomplete strategy% (62252)------------------------------
+% % (62252)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62252)Termination reason: Refutation not found, incomplete strategy
+% 
+% % (62252)Memory used [KB]: 957
+% % (62252)Time elapsed: 0.001 s
+% % (62252)Instructions burned: 2 (million)
+% % (62252)------------------------------
+% % (62252)------------------------------
+% % (62246)Solution written to "/tmp/tmp.AgbssofhyZ/vampire-proof-62132"
+% % SZS status Satisfiable for Vampire---4
+% % (62246)# SZS output start Saturation.
+% See solution above
+% % (62246)------------------------------
+% % (62246)Version: Vampire 4.8 (commit 3a798227e on 2024-05-03 07:42:47 +0200)
+% % (62246)Termination reason: Satisfiable
+% 
+% % (62246)Memory used [KB]: 1538
+% % (62246)Time elapsed: 0.059 s
+% % (62246)Instructions burned: 74 (million)
+% % (62132)Success in time 0.751 s
+% % Vampire---4.8 exiting
+% 
+%------------------------------------------------------------------------------
