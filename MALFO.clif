@@ -87,6 +87,14 @@
 
 (cl-comment '=== End of Toyoshima causal ontology===')
 
+(cl-comment '=== Start of an extension of Toyoshima causal ontology: added a relation of physical consequence')
+
+
+Coming back to the \incompatibleWith primitive, we interpret it as physical incompatibility between two occurrences. For example, if we call $x$ the occurrence that `yesterday I ate exactly two apples' and call $y$ the occurrence that `yesterday I ate exactly one apple', then we say $\incompatibleWith[x][y]$. Similarly, if $z$ is `yesterday I ate less than three apples' then is clear that $x$ and $y$ both `imply' $z$, meaning that if $x$ or $y$ happened, also $z$ happened. Since this kind of implication (that we call `physical consequence') is often mentioned in failure analysis (e.g. `peak vibration is 1.13 times over nominal limit' \emph{causing} the `fatigue imposed on the axis to be 1.13 times than normal' -- taken from \cite{matthewsPracticalGuideEngineering1998}), we introduce it explicitely below:
+
+Note that physical-consequenc is a different type than causal-consequence (e.g., \achieves). For instance, a key difference is that causal-consequence requires a (possibly extended) spatial and temporal contiguity or overlapping, while physical-consequence is `immediate'/`synchronous' and does not take place somewhere nor during some time. Another difference is that causal-consequence is antisymmetric and not (generally speaking) transitive, while physical-consequence is transitive and could be bidirectional. 
+Formally, we assume that physical-consequence extends causal-consequence as follows
+
 
 
 (cl-comment 'Ax14:  If x participates in y at t, then x is an object, y is an occurrence and t a time')
@@ -140,11 +148,26 @@
 
 
 
-(cl-comment 'Df8:  x can coexist with normal functionality (in short, is function-compatible) if and only if it is an occurrent and, for each object (o) participating in x at some time (t), if that participant has a systemic function ( f ) at that time realized through a behaviour (b), then, the behaviour is not incompatible with x')
+
+(cl-comment 'Df8*:  x is functional-incompatible (or is not function-compatible) with f if and only if there exist an object (o) participating in x at some time (t), such that f is a systemic function of o, realized at time t through some behaviour (b) that is not incompatible-with x')
+(forall (x f)
+  (iff (functionIncompatible x f)
+    (exists (o b t)(
+    and (participatesIn o x t)
+      (functionOf_sys f o)
+      (CF b f t)
+      (incompatibleWith x b)
+    ))
+  )
+)
+
+
+(cl-comment 'Df12*: x is a malfunction means that x is function-incompatible with some f')
 (forall (x)
-  (iff (FunctionCompatible x)(and (Occurrent x)(forall (o f b t)(
-    if (and(participatesIn o x t)(functionOf_sys f o)(CF b f t))(not (incompatibleWith x b)))
-  )))
+  (iff 
+    (Malfunction x)
+    (exists (f)(functionIncompatible x f))
+  )
 )
 
 (cl-comment 'pr17 part 1:  bare-bone axiomatics for transitive closure of posCausOf')
@@ -157,25 +180,26 @@
   (if (and (posCauseOf x y)(posCauseOf_cross y z))(posCauseOf_cross x z))
 )
 
-(cl-comment 'Df9:  x is a failure mechanism means that x can coexist with normal functionality, is either a process or an event, and is the positive cause, eventually, of some failure')
+(cl-comment 'Df9*:  x is a failure mechanism means that x
+ is not a malfunction, is either a process or an event, and is the positive cause, eventually, of some failure')
 (forall (x)
   (iff 
     (FailureMechanism x)
     (and 
       (or (Process x)(Event x))
-      (FunctionCompatible x)
+      (not (Malfunction x))
       (exists (y)(and (Failure y)(posCauseOf_cross x y)))
     )
   )
 )
 
-(cl-comment 'Df10:  x is a failure condition means that x can coexist with normal functionality, is a state, and is either the facilitative precondition for a failure or the positive cause, eventually, of that failure, or it is the preventive precondition for some occurrence that disallows the failure.')
+(cl-comment 'Df10*:  x is a failure condition means that x is not a malfunction, is a state, and is either the facilitative precondition for a failure or the positive cause, eventually, of that failure, or it is the preventive precondition for some occurrence that disallows the failure.')
 (forall (x)
   (iff 
     (FailureCondition x)
     (and 
       (State x)
-      (FunctionCompatible x)
+      (not (Malfunction x))
       (exists (y)(and (Failure y)
         (or 
           (posCauseOf_cross x y)
@@ -186,51 +210,46 @@
   )
 )
 
-(cl-comment 'Df11:  x is a mere symptom means that x is function-compatible and is caused by a fault, while it has no causal relation to any failure')
+(cl-comment 'Df11***:  x is a mere symptom means that x is not a malfunction but is neither a failure condition nor a failure mechanism, and is caused by a malfunction')
+(cl-comment 'Note that mere symptoms, failure conditions, and failure mechanisms are disjoint classes, however, they do not exhaust the set of malfunction-related occurrences which are not malfunctions (e.g., there may be occurrents that weakly contribute to cause failures in convoluted ways that are not encompassed in the definitions of failure conditions or failure mechanisms)')
 (forall (x)
   (iff 
     (MereSymptom x)
     (and 
-      (FunctionCompatible x)
-      (not (exists (y)(and (Failure y)(causeOf x y))))
-      (exists (z)(and (Fault z)(causeOf z x)))
+      (not (Malfunction x))
+      (not (FailureCondition x))
+      (not (FailureMechanism x))
+      (exists (z)(and (Malfunction z)(causeOf z x)))
     )
   )
 )
 
-(cl-comment 'Df12: x is a malfunction means that x can not coexist with normal functionality')
-(forall (x)
-  (iff 
-    (Malfunction x)
-    (not (FunctionCompatible x))
-  )
-)
 
-(cl-comment 'Df13: x is a fault means that x is not function-compatible state and is achieved by some occurrence internal to itself')
+(cl-comment 'Df13*: x is a fault means that x is a malfunction and a state and is achieved by some occurrence internal to itself')
 (forall (x)
   (iff 
     (Fault x)
     (and 
-      (not (FunctionCompatible x))
+      (Malfunction x)
       (State x)
       (exists (z)(and (internalTo z x)(achieves z x)))
     )
   )
 )
 
-(cl-comment 'Df14: x is a down state means that x is not a function-compatible state and also not a fault')
+(cl-comment 'Df14*: x is a down state means that x is a malfunction and a state and also not a fault')
 (forall (x)
   (iff 
     (DownState x)
     (and 
-      (not (FunctionCompatible x))
+      (Malfunction x)
       (State x)
       (not (Fault x))
     )
   )
 )
 
-(cl-comment 'Df15: x is a failure means that x is a not-function-compatible event that achieves some faul')
+(cl-comment 'Df15*: x is a failure means that x is a malfunction and an event that achieves some fault')
 (forall (x)
   (iff 
     (Failure x)

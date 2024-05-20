@@ -22,21 +22,24 @@ fof(axiom210, axiom, (! [X] : ! [Y] :  ((hasphysicalconseq(X,Y) => (occurrent(X)
 fof(axiom220, axiom, (! [X] : ! [Y] : ! [Z] :  (((hasphysicalconseq(X,Y) & hasphysicalconseq(Y,Z)) => hasphysicalconseq(X,Z))))).
 fof(axiom230, axiom, (! [X] : ! [Y] : ! [Z] :  (((achieves(X,Y) & hasphysicalconseq(Y,Z)) => achieves(X,Z))))).
 fof(axiom240, axiom, (! [X] : ! [Y] : ! [Z] :  (((allows(X,Y) & hasphysicalconseq(Y,Z)) => allows(X,Z))))).
-fof(axiom250, axiom, (! [X] : ! [Y] : ! [Z] :  (((prevents(X,Z) & hasphysicalconseq(Y,Z)) => prevents(X,Y))))).
-fof(axiom260, axiom, (! [X] : ! [Y] : ! [Z] :  (((disallows(X,Z) & hasphysicalconseq(Y,Z)) => disallows(X,Y))))).
-fof(axiom230, axiom, (! [X] : ! [Y] : ! [Z] :  (((hasphysicalconseq(Y,Z) & achieves(X,Y)) => achieves(X,Z))))).
-fof(axiom240, axiom, (! [X] : ! [Y] : ! [Z] :  (((hasphysicalconseq(Y,Z) & allows(X,Y)) => allows(X,Z))))).
-fof(axiom250, axiom, (! [X] : ! [Y] : ! [Z] :  (((hasphysicalconseq(Y,Z) & prevents(X,Z)) => prevents(X,Y))))).
-fof(axiom260, axiom, (! [X] : ! [Y] : ! [Z] :  (((hasphysicalconseq(Y,Z) & disallows(X,Z)) => disallows(X,Y))))).
-fof(axiom270, axiom, (! [X] :  ((functioncompatible(X) <=> (occurrent(X) & (! [O] : ! [F] : ! [B] : ! [T] :  (((participatesin(O,X,T) & 'functionof_sys'(F,O) & cf(B,F,T)) => ~(incompatiblewith(X,B)))))))))).
-fof(axiom280, axiom, (! [X] : ! [Y] :  ((poscauseof(X,Y) => 'poscauseof_cross'(X,Y))))).
-fof(axiom290, axiom, (! [X] : ! [Y] : ! [Z] :  (((poscauseof(X,Y) & 'poscauseof_cross'(Y,Z)) => 'poscauseof_cross'(X,Z))))).
-fof(axiom300, axiom, (! [X] :  ((failuremechanism(X) <=> ((process(X) | event(X)) & functioncompatible(X) & (? [Y] :  ((failure(Y) & 'poscauseof_cross'(X,Y))))))))).
-fof(axiom310, axiom, (! [X] :  ((failurecondition(X) <=> (state(X) & functioncompatible(X) & (? [Y] :  ((failure(Y) & ('poscauseof_cross'(X,Y) | (? [Z] :  ((prevpreconditionfor(X,Z) & disallows(Z,Y))))))))))))).
-fof(axiom320, axiom, (! [X] :  ((meresymptom(X) <=> (functioncompatible(X) & ~(? [Y] :  ((failure(Y) & causeof(X,Y)))) & (? [Z] :  ((fault(Z) & causeof(Z,X))))))))).
-fof(axiom330, axiom, (! [X] :  ((malfunction(X) <=> ~(functioncompatible(X)))))).
-fof(axiom340, axiom, (! [X] :  ((fault(X) <=> (~(functioncompatible(X)) & state(X) & (? [Z] :  ((internalto(Z,X) & achieves(Z,X))))))))).
-fof(axiom350, axiom, (! [X] :  ((downstate(X) <=> (~(functioncompatible(X)) & state(X) & ~(fault(X))))))).
-fof(axiom360, axiom, (! [X] :  ((failure(X) <=> (malfunction(X) & event(X) & (? [Y] :  ((fault(Y) & achieves(X,Y))))))))).
-fof(axiom370, axiom, (! [X] :  ((nonperformanceevent(X) <=> (malfunction(X) & event(X) & ~(failure(X))))))).
-fof(axiom380, axiom, (! [X] :  ((malfunctionprocess(X) <=> (malfunction(X) & process(X)))))).
+fof(axiom250, axiom, (! [X] : ! [Y] : ! [Z] :  (((prevents(X,Y) & hasphysicalconseq(Y,Z)) => prevents(X,Z))))).
+fof(axiom260, axiom, (! [X] : ! [Y] : ! [Z] :  (((disallows(X,Y) & hasphysicalconseq(Y,Z)) => disallows(X,Z))))).
+fof(axiom270, axiom, (! [X] : ! [Y] : ! [Z] :  (((achieves(X,Y) & hasphysicalconseq(Z,X)) => achieves(Z,X))))).
+fof(axiom280, axiom, (! [X] : ! [Y] : ! [Z] :  (((prevents(X,Y) & hasphysicalconseq(Z,X)) => prevents(Z,X))))).
+fof(axiom290, axiom, (! [X] : ! [Y] : ! [Z] :  (((allows(X,Y) & hasphysicalconseq(Z,X)) => allows(Z,X))))).
+fof(axiom300, axiom, (! [X] : ! [Y] : ! [Z] :  (((disallows(X,Y) & hasphysicalconseq(Z,X)) => disallows(Z,X))))).
+
+fof(axiom310, axiom, (! [X] : ! [F] :  ((functionincompatible(X,F) <=> (? [O] : ? [B] : ? [T] :  ((participatesin(O,X,T) & 'functionof_sys'(F,O) & cf(B,F,T) & incompatiblewith(X,B)))))))).
+fof(axiom320, axiom, (! [X] :  ((malfunction(X) <=> (? [F] :  (functionincompatible(X,F))))))).
+
+fof(axiom330, axiom, (! [X] : ! [Y] :  ((poscauseof(X,Y) => 'poscauseof_cross'(X,Y))))).
+fof(axiom340, axiom, (! [X] : ! [Y] : ! [Z] :  (((poscauseof(X,Y) & 'poscauseof_cross'(Y,Z)) => 'poscauseof_cross'(X,Z))))).
+
+fof(axiom350, axiom, (! [X] :  ((failuremechanism(X) <=> ((process(X) | event(X)) & ~(malfunction(X)) & (? [Y] :  ((failure(Y) & 'poscauseof_cross'(X,Y))))))))).
+fof(axiom360, axiom, (! [X] :  ((failurecondition(X) <=> (state(X) & ~(malfunction(X)) & (? [Y] :  ((failure(Y) & ('poscauseof_cross'(X,Y) | (? [Z] :  ((prevpreconditionfor(X,Z) & disallows(Z,Y))))))))))))).
+fof(axiom370, axiom, (! [X] :  ((meresymptom(X) <=> (~(malfunction(X)) & ~(failurecondition(X)) & ~(failuremechanism(X)) & (? [Z] :  ((malfunction(Z) & causeof(Z,X))))))))).
+fof(axiom380, axiom, (! [X] :  ((fault(X) <=> (malfunction(X) & state(X) & (? [Z] :  ((internalto(Z,X) & achieves(Z,X))))))))).
+fof(axiom390, axiom, (! [X] :  ((downstate(X) <=> (malfunction(X) & state(X) & ~(fault(X))))))).
+fof(axiom400, axiom, (! [X] :  ((failure(X) <=> (malfunction(X) & event(X) & (? [Y] :  ((fault(Y) & achieves(X,Y))))))))).
+fof(axiom410, axiom, (! [X] :  ((nonperformanceevent(X) <=> (malfunction(X) & event(X) & ~(failure(X))))))).
+fof(axiom420, axiom, (! [X] :  ((malfunctionprocess(X) <=> (malfunction(X) & process(X)))))).

@@ -17,7 +17,7 @@ OUTPUT_TURTLE = 'graphml2rdf-out.ttl'
 
 # change this map to change the conventional meaning of colors
 COLORS2CATEGORIES = [
-("#ffcc00", "FunctionCompatible"),
+("#ffcc00", "FunctionCompatible"), #The complement of Malfuntion in Malfunction-related-happenings
 ("#ff0000", "Malfunction"),
 ]
 

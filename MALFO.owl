@@ -8,17 +8,28 @@ Prefix(malfo:=<https://www.w3id.org/MALFO>)
 
 
 Ontology(<https://www.w3id.org/MALFO>
-<https://www.w3id.org/MALFO>
-Annotation(rdfs:comment "Malfunction Ontology: ontology about failure-related happenings")
+<https://www.w3id.org/MALFO/1.1>
+Annotation(<http://purl.org/dc/elements/1.1/contributor> "Francesco Compagno")
+Annotation(<http://purl.org/dc/elements/1.1/contributor> "Stefano Borgo")
+Annotation(<http://purl.org/dc/elements/1.1/description> "MALFunction Ontology: an ontology about malfunction-related happenings")
+Annotation(<http://purl.org/dc/elements/1.1/title> "MALFO")
+Annotation(<http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI)
+Annotation(owl:versionInfo "1.1:
+- changed the definition of failure condition so that now there is a single equivalence axioms
+- added functionalIncompatibleWith object property, to harmonize with clif version
+- changed definition of MereSymptom and removed FunctionCompatible class, to harmonize with clif version
+- added comments to all entities
+- added annotations to the ontology
+- added (the only) two cases of sufficient conditions for FailureCondition
+- changed the name \"FailureRelatedHappening\" to \"MalfunctionRelatedHappening\" as it is more coherent with the definitions of Failure and Malfunction in the ontology")
 
-Declaration(Class(<http://www.loa.istc.cnr.it/engineering-domain/FailureRelatedHappening>))
+Declaration(Class(<http://www.loa.istc.cnr.it/engineering-domain/MalfunctionRelatedHappening>))
 Declaration(Class(:DownState))
 Declaration(Class(:Event))
 Declaration(Class(:Failure))
 Declaration(Class(:FailureCondition))
 Declaration(Class(:FailureMechanism))
 Declaration(Class(:Fault))
-Declaration(Class(:FunctionCompatible))
 Declaration(Class(:Malfunction))
 Declaration(Class(:MalfunctionProcess))
 Declaration(Class(:MereSymptom))
@@ -26,28 +37,41 @@ Declaration(Class(:NonPerformanceEvent))
 Declaration(Class(:Occurrent))
 Declaration(Class(:Process))
 Declaration(Class(:State))
+Declaration(ObjectProperty(:SystemicFunctionOf))
 Declaration(ObjectProperty(:achieves))
 Declaration(ObjectProperty(:allows))
 Declaration(ObjectProperty(:causeOf))
 Declaration(ObjectProperty(:disallows))
 Declaration(ObjectProperty(:facilPreconditionFor))
-Declaration(ObjectProperty(:functionOf_sys))
+Declaration(ObjectProperty(:functionalIncompatibleWith))
 Declaration(ObjectProperty(:hasPhysicalConseq))
 Declaration(ObjectProperty(:incompatibleWith))
 Declaration(ObjectProperty(:internalTo))
 Declaration(ObjectProperty(:maintains))
 Declaration(ObjectProperty(:posCauseOf))
-Declaration(ObjectProperty(:posCauseOf_cross))
 Declaration(ObjectProperty(:prevPreconditionFor))
 Declaration(ObjectProperty(:prevents))
+Declaration(ObjectProperty(:transitivePosCauseOf))
+Declaration(AnnotationProperty(<http://purl.org/dc/elements/1.1/contributor>))
+Declaration(AnnotationProperty(<http://purl.org/dc/elements/1.1/description>))
+Declaration(AnnotationProperty(<http://purl.org/dc/elements/1.1/title>))
+Declaration(AnnotationProperty(<http://purl.org/dc/terms/license>))
 Declaration(AnnotationProperty(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled>))
 
 ############################
 #   Object Properties
 ############################
 
+# Object Property: :SystemicFunctionOf (:SystemicFunctionOf)
+
+AnnotationAssertion(rdfs:comment :SystemicFunctionOf "“x is a systemic function of y if and only if x is a role and there exist a system z
+and a goal g for z such that x classifies only behaviours which have y as doer and
+part of z, and that causally contribute to achieve g.”")
+
 # Object Property: :achieves (:achieves)
 
+AnnotationAssertion(rdfs:comment :achieves "Direct and positive causatio, requires tight coupling between the arguments, in particular the juxtaposition or overlapping of their time extension.")
+AnnotationAssertion(rdfs:isDefinedBy :achieves "https://arxiv.org/ftp/arxiv/papers/2307/2307.07517.pdf"^^xsd:anyURI)
 SubObjectPropertyOf(:achieves :causeOf)
 SubObjectPropertyOf(:achieves :posCauseOf)
 ObjectPropertyDomain(:achieves ObjectUnionOf(:Event :Process :State))
@@ -55,6 +79,8 @@ ObjectPropertyRange(:achieves ObjectUnionOf(:Process :State))
 
 # Object Property: :allows (:allows)
 
+AnnotationAssertion(rdfs:comment :allows "(i) achieving or maintaining a facilitative precondition, or (ii) preventing a preventive precondition (and assuming that, at the same time, no additional preventive precondition was achieved).")
+AnnotationAssertion(rdfs:isDefinedBy :allows "https://doi.org/10.3233/AO-190206")
 SubObjectPropertyOf(:allows :causeOf)
 SubObjectPropertyOf(:allows :posCauseOf)
 ObjectPropertyDomain(:allows ObjectUnionOf(:Event :Process))
@@ -62,47 +88,88 @@ ObjectPropertyRange(:allows ObjectUnionOf(:Event :Process :State))
 
 # Object Property: :causeOf (:causeOf)
 
+AnnotationAssertion(rdfs:comment :causeOf "Cause of is an umbrella for all the direct causation relations of MALFO: either achievs, allows, disallows, or prevents causation-types (we also include physical consequences)")
 ObjectPropertyDomain(:causeOf :Occurrent)
 ObjectPropertyRange(:causeOf :Occurrent)
 
 # Object Property: :disallows (:disallows)
 
+AnnotationAssertion(rdfs:comment :disallows "(i) achieving or maintaining a preventive precondition, or (ii) preventing a facilitative precondition.")
+AnnotationAssertion(rdfs:isDefinedBy :disallows "https://doi.org/10.3233/AO-190206")
 SubObjectPropertyOf(:disallows :causeOf)
 ObjectPropertyDomain(:disallows ObjectUnionOf(:Event :Process))
 ObjectPropertyRange(:disallows ObjectUnionOf(:Event :Process :State))
 
 # Object Property: :facilPreconditionFor (:facilPreconditionFor)
 
+AnnotationAssertion(rdfs:comment :facilPreconditionFor "\"A precondition for an occurrent is a condition whose truth value influences the activation of the associated occurrent.\" -- Riichiro Mizoguchi, Causing is Achieving:  A solution to the problem of causation, p.6 https://arxiv.org/ftp/arxiv/papers/2307/2307.07517.pdf, last accessed in May 2024
+
+A facilitative precondition helps (or even is a necessary precondition for) bringinng about an occurrence.")
+AnnotationAssertion(rdfs:isDefinedBy :facilPreconditionFor "https://arxiv.org/ftp/arxiv/papers/2307/2307.07517.pdf")
 SubObjectPropertyOf(:facilPreconditionFor :posCauseOf)
 ObjectPropertyDomain(:facilPreconditionFor :State)
 ObjectPropertyRange(:facilPreconditionFor ObjectUnionOf(:Event :Process :State))
 
+# Object Property: :functionalIncompatibleWith (:functionalIncompatibleWith)
+
+AnnotationAssertion(rdfs:comment :functionalIncompatibleWith "By saying that an occurrence is functional-incompatible with a function, we mean synchronous logical-incompatibility of the occurrence with the execution of the function (the function must be related to some object participating in the occurrence). For example, if the function of an electric wire is to carry electricity, and a logically-necessary requirement for the wire to do that is being physically connected, then `the wire being cut in two' is function-incompatible with the wire's function.")
+AnnotationAssertion(rdfs:comment :functionalIncompatibleWith "Clearly, the range of this property is intended to be a class of functions. We do not write it explicitly in the ontology what kind of class to leave users with the freedom of chosing themselves.")
+
 # Object Property: :hasPhysicalConseq (:hasPhysicalConseq)
 
+AnnotationAssertion(rdfs:comment :hasPhysicalConseq "if z is `yesterday I ate less than three apples', and x is `yesterday I ate exactly two apples' and y is the occurrence that `yesterday I ate exactly one apple', then is clear that x and y both `imply' z, meaning that if x or y happened, also z happened. 
+We call `physical consequence' this kind of implication.
+For example `peak vibration is 1.13 times over nominal limit' causes the `fatigue imposed on the axis to be 1.13 times than normal' (Matthews, A Practical Guide to Engineering Failure Investigation, 1998).
+
+Note that physical-consequenc is a different type than other causal-consequences (e.g., achieves). For instance, a key difference is that causal-consequence requires a (possibly extended) spatial and temporal contiguity or overlapping, while physical-consequence is `immediate'/`synchronous' and does not take place somewhere nor during some time. Another difference is that causal-consequence is antisymmetric and not (generally speaking) transitive, while physical-consequence is transitive and could be bidirectional.")
 SubObjectPropertyOf(:hasPhysicalConseq :causeOf)
 SubObjectPropertyOf(:hasPhysicalConseq :posCauseOf)
 TransitiveObjectProperty(:hasPhysicalConseq)
 ObjectPropertyDomain(:hasPhysicalConseq :Occurrent)
 ObjectPropertyRange(:hasPhysicalConseq :Occurrent)
 
+# Object Property: :incompatibleWith (:incompatibleWith)
+
+AnnotationAssertion(rdfs:comment :incompatibleWith "we interpret internalTo as physical incompatibility between two occurrences. For example, if we call x the occurrence that `yesterday I ate exactly two apples' and call y the occurrence that `yesterday I ate exactly one apple', then we say that x is incompatible with y")
+
+# Object Property: :internalTo (:internalTo)
+
+AnnotationAssertion(rdfs:comment :internalTo "For example, consider the case of the right headlight of a car that is not working because the filaments of its light bulb are burned. The occurrence ‘the filaments are burned’ (in other words, `the filaments are disconnected') is internal to the occurrence ‘the right headlight is not working'.")
+
+# Object Property: :maintains (:maintains)
+
+AnnotationAssertion(rdfs:comment :maintains "\"The function Maintain which originally refers to the function of outputting the incoming operand without changing it. The prototypical example is a conduit that outputs
+exactly what is fed into it: a water pipe has an output flow rate that is equal to the input flow rate. The general Maintain function performs similarly by keeping the current state unchanged. In terms of Maintain, “John did not lock the door” is paraphrased as he Maintained the lock in the unlocked state. In other words,
+the omission of an event that should have occurred Maintains the current state (by doing nothing). The introduction of Maintain thus overcomes the theoretical difficulty of mentioning an occurrent which does not happen\". 
+-- Riichiro Mizoguchi, Causing is Achieving:  A solution to the problem of causation, p.6-7 https://arxiv.org/ftp/arxiv/papers/2307/2307.07517.pdf, last accessed in May 2024")
+AnnotationAssertion(rdfs:isDefinedBy :maintains "https://arxiv.org/ftp/arxiv/papers/2307/2307.07517.pdf")
+
 # Object Property: :posCauseOf (:posCauseOf)
 
-SubObjectPropertyOf(:posCauseOf :posCauseOf_cross)
-
-# Object Property: :posCauseOf_cross (:posCauseOf_cross)
-
-TransitiveObjectProperty(:posCauseOf_cross)
+AnnotationAssertion(rdfs:isDefinedBy :posCauseOf "positive causation: achieves, allows, and physical causation")
+SubObjectPropertyOf(:posCauseOf :transitivePosCauseOf)
 
 # Object Property: :prevPreconditionFor (:prevPreconditionFor)
 
+AnnotationAssertion(rdfs:comment :prevPreconditionFor "\"A precondition for an occurrent is a condition whose truth value influences the activation of the associated occurrent.\" -- Riichiro Mizoguchi, Causing is Achieving:  A solution to the problem of causation, p.6 https://arxiv.org/ftp/arxiv/papers/2307/2307.07517.pdf, last accessed in May 2024
+
+A preventive precondition helps (or even is a necessary precondition for) bringinng about an occurrence.")
+AnnotationAssertion(rdfs:isDefinedBy :prevPreconditionFor "https://arxiv.org/ftp/arxiv/papers/2307/2307.07517.pdf")
 ObjectPropertyDomain(:prevPreconditionFor :State)
 ObjectPropertyRange(:prevPreconditionFor ObjectUnionOf(:Event :Process :State))
 
 # Object Property: :prevents (:prevents)
 
+AnnotationAssertion(rdfs:comment :prevents "achieving a state that is incompatible with the caused occurrence")
+AnnotationAssertion(rdfs:isDefinedBy :prevents "https://doi.org/10.3233/AO-190206")
 SubObjectPropertyOf(:prevents :causeOf)
 ObjectPropertyDomain(:prevents ObjectUnionOf(:Event :Process :State))
 ObjectPropertyRange(:prevents ObjectUnionOf(:Process :State))
+
+# Object Property: :transitivePosCauseOf (:transitivePosCauseOf)
+
+AnnotationAssertion(rdfs:isDefinedBy :transitivePosCauseOf "Transitive closure of positive cause")
+TransitiveObjectProperty(:transitivePosCauseOf)
 
 
 
@@ -110,79 +177,120 @@ ObjectPropertyRange(:prevents ObjectUnionOf(:Process :State))
 #   Classes
 ############################
 
-# Class: <http://www.loa.istc.cnr.it/engineering-domain/FailureRelatedHappening> (<http://www.loa.istc.cnr.it/engineering-domain/FailureRelatedHappening>)
+# Class: <http://www.loa.istc.cnr.it/engineering-domain/MalfunctionRelatedHappening> (<http://www.loa.istc.cnr.it/engineering-domain/MalfunctionRelatedHappening>)
 
-SubClassOf(<http://www.loa.istc.cnr.it/engineering-domain/FailureRelatedHappening> :Occurrent)
+AnnotationAssertion(rdfs:comment <http://www.loa.istc.cnr.it/engineering-domain/MalfunctionRelatedHappening> "The umbrella for all the malfunction-related classes. 
+
+As a heuristic definition, one can consider \"the class of all occurrents who are related to a malfunction through the symmetric, transitive closure of all the cusal relations of MALFO (achieves, allows, disallows, prevents, facilitative, preventive, maintains)\"")
+SubClassOf(<http://www.loa.istc.cnr.it/engineering-domain/MalfunctionRelatedHappening> :Occurrent)
 
 # Class: :DownState (:DownState)
 
-EquivalentClasses(:DownState ObjectIntersectionOf(:State ObjectComplementOf(:Fault) ObjectComplementOf(:FunctionCompatible)))
+AnnotationAssertion(rdfs:comment :DownState "x is a down state means that x is a malfunction and a function-compatible state and also not a fault.
+
+The reason for introducing this term is to distinguish between the abnormal states of a component that require corrective actions from those that do not, since the effective cause of the fault is located elsewhere. For instance, if the right headlight of a car is not lit up when it should be, there are at least two possibilities: either the headlight itself is broken, say the lightbulb is blown, in that case `the headlight is not lit up' is a fault and the headlight must be repaired; or there is another component that is broken, say the wire linking the headlight to the car's battery is cut. In this latter case, it is the wire that must be replaced, and `the headlight is not lit up' is a down state.")
+EquivalentClasses(:DownState ObjectIntersectionOf(:Malfunction :State ObjectComplementOf(:Fault)))
 
 # Class: :Event (:Event)
 
+AnnotationAssertion(rdfs:comment :Event "In engineering, an important class of occurrences, which in this work we consider as archetypical examples of events are those occurrences that, being very brief, are considered instantaneous, such as impacts or ruptures.
+
+More precise definitions are left open to interpretation (e.g. through alignment with an upper ontology)")
 SubClassOf(:Event :Occurrent)
 
 # Class: :Failure (:Failure)
 
+AnnotationAssertion(rdfs:comment :Failure "x is a failure means that x is a malfunction and an event that achieves some fault.
+
+With this definition we try to capture the common concept of failure present in the literature: the loss of the ability to perform a function. We also stipulate, by definition, that failures cause faults. For example, if a wire, whose function is to carry electricity, is gnawed by a rat, the wire fails when it breaks and ceases to be able to conduct electricity.")
 EquivalentClasses(:Failure ObjectIntersectionOf(:Event :Malfunction ObjectSomeValuesFrom(:achieves :Fault)))
 DisjointClasses(:Failure :NonPerformanceEvent)
 
 # Class: :FailureCondition (:FailureCondition)
 
-SubClassOf(:FailureCondition :FunctionCompatible)
-SubClassOf(:FailureCondition :State)
+AnnotationAssertion(rdfs:comment :FailureCondition "x is a failure condition means that x is not a malfunction, is a state, and is either the facilitative precondition for a failure or the positive cause, eventually, of that failure, or it is the preventive precondition for some occurrence that disallows the failure.
+
+Failure conditions have the same causal role as failure mechanisms, but are states in place of processes (e.g. `being corroded' in place of `corrosion'). We also add explicitly the case of negative causation, that is, e.g. the case that the state of being corroded inhibits a safety function and such inhibition then causes a failure.")
+EquivalentClasses(:FailureCondition ObjectIntersectionOf(:State ObjectUnionOf(ObjectSomeValuesFrom(:prevPreconditionFor ObjectSomeValuesFrom(:disallows :Failure)) ObjectSomeValuesFrom(:transitivePosCauseOf :Failure)) ObjectComplementOf(:Malfunction)))
 
 # Class: :FailureMechanism (:FailureMechanism)
 
-EquivalentClasses(:FailureMechanism ObjectIntersectionOf(:FunctionCompatible ObjectUnionOf(:Event :Process) ObjectSomeValuesFrom(:posCauseOf_cross :Failure)))
+AnnotationAssertion(rdfs:comment :FailureMechanism "x is a failure mechanism means that x is not a malfunction, is either a process or an event, and is the positive cause, eventually, of some failure
+
+FailureMechanism tries to convey the meaning behind common occurrence-types such as corrosion, wear, cracking, etc., which typically are not considered failures, but do cause failures in some sense.")
+EquivalentClasses(:FailureMechanism ObjectIntersectionOf(ObjectUnionOf(:Event :Process) ObjectComplementOf(:Malfunction) ObjectSomeValuesFrom(:transitivePosCauseOf :Failure)))
 
 # Class: :Fault (:Fault)
 
+AnnotationAssertion(rdfs:comment :Fault "Note that sufficient conditions for the classifications are expressed as a SWRL rule")
+AnnotationAssertion(rdfs:comment :Fault "x is a fault means that x is malfunction and a state and is achieved by some occurrence internal to itself
+
+Notice that we somewhat weakened the classic definition of fault ``inability to function due to an internal state'', otherwise the z in the definient should be classified as a state. We consider that such classification is not necessary, and the z may belogn to other occurrent-types: for example, if `catastrophic fracture of the main axis' (z) causes the an industrial fan to `be completely non-operational' (x), the first occurrence (the fracture) is an event internal to the second occurrence (being non operational), a state, which is non function-compatible, and, therefore, a fault by definition.
+ 
+Another example, this time in which the z is a state, is the `being cut into two parts'-state (z) of an electrical wire, which is an internal state that causes the state of `being unable to transmit electricity' (x), which is then a fault by definition")
 SubClassOf(:Fault :Malfunction)
 SubClassOf(:Fault :State)
-SubClassOf(:Fault ObjectSomeValuesFrom(ObjectInverseOf(:achieves) <http://www.loa.istc.cnr.it/engineering-domain/FailureRelatedHappening>))
-SubClassOf(:Fault ObjectSomeValuesFrom(ObjectInverseOf(:internalTo) <http://www.loa.istc.cnr.it/engineering-domain/FailureRelatedHappening>))
-
-# Class: :FunctionCompatible (:FunctionCompatible)
-
-SubClassOf(:FunctionCompatible <http://www.loa.istc.cnr.it/engineering-domain/FailureRelatedHappening>)
-DisjointClasses(:FunctionCompatible :Malfunction)
+SubClassOf(:Fault ObjectSomeValuesFrom(ObjectInverseOf(:achieves) <http://www.loa.istc.cnr.it/engineering-domain/MalfunctionRelatedHappening>))
+SubClassOf(:Fault ObjectSomeValuesFrom(ObjectInverseOf(:internalTo) <http://www.loa.istc.cnr.it/engineering-domain/MalfunctionRelatedHappening>))
 
 # Class: :Malfunction (:Malfunction)
 
-EquivalentClasses(:Malfunction ObjectComplementOf(:FunctionCompatible))
-SubClassOf(:Malfunction <http://www.loa.istc.cnr.it/engineering-domain/FailureRelatedHappening>)
+AnnotationAssertion(rdfs:comment :Malfunction "x is a malfunction means that there is some function x is function-incompatible with
+
+For example, the fracture of an axis is a malfunction because it is function-incompatible with the axis' function of transmitting torque.")
+EquivalentClasses(:Malfunction ObjectSomeValuesFrom(:functionalIncompatibleWith owl:Thing))
+SubClassOf(:Malfunction <http://www.loa.istc.cnr.it/engineering-domain/MalfunctionRelatedHappening>)
 
 # Class: :MalfunctionProcess (:MalfunctionProcess)
 
+AnnotationAssertion(rdfs:comment :MalfunctionProcess "x is a malfunction process means that x is a malfunction and a process
+
+We introduce malfunction processes to partition completely the malfunction category. For example in Avizienis' Basic concepts and taxonomy of dependable and secure computing 2004, an example of a failure in an integrated circuit is described: a faulty IC is invoked, and this causes, at different time and locations, the presence of wrong values in the calculation process. In our taxonomy, we classify this `erroneus calculation process' as a malfunction process.")
 EquivalentClasses(:MalfunctionProcess ObjectIntersectionOf(:Malfunction :Process))
 SubClassOf(:MalfunctionProcess :Malfunction)
 SubClassOf(:MalfunctionProcess :Process)
 
 # Class: :MereSymptom (:MereSymptom)
 
-EquivalentClasses(:MereSymptom ObjectIntersectionOf(:FunctionCompatible ObjectComplementOf(ObjectSomeValuesFrom(:causeOf :Failure)) ObjectSomeValuesFrom(ObjectInverseOf(:causeOf) :Fault)))
+AnnotationAssertion(rdfs:comment :MereSymptom "x is a mere symptom means that x not a malfunction, nor a failure condition, nor a failure mechnaism, and is caused by a malfunction.
+
+A mere symptom has no causal effect on a system (at least not in the sense of failure emchanisms and conditions) and is therefore differentiated from other occurrence types. For example, if the right headlight of a car is not lit up when it should, the fact that `there is no light beam shined by the headlight' is a mere symptom because the absence of light, by itself, will not cause the failure of other components. The negative causation in \\causeOf is considered because the symptom could be the absence of some occurrence that, say, the malfunction prevents (e.g., the missing light in the previous example).")
+EquivalentClasses(:MereSymptom ObjectIntersectionOf(ObjectComplementOf(:FailureCondition) ObjectComplementOf(:FailureMechanism) ObjectComplementOf(:Malfunction) ObjectSomeValuesFrom(ObjectInverseOf(:causeOf) :Malfunction)))
 
 # Class: :NonPerformanceEvent (:NonPerformanceEvent)
 
+AnnotationAssertion(rdfs:comment :NonPerformanceEvent "x is a non-performance event means that x is a malfunction and an event, but not a failure.
+
+An example of non-performance event occurs when attempting to turn on the right headlight of a car if its lightbulb is broken: `the right headlight did not turn on' is a non-performance event, since it is a malfunction but, by itself, does not cause additional failures.")
 EquivalentClasses(:NonPerformanceEvent ObjectIntersectionOf(:Event :Malfunction ObjectComplementOf(:Failure)))
+
+# Class: :Occurrent (:Occurrent)
+
+AnnotationAssertion(rdfs:comment :Occurrent "An occurrent is something that happens in time
+
+More precise definitions are left open to interpretation (e.g. through alignment with an upper ontology)")
 
 # Class: :Process (:Process)
 
+AnnotationAssertion(rdfs:comment :Process "In engineering, a typical example of process is a sequence of states (or, equivalently, of state transitions) related to some physical phenomena. For instance corrosion is a sequence of many single chemical reactions that change the arrangement of the relevant atoms. 
+
+More precise definitions are left open to interpretation (e.g. through alignment with an upper ontology)")
 SubClassOf(:Process :Occurrent)
 
 # Class: :State (:State)
 
+AnnotationAssertion(rdfs:comment :State "In engineering states are often described by specifying some characteristics (form, value of a process variable, ...) of the entities participating in the state (e.g. `the shaft is broken', `high oven temperature', or `the oven temperature is increasing').
+
+More precise definitions are left open to interpretation (e.g. through alignment with an upper ontology)")
 SubClassOf(:State :Occurrent)
 SubClassOf(:State ObjectAllValuesFrom(:achieves :State))
 SubClassOf(:State ObjectAllValuesFrom(:prevents :State))
 
 
-SubClassOf(ObjectIntersectionOf(:FunctionCompatible :State ObjectSomeValuesFrom(:posCauseOf_cross :Failure)) :FailureCondition)
-DisjointClasses(:DownState :Fault :FunctionCompatible)
 DisjointClasses(:Event :Process :State)
 SubObjectPropertyOf(ObjectPropertyChain(:achieves :facilPreconditionFor) :allows)
 SubObjectPropertyOf(ObjectPropertyChain(:achieves :hasPhysicalConseq) :achieves)
+SubObjectPropertyOf(ObjectPropertyChain(:achieves :incompatibleWith) :prevents)
 SubObjectPropertyOf(ObjectPropertyChain(:allows :hasPhysicalConseq) :allows)
 SubObjectPropertyOf(ObjectPropertyChain(:disallows :hasPhysicalConseq) :disallows)
 SubObjectPropertyOf(ObjectPropertyChain(:facilPreconditionFor :hasPhysicalConseq) :facilPreconditionFor)
@@ -193,11 +301,9 @@ SubObjectPropertyOf(ObjectPropertyChain(:hasPhysicalConseq :facilPreconditionFor
 SubObjectPropertyOf(ObjectPropertyChain(:hasPhysicalConseq :prevPreconditionFor) :prevPreconditionFor)
 SubObjectPropertyOf(ObjectPropertyChain(:hasPhysicalConseq :prevents) :prevents)
 SubObjectPropertyOf(ObjectPropertyChain(:incompatibleWith :prevPreconditionFor) :incompatibleWith)
-SubObjectPropertyOf(ObjectPropertyChain(:maintains :facilPreconditionFor) :allows)
 SubObjectPropertyOf(ObjectPropertyChain(:prevPreconditionFor :hasPhysicalConseq) :prevPreconditionFor)
 SubObjectPropertyOf(ObjectPropertyChain(:prevPreconditionFor :incompatibleWith) :incompatibleWith)
 SubObjectPropertyOf(ObjectPropertyChain(:prevents :hasPhysicalConseq) :prevents)
 SubObjectPropertyOf(ObjectPropertyChain(:prevents :prevPreconditionFor) :allows)
-DLSafeRule(Annotation(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean) Annotation(rdfs:comment ""^^xsd:string) Annotation(rdfs:label "failureCondition-partial-sufficient-implication"^^xsd:string) Body(ClassAtom(:FunctionCompatible Variable(:x)) ClassAtom(:Failure Variable(:y)) ClassAtom(:State Variable(:x)) ObjectPropertyAtom(:prevPreconditionFor Variable(:x) Variable(:z)) ObjectPropertyAtom(:disallows Variable(:z) Variable(:y)))Head(ClassAtom(:FailureCondition Variable(:x))))
-DLSafeRule(Annotation(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean) Annotation(rdfs:comment ""^^xsd:string) Annotation(rdfs:label "fault-sufficient-implication"^^xsd:string) Body(ObjectPropertyAtom(:achieves Variable(:z) Variable(:x)) ClassAtom(:Malfunction Variable(:x)) ObjectPropertyAtom(:internalTo Variable(:z) Variable(:x)) ClassAtom(:State Variable(:x)))Head(ClassAtom(:Fault Variable(:x))))
+DLSafeRule(Annotation(<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean) Annotation(rdfs:comment "") Annotation(rdfs:label "fault-sufficient-implication") Body(ObjectPropertyAtom(:achieves Variable(:z) Variable(:x)) ClassAtom(:Malfunction Variable(:x)) ObjectPropertyAtom(:internalTo Variable(:z) Variable(:x)) ClassAtom(:State Variable(:x)))Head(ClassAtom(:Fault Variable(:x))))
 )

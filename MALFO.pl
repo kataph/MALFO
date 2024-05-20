@@ -98,58 +98,60 @@ prevents(Y,X) :- prevents(Z,X), physicalConseqOf(Y,Z) .
 disallows(Y,X) :- disallows(Z,X), physicalConseqOf(Y,Z) .
 
 
-Occurrent(X) :- FunctionCompatible(X) .
-:-AUX5(O,X,T,F,B), FunctionCompatible(X) .
 AUX5(O,X,T,F,B) :- participatesIn(O,X,T), functionOf_sys(F,O), CF(B,F,T), incompatibleWith(X,B) .
 participatesIn(O,X,T) :- AUX5(O,X,T,F,B) .
 functionOf_sys(F,O) :- AUX5(O,X,T,F,B) .
 CF(B,F,T):- AUX5(O,X,T,F,B) .
 incompatibleWith(X,B) :- AUX5(O,X,T,F,B) .
-FunctionCompatible(X) :- Occurrent(X), Object(O), Function(F), Time(T), Behavior(B), not AUX5(O,X,T,F,B) .
+FunctionalIncompatible(X,F) :- Occurrent(X), Object(O), Function(F), Time(T), Behavior(B), AUX5(O,X,T,F,B) .
+Occurrent(X) :- FunctionalIncompatible(X,F) .
+Function(F) :- FunctionalIncompatible(X,F) .
+AUX5(o5(X,F),X,t5(X,F),F,b5(X,F)) :- FunctionalIncompatible(X,F) .
 
-posCauseOf_cross(X,Y) :- posCauseOf(X,Y) .
-posCauseOf_cross(X,Z) :- posCauseOf(X,Y), posCauseOf_cross(Y,Z) .
+Malfunction(X) :- FunctionalIncompatible(X,F) .
+FunctionalIncompatible(X,fmal(X)) :- Malfunction(X) .
+
+transPosCauseOf(X,Y) :- posCauseOf(X,Y) .
+transPosCauseOf(X,Z) :- posCauseOf(X,Y), transPosCauseOf(Y,Z) .
 
 
-FailureMechanism(X) :- Process(X), FunctionCompatible(X), Failure(Y), posCauseOf_cross(X,Y) .
-FailureMechanism(X) :- Event(X), FunctionCompatible(X), Failure(Y), posCauseOf_cross(X,Y) .
+FailureMechanism(X) :- Process(X), Failure(Y), transPosCauseOf(X,Y), not Malfunction(X) .
+FailureMechanism(X) :- Event(X), Failure(Y), transPosCauseOf(X,Y), not Malfunction(X) .
 Process(X) v Event(X) :- FailureMechanism(X) .
-FunctionCompatible(X) :- FailureMechanism(X) .
+:- FailureMechanism(X), Malfunction(X) .
 AUX6(X,y6(X)) :- FailureMechanism(X) .
 Failure(Y) :- AUX6(X,Y) .
-posCauseOf_cross(X,Y) :- AUX6(X,Y) .
+transPosCauseOf(X,Y) :- AUX6(X,Y) .
 
-FailureCondition(X) :- State(X), FunctionCompatible(X), Failure(Y), posCauseOf_cross(X,Y) .
-FailureCondition(X) :- State(X), FunctionCompatible(X), Failure(Y), prevPreconditionFor(X,Z), disallows(Z,Y) .
+FailureCondition(X) :- State(X), Failure(Y), transPosCauseOf(X,Y), not Malfunction(X) .
+FailureCondition(X) :- State(X), Failure(Y), prevPreconditionFor(X,Z), disallows(Z,Y), not Malfunction(X) .
 State(X) :- FailureCondition(X) .
-FunctionCompatible(X) :- FailureCondition(X) .
+:- FailureCondition(X), Malfunction(X) .
 AUX7(X,y7(X)) :- FailureCondition(X) .
 Failure(Y) :- AUX7(X,Y) .
 AUX8(X,Y) :- AUX7(X,Y) .
-posCauseOf_cross(X,Y) v AUX9(X,Y,z9(X,Y)) :- AUX8(X,Y) .
+transPosCauseOf(X,Y) v AUX9(X,Y,z9(X,Y)) :- AUX8(X,Y) .
 prevPreconditionFor(X,Z) :- AUX9(X,Y,Z) .
 disallows(Z,Y) :- AUX9(X,Y,Z) .
 
-AUXA(X,Y) :- Failure(Y), causeOf(X,Y) .
-MereSymptom(X) :- FunctionCompatible(X), Fault(Z), causeOf(Z,X), Occurrent(Y), not AUXA(X,Y) .
-FunctionCompatible(X) :- MereSymptom(X) .
-:- MereSymptom(X), Failure(Y), causeOf(X,Y).
+MereSymptom(X) :- Malfunction(Y), causeOf(Y,X), not Malfunction(X), not FailureCondition(X), not FailureMechanism(X) .
+:- MereSymptom(X), Malfunction(X).
+:- MereSymptom(X), FailureCondition(X).
+:- MereSymptom(X), FailureMechanism(X).
 AUXB(X,zb(X)) :- MereSymptom(X) .
-Fault(Z) :- AUXB(X,Z) .
+Malfunction(Z) :- AUXB(X,Z) .
 causeOf(Z,X) :- AUXB(X,Z) .
 
-:- Malfunction(X), FunctionCompatible(X).
-
-Fault(X) :- State(X), internalTo(Z,X), achieves(Z,X), not FunctionCompatible(X) .
+Fault(X) :- State(X), internalTo(Z,X), achieves(Z,X), Malfunction(X) .
 State(X) :- Fault(X) .
-:- Fault(X), FunctionCompatible(X).
+Malfunction(X):- Fault(X).
 AUXC(X,zc(X)) :- Fault(X) .
 internalTo(Z,X) :- AUXC(X,Z) .
 achieves(Z,X) :- AUXC(X,Z) .
 
-DownState(X) :- State(X), not FunctionCompatible(X), not -Fault(X) .
+DownState(X) :- State(X), Malfunction(X), not Fault(X) .
 State(X) :- DownState(X) .
-:- DownState(X), FunctionCompatible(X) .
+Malfunction(X) :- DownState(X) .
 :- DownState(X), Fault(X) .
 
 Failure(X) :- Malfunction(X), Event(X), Fault(Y), achieves(X,Y) .

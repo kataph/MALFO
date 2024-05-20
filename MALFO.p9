@@ -6,7 +6,7 @@ formulas(sos).
 (all x all y  -(causeOf(x,x))).
 (all x all y  (causeOf(x,y) -> -(causeOf(y,x)))).
 (all x all y  (causeOf(x,y) <-> (achieves(x,y) | prevents(x,y) | allows(x,y) | disallows(x,y)))).
-(all x all y  (posCauseOf(x,y) <-> (achieves(x,y) | allows(x,y)|facilPreconditionFor(x,y)))).
+(all x all y  (posCauseOf(x,y) <-> (achieves(x,y) | allows(x,y) | facilPreconditionFor(x,y)))).
 (all x all y  (achieves(x,y) -> ((Event(x) | Process(x) | State(x)) & (Process(y) | State(y)) & -(State(x) & Process(y))))).
 (all x all y  (prevents(x,y) <-> (exists z  (State(z) & incompatibleWith(z,y) & achieves(x,z))))).
 (all x all y  (prevents(x,y) -> ((Event(x) | Process(x) | State(x)) & (Process(y) | State(y)) & -(State(x) & Process(y))))).
@@ -23,21 +23,21 @@ formulas(sos).
 (all x all y all z  ((hasPhysicalConseq(x,y) & hasPhysicalConseq(y,z)) -> hasPhysicalConseq(x,z))).
 (all x all y all z  ((achieves(x,y) & hasPhysicalConseq(y,z)) -> achieves(x,z))).
 (all x all y all z  ((allows(x,y) & hasPhysicalConseq(y,z)) -> allows(x,z))).
-(all x all y all z  ((prevents(x,z) & hasPhysicalConseq(y,z)) -> prevents(x,y))).
-(all x all y all z  ((disallows(x,z) & hasPhysicalConseq(y,z)) -> disallows(x,y))).
-(all x all y all z  (hasPhysicalConseq(y,z) & (achieves(x,y)) -> achieves(x,z))).
-(all x all y all z  (hasPhysicalConseq(y,z) & (allows(x,y)) -> allows(x,z))).
-(all x all y all z  (hasPhysicalConseq(y,z) & (prevents(x,z)) -> prevents(x,y))).
-(all x all y all z  (hasPhysicalConseq(y,z) & (disallows(x,z)) -> disallows(x,y))).
-(all x  (FunctionCompatible(x) <-> (Occurrent(x) & (all o all f all b all t  ((participatesIn(o,x,t) & functionOf_sys(f,o) & CF(b,f,t)) -> -(incompatibleWith(x,b))))))).
+(all x all y all z  ((prevents(x,y) & hasPhysicalConseq(y,z)) -> prevents(x,z))).
+(all x all y all z  ((disallows(x,y) & hasPhysicalConseq(y,z)) -> disallows(x,z))).
+(all x all y all z  ((achieves(x,y) & hasPhysicalConseq(z,x)) -> achieves(z,x))).
+(all x all y all z  ((prevents(x,y) & hasPhysicalConseq(z,x)) -> prevents(z,x))).
+(all x all y all z  ((allows(x,y) & hasPhysicalConseq(z,x)) -> allows(z,x))).
+(all x all y all z  ((disallows(x,y) & hasPhysicalConseq(z,x)) -> disallows(z,x))).
+(all x all f  (functionIncompatible(x,f) <-> (exists o exists b exists t  (participatesIn(o,x,t) & functionOf_sys(f,o) & CF(b,f,t) & incompatibleWith(x,b))))).
+(all x  (Malfunction(x) <-> (exists f  functionIncompatible(x,f)))).
 (all x all y  (posCauseOf(x,y) -> posCauseOf_cross(x,y))).
 (all x all y all z  ((posCauseOf(x,y) & posCauseOf_cross(y,z)) -> posCauseOf_cross(x,z))).
-(all x  (FailureMechanism(x) <-> ((Process(x) | Event(x)) & FunctionCompatible(x) & (exists y  (Failure(y) & posCauseOf_cross(x,y)))))).
-(all x  (FailureCondition(x) <-> (State(x) & FunctionCompatible(x) & (exists y  (Failure(y) & (posCauseOf_cross(x,y) | (exists z  (prevPreconditionFor(x,z) & disallows(z,y))))))))).
-(all x  (MereSymptom(x) <-> (FunctionCompatible(x) & -(exists y  (Failure(y) & causeOf(x,y))) & (exists z  (Fault(z) & causeOf(z,x)))))).
-(all x  (Malfunction(x) <-> -(FunctionCompatible(x)))).
-(all x  (Fault(x) <-> (-(FunctionCompatible(x)) & State(x) & (exists z  (internalTo(z,x) & achieves(z,x)))))).
-(all x  (DownState(x) <-> (-(FunctionCompatible(x)) & State(x) & -(Fault(x))))).
+(all x  (FailureMechanism(x) <-> ((Process(x) | Event(x)) & -(Malfunction(x)) & (exists y  (Failure(y) & posCauseOf_cross(x,y)))))).
+(all x  (FailureCondition(x) <-> (State(x) & -(Malfunction(x)) & (exists y  (Failure(y) & (posCauseOf_cross(x,y) | (exists z  (prevPreconditionFor(x,z) & disallows(z,y))))))))).
+(all x  (MereSymptom(x) <-> (-(Malfunction(x)) & -(FailureCondition(x)) & -(FailureMechanism(x)) & (exists z  (Malfunction(z) & causeOf(z,x)))))).
+(all x  (Fault(x) <-> (Malfunction(x) & State(x) & (exists z  (internalTo(z,x) & achieves(z,x)))))).
+(all x  (DownState(x) <-> (Malfunction(x) & State(x) & -(Fault(x))))).
 (all x  (Failure(x) <-> (Malfunction(x) & Event(x) & (exists y  (Fault(y) & achieves(x,y)))))).
 (all x  (NonPerformanceEvent(x) <-> (Malfunction(x) & Event(x) & -(Failure(x))))).
 (all x  (MalfunctionProcess(x) <-> (Malfunction(x) & Process(x)))).

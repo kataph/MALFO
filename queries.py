@@ -1,13 +1,5 @@
 CLASSIFICATION_QUERIES = {
-"rank1": [
-"""## SELECTS all malfunctions # Complete knowledge about functional compatibility and high-level-type of putative malfunctions is assumed (for the FILTER NOT EXISTS, otherwise some non-malfunctions may be returned)
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX malfo: <https://www.w3id.org/MALFO#>
-INSERT {?x a malfo:Malfunction}
-WHERE {
-	{?x a malfo:FailureRelatedHappening} UNION {?x a malfo:Occurrent} UNION {?x a malfo:State} UNION {?x a malfo:Process} UNION {?x a malfo:Event}
-	FILTER NOT EXISTS {?x a malfo:FunctionCompatible}
-}"""],
+"rank1": [],
 "rank2": [
 """
 ##[reduced to RANK1]
@@ -16,8 +8,8 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX malfo: <https://www.w3id.org/MALFO#>
 INSERT {?x a malfo:MalfunctionProcess}
 WHERE {
-	{?x a malfo:Process}
-	FILTER NOT EXISTS {?x a malfo:FunctionCompatible}
+	?x a malfo:Process .
+	?x a malfo:Malfunction .
 }""",
 """
 ##[reduced to RANK1]
@@ -27,7 +19,7 @@ PREFIX malfo: <https://www.w3id.org/MALFO#>
 INSERT {?x a malfo:Fault}
 WHERE {
 	?x a malfo:State .
-	FILTER NOT EXISTS {?x a malfo:FunctionCompatible}
+	?x a malfo:Malfunction .
 	?z malfo:internalTo ?x . 
 	?z malfo:achieves ?x .
 }"""],
@@ -39,8 +31,8 @@ PREFIX malfo: <https://www.w3id.org/MALFO#>
 INSERT {?x a malfo:Failure}
 WHERE {
 	?x a malfo:Event .
+	?x a malfo:Malfunction .
 	?x malfo:achieves ?y . ?y a malfo:Fault .
-	FILTER NOT EXISTS {?x a malfo:FunctionCompatible .}
 }""",
 
 """##[reduced to RANK2]; requires negation-as-failure
@@ -50,9 +42,8 @@ PREFIX malfo: <https://www.w3id.org/MALFO#>
 INSERT {?x a malfo:DownState}
 WHERE {
 	?x a malfo:State .
-	FILTER NOT EXISTS {?x a malfo:FunctionCompatible .}
+	?x a malfo:Malfunction .
 	FILTER NOT EXISTS {?x a malfo:Fault .}
-	FILTER NOT EXISTS {?z malfo:internalTo ?x . ?z malfo:achieves ?x .} 
 }"""],
 "rank4":
 ["""##[reduced to RANK3]
@@ -62,12 +53,12 @@ PREFIX malfo: <https://www.w3id.org/MALFO#>
 INSERT {?x rdf:type malfo:FailureCondition} 
 WHERE {
 	?x a malfo:State .
-	?x a malfo:FunctionCompatible .
 	?fa a malfo:Failure .
 	{?x (malfo:achieves|malfo:allows|malfo:facilPreconditionFor|malfo:hasPhysicalConseq)* ?fa .} 
 	UNION
 	{?x malfo:prevPreconditionFor ?st .
 	?st malfo:disallows ?fa .} 
+	FILTER NOT EXISTS {?x a malfo:Malfunction}
 }""",
 """##[reduced to RANK3]
 ## SELECTS all failure mechanisms
@@ -75,11 +66,11 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX malfo: <https://www.w3id.org/MALFO#>
 INSERT {?x a malfo:FailureMechanism}
 WHERE {
-	?x a malfo:FunctionCompatible .
 	?x (malfo:achieves|malfo:allows|malfo:facilPreconditionFor|malfo:hasPhysicalConseq)* ?fa . ?fa a malfo:Failure .
 	{?x a malfo:Process} 
 	UNION
 	{?x a malfo:Event} 
+	FILTER NOT EXISTS {?x a malfo:Malfunction}
 }""",
 """##[reduced to RANK3]; requires negation-as-failure
 ## SELECTS all non-performance event # Complete knowledge about functional compatibility of putative non-performance event is assumed (for the FILTER NOT EXISTS, otherwise some non-non-performance-event  may be returned)
@@ -88,9 +79,9 @@ PREFIX malfo: <https://www.w3id.org/MALFO#>
 INSERT {?x a malfo:NonPerformanceEvent}	
 WHERE {
 	?x a malfo:Event .
+	?x a malfo:Malfunction .
 	FILTER NOT EXISTS {?x malfo:achieves ?y . ?y a malfo:Fault .}
-	FILTER NOT EXISTS {?x a malfo:Failure .}
-	FILTER NOT EXISTS {?x a malfo:FunctionCompatible .}
+	FILTER NOT EXISTS {?x a malfo:Failure}
 }""",
 """##[reduced to RANK3]; requires negation-as-failure
 ## SELECTS all mere symptoms # Complete knowledge about causal consequences of putative mere sympoms is assumed (for the FILTER NOT EXISTS, otherwise some non-mere-symptoms may be returned)
@@ -98,9 +89,10 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX malfo: <https://www.w3id.org/MALFO#>
 INSERT {?x a malfo:MereSymptom}
 WHERE {
-	?x a malfo:FunctionCompatible .
-	?fau (malfo:achieves|malfo:allows|malfo:prevents|malfo:disallows) ?x . ?fau a malfo:Fault
-	FILTER NOT EXISTS {?x (malfo:achieves|malfo:allows|malfo:prevents|malfo:disallows) ?fai . ?fai a malfo:Failure .}
+	?mal (malfo:achieves|malfo:allows|malfo:prevents|malfo:disallows) ?x . ?mal a malfo:Malfunction
+	FILTER NOT EXISTS {?x a malfo:FailureMechanism}
+	FILTER NOT EXISTS {?x a malfo:FailureCondition}
+	FILTER NOT EXISTS {?x a malfo:Malfunction}
 }"""]
 }
 
