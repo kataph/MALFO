@@ -162,7 +162,7 @@ Formally, we assume that physical-consequence extends causal-consequence as foll
 )
 
 
-(cl-comment 'Df12*: x is a malfunction means that x is function-incompatible with some f')
+(cl-comment 'Df9: x is a malfunction means that x is function-incompatible with some f')
 (forall (x)
   (iff 
     (Malfunction x)
@@ -180,7 +180,7 @@ Formally, we assume that physical-consequence extends causal-consequence as foll
   (if (and (posCauseOf x y)(posCauseOf_cross y z))(posCauseOf_cross x z))
 )
 
-(cl-comment 'Df9*:  x is a failure mechanism means that x
+(cl-comment 'Df10:  x is a failure mechanism means that x
  is not a malfunction, is either a process or an event, and is the positive cause, eventually, of some failure')
 (forall (x)
   (iff 
@@ -193,7 +193,7 @@ Formally, we assume that physical-consequence extends causal-consequence as foll
   )
 )
 
-(cl-comment 'Df10*:  x is a failure condition means that x is not a malfunction, is a state, and is either the facilitative precondition for a failure or the positive cause, eventually, of that failure, or it is the preventive precondition for some occurrence that disallows the failure.')
+(cl-comment 'Df11:  x is a failure condition means that x is not a malfunction, is a state, and is either the facilitative precondition for a failure or the positive cause, eventually, of that failure, or it is the preventive precondition for some occurrence that disallows the failure.')
 (forall (x)
   (iff 
     (FailureCondition x)
@@ -210,7 +210,7 @@ Formally, we assume that physical-consequence extends causal-consequence as foll
   )
 )
 
-(cl-comment 'Df11***:  x is a mere symptom means that x is not a malfunction but is neither a failure condition nor a failure mechanism, and is caused by a malfunction')
+(cl-comment 'Df12:  x is a mere symptom means that x is not a malfunction but is neither a failure condition nor a failure mechanism, and is caused by a malfunction')
 (cl-comment 'Note that mere symptoms, failure conditions, and failure mechanisms are disjoint classes, however, they do not exhaust the set of malfunction-related occurrences which are not malfunctions (e.g., there may be occurrents that weakly contribute to cause failures in convoluted ways that are not encompassed in the definitions of failure conditions or failure mechanisms)')
 (forall (x)
   (iff 
@@ -225,7 +225,7 @@ Formally, we assume that physical-consequence extends causal-consequence as foll
 )
 
 
-(cl-comment 'Df13*: x is a fault means that x is a malfunction and a state and is achieved by some occurrence internal to itself')
+(cl-comment 'Df13: x is a fault means that x is a malfunction and a state and is achieved by some occurrence internal to itself')
 (forall (x)
   (iff 
     (Fault x)
@@ -237,7 +237,7 @@ Formally, we assume that physical-consequence extends causal-consequence as foll
   )
 )
 
-(cl-comment 'Df14*: x is a down state means that x is a malfunction and a state and also not a fault')
+(cl-comment 'Df14: x is a down state means that x is a malfunction and a state and also not a fault')
 (forall (x)
   (iff 
     (DownState x)
@@ -249,7 +249,7 @@ Formally, we assume that physical-consequence extends causal-consequence as foll
   )
 )
 
-(cl-comment 'Df15*: x is a failure means that x is a malfunction and an event that achieves some fault')
+(cl-comment 'Df15: x is a failure means that x is a malfunction and an event that achieves some fault')
 (forall (x)
   (iff 
     (Failure x)
