@@ -87,15 +87,8 @@
 
 (cl-comment '=== End of Toyoshima causal ontology===')
 
+
 (cl-comment '=== Start of an extension of Toyoshima causal ontology: added a relation of physical consequence')
-
-
-Coming back to the \incompatibleWith primitive, we interpret it as physical incompatibility between two occurrences. For example, if we call $x$ the occurrence that `yesterday I ate exactly two apples' and call $y$ the occurrence that `yesterday I ate exactly one apple', then we say $\incompatibleWith[x][y]$. Similarly, if $z$ is `yesterday I ate less than three apples' then is clear that $x$ and $y$ both `imply' $z$, meaning that if $x$ or $y$ happened, also $z$ happened. Since this kind of implication (that we call `physical consequence') is often mentioned in failure analysis (e.g. `peak vibration is 1.13 times over nominal limit' \emph{causing} the `fatigue imposed on the axis to be 1.13 times than normal' -- taken from \cite{matthewsPracticalGuideEngineering1998}), we introduce it explicitely below:
-
-Note that physical-consequenc is a different type than causal-consequence (e.g., \achieves). For instance, a key difference is that causal-consequence requires a (possibly extended) spatial and temporal contiguity or overlapping, while physical-consequence is `immediate'/`synchronous' and does not take place somewhere nor during some time. Another difference is that causal-consequence is antisymmetric and not (generally speaking) transitive, while physical-consequence is transitive and could be bidirectional. 
-Formally, we assume that physical-consequence extends causal-consequence as follows
-
-
 
 (cl-comment 'Ax14:  If x participates in y at t, then x is an object, y is an occurrence and t a time')
 (forall (x y t)
