@@ -12,7 +12,7 @@ from rdflib.namespace import OWL, RDF, RDFS
 
 ROOT_URL = "https://www.example.com/"
 MALFO_URL = "https://www.w3id.org/MALFO#"
-INPUT_GRAPHML = input("Input the graphml file name or path (with the extension). The file must follow the convention hardcoded in this script. ")
+INPUT_GRAPHML = input("Input the graphml file name or path (with the extension). The file must follow the convention hardcoded in this script> ")
 OUTPUT_TURTLE = 'graphml2rdf-out.ttl'
 
 # change this map to change the conventional meaning of colors
@@ -116,11 +116,15 @@ for edge in edges:
     g.add((occurrent_s, category_e, occurrent_t))
     g.add((category_e, RDF.type, OWL.ObjectProperty))
 
+g.add((MALFO["FunctionCompatible"], RDF.type, OWL.Class))
+g.add((MALFO["FunctionCompatible"], RDFS.comment, rl.Literal('Utility class representing the complement of MALFO:Malfunction')))
+g.add((MALFO["FunctionCompatible"], OWL.disjointWith, MALFO["Malfunction"]))
 document = rl.BNode()
 g.add((document, RDF.type, OWL.Ontology))
 g.add((document, RDFS.comment, rl.Literal(f'Graph automatically built from \'{INPUT_GRAPHML}\' on {str(datetime.datetime.now())}')))
 g.add((document, OWL.imports, rl.URIRef('https://www.w3id.org/MALFO')))
 
 
-g.serialize(OUTPUT_TURTLE, format = "ttl")   
+g.serialize(OUTPUT_TURTLE, format = "ttl")  
+print(f"A file named {OUTPUT_TURTLE} has been written in the local folder") 
 
