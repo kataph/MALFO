@@ -194,5 +194,17 @@ SELECT_FINER_CAUSES = {
 				?fau2 (malfo:achieves|malfo:allows|malfo:facilPreconditionFor|malfo:hasPhysicalConseq)+ ?y}
         BIND(malfo:absoluteCauseOf as ?p)
 	}""",
-    "ultimate":""""""
+    "ultimate":"""PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+	PREFIX malfo: <https://www.w3id.org/MALFO#>
+	PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+	SELECT DISTINCT ?x ?p ?y ?q ?s
+	WHERE {
+		?x (malfo:achieves|malfo:allows|malfo:facilPreconditionFor|malfo:hasPhysicalConseq) ?fau . ?fau a malfo:Fault .
+		?fau (malfo:achieves|malfo:allows|malfo:facilPreconditionFor|malfo:hasPhysicalConseq)+ ?y . ?fau malfo:internalTo ?s . 
+  		?y malfo:internalTo ?s . 
+		MINUS {?fau (malfo:achieves|malfo:allows|malfo:facilPreconditionFor|malfo:hasPhysicalConseq)+ ?xn . 
+			?xn (malfo:achieves|malfo:allows|malfo:facilPreconditionFor|malfo:hasPhysicalConseq)+ ?y . 
+			MINUS {?xn malfo:internalTo ?s} }
+        BIND(malfo:ultimateCauseOf as ?p) BIND("with respect to the system" as ?q)
+	}"""
 }
