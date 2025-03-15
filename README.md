@@ -6,6 +6,7 @@ This repo contains various serializations of the ontology MALFO (MALFunction Ont
 
 Consistency and satisfiability of classes of the first-order theory has been confirmed using Vampire through the "Systems on TpTp" tool available at: https://www.tptp.org/cgi-bin/SystemOnTPTP, while the OWL theory has been applied to some models.
 
+## MALFO mappings
 Note that take has been taken that MALFO is an ontological module that can be aligned with ease with other ontologies, in the sense that the eventual mappings between MALFO and the other ontologies should be small. There is also an exemplificative alignment with the DOLCE-based theory of functions from https://github.com/kataph/function-method-ontology. The alignment is contained in the file "MALFO-plus-DOLCE-functions.owl", which imports MALFO, an OWL version of DOLCE, and the OWL version of the DOLCE-based theory of functions. The latter two files are from the function-method-ontology repository and have been duplicated here for sake of simplicity. 
 
 ## MALFO models 
