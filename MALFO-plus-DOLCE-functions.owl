@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/francesco/ontologies/2025/2/untitled-ontology-128/"
+     xml:base="http://www.semanticweb.org/francesco/ontologies/2025/2/untitled-ontology-128/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://www.w3id.org/MALFO/DOLCE-alignments">
+        <owl:imports rdf:resource="http://www.loa.istc.cnr.it/dolce/dolce-owl/DOLCE"/>
+        <owl:imports rdf:resource="https://github.com/kataph/function-method-ontology"/>
+        <owl:imports rdf:resource="https://www.w3id.org/MALFO/1.2"/>
+        <rdfs:comment>Take has been taken that MALFO (https://www.w3id.org/MALFO) is an ontological module that can be aligned with ease with other ontologies, in the sense that the eventual mappings between MALFO and the other ontologies should be small. 
+
+This file examplifies the intended alignment of MALFO with DOLCE and with a DOLCE-based functional ontology (https://github.com/kataph/function-method-ontology#change_voltage_1). 
+The version of DOLCE-owl used is (http://www.loa.istc.cnr.it/dolce/dolce-owl/DOLCE), the one originarily imported by the functions ontology. Though at the moment (March 2025) more recent versions of DOLCE-owl exist, the changes of the new versions do not impact said mappings.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/kataph/function-method-ontology#systemic-function-of -->
+
+    <rdf:Description rdf:about="https://github.com/kataph/function-method-ontology#systemic-function-of">
+        <owl:equivalentProperty rdf:resource="https://www.w3id.org/MALFO#systemicFunctionOf"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://www.w3id.org/MALFO#functionalIncompatibleWith -->
+
+    <rdf:Description rdf:about="https://www.w3id.org/MALFO#functionalIncompatibleWith">
+        <rdfs:range rdf:resource="https://github.com/kataph/function-method-ontology#SystemicFunction"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://www.w3id.org/MALFO#incompatibleWith"/>
+            <rdf:Description rdf:about="https://github.com/kataph/function-method-ontology#classified-by"/>
+            <rdf:Description rdf:about="https://github.com/kataph/function-method-ontology#systemic-function-of"/>
+            <rdf:Description rdf:about="https://github.com/kataph/function-method-ontology#participates-in"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment>Using the FOL theory of the DOLCE-based theory of functions this relation can be defined as follows:
+
+functionIncompatible(x, f) := ∃o, b, t(participatesIn(o, x, t) ∧
+systemicFunctionOf(f, o) ∧ CF(b, f, t) ∧ incompatibleWith(x, b))
+
+However, OWL is not enough expressive to writhe such an axiom. Therefore, in this mapping, we only add the fact that the range of the relation is the class &quot;Systemic Function&quot; and the chain 
+&quot;incompatibleWith o classified-by o systemic-function-of o participates-in -&gt; functionIncompatible&quot;
+which is consists of the sufficient part of the definition, where the ternary predicates have been replaced by appropriate de-temporalized predicates.</rdfs:comment>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.loa.istc.cnr.it/dolce/dolce-owl/DOLCE#EV -->
+
+    <rdf:Description rdf:about="http://www.loa.istc.cnr.it/dolce/dolce-owl/DOLCE#EV">
+        <owl:equivalentClass rdf:resource="https://www.w3id.org/MALFO#Event"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.loa.istc.cnr.it/dolce/dolce-owl/DOLCE#PD -->
+
+    <rdf:Description rdf:about="http://www.loa.istc.cnr.it/dolce/dolce-owl/DOLCE#PD">
+        <owl:equivalentClass rdf:resource="https://www.w3id.org/MALFO#Occurrent"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.loa.istc.cnr.it/dolce/dolce-owl/DOLCE#PRO -->
+
+    <rdf:Description rdf:about="http://www.loa.istc.cnr.it/dolce/dolce-owl/DOLCE#PRO">
+        <owl:equivalentClass rdf:resource="https://www.w3id.org/MALFO#Process"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.loa.istc.cnr.it/dolce/dolce-owl/DOLCE#ST -->
+
+    <rdf:Description rdf:about="http://www.loa.istc.cnr.it/dolce/dolce-owl/DOLCE#ST">
+        <owl:equivalentClass rdf:resource="https://www.w3id.org/MALFO#State"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
