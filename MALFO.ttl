@@ -18,7 +18,9 @@
                               owl:versionIRI <https://www.w3id.org/malfo/1.3> ;
                               dcterms:abstract """This ontology uses spatial relations, high-levels ontological categories, and causal relations to supply a formal taxonomies of occurrences that are not, from the point of view of some engineer, as they should be. 
 
-In particular, the terms fault, failure, failure mechanism, malfunction, and others are given precise interpretations.""" ;
+In particular, the terms fault, failure, failure mechanism, malfunction, and others are given precise interpretations.
+
+See https://github.com/kataph/MALFO for more info""" ;
                               dcterms:contributor "Francesco Compagno" ;
                               dcterms:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
                               dcterms:title "MALFO: Malfunction Ontology" ;
