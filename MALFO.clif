@@ -230,10 +230,10 @@
   )
 )
 
-(cl-comment 'Df14: x is a down state means that x is a malfunction and a state and also not a fault')
+(cl-comment 'Df14: x is a abormal external disabled state means that x is a malfunction and a state and also not a fault')
 (forall (x)
   (iff 
-    (DownState x)
+    (AbormalExternalDisabledState x)
     (and 
       (Malfunction x)
       (State x)

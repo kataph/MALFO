@@ -149,10 +149,10 @@ AUXC(X,zc(X)) :- Fault(X) .
 internalTo(Z,X) :- AUXC(X,Z) .
 achieves(Z,X) :- AUXC(X,Z) .
 
-DownState(X) :- State(X), Malfunction(X), not Fault(X) .
-State(X) :- DownState(X) .
-Malfunction(X) :- DownState(X) .
-:- DownState(X), Fault(X) .
+AbormalExternalDisabledState(X) :- State(X), Malfunction(X), not Fault(X) .
+State(X) :- AbormalExternalDisabledState(X) .
+Malfunction(X) :- AbormalExternalDisabledState(X) .
+:- AbormalExternalDisabledState(X), Fault(X) .
 
 Failure(X) :- Malfunction(X), Event(X), Fault(Y), achieves(X,Y) .
 Malfunction(X) :- Failure(X) .

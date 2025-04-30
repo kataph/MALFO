@@ -37,7 +37,7 @@ formulas(sos).
 (all x  (FailureCondition(x) <-> (State(x) & -(Malfunction(x)) & (exists y  (Failure(y) & (posCauseOf_cross(x,y) | (exists z  (prevPreconditionFor(x,z) & disallows(z,y))))))))).
 (all x  (MereSymptom(x) <-> (-(Malfunction(x)) & -(FailureCondition(x)) & -(FailureMechanism(x)) & (exists z  (Malfunction(z) & causeOf(z,x)))))).
 (all x  (Fault(x) <-> (Malfunction(x) & State(x) & (exists z  (internalTo(z,x) & achieves(z,x)))))).
-(all x  (DownState(x) <-> (Malfunction(x) & State(x) & -(Fault(x))))).
+(all x  (AbormalExternalDisabledState(x) <-> (Malfunction(x) & State(x) & -(Fault(x))))).
 (all x  (Failure(x) <-> (Malfunction(x) & Event(x) & (exists y  (Fault(y) & achieves(x,y)))))).
 (all x  (NonPerformanceEvent(x) <-> (Malfunction(x) & Event(x) & -(Failure(x))))).
 (all x  (MalfunctionProcess(x) <-> (Malfunction(x) & Process(x)))).
