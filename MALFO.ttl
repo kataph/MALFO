@@ -37,7 +37,8 @@ In particular, the terms fault, failure, failure mechanism, malfunction, and oth
 - corrected the annotation of non performance events (replaced 'failures' with 'faults')
 - restructured, expanded, and corrected the annotations. Now the ontology is (almost) compliant with IOF's annotation guideline
 - changed \"down state\" into \"abnormal external disabled state\" for better compatibility with EN-13306
-- unified the namespace of malfunction related happening to 'https://www.w3id.org/MALFO#'""" .
+- unified the namespace of malfunction related happening to 'https://www.w3id.org/MALFO/'
+- changed the last separator in the root IRI from \"#\" to \"/\"""" .
 
 #################################################################
 #    Annotation properties
@@ -107,71 +108,71 @@ iof-av:semiFormalNaturalLanguageDefinition rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
-###  https://www.w3id.org/MALFO#achieves
-:achieves rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf :causeOf ,
-                             :posCauseOf ;
-          rdfs:domain [ rdf:type owl:Class ;
-                        owl:unionOf ( :Event
-                                      :Process
-                                      :State
-                                    )
-                      ] ;
-          rdfs:range [ rdf:type owl:Class ;
-                       owl:unionOf ( :Process
-                                     :State
-                                   )
-                     ] ;
-          owl:propertyChainAxiom ( :achieves
-                                   :hasPhysicalConseq
-                                 ) ,
-                                 ( :hasPhysicalConseq
-                                   :achieves
-                                 ) ;
-          rdfs:comment "Direct and positive causatio, requires tight coupling between the arguments, in particular the juxtaposition or overlapping of their time extension." ;
-          rdfs:isDefinedBy "https://arxiv.org/ftp/arxiv/papers/2307/2307.07517.pdf"^^xsd:anyURI ;
-          rdfs:label "achieves" .
+###  https://www.w3id.org/MALFO/achieves
+<https://www.w3id.org/MALFO/achieves> rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf <https://www.w3id.org/MALFO/causeOf> ,
+                                                         <https://www.w3id.org/MALFO/posCauseOf> ;
+                                      rdfs:domain [ rdf:type owl:Class ;
+                                                    owl:unionOf ( <https://www.w3id.org/MALFO/Event>
+                                                                  <https://www.w3id.org/MALFO/Process>
+                                                                  <https://www.w3id.org/MALFO/State>
+                                                                )
+                                                  ] ;
+                                      rdfs:range [ rdf:type owl:Class ;
+                                                   owl:unionOf ( <https://www.w3id.org/MALFO/Process>
+                                                                 <https://www.w3id.org/MALFO/State>
+                                                               )
+                                                 ] ;
+                                      owl:propertyChainAxiom ( <https://www.w3id.org/MALFO/achieves>
+                                                               <https://www.w3id.org/MALFO/hasPhysicalConseq>
+                                                             ) ,
+                                                             ( <https://www.w3id.org/MALFO/hasPhysicalConseq>
+                                                               <https://www.w3id.org/MALFO/achieves>
+                                                             ) ;
+                                      rdfs:comment "Direct and positive causatio, requires tight coupling between the arguments, in particular the juxtaposition or overlapping of their time extension." ;
+                                      rdfs:isDefinedBy "https://arxiv.org/ftp/arxiv/papers/2307/2307.07517.pdf"^^xsd:anyURI ;
+                                      rdfs:label "achieves" .
 
 
-###  https://www.w3id.org/MALFO#allows
-:allows rdf:type owl:ObjectProperty ;
-        rdfs:subPropertyOf :causeOf ,
-                           :posCauseOf ;
-        rdfs:domain [ rdf:type owl:Class ;
-                      owl:unionOf ( :Event
-                                    :Process
-                                  )
-                    ] ;
-        rdfs:range [ rdf:type owl:Class ;
-                     owl:unionOf ( :Event
-                                   :Process
-                                   :State
-                                 )
-                   ] ;
-        owl:propertyChainAxiom ( :achieves
-                                 :facilPreconditionFor
-                               ) ,
-                               ( :allows
-                                 :hasPhysicalConseq
-                               ) ,
-                               ( :hasPhysicalConseq
-                                 :allows
-                               ) ,
-                               ( :maintains
-                                 :facilPreconditionFor
-                               ) ,
-                               _:genid28 ;
-        rdfs:comment "(i) achieving or maintaining a facilitative precondition, or (ii) preventing a preventive precondition (and assuming that, at the same time, no additional preventive precondition was achieved)." ;
-        rdfs:isDefinedBy "https://doi.org/10.3233/AO-190206" ;
-        rdfs:label "allows" .
+###  https://www.w3id.org/MALFO/allows
+<https://www.w3id.org/MALFO/allows> rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf <https://www.w3id.org/MALFO/causeOf> ,
+                                                       <https://www.w3id.org/MALFO/posCauseOf> ;
+                                    rdfs:domain [ rdf:type owl:Class ;
+                                                  owl:unionOf ( <https://www.w3id.org/MALFO/Event>
+                                                                <https://www.w3id.org/MALFO/Process>
+                                                              )
+                                                ] ;
+                                    rdfs:range [ rdf:type owl:Class ;
+                                                 owl:unionOf ( <https://www.w3id.org/MALFO/Event>
+                                                               <https://www.w3id.org/MALFO/Process>
+                                                               <https://www.w3id.org/MALFO/State>
+                                                             )
+                                               ] ;
+                                    owl:propertyChainAxiom ( <https://www.w3id.org/MALFO/achieves>
+                                                             <https://www.w3id.org/MALFO/facilPreconditionFor>
+                                                           ) ,
+                                                           ( <https://www.w3id.org/MALFO/allows>
+                                                             <https://www.w3id.org/MALFO/hasPhysicalConseq>
+                                                           ) ,
+                                                           ( <https://www.w3id.org/MALFO/hasPhysicalConseq>
+                                                             <https://www.w3id.org/MALFO/allows>
+                                                           ) ,
+                                                           ( <https://www.w3id.org/MALFO/maintains>
+                                                             <https://www.w3id.org/MALFO/facilPreconditionFor>
+                                                           ) ,
+                                                           _:genid28 ;
+                                    rdfs:comment "(i) achieving or maintaining a facilitative precondition, or (ii) preventing a preventive precondition (and assuming that, at the same time, no additional preventive precondition was achieved)." ;
+                                    rdfs:isDefinedBy "https://doi.org/10.3233/AO-190206" ;
+                                    rdfs:label "allows" .
 
 _:genid28 rdf:type rdf:List ;
-           rdf:first :prevents ;
-           rdf:rest ( :prevPreconditionFor
+           rdf:first <https://www.w3id.org/MALFO/prevents> ;
+           rdf:rest ( <https://www.w3id.org/MALFO/prevPreconditionFor>
                     ) .
 
 [ rdf:type owl:Axiom ;
-   owl:annotatedSource :allows ;
+   owl:annotatedSource <https://www.w3id.org/MALFO/allows> ;
    owl:annotatedProperty owl:propertyChainAxiom ;
    owl:annotatedTarget _:genid28 ;
    rdfs:comment """Technically not compatible with the first-order version, instead it is slightly stronger. However, it is kept because otherwise, due to the open world assumption, the corresponding inference would never be applied. 
@@ -179,223 +180,223 @@ Consider removing if necessary."""
  ] .
 
 
-###  https://www.w3id.org/MALFO#causeOf
-:causeOf rdf:type owl:ObjectProperty ;
-         rdfs:domain :Occurrent ;
-         rdfs:range :Occurrent ;
-         rdfs:comment "Cause of is an umbrella for all the direct causation relations of MALFO: either achievs, allows, disallows, or prevents causation-types (we also include physical consequences)" ;
-         rdfs:label "cause of" ;
-         iof-av:firstOrderLogicDefinition """causeOf(x, y) ↔ achieves(x, y) ∨ prevents(x, y) ∨ allows(x, y)
+###  https://www.w3id.org/MALFO/causeOf
+<https://www.w3id.org/MALFO/causeOf> rdf:type owl:ObjectProperty ;
+                                     rdfs:domain <https://www.w3id.org/MALFO/Occurrent> ;
+                                     rdfs:range <https://www.w3id.org/MALFO/Occurrent> ;
+                                     rdfs:comment "Cause of is an umbrella for all the direct causation relations of MALFO: either achievs, allows, disallows, or prevents causation-types (we also include physical consequences)" ;
+                                     rdfs:label "cause of" ;
+                                     iof-av:firstOrderLogicDefinition """causeOf(x, y) ↔ achieves(x, y) ∨ prevents(x, y) ∨ allows(x, y)
 ∨ disallows(x, y)""" ;
-         iof-av:semiFormalNaturalLanguageDefinition "“x causes y if and only if it either achieves or allows or prevents or disallows y.”" .
+                                     iof-av:semiFormalNaturalLanguageDefinition "“x causes y if and only if it either achieves or allows or prevents or disallows y.”" .
 
 
-###  https://www.w3id.org/MALFO#disallows
-:disallows rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf :causeOf ;
-           rdfs:domain [ rdf:type owl:Class ;
-                         owl:unionOf ( :Event
-                                       :Process
-                                     )
-                       ] ;
-           rdfs:range [ rdf:type owl:Class ;
-                        owl:unionOf ( :Event
-                                      :Process
-                                      :State
-                                    )
-                      ] ;
-           owl:propertyChainAxiom ( :achieves
-                                    :prevPreconditionFor
-                                  ) ,
-                                  ( :disallows
-                                    :hasPhysicalConseq
-                                  ) ,
-                                  ( :hasPhysicalConseq
-                                    :disallows
-                                  ) ,
-                                  ( :maintains
-                                    :prevPreconditionFor
-                                  ) ,
-                                  ( :prevents
-                                    :facilPreconditionFor
-                                  ) ;
-           rdfs:comment "(i) achieving or maintaining a preventive precondition, or (ii) preventing a facilitative precondition." ;
-           rdfs:isDefinedBy "https://doi.org/10.3233/AO-190206" ;
-           rdfs:label "disallows" .
+###  https://www.w3id.org/MALFO/disallows
+<https://www.w3id.org/MALFO/disallows> rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf <https://www.w3id.org/MALFO/causeOf> ;
+                                       rdfs:domain [ rdf:type owl:Class ;
+                                                     owl:unionOf ( <https://www.w3id.org/MALFO/Event>
+                                                                   <https://www.w3id.org/MALFO/Process>
+                                                                 )
+                                                   ] ;
+                                       rdfs:range [ rdf:type owl:Class ;
+                                                    owl:unionOf ( <https://www.w3id.org/MALFO/Event>
+                                                                  <https://www.w3id.org/MALFO/Process>
+                                                                  <https://www.w3id.org/MALFO/State>
+                                                                )
+                                                  ] ;
+                                       owl:propertyChainAxiom ( <https://www.w3id.org/MALFO/achieves>
+                                                                <https://www.w3id.org/MALFO/prevPreconditionFor>
+                                                              ) ,
+                                                              ( <https://www.w3id.org/MALFO/disallows>
+                                                                <https://www.w3id.org/MALFO/hasPhysicalConseq>
+                                                              ) ,
+                                                              ( <https://www.w3id.org/MALFO/hasPhysicalConseq>
+                                                                <https://www.w3id.org/MALFO/disallows>
+                                                              ) ,
+                                                              ( <https://www.w3id.org/MALFO/maintains>
+                                                                <https://www.w3id.org/MALFO/prevPreconditionFor>
+                                                              ) ,
+                                                              ( <https://www.w3id.org/MALFO/prevents>
+                                                                <https://www.w3id.org/MALFO/facilPreconditionFor>
+                                                              ) ;
+                                       rdfs:comment "(i) achieving or maintaining a preventive precondition, or (ii) preventing a facilitative precondition." ;
+                                       rdfs:isDefinedBy "https://doi.org/10.3233/AO-190206" ;
+                                       rdfs:label "disallows" .
 
 
-###  https://www.w3id.org/MALFO#facilPreconditionFor
-:facilPreconditionFor rdf:type owl:ObjectProperty ;
-                      rdfs:subPropertyOf :posCauseOf ;
-                      rdfs:domain :State ;
-                      rdfs:range [ rdf:type owl:Class ;
-                                   owl:unionOf ( :Event
-                                                 :Process
-                                                 :State
-                                               )
-                                 ] ;
-                      owl:propertyChainAxiom ( :facilPreconditionFor
-                                               :hasPhysicalConseq
-                                             ) ,
-                                             ( :hasPhysicalConseq
-                                               :facilPreconditionFor
-                                             ) ;
-                      rdfs:comment """\"A precondition for an occurrent is a condition whose truth value influences the activation of the associated occurrent.\" -- Riichiro Mizoguchi, Causing is Achieving:  A solution to the problem of causation, p.6 https://arxiv.org/ftp/arxiv/papers/2307/2307.07517.pdf, last accessed in May 2024
+###  https://www.w3id.org/MALFO/facilPreconditionFor
+<https://www.w3id.org/MALFO/facilPreconditionFor> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf <https://www.w3id.org/MALFO/posCauseOf> ;
+                                                  rdfs:domain <https://www.w3id.org/MALFO/State> ;
+                                                  rdfs:range [ rdf:type owl:Class ;
+                                                               owl:unionOf ( <https://www.w3id.org/MALFO/Event>
+                                                                             <https://www.w3id.org/MALFO/Process>
+                                                                             <https://www.w3id.org/MALFO/State>
+                                                                           )
+                                                             ] ;
+                                                  owl:propertyChainAxiom ( <https://www.w3id.org/MALFO/facilPreconditionFor>
+                                                                           <https://www.w3id.org/MALFO/hasPhysicalConseq>
+                                                                         ) ,
+                                                                         ( <https://www.w3id.org/MALFO/hasPhysicalConseq>
+                                                                           <https://www.w3id.org/MALFO/facilPreconditionFor>
+                                                                         ) ;
+                                                  rdfs:comment """\"A precondition for an occurrent is a condition whose truth value influences the activation of the associated occurrent.\" -- Riichiro Mizoguchi, Causing is Achieving:  A solution to the problem of causation, p.6 https://arxiv.org/ftp/arxiv/papers/2307/2307.07517.pdf, last accessed in May 2024
 
 A facilitative precondition helps (or even is a necessary precondition for) bringinng about an occurrence.""" ;
-                      rdfs:isDefinedBy "https://arxiv.org/ftp/arxiv/papers/2307/2307.07517.pdf" ;
-                      rdfs:label "facilitative precondition for" .
+                                                  rdfs:isDefinedBy "https://arxiv.org/ftp/arxiv/papers/2307/2307.07517.pdf" ;
+                                                  rdfs:label "facilitative precondition for" .
 
 
-###  https://www.w3id.org/MALFO#functionalIncompatibleWith
-:functionalIncompatibleWith rdf:type owl:ObjectProperty ;
-                            rdfs:domain :Occurrent ;
-                            rdfs:comment "By saying that an occurrence is functional-incompatible with a function, we mean synchronous logical-incompatibility of the occurrence with the execution of the function (the function must be related to some object participating in the occurrence). For example, if the function of an electric wire is to carry electricity, and a logically-necessary requirement for the wire to do that is being physically connected, then `the wire being cut in two' is function-incompatible with the wire's function." ,
-                                         "Clearly, the range of this property is intended to be a class of functions. We do not write it explicitly in the ontology what kind of class to leave users with the freedom of chosing themselves." ;
-                            rdfs:label "functional Incompatible with" .
+###  https://www.w3id.org/MALFO/functionalIncompatibleWith
+<https://www.w3id.org/MALFO/functionalIncompatibleWith> rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain <https://www.w3id.org/MALFO/Occurrent> ;
+                                                        rdfs:comment "By saying that an occurrence is functional-incompatible with a function, we mean synchronous logical-incompatibility of the occurrence with the execution of the function (the function must be related to some object participating in the occurrence). For example, if the function of an electric wire is to carry electricity, and a logically-necessary requirement for the wire to do that is being physically connected, then `the wire being cut in two' is function-incompatible with the wire's function." ,
+                                                                     "Clearly, the range of this property is intended to be a class of functions. We do not write it explicitly in the ontology what kind of class to leave users with the freedom of chosing themselves." ;
+                                                        rdfs:label "functional Incompatible with" .
 
 
-###  https://www.w3id.org/MALFO#hasPhysicalConseq
-:hasPhysicalConseq rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf :causeOf ,
-                                      :posCauseOf ;
-                   rdf:type owl:TransitiveProperty ;
-                   rdfs:domain :Occurrent ;
-                   rdfs:range :Occurrent ;
-                   rdfs:comment """if z is `yesterday I ate less than three apples', and x is `yesterday I ate exactly two apples' and y is the occurrence that `yesterday I ate exactly one apple', then is clear that x and y both `imply' z, meaning that if x or y happened, also z happened. 
+###  https://www.w3id.org/MALFO/hasPhysicalConseq
+<https://www.w3id.org/MALFO/hasPhysicalConseq> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf <https://www.w3id.org/MALFO/causeOf> ,
+                                                                  <https://www.w3id.org/MALFO/posCauseOf> ;
+                                               rdf:type owl:TransitiveProperty ;
+                                               rdfs:domain <https://www.w3id.org/MALFO/Occurrent> ;
+                                               rdfs:range <https://www.w3id.org/MALFO/Occurrent> ;
+                                               rdfs:comment """if z is `yesterday I ate less than three apples', and x is `yesterday I ate exactly two apples' and y is the occurrence that `yesterday I ate exactly one apple', then is clear that x and y both `imply' z, meaning that if x or y happened, also z happened. 
 We call `physical consequence' this kind of implication.
 For example `peak vibration is 1.13 times over nominal limit' causes the `fatigue imposed on the axis to be 1.13 times than normal' (Matthews, A Practical Guide to Engineering Failure Investigation, 1998).
 
 Note that physical-consequenc is a different type than other causal-consequences (e.g., achieves). For instance, a key difference is that causal-consequence requires a (possibly extended) spatial and temporal contiguity or overlapping, while physical-consequence is `immediate'/`synchronous' and does not take place somewhere nor during some time. Another difference is that causal-consequence is antisymmetric and not (generally speaking) transitive, while physical-consequence is transitive and could be bidirectional.""" ;
-                   rdfs:label "has physical consequence" .
+                                               rdfs:label "has physical consequence" .
 
 
-###  https://www.w3id.org/MALFO#incompatibleWith
-:incompatibleWith rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Occurrent ;
-                  rdfs:range :Occurrent ;
-                  owl:propertyChainAxiom ( :incompatibleWith
-                                           :prevPreconditionFor
-                                         ) ,
-                                         ( :prevPreconditionFor
-                                           :incompatibleWith
-                                         ) ;
-                  rdfs:comment "we interpret internalTo as physical incompatibility between two occurrences. For example, if we call x the occurrence that `yesterday I ate exactly two apples' and call y the occurrence that `yesterday I ate exactly one apple', then we say that x is incompatible with y" ;
-                  rdfs:label "incompatible with" .
+###  https://www.w3id.org/MALFO/incompatibleWith
+<https://www.w3id.org/MALFO/incompatibleWith> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <https://www.w3id.org/MALFO/Occurrent> ;
+                                              rdfs:range <https://www.w3id.org/MALFO/Occurrent> ;
+                                              owl:propertyChainAxiom ( <https://www.w3id.org/MALFO/incompatibleWith>
+                                                                       <https://www.w3id.org/MALFO/prevPreconditionFor>
+                                                                     ) ,
+                                                                     ( <https://www.w3id.org/MALFO/prevPreconditionFor>
+                                                                       <https://www.w3id.org/MALFO/incompatibleWith>
+                                                                     ) ;
+                                              rdfs:comment "we interpret internalTo as physical incompatibility between two occurrences. For example, if we call x the occurrence that `yesterday I ate exactly two apples' and call y the occurrence that `yesterday I ate exactly one apple', then we say that x is incompatible with y" ;
+                                              rdfs:label "incompatible with" .
 
 
-###  https://www.w3id.org/MALFO#internalTo
-:internalTo rdf:type owl:ObjectProperty ;
-            rdfs:domain :Occurrent ;
-            rdfs:range :Occurrent ;
-            rdfs:comment "For example, consider the case of the right headlight of a car that is not working because the filaments of its light bulb are burned. The occurrence ‘the filaments are burned’ (in other words, `the filaments are disconnected') is internal to the occurrence ‘the right headlight is not working'." ;
-            rdfs:label "internal to" .
+###  https://www.w3id.org/MALFO/internalTo
+<https://www.w3id.org/MALFO/internalTo> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain <https://www.w3id.org/MALFO/Occurrent> ;
+                                        rdfs:range <https://www.w3id.org/MALFO/Occurrent> ;
+                                        rdfs:comment "For example, consider the case of the right headlight of a car that is not working because the filaments of its light bulb are burned. The occurrence ‘the filaments are burned’ (in other words, `the filaments are disconnected') is internal to the occurrence ‘the right headlight is not working'." ;
+                                        rdfs:label "internal to" .
 
 
-###  https://www.w3id.org/MALFO#maintains
-:maintains rdf:type owl:ObjectProperty ;
-           rdfs:domain :Occurrent ;
-           rdfs:range :Occurrent ;
-           rdfs:comment """\"The function Maintain which originally refers to the function of outputting the incoming operand without changing it. The prototypical example is a conduit that outputs
+###  https://www.w3id.org/MALFO/maintains
+<https://www.w3id.org/MALFO/maintains> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain <https://www.w3id.org/MALFO/Occurrent> ;
+                                       rdfs:range <https://www.w3id.org/MALFO/Occurrent> ;
+                                       rdfs:comment """\"The function Maintain which originally refers to the function of outputting the incoming operand without changing it. The prototypical example is a conduit that outputs
 exactly what is fed into it: a water pipe has an output flow rate that is equal to the input flow rate. The general Maintain function performs similarly by keeping the current state unchanged. In terms of Maintain, “John did not lock the door” is paraphrased as he Maintained the lock in the unlocked state. In other words,
 the omission of an event that should have occurred Maintains the current state (by doing nothing). The introduction of Maintain thus overcomes the theoretical difficulty of mentioning an occurrent which does not happen\". 
 -- Riichiro Mizoguchi, Causing is Achieving:  A solution to the problem of causation, p.6-7 https://arxiv.org/ftp/arxiv/papers/2307/2307.07517.pdf, last accessed in May 2024""" ;
-           rdfs:isDefinedBy "https://arxiv.org/ftp/arxiv/papers/2307/2307.07517.pdf" ;
-           rdfs:label "maintains" .
+                                       rdfs:isDefinedBy "https://arxiv.org/ftp/arxiv/papers/2307/2307.07517.pdf" ;
+                                       rdfs:label "maintains" .
 
 
-###  https://www.w3id.org/MALFO#posCauseOf
-:posCauseOf rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf :transitivePosCauseOf ;
-            rdfs:domain :Occurrent ;
-            rdfs:range :Occurrent ;
-            rdfs:comment "positive causation: achieves, allows, and physical causation" ;
-            rdfs:label "positive cause of" .
+###  https://www.w3id.org/MALFO/posCauseOf
+<https://www.w3id.org/MALFO/posCauseOf> rdf:type owl:ObjectProperty ;
+                                        rdfs:subPropertyOf <https://www.w3id.org/MALFO/transitivePosCauseOf> ;
+                                        rdfs:domain <https://www.w3id.org/MALFO/Occurrent> ;
+                                        rdfs:range <https://www.w3id.org/MALFO/Occurrent> ;
+                                        rdfs:comment "positive causation: achieves, allows, and physical causation" ;
+                                        rdfs:label "positive cause of" .
 
 
-###  https://www.w3id.org/MALFO#prevPreconditionFor
-:prevPreconditionFor rdf:type owl:ObjectProperty ;
-                     rdfs:domain :State ;
-                     rdfs:range [ rdf:type owl:Class ;
-                                  owl:unionOf ( :Event
-                                                :Process
-                                                :State
-                                              )
-                                ] ;
-                     owl:propertyChainAxiom ( :hasPhysicalConseq
-                                              :prevPreconditionFor
-                                            ) ,
-                                            ( :prevPreconditionFor
-                                              :hasPhysicalConseq
-                                            ) ;
-                     rdfs:comment """\"A precondition for an occurrent is a condition whose truth value influences the activation of the associated occurrent.\" -- Riichiro Mizoguchi, Causing is Achieving:  A solution to the problem of causation, p.6 https://arxiv.org/ftp/arxiv/papers/2307/2307.07517.pdf, last accessed in May 2024
+###  https://www.w3id.org/MALFO/prevPreconditionFor
+<https://www.w3id.org/MALFO/prevPreconditionFor> rdf:type owl:ObjectProperty ;
+                                                 rdfs:domain <https://www.w3id.org/MALFO/State> ;
+                                                 rdfs:range [ rdf:type owl:Class ;
+                                                              owl:unionOf ( <https://www.w3id.org/MALFO/Event>
+                                                                            <https://www.w3id.org/MALFO/Process>
+                                                                            <https://www.w3id.org/MALFO/State>
+                                                                          )
+                                                            ] ;
+                                                 owl:propertyChainAxiom ( <https://www.w3id.org/MALFO/hasPhysicalConseq>
+                                                                          <https://www.w3id.org/MALFO/prevPreconditionFor>
+                                                                        ) ,
+                                                                        ( <https://www.w3id.org/MALFO/prevPreconditionFor>
+                                                                          <https://www.w3id.org/MALFO/hasPhysicalConseq>
+                                                                        ) ;
+                                                 rdfs:comment """\"A precondition for an occurrent is a condition whose truth value influences the activation of the associated occurrent.\" -- Riichiro Mizoguchi, Causing is Achieving:  A solution to the problem of causation, p.6 https://arxiv.org/ftp/arxiv/papers/2307/2307.07517.pdf, last accessed in May 2024
 
 A preventive precondition helps (or even is a necessary precondition for) bringinng about an occurrence.""" ;
-                     rdfs:isDefinedBy "https://arxiv.org/ftp/arxiv/papers/2307/2307.07517.pdf" ;
-                     rdfs:label "preventive precondition for" .
+                                                 rdfs:isDefinedBy "https://arxiv.org/ftp/arxiv/papers/2307/2307.07517.pdf" ;
+                                                 rdfs:label "preventive precondition for" .
 
 
-###  https://www.w3id.org/MALFO#prevents
-:prevents rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf :causeOf ;
-          rdfs:domain [ rdf:type owl:Class ;
-                        owl:unionOf ( :Event
-                                      :Process
-                                      :State
-                                    )
-                      ] ;
-          rdfs:range [ rdf:type owl:Class ;
-                       owl:unionOf ( :Process
-                                     :State
-                                   )
-                     ] ;
-          owl:propertyChainAxiom ( :achieves
-                                   :incompatibleWith
-                                 ) ,
-                                 ( :hasPhysicalConseq
-                                   :prevents
-                                 ) ,
-                                 ( :prevents
-                                   :hasPhysicalConseq
-                                 ) ;
-          rdfs:comment "achieving a state that is incompatible with the caused occurrence" ;
-          rdfs:isDefinedBy "https://doi.org/10.3233/AO-190206" ;
-          rdfs:label "prevents" .
+###  https://www.w3id.org/MALFO/prevents
+<https://www.w3id.org/MALFO/prevents> rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf <https://www.w3id.org/MALFO/causeOf> ;
+                                      rdfs:domain [ rdf:type owl:Class ;
+                                                    owl:unionOf ( <https://www.w3id.org/MALFO/Event>
+                                                                  <https://www.w3id.org/MALFO/Process>
+                                                                  <https://www.w3id.org/MALFO/State>
+                                                                )
+                                                  ] ;
+                                      rdfs:range [ rdf:type owl:Class ;
+                                                   owl:unionOf ( <https://www.w3id.org/MALFO/Process>
+                                                                 <https://www.w3id.org/MALFO/State>
+                                                               )
+                                                 ] ;
+                                      owl:propertyChainAxiom ( <https://www.w3id.org/MALFO/achieves>
+                                                               <https://www.w3id.org/MALFO/incompatibleWith>
+                                                             ) ,
+                                                             ( <https://www.w3id.org/MALFO/hasPhysicalConseq>
+                                                               <https://www.w3id.org/MALFO/prevents>
+                                                             ) ,
+                                                             ( <https://www.w3id.org/MALFO/prevents>
+                                                               <https://www.w3id.org/MALFO/hasPhysicalConseq>
+                                                             ) ;
+                                      rdfs:comment "achieving a state that is incompatible with the caused occurrence" ;
+                                      rdfs:isDefinedBy "https://doi.org/10.3233/AO-190206" ;
+                                      rdfs:label "prevents" .
 
 
-###  https://www.w3id.org/MALFO#systemicFunctionOf
-:systemicFunctionOf rdf:type owl:ObjectProperty ;
-                    rdfs:comment "Similarly to functionIncompatibleWith, the domain of this property is intended to be a class of functions, while its range a class of devices. We do not write them explicitly in the ontology and leave users with the freedom of chosing themselves and using this relation for eventual mappings." ,
-                                 """“x is a systemic function of y if and only if x is a role and there exist a system z
+###  https://www.w3id.org/MALFO/systemicFunctionOf
+<https://www.w3id.org/MALFO/systemicFunctionOf> rdf:type owl:ObjectProperty ;
+                                                rdfs:comment "Similarly to functionIncompatibleWith, the domain of this property is intended to be a class of functions, while its range a class of devices. We do not write them explicitly in the ontology and leave users with the freedom of chosing themselves and using this relation for eventual mappings." ,
+                                                             """“x is a systemic function of y if and only if x is a role and there exist a system z
 and a goal g for z such that x classifies only behaviours which have y as doer and
 part of z, and that causally contribute to achieve g.”""" ;
-                    rdfs:label "systemic function of" .
+                                                rdfs:label "systemic function of" .
 
 
-###  https://www.w3id.org/MALFO#transitivePosCauseOf
-:transitivePosCauseOf rdf:type owl:ObjectProperty ,
-                               owl:TransitiveProperty ;
-                      rdfs:domain :Occurrent ;
-                      rdfs:range :Occurrent ;
-                      rdfs:comment "Transitive closure of positive cause" ;
-                      rdfs:label "transitive positive cause of" .
+###  https://www.w3id.org/MALFO/transitivePosCauseOf
+<https://www.w3id.org/MALFO/transitivePosCauseOf> rdf:type owl:ObjectProperty ,
+                                                           owl:TransitiveProperty ;
+                                                  rdfs:domain <https://www.w3id.org/MALFO/Occurrent> ;
+                                                  rdfs:range <https://www.w3id.org/MALFO/Occurrent> ;
+                                                  rdfs:comment "Transitive closure of positive cause" ;
+                                                  rdfs:label "transitive positive cause of" .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  https://www.w3id.org/MALFO#AbnormalExternalDisabledState
-:AbnormalExternalDisabledState rdf:type owl:Class ;
-                               owl:equivalentClass [ owl:intersectionOf ( :Malfunction
-                                                                          :State
-                                                                          [ rdf:type owl:Class ;
-                                                                            owl:complementOf :Fault
-                                                                          ]
-                                                                        ) ;
-                                                     rdf:type owl:Class
-                                                   ] ;
-                               rdfs:comment """Abnormal external disabled states are introduced to separate the malfunction states that need corrective actions from those that do not, because the
+###  https://www.w3id.org/MALFO/AbnormalExternalDisabledState
+<https://www.w3id.org/MALFO/AbnormalExternalDisabledState> rdf:type owl:Class ;
+                                                           owl:equivalentClass [ owl:intersectionOf ( <https://www.w3id.org/MALFO/Malfunction>
+                                                                                                      <https://www.w3id.org/MALFO/State>
+                                                                                                      [ rdf:type owl:Class ;
+                                                                                                        owl:complementOf <https://www.w3id.org/MALFO/Fault>
+                                                                                                      ]
+                                                                                                    ) ;
+                                                                                 rdf:type owl:Class
+                                                                               ] ;
+                                                           rdfs:comment """Abnormal external disabled states are introduced to separate the malfunction states that need corrective actions from those that do not, because the
 malfunction to be corrected resides somewhere else. For example, when the right
 headlight of a car is not lit when it should, there are at least two scenarios to
 consider. The headlight itself may be faulty, say there is a blown lightbulb inside
@@ -408,261 +409,261 @@ latter correspond to the union of the two cases: either there is a lack of requi
 MALFO-‘abnormal external disabled states’ are more specific and correspond to
 just the ‘lacks required external resources’ case. This is because we have declared
 that malfunction-related happenings are unwanted occurrences, while planned occurrences are not unwanted.""" ;
-                               rdfs:label "Abnormal External Disabled State" ;
-                               skos:example "The computer cannot be turned on because the wall socket its plug is plugged in is broken" ;
-                               iof-av:firstOrderLogicDefinition "AbExtDisabledSt(x) ↔ Malfunction(x) ∧ State(x) ∧ ¬Fault(x)" ;
-                               iof-av:naturalLanguageDefinition "A state that is abnormal, but is not due to any internal cause" ;
-                               iof-av:semiFormalNaturalLanguageDefinition """x is an abnormal external disabled state means that x is a malfunction and state
+                                                           rdfs:label "Abnormal External Disabled State" ;
+                                                           skos:example "The computer cannot be turned on because the wall socket its plug is plugged in is broken" ;
+                                                           iof-av:firstOrderLogicDefinition "AbExtDisabledSt(x) ↔ Malfunction(x) ∧ State(x) ∧ ¬Fault(x)" ;
+                                                           iof-av:naturalLanguageDefinition "A state that is abnormal, but is not due to any internal cause" ;
+                                                           iof-av:semiFormalNaturalLanguageDefinition """x is an abnormal external disabled state means that x is a malfunction and state
 but not a fault.""" .
 
 
-###  https://www.w3id.org/MALFO#Event
-:Event rdf:type owl:Class ;
-       rdfs:subClassOf :Occurrent ;
-       rdfs:comment """In engineering, an important class of occurrences, which in this work we consider as archetypical examples of events are those occurrences that, being very brief, are considered instantaneous, such as impacts or ruptures.
+###  https://www.w3id.org/MALFO/Event
+<https://www.w3id.org/MALFO/Event> rdf:type owl:Class ;
+                                   rdfs:subClassOf <https://www.w3id.org/MALFO/Occurrent> ;
+                                   rdfs:comment """In engineering, an important class of occurrences, which in this work we consider as archetypical examples of events are those occurrences that, being very brief, are considered instantaneous, such as impacts or ruptures.
 
 More precise definitions are left open to interpretation (e.g. through alignment with an upper ontology)""" ;
-       rdfs:label "Event" ;
-       iof-av:isPrimitive "true"^^xsd:boolean ;
-       iof-av:primitiveRationale "This is a notion of higher generality than those considered in this ontology, its definition is delegated to e.g. alignment with an upper ontology" .
+                                   rdfs:label "Event" ;
+                                   iof-av:isPrimitive "true"^^xsd:boolean ;
+                                   iof-av:primitiveRationale "This is a notion of higher generality than those considered in this ontology, its definition is delegated to e.g. alignment with an upper ontology" .
 
 
-###  https://www.w3id.org/MALFO#Failure
-:Failure rdf:type owl:Class ;
-         owl:equivalentClass [ owl:intersectionOf ( :Event
-                                                    :Malfunction
-                                                    [ rdf:type owl:Restriction ;
-                                                      owl:onProperty :achieves ;
-                                                      owl:someValuesFrom :Fault
-                                                    ]
-                                                  ) ;
-                               rdf:type owl:Class
-                             ] ;
-         owl:disjointWith :NonPerformanceEvent ;
-         rdfs:comment "With this definition we try to capture the common concept of failure present in the literature: the loss of the ability to perform a function. We also stipulate, by definition, that failures cause faults. For example, if a wire, whose function is to carry electricity, is gnawed by a rat, the wire fails when it breaks and ceases to be able to conduct electricity." ;
-         rdfs:label "Failure" ;
-         skos:example "the rupture of an electric wire" ;
-         iof-av:firstOrderLogicDefinition "Failure(x) ↔ Malfunction(x) ∧ Event(x) ∧ ∃y(Fault(y) ∧ achieves(x, y))" ;
-         iof-av:naturalLanguageDefinition "the loss of the ability to perform a function, which leads to a fault" ;
-         iof-av:semiFormalNaturalLanguageDefinition "x is a failure means that x is a malfunction and an event that achieves some fault." .
+###  https://www.w3id.org/MALFO/Failure
+<https://www.w3id.org/MALFO/Failure> rdf:type owl:Class ;
+                                     owl:equivalentClass [ owl:intersectionOf ( <https://www.w3id.org/MALFO/Event>
+                                                                                <https://www.w3id.org/MALFO/Malfunction>
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty <https://www.w3id.org/MALFO/achieves> ;
+                                                                                  owl:someValuesFrom <https://www.w3id.org/MALFO/Fault>
+                                                                                ]
+                                                                              ) ;
+                                                           rdf:type owl:Class
+                                                         ] ;
+                                     owl:disjointWith <https://www.w3id.org/MALFO/NonPerformanceEvent> ;
+                                     rdfs:comment "With this definition we try to capture the common concept of failure present in the literature: the loss of the ability to perform a function. We also stipulate, by definition, that failures cause faults. For example, if a wire, whose function is to carry electricity, is gnawed by a rat, the wire fails when it breaks and ceases to be able to conduct electricity." ;
+                                     rdfs:label "Failure" ;
+                                     skos:example "the rupture of an electric wire" ;
+                                     iof-av:firstOrderLogicDefinition "Failure(x) ↔ Malfunction(x) ∧ Event(x) ∧ ∃y(Fault(y) ∧ achieves(x, y))" ;
+                                     iof-av:naturalLanguageDefinition "the loss of the ability to perform a function, which leads to a fault" ;
+                                     iof-av:semiFormalNaturalLanguageDefinition "x is a failure means that x is a malfunction and an event that achieves some fault." .
 
 
-###  https://www.w3id.org/MALFO#FailureCondition
-:FailureCondition rdf:type owl:Class ;
-                  owl:equivalentClass [ owl:intersectionOf ( :State
-                                                             [ rdf:type owl:Class ;
-                                                               owl:unionOf ( [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty :prevPreconditionFor ;
-                                                                               owl:someValuesFrom [ rdf:type owl:Restriction ;
-                                                                                                    owl:onProperty :disallows ;
-                                                                                                    owl:someValuesFrom :Failure
-                                                                                                  ]
-                                                                             ]
-                                                                             [ rdf:type owl:Restriction ;
-                                                                               owl:onProperty :transitivePosCauseOf ;
-                                                                               owl:someValuesFrom :Failure
-                                                                             ]
-                                                                           )
-                                                             ]
-                                                             [ rdf:type owl:Class ;
-                                                               owl:complementOf :Malfunction
-                                                             ]
-                                                           ) ;
-                                        rdf:type owl:Class
-                                      ] ;
-                  rdfs:subClassOf :MalfunctionRelatedHappening ;
-                  rdfs:comment "Failure conditions have the same causal role as failure mechanisms, but are states in place of processes (e.g. `being corroded' in place of `corrosion'). We also add explicitly the case of negative causation, that is, e.g. the case that the state of being corroded inhibits a safety function and such inhibition then causes a failure." ;
-                  rdfs:label "Failure Condition" ;
-                  iof-av:firstOrderLogicDefinition """FailureCondition(x) ↔ (State(x) ∧ (¬Malfunction(x)) ∧
+###  https://www.w3id.org/MALFO/FailureCondition
+<https://www.w3id.org/MALFO/FailureCondition> rdf:type owl:Class ;
+                                              owl:equivalentClass [ owl:intersectionOf ( <https://www.w3id.org/MALFO/State>
+                                                                                         [ rdf:type owl:Class ;
+                                                                                           owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty <https://www.w3id.org/MALFO/prevPreconditionFor> ;
+                                                                                                           owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                                                owl:onProperty <https://www.w3id.org/MALFO/disallows> ;
+                                                                                                                                owl:someValuesFrom <https://www.w3id.org/MALFO/Failure>
+                                                                                                                              ]
+                                                                                                         ]
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty <https://www.w3id.org/MALFO/transitivePosCauseOf> ;
+                                                                                                           owl:someValuesFrom <https://www.w3id.org/MALFO/Failure>
+                                                                                                         ]
+                                                                                                       )
+                                                                                         ]
+                                                                                         [ rdf:type owl:Class ;
+                                                                                           owl:complementOf <https://www.w3id.org/MALFO/Malfunction>
+                                                                                         ]
+                                                                                       ) ;
+                                                                    rdf:type owl:Class
+                                                                  ] ;
+                                              rdfs:subClassOf <https://www.w3id.org/MALFO/MalfunctionRelatedHappening> ;
+                                              rdfs:comment "Failure conditions have the same causal role as failure mechanisms, but are states in place of processes (e.g. `being corroded' in place of `corrosion'). We also add explicitly the case of negative causation, that is, e.g. the case that the state of being corroded inhibits a safety function and such inhibition then causes a failure." ;
+                                              rdfs:label "Failure Condition" ;
+                                              iof-av:firstOrderLogicDefinition """FailureCondition(x) ↔ (State(x) ∧ (¬Malfunction(x)) ∧
 ∃y(Failure(y) ∧ (transPosCausalCon(x, y) ∨
 ∃z(prevPrecondFor(x, z) ∧ disallows(z, y)))))""" ;
-                  iof-av:naturalLanguageDefinition "A state that, while not entailing per se the loss of functionality, will eventually determine such a loss." ;
-                  iof-av:semiFormalNaturalLanguageDefinition "x is a failure condition means that x is not a malfunction, is a state, and is either the facilitative precondition for a failure or the positive cause, eventually, of that failure, or it is the preventive precondition for some occurrence that disallows the failure." .
+                                              iof-av:naturalLanguageDefinition "A state that, while not entailing per se the loss of functionality, will eventually determine such a loss." ;
+                                              iof-av:semiFormalNaturalLanguageDefinition "x is a failure condition means that x is not a malfunction, is a state, and is either the facilitative precondition for a failure or the positive cause, eventually, of that failure, or it is the preventive precondition for some occurrence that disallows the failure." .
 
 
-###  https://www.w3id.org/MALFO#FailureMechanism
-:FailureMechanism rdf:type owl:Class ;
-                  owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
-                                                               owl:unionOf ( :Event
-                                                                             :Process
-                                                                           )
-                                                             ]
-                                                             [ rdf:type owl:Class ;
-                                                               owl:complementOf :Malfunction
-                                                             ]
-                                                             [ rdf:type owl:Restriction ;
-                                                               owl:onProperty :transitivePosCauseOf ;
-                                                               owl:someValuesFrom :Failure
-                                                             ]
-                                                           ) ;
-                                        rdf:type owl:Class
-                                      ] ;
-                  rdfs:subClassOf :MalfunctionRelatedHappening ;
-                  rdfs:comment """FailureMechanism tries to convey the meaning behind common occurrence-types such as corrosion, wear, cracking, etc., which are not
+###  https://www.w3id.org/MALFO/FailureMechanism
+<https://www.w3id.org/MALFO/FailureMechanism> rdf:type owl:Class ;
+                                              owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                                                           owl:unionOf ( <https://www.w3id.org/MALFO/Event>
+                                                                                                         <https://www.w3id.org/MALFO/Process>
+                                                                                                       )
+                                                                                         ]
+                                                                                         [ rdf:type owl:Class ;
+                                                                                           owl:complementOf <https://www.w3id.org/MALFO/Malfunction>
+                                                                                         ]
+                                                                                         [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty <https://www.w3id.org/MALFO/transitivePosCauseOf> ;
+                                                                                           owl:someValuesFrom <https://www.w3id.org/MALFO/Failure>
+                                                                                         ]
+                                                                                       ) ;
+                                                                    rdf:type owl:Class
+                                                                  ] ;
+                                              rdfs:subClassOf <https://www.w3id.org/MALFO/MalfunctionRelatedHappening> ;
+                                              rdfs:comment """FailureMechanism tries to convey the meaning behind common occurrence-types such as corrosion, wear, cracking, etc., which are not
 typically classified as failures themselves but do cause failures in some sense, which
 is made precise here.""" ;
-                  rdfs:label "Failure Mechanism" ;
-                  skos:example "corrosion, wear, cracking" ;
-                  iof-av:firstOrderLogicDefinition """FailureMechanism(x) ↔ ((Process(x) ∨ Event(x)) ∧
+                                              rdfs:label "Failure Mechanism" ;
+                                              skos:example "corrosion, wear, cracking" ;
+                                              iof-av:firstOrderLogicDefinition """FailureMechanism(x) ↔ ((Process(x) ∨ Event(x)) ∧
 (¬Malfunction(x)) ∧ ∃y(Failure(y) ∧ transPosCausalCon(x, y)))""" ;
-                  iof-av:semiFormalNaturalLanguageDefinition """x is a failure mechanism means that x is not a malfunction, is either a process or an
+                                              iof-av:semiFormalNaturalLanguageDefinition """x is a failure mechanism means that x is not a malfunction, is either a process or an
 event, and is the positive causal contributor, eventually, of some failure.""" .
 
 
-###  https://www.w3id.org/MALFO#Fault
-:Fault rdf:type owl:Class ;
-       rdfs:subClassOf :Malfunction ,
-                       :State ,
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty [ owl:inverseOf :achieves
-                                        ] ;
-                         owl:someValuesFrom :MalfunctionRelatedHappening
-                       ] ,
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty [ owl:inverseOf :internalTo
-                                        ] ;
-                         owl:someValuesFrom :MalfunctionRelatedHappening
-                       ] ;
-       rdfs:comment "Note that sufficient conditions for the classifications are expressed as a SWRL rule" ,
-                    """Notice that we somewhat weakened the classic definition of fault ``inability to function due to an internal state'', otherwise the z in the definient should be classified as a state. We consider that such classification is not necessary, and the z may belogn to other occurrent-types: for example, if `catastrophic fracture of the main axis' (z) causes the an industrial fan to `be completely non-operational' (x), the first occurrence (the fracture) is an event internal to the second occurrence (being non operational), a state, which is non function-compatible, and, therefore, a fault by definition.
+###  https://www.w3id.org/MALFO/Fault
+<https://www.w3id.org/MALFO/Fault> rdf:type owl:Class ;
+                                   rdfs:subClassOf <https://www.w3id.org/MALFO/Malfunction> ,
+                                                   <https://www.w3id.org/MALFO/State> ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty [ owl:inverseOf <https://www.w3id.org/MALFO/achieves>
+                                                                    ] ;
+                                                     owl:someValuesFrom <https://www.w3id.org/MALFO/MalfunctionRelatedHappening>
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty [ owl:inverseOf <https://www.w3id.org/MALFO/internalTo>
+                                                                    ] ;
+                                                     owl:someValuesFrom <https://www.w3id.org/MALFO/MalfunctionRelatedHappening>
+                                                   ] ;
+                                   rdfs:comment "Note that sufficient conditions for the classifications are expressed as a SWRL rule" ,
+                                                """Notice that we somewhat weakened the classic definition of fault ``inability to function due to an internal state'', otherwise the z in the definient should be classified as a state. We consider that such classification is not necessary, and the z may belogn to other occurrent-types: for example, if `catastrophic fracture of the main axis' (z) causes the an industrial fan to `be completely non-operational' (x), the first occurrence (the fracture) is an event internal to the second occurrence (being non operational), a state, which is non function-compatible, and, therefore, a fault by definition.
  
 Another example, this time in which the z is a state, is the `being cut into two parts'-state (z) of an electrical wire, which is an internal state that causes the state of `being unable to transmit electricity' (x), which is then a fault by definition""" ;
-       rdfs:label "Fault" ;
-       iof-av:firstOrderLogicDefinition """Fault(x) ↔ Malfunction(x) ∧ State(x) ∧ ∃z(internalTo(z, x) ∧
+                                   rdfs:label "Fault" ;
+                                   iof-av:firstOrderLogicDefinition """Fault(x) ↔ Malfunction(x) ∧ State(x) ∧ ∃z(internalTo(z, x) ∧
 achieves(z, x))""" ;
-       iof-av:naturalLanguageDefinition "inability to function due to the happening of some internal occurrence" ;
-       iof-av:semiFormalNaturalLanguageDefinition "x is a fault means that x is malfunction and a state and is achieved by some occurrence internal to itself" .
+                                   iof-av:naturalLanguageDefinition "inability to function due to the happening of some internal occurrence" ;
+                                   iof-av:semiFormalNaturalLanguageDefinition "x is a fault means that x is malfunction and a state and is achieved by some occurrence internal to itself" .
 
 
-###  https://www.w3id.org/MALFO#Malfunction
-:Malfunction rdf:type owl:Class ;
-             owl:equivalentClass [ rdf:type owl:Restriction ;
-                                   owl:onProperty :functionalIncompatibleWith ;
-                                   owl:someValuesFrom owl:Thing
-                                 ] ;
-             rdfs:subClassOf :MalfunctionRelatedHappening ;
-             rdfs:comment "This definition of malfunction is almost a literal interpretation of the term malfunction, Of course, the compatibility could be complete or partial. This is ignored for the sake of simplicity." ;
-             rdfs:label "Malfunction" ;
-             skos:example """For example, the fracture of an axis is a malfunction because it is function-incompatible with the axis' function of transmitting torque, the occurrence
+###  https://www.w3id.org/MALFO/Malfunction
+<https://www.w3id.org/MALFO/Malfunction> rdf:type owl:Class ;
+                                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <https://www.w3id.org/MALFO/functionalIncompatibleWith> ;
+                                                               owl:someValuesFrom owl:Thing
+                                                             ] ;
+                                         rdfs:subClassOf <https://www.w3id.org/MALFO/MalfunctionRelatedHappening> ;
+                                         rdfs:comment "This definition of malfunction is almost a literal interpretation of the term malfunction, Of course, the compatibility could be complete or partial. This is ignored for the sake of simplicity." ;
+                                         rdfs:label "Malfunction" ;
+                                         skos:example """For example, the fracture of an axis is a malfunction because it is function-incompatible with the axis' function of transmitting torque, the occurrence
 that a headlight of a car does not turn on when it should (incompatible with the
 headlight function of lighting the environment in front of the car when requested).""" ;
-             iof-av:firstOrderLogicDefinition "Malfunction(x) ↔ ∃f functionIncompatible(x, f)" ;
-             iof-av:naturalLanguageDefinition "Any occurrence that cannot co-occurr or temporally overlap with some function" ;
-             iof-av:semiFormalNaturalLanguageDefinition "x is a malfunction means that there is some function x is function-incompatible with" .
+                                         iof-av:firstOrderLogicDefinition "Malfunction(x) ↔ ∃f functionIncompatible(x, f)" ;
+                                         iof-av:naturalLanguageDefinition "Any occurrence that cannot co-occurr or temporally overlap with some function" ;
+                                         iof-av:semiFormalNaturalLanguageDefinition "x is a malfunction means that there is some function x is function-incompatible with" .
 
 
-###  https://www.w3id.org/MALFO#MalfunctionProcess
-:MalfunctionProcess rdf:type owl:Class ;
-                    owl:equivalentClass [ owl:intersectionOf ( :Malfunction
-                                                               :Process
-                                                             ) ;
-                                          rdf:type owl:Class
-                                        ] ;
-                    rdfs:comment "We introduce malfunction processes to partition completely the malfunction category. For example in Avizienis' ``Basic concepts and taxonomy of dependable and secure computing'' (2004). An example of a failure in an integrated circuit is described: a faulty IC is invoked, and this causes, at different time and locations, the presence of wrong values in the calculation process. In our taxonomy, we classify this `erroneus calculation process' as a malfunction process." ;
-                    rdfs:label "Malfunction Process" ;
-                    iof-av:firstOrderLogicDefinition "MalfunctionProcess(x) ↔ (Malfunction(x) ∧ Process(x))" ;
-                    iof-av:naturalLanguageDefinition "A malfunction that is a process" ;
-                    iof-av:semiFormalNaturalLanguageDefinition "x is a malfunction process means that x is a malfunction and a process" .
+###  https://www.w3id.org/MALFO/MalfunctionProcess
+<https://www.w3id.org/MALFO/MalfunctionProcess> rdf:type owl:Class ;
+                                                owl:equivalentClass [ owl:intersectionOf ( <https://www.w3id.org/MALFO/Malfunction>
+                                                                                           <https://www.w3id.org/MALFO/Process>
+                                                                                         ) ;
+                                                                      rdf:type owl:Class
+                                                                    ] ;
+                                                rdfs:comment "We introduce malfunction processes to partition completely the malfunction category. For example in Avizienis' ``Basic concepts and taxonomy of dependable and secure computing'' (2004). An example of a failure in an integrated circuit is described: a faulty IC is invoked, and this causes, at different time and locations, the presence of wrong values in the calculation process. In our taxonomy, we classify this `erroneus calculation process' as a malfunction process." ;
+                                                rdfs:label "Malfunction Process" ;
+                                                iof-av:firstOrderLogicDefinition "MalfunctionProcess(x) ↔ (Malfunction(x) ∧ Process(x))" ;
+                                                iof-av:naturalLanguageDefinition "A malfunction that is a process" ;
+                                                iof-av:semiFormalNaturalLanguageDefinition "x is a malfunction process means that x is a malfunction and a process" .
 
 
-###  https://www.w3id.org/MALFO#MalfunctionRelatedHappening
-:MalfunctionRelatedHappening rdf:type owl:Class ;
-                             rdfs:subClassOf :Occurrent ;
-                             rdfs:comment """The umbrella for all the malfunction-related classes. 
+###  https://www.w3id.org/MALFO/MalfunctionRelatedHappening
+<https://www.w3id.org/MALFO/MalfunctionRelatedHappening> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <https://www.w3id.org/MALFO/Occurrent> ;
+                                                         rdfs:comment """The umbrella for all the malfunction-related classes. 
 
 As a heuristic definition, one can consider \"the class of all occurrents who are related to a malfunction through the symmetric, transitive closure of all the cusal relations of MALFO (achieves, allows, disallows, prevents, facilitative, preventive, maintains)\"""" ;
-                             rdfs:label "Malfunction Related Happening" ;
-                             iof-av:isPrimitive "true"^^xsd:boolean ;
-                             iof-av:naturalLanguageDefinition "a catch-all term for any occurrence considered unwanted by domain experts (i.e. there is a mismatch between what is occurring and the ideal mental model of a domain expert)" ;
-                             iof-av:primitiveRationale "This class collects all the occurrents that are the subjects of our analysis and it is the very start of our analysis." .
+                                                         rdfs:label "Malfunction Related Happening" ;
+                                                         iof-av:isPrimitive "true"^^xsd:boolean ;
+                                                         iof-av:naturalLanguageDefinition "a catch-all term for any occurrence considered unwanted by domain experts (i.e. there is a mismatch between what is occurring and the ideal mental model of a domain expert)" ;
+                                                         iof-av:primitiveRationale "This class collects all the occurrents that are the subjects of our analysis and it is the very start of our analysis." .
 
 
-###  https://www.w3id.org/MALFO#MereSymptom
-:MereSymptom rdf:type owl:Class ;
-             owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
-                                                          owl:complementOf :FailureCondition
-                                                        ]
-                                                        [ rdf:type owl:Class ;
-                                                          owl:complementOf :FailureMechanism
-                                                        ]
-                                                        [ rdf:type owl:Class ;
-                                                          owl:complementOf :Malfunction
-                                                        ]
-                                                        [ rdf:type owl:Restriction ;
-                                                          owl:onProperty [ owl:inverseOf :causeOf
-                                                                         ] ;
-                                                          owl:someValuesFrom :Malfunction
-                                                        ]
-                                                      ) ;
-                                   rdf:type owl:Class
-                                 ] ;
-             rdfs:subClassOf :MalfunctionRelatedHappening ;
-             rdfs:comment "A mere symptom has no causal effect on a system (at least not in the sense of failure mechanisms and conditions) and is therefore differentiated from other occurrence types. For example, if the right headlight of a car is not lit up when it should, the fact that `there is no light beam shined by the headlight' is a mere symptom because the absence of light, by itself, will not cause the failure of other components. The negative causation in causeOf is considered because the symptom could be the absence of some occurrence that, say, the malfunction prevents (e.g., the missing light in the previous example)." ;
-             rdfs:label "Mere Symptom" ;
-             skos:example "there is no light beam shined by the headlight" ;
-             iof-av:firstOrderLogicDefinition """MereSymptom(x) ↔ ¬Malfunction(x) ∧ ¬FailureMechanism(x) ∧
+###  https://www.w3id.org/MALFO/MereSymptom
+<https://www.w3id.org/MALFO/MereSymptom> rdf:type owl:Class ;
+                                         owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                                                      owl:complementOf <https://www.w3id.org/MALFO/FailureCondition>
+                                                                                    ]
+                                                                                    [ rdf:type owl:Class ;
+                                                                                      owl:complementOf <https://www.w3id.org/MALFO/FailureMechanism>
+                                                                                    ]
+                                                                                    [ rdf:type owl:Class ;
+                                                                                      owl:complementOf <https://www.w3id.org/MALFO/Malfunction>
+                                                                                    ]
+                                                                                    [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty [ owl:inverseOf <https://www.w3id.org/MALFO/causeOf>
+                                                                                                     ] ;
+                                                                                      owl:someValuesFrom <https://www.w3id.org/MALFO/Malfunction>
+                                                                                    ]
+                                                                                  ) ;
+                                                               rdf:type owl:Class
+                                                             ] ;
+                                         rdfs:subClassOf <https://www.w3id.org/MALFO/MalfunctionRelatedHappening> ;
+                                         rdfs:comment "A mere symptom has no causal effect on a system (at least not in the sense of failure mechanisms and conditions) and is therefore differentiated from other occurrence types. For example, if the right headlight of a car is not lit up when it should, the fact that `there is no light beam shined by the headlight' is a mere symptom because the absence of light, by itself, will not cause the failure of other components. The negative causation in causeOf is considered because the symptom could be the absence of some occurrence that, say, the malfunction prevents (e.g., the missing light in the previous example)." ;
+                                         rdfs:label "Mere Symptom" ;
+                                         skos:example "there is no light beam shined by the headlight" ;
+                                         iof-av:firstOrderLogicDefinition """MereSymptom(x) ↔ ¬Malfunction(x) ∧ ¬FailureMechanism(x) ∧
 ¬FailureCondition(x) ∧ ∃z(Malfunction(z) ∧ causeOf(z, x))""" ;
-             iof-av:naturalLanguageDefinition "A symptom that per se does not impede a function, nor will cause a failure" ;
-             iof-av:semiFormalNaturalLanguageDefinition "x is a mere symptom means that x not a malfunction, nor a failure condition, nor a failure mechnaism, and is caused by a malfunction." .
+                                         iof-av:naturalLanguageDefinition "A symptom that per se does not impede a function, nor will cause a failure" ;
+                                         iof-av:semiFormalNaturalLanguageDefinition "x is a mere symptom means that x not a malfunction, nor a failure condition, nor a failure mechnaism, and is caused by a malfunction." .
 
 
-###  https://www.w3id.org/MALFO#NonPerformanceEvent
-:NonPerformanceEvent rdf:type owl:Class ;
-                     owl:equivalentClass [ owl:intersectionOf ( :Event
-                                                                :Malfunction
-                                                                [ rdf:type owl:Class ;
-                                                                  owl:complementOf :Failure
-                                                                ]
-                                                              ) ;
-                                           rdf:type owl:Class
-                                         ] ;
-                     rdfs:comment "An example of non-performance event occurs when attempting to turn on the right headlight of a car if its lightbulb is broken: `the right headlight did not turn on' is a non-performance event, since it is a malfunction but, by itself, does not cause failures." ;
-                     rdfs:label "Non-Performance Event" ;
-                     skos:example "the right headlight of the car did not turn on" ;
-                     iof-av:firstOrderLogicDefinition "NonPerformanceEvent(x) ↔ Malfunction(x) ∧ Event(x) ∧ ¬Failure(x)" ;
-                     iof-av:naturalLanguageDefinition "Those events that entail that a function was not performed as it should have been, but by themself do no cause faults" ;
-                     iof-av:semiFormalNaturalLanguageDefinition "x is a non-performance event means that x is a malfunction and an event, but not a failure." .
+###  https://www.w3id.org/MALFO/NonPerformanceEvent
+<https://www.w3id.org/MALFO/NonPerformanceEvent> rdf:type owl:Class ;
+                                                 owl:equivalentClass [ owl:intersectionOf ( <https://www.w3id.org/MALFO/Event>
+                                                                                            <https://www.w3id.org/MALFO/Malfunction>
+                                                                                            [ rdf:type owl:Class ;
+                                                                                              owl:complementOf <https://www.w3id.org/MALFO/Failure>
+                                                                                            ]
+                                                                                          ) ;
+                                                                       rdf:type owl:Class
+                                                                     ] ;
+                                                 rdfs:comment "An example of non-performance event occurs when attempting to turn on the right headlight of a car if its lightbulb is broken: `the right headlight did not turn on' is a non-performance event, since it is a malfunction but, by itself, does not cause failures." ;
+                                                 rdfs:label "Non-Performance Event" ;
+                                                 skos:example "the right headlight of the car did not turn on" ;
+                                                 iof-av:firstOrderLogicDefinition "NonPerformanceEvent(x) ↔ Malfunction(x) ∧ Event(x) ∧ ¬Failure(x)" ;
+                                                 iof-av:naturalLanguageDefinition "Those events that entail that a function was not performed as it should have been, but by themself do no cause faults" ;
+                                                 iof-av:semiFormalNaturalLanguageDefinition "x is a non-performance event means that x is a malfunction and an event, but not a failure." .
 
 
-###  https://www.w3id.org/MALFO#Occurrent
-:Occurrent rdf:type owl:Class ;
-           rdfs:comment """An occurrent is something that happens in time
-
-More precise definitions are left open to interpretation (e.g. through alignment with an upper ontology)""" ;
-           rdfs:label "Occurrent" ;
-           iof-av:isPrimitive "true"^^xsd:boolean ;
-           iof-av:naturalLanguageDefinition "An occurrent is something that happens in time" ;
-           iof-av:primitiveRationale "This is a notion of higher generality than those considered in this ontology, its definition is delegated to e.g. alignment with an upper ontology" .
-
-
-###  https://www.w3id.org/MALFO#Process
-:Process rdf:type owl:Class ;
-         rdfs:subClassOf :Occurrent ;
-         rdfs:comment """In engineering, a typical example of process is a sequence of states (or, equivalently, of state transitions) related to some physical phenomena. For instance corrosion is a sequence of many single chemical reactions that change the arrangement of the relevant atoms. 
+###  https://www.w3id.org/MALFO/Occurrent
+<https://www.w3id.org/MALFO/Occurrent> rdf:type owl:Class ;
+                                       rdfs:comment """An occurrent is something that happens in time
 
 More precise definitions are left open to interpretation (e.g. through alignment with an upper ontology)""" ;
-         rdfs:label "Process" ;
-         iof-av:isPrimitive "true"^^xsd:boolean ;
-         iof-av:primitiveRationale "This is a notion of higher generality than those considered in this ontology, its definition is delegated to e.g. alignment with an upper ontology" .
+                                       rdfs:label "Occurrent" ;
+                                       iof-av:isPrimitive "true"^^xsd:boolean ;
+                                       iof-av:naturalLanguageDefinition "An occurrent is something that happens in time" ;
+                                       iof-av:primitiveRationale "This is a notion of higher generality than those considered in this ontology, its definition is delegated to e.g. alignment with an upper ontology" .
 
 
-###  https://www.w3id.org/MALFO#State
-:State rdf:type owl:Class ;
-       rdfs:subClassOf :Occurrent ,
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :achieves ;
-                         owl:allValuesFrom :State
-                       ] ,
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :prevents ;
-                         owl:allValuesFrom :State
-                       ] ;
-       rdfs:comment """In engineering states are often described by specifying some characteristics (form, value of a process variable, ...) of the entities participating in the state (e.g. `the shaft is broken', `high oven temperature', or `the oven temperature is increasing').
+###  https://www.w3id.org/MALFO/Process
+<https://www.w3id.org/MALFO/Process> rdf:type owl:Class ;
+                                     rdfs:subClassOf <https://www.w3id.org/MALFO/Occurrent> ;
+                                     rdfs:comment """In engineering, a typical example of process is a sequence of states (or, equivalently, of state transitions) related to some physical phenomena. For instance corrosion is a sequence of many single chemical reactions that change the arrangement of the relevant atoms. 
 
 More precise definitions are left open to interpretation (e.g. through alignment with an upper ontology)""" ;
-       rdfs:label "State" ;
-       iof-av:isPrimitive "true"^^xsd:boolean ;
-       iof-av:primitiveRationale "This is a notion of higher generality than those considered in this ontology, its definition is delegated to e.g. alignment with an upper ontology" .
+                                     rdfs:label "Process" ;
+                                     iof-av:isPrimitive "true"^^xsd:boolean ;
+                                     iof-av:primitiveRationale "This is a notion of higher generality than those considered in this ontology, its definition is delegated to e.g. alignment with an upper ontology" .
+
+
+###  https://www.w3id.org/MALFO/State
+<https://www.w3id.org/MALFO/State> rdf:type owl:Class ;
+                                   rdfs:subClassOf <https://www.w3id.org/MALFO/Occurrent> ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <https://www.w3id.org/MALFO/achieves> ;
+                                                     owl:allValuesFrom <https://www.w3id.org/MALFO/State>
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <https://www.w3id.org/MALFO/prevents> ;
+                                                     owl:allValuesFrom <https://www.w3id.org/MALFO/State>
+                                                   ] ;
+                                   rdfs:comment """In engineering states are often described by specifying some characteristics (form, value of a process variable, ...) of the entities participating in the state (e.g. `the shaft is broken', `high oven temperature', or `the oven temperature is increasing').
+
+More precise definitions are left open to interpretation (e.g. through alignment with an upper ontology)""" ;
+                                   rdfs:label "State" ;
+                                   iof-av:isPrimitive "true"^^xsd:boolean ;
+                                   iof-av:primitiveRationale "This is a notion of higher generality than those considered in this ontology, its definition is delegated to e.g. alignment with an upper ontology" .
 
 
 #################################################################
@@ -670,9 +671,9 @@ More precise definitions are left open to interpretation (e.g. through alignment
 #################################################################
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Event
-                :Process
-                :State
+  owl:members ( <https://www.w3id.org/MALFO/Event>
+                <https://www.w3id.org/MALFO/Process>
+                <https://www.w3id.org/MALFO/State>
               )
 ] .
 
@@ -681,9 +682,9 @@ More precise definitions are left open to interpretation (e.g. through alignment
 #    Rules
 #################################################################
 
-:z rdf:type swrl:Variable .
+<https://www.w3id.org/MALFO/z> rdf:type swrl:Variable .
 
-:x rdf:type swrl:Variable .
+<https://www.w3id.org/MALFO/x> rdf:type swrl:Variable .
 
 [ swrla:isRuleEnabled "true"^^xsd:boolean ;
    rdfs:comment "" ;
@@ -691,25 +692,25 @@ More precise definitions are left open to interpretation (e.g. through alignment
    rdf:type swrl:Imp ;
    swrl:body [ rdf:type swrl:AtomList ;
                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                           swrl:propertyPredicate :achieves ;
-                           swrl:argument1 :z ;
-                           swrl:argument2 :x
+                           swrl:propertyPredicate <https://www.w3id.org/MALFO/achieves> ;
+                           swrl:argument1 <https://www.w3id.org/MALFO/z> ;
+                           swrl:argument2 <https://www.w3id.org/MALFO/x>
                          ] ;
                rdf:rest [ rdf:type swrl:AtomList ;
                           rdf:first [ rdf:type swrl:ClassAtom ;
-                                      swrl:classPredicate :Malfunction ;
-                                      swrl:argument1 :x
+                                      swrl:classPredicate <https://www.w3id.org/MALFO/Malfunction> ;
+                                      swrl:argument1 <https://www.w3id.org/MALFO/x>
                                     ] ;
                           rdf:rest [ rdf:type swrl:AtomList ;
                                      rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
-                                                 swrl:propertyPredicate :internalTo ;
-                                                 swrl:argument1 :z ;
-                                                 swrl:argument2 :x
+                                                 swrl:propertyPredicate <https://www.w3id.org/MALFO/internalTo> ;
+                                                 swrl:argument1 <https://www.w3id.org/MALFO/z> ;
+                                                 swrl:argument2 <https://www.w3id.org/MALFO/x>
                                                ] ;
                                      rdf:rest [ rdf:type swrl:AtomList ;
                                                 rdf:first [ rdf:type swrl:ClassAtom ;
-                                                            swrl:classPredicate :State ;
-                                                            swrl:argument1 :x
+                                                            swrl:classPredicate <https://www.w3id.org/MALFO/State> ;
+                                                            swrl:argument1 <https://www.w3id.org/MALFO/x>
                                                           ] ;
                                                 rdf:rest rdf:nil
                                               ]
@@ -718,8 +719,8 @@ More precise definitions are left open to interpretation (e.g. through alignment
              ] ;
    swrl:head [ rdf:type swrl:AtomList ;
                rdf:first [ rdf:type swrl:ClassAtom ;
-                           swrl:classPredicate :Fault ;
-                           swrl:argument1 :x
+                           swrl:classPredicate <https://www.w3id.org/MALFO/Fault> ;
+                           swrl:argument1 <https://www.w3id.org/MALFO/x>
                          ] ;
                rdf:rest rdf:nil
              ]
