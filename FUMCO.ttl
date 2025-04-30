@@ -1,0 +1,905 @@
+@prefix : <https://github.com/kataph/function-method-ontology#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix DOLCE: <http://www.loa.istc.cnr.it/dolce/dolce-owl/DOLCE#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix iof-av: <https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/> .
+@base <https://github.com/kataph/function-method-ontology#> .
+
+<https://w3id.org/fumco> rdf:type owl:Ontology ;
+                          owl:versionIRI <https://w3id.org/fumco/1.1> ;
+                          owl:imports <https://w3id.org/DOLCE/OWL/DOLCEbasic/3.5> ;
+                          terms:abstract """FUMCO: FUnctions, Methods, and Capabilities Ontology
+
+Attachment to the paper \"About functions, behaviours, and capabilities in formal ontology and engineering\" in submission to the Semantic Web Journal, this ontology exemplify how the first order theory described in the paper can be translated in OWL (https://journals.sagepub.com/doi/full/10.3233/SW-223188, see also the relevant GitHub repository: https://www.github.com/kataph/FUMCO).
+
+The Dolce-owl ontology used is the current version of DOLCEbasic exposed at the address http://www.w3id.org/DOLCE/OWL/DOLCEbasic (and stored in the repository https://github.com/appliedontolab/DOLCE/tree/main/OWL)"""@en ;
+                          terms:contributor "Francesco Compagno" ;
+                          terms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                          terms:title "FUMCO: FUnctions, Methods, and Capabilities Ontology" ;
+                          rdfs:label "FUMCO: FUnctions, Methods, and Capabilities Ontology" ;
+                          owl:versionInfo """1.1.0
+
+- removed erroneous axiom (Connect disjointed with its own superclass)
+- updated the DOLCE-OWL import to current version of DOLCE-basic
+- retconnetted the name of the ontology to FUMCO (FUnctions, Methods, and Capabilities Ontology)
+- changed the last separator in the root IRI from \"#\" to \"/\"
+- the ontology is now exposed at the address https://w3id.org/fumco 
+- the ontology IRI is now https://w3id.org/fumco
+- restructured and enriched the annotations of the ontology
+- splitted the ontology from the examplificative Abox (which is now present in a different file in the repository).""" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/abstract
+terms:abstract rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+terms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+terms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+###  https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/firstOrderLogicAxiom
+iof-av:firstOrderLogicAxiom rdf:type owl:AnnotationProperty .
+
+
+###  https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/firstOrderLogicDefinition
+iof-av:firstOrderLogicDefinition rdf:type owl:AnnotationProperty .
+
+
+###  https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/isPrimitive
+iof-av:isPrimitive rdf:type owl:AnnotationProperty .
+
+
+###  https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/naturalLanguageDefinition
+iof-av:naturalLanguageDefinition rdf:type owl:AnnotationProperty .
+
+
+###  https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/primitiveRationale
+iof-av:primitiveRationale rdf:type owl:AnnotationProperty .
+
+
+###  https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/semiFormalNaturalLanguageAxiom
+iof-av:semiFormalNaturalLanguageAxiom rdf:type owl:AnnotationProperty .
+
+
+###  https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/semiFormalNaturalLanguageDefinition
+iof-av:semiFormalNaturalLanguageDefinition rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  https://www.w3id.org/fumco/ohms
+<https://www.w3id.org/fumco/ohms> rdf:type rdfs:Datatype .
+
+
+###  https://www.w3id.org/fumco/volts
+<https://www.w3id.org/fumco/volts> rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/DOLCE/OWL/DOLCEbasic#constantPartOf
+<https://w3id.org/DOLCE/OWL/DOLCEbasic#constantPartOf> rdf:type owl:ObjectProperty ,
+                                                                owl:TransitiveProperty ;
+                                                       rdfs:domain <https://w3id.org/DOLCE/OWL/DOLCEbasic#Endurant> ;
+                                                       rdfs:range <https://w3id.org/DOLCE/OWL/DOLCEbasic#Endurant> .
+
+
+###  https://w3id.org/DOLCE/OWL/DOLCEbasic#constantQualeOf
+<https://w3id.org/DOLCE/OWL/DOLCEbasic#constantQualeOf> rdf:type owl:ObjectProperty ;
+                                                        rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  https://w3id.org/DOLCE/OWL/DOLCEbasic#directQualityOf
+<https://w3id.org/DOLCE/OWL/DOLCEbasic#directQualityOf> rdf:type owl:ObjectProperty ;
+                                                        rdfs:domain <https://w3id.org/DOLCE/OWL/DOLCEbasic#Quality> .
+
+
+###  https://w3id.org/DOLCE/OWL/DOLCEbasic#specificallyDependsOn
+<https://w3id.org/DOLCE/OWL/DOLCEbasic#specificallyDependsOn> rdf:type owl:ObjectProperty ;
+                                                              rdfs:comment """Specific dependance can be understood in modal terms. It can also be understood in temporal only terms, e.g.:
+
+specificallyDependsOn(x,y) ⇐⇒(∃t(PRE(x,t)) ∧∀t(PRE(x,t) =⇒PRE(y,t)))
+
+The above notion of dependence is specific and existential: x depends on y if and only if x exists at some time and at any time when x exists so does y."""@en .
+
+
+###  https://www.w3id.org/fumco/causally-contributes-to
+<https://www.w3id.org/fumco/causally-contributes-to> rdf:type owl:ObjectProperty ;
+                                                     rdfs:domain <https://w3id.org/DOLCE/OWL/DOLCEbasic#Perdurant> ;
+                                                     rdfs:range <https://w3id.org/DOLCE/OWL/DOLCEbasic#Perdurant> ;
+                                                     rdfs:isDefinedBy "This relation abstracts causal explanations of complex occurences.  For example, \"the beam was cut, therefore it fell to the floor\": we could introduce in the domain of discourse two perdurants: \"cutting the beam [in some context]\" and \"falling to the floor [in some context]\" and then state causally-contributes-to(\"cutting the beam\", \"falling to the floor\")" ;
+                                                     rdfs:label "causally contributes to" .
+
+
+###  https://www.w3id.org/fumco/classified-by
+<https://www.w3id.org/fumco/classified-by> rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                           owl:inverseOf <https://www.w3id.org/fumco/classifies> ;
+                                           rdfs:range <https://www.w3id.org/fumco/Concept> ;
+                                           rdfs:isDefinedBy "https://www.istc.cnr.it/en/content/social-roles-and-their-descriptions" ;
+                                           rdfs:label "classified by" ;
+                                           iof-av:naturalLanguageDefinition "The relation between a reified concept and any of its instances" .
+
+
+###  https://www.w3id.org/fumco/classifies
+<https://www.w3id.org/fumco/classifies> rdf:type owl:ObjectProperty ;
+                                        rdfs:range <https://www.w3id.org/fumco/Concept> ;
+                                        rdfs:label "classifies" ;
+                                        iof-av:naturalLanguageDefinition "inferse of classified by" .
+
+
+###  https://www.w3id.org/fumco/definition-founded-on
+<https://www.w3id.org/fumco/definition-founded-on> rdf:type owl:ObjectProperty ;
+                                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                                   rdfs:label "definition founded on" ;
+                                                   iof-av:naturalLanguageDefinition "x is definition-founded on some entity y if and only if y is necessarily used to define x." .
+
+
+###  https://www.w3id.org/fumco/external-to
+<https://www.w3id.org/fumco/external-to> rdf:type owl:ObjectProperty ;
+                                         rdfs:comment "This relation expresses the fact that two entities are 'external'. The precise definition of the external-to relation depends on the underlying reference ontology. Using DOLCE we defined it as follows: x is external to y if and only if x is neither a quality of y, nor one of y’s constituents, nor x and y have parts in common." ;
+                                         rdfs:label "external to" ;
+                                         iof-av:firstOrderLogicDefinition "externalTo(x,y) ↔ ¬(qt(x,y) ∨constitutes(x,y) ∨O(x,y))" .
+
+
+###  https://www.w3id.org/fumco/follows
+<https://www.w3id.org/fumco/follows> rdf:type owl:ObjectProperty ;
+                                     rdfs:comment """follows is defined differently depending on its relata:
+
+in the case the relata are perdurants
+
+df31 follows(x, y) =df precedes(y, x)
+
+In the case the relata are types
+df33 follows(Φ, Ψ) =df ∀x(Ψ(x) =⇒ ∃y(Φ(y) ∧ follows(y, x)))
+“Φ follows Ψ if for every instance of Ψ there is an instance of Φ that follows
+it.”
+
+In the case the relata are reified concepts:
+df35 follows(c, d) =df ∀x(CL(x, d) =⇒ ∃y(CL(y, c) ∧ follows(y, x)))""" ;
+                                     rdfs:label "follows" ;
+                                     iof-av:naturalLanguageDefinition "if x and y are events, x follows y if its temporal extension is after (e.f. in the sense of Allen's) that of y. If x and y are at the type-level this definition is lifted appropriately." .
+
+
+###  https://www.w3id.org/fumco/function-of
+<https://www.w3id.org/fumco/function-of> rdf:type owl:ObjectProperty ;
+                                         owl:inverseOf <https://www.w3id.org/fumco/has-function> ;
+                                         rdfs:domain <https://www.w3id.org/fumco/SelectedFunction> ;
+                                         rdfs:range <https://www.w3id.org/fumco/TechnicalArtifact> ;
+                                         rdfs:label "function of" ;
+                                         iof-av:naturalLanguageDefinition "The relation between a function and the object such a function is attributed to by an agent's selection" .
+
+
+###  https://www.w3id.org/fumco/has-function
+<https://www.w3id.org/fumco/has-function> rdf:type owl:ObjectProperty ;
+                                          rdfs:domain <https://www.w3id.org/fumco/TechnicalArtifact> ;
+                                          rdfs:range <https://www.w3id.org/fumco/Concept> ;
+                                          rdfs:label "has function" ;
+                                          iof-av:firstOrderLogicDefinition """hasFunction(x, f) ↔ ∃a, qintentionalSel(a, e, x, q) ∧ defFoundedOn(q, f)
+ ∧ Capability(q) ∧ qt(q, x)""" ;
+                                          iof-av:naturalLanguageDefinition "The relation between an object and the function attributed to it by an agent's selection" ;
+                                          iof-av:semiFormalNaturalLanguageDefinition """“An entity has/bears/carries/has ascribed a function iff there is some agent (a)
+that intentionally selects (though event e) a capability (q) of that entity that
+makes the entity able of executing the function.”""" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <https://www.w3id.org/fumco/has-function> ;
+   owl:annotatedProperty iof-av:firstOrderLogicDefinition ;
+   owl:annotatedTarget """hasFunction(x, f) ↔ ∃a, qintentionalSel(a, e, x, q) ∧ defFoundedOn(q, f)
+ ∧ Capability(q) ∧ qt(q, x)""" ;
+   rdfs:comment "The link between the capability and the function with the definition-founding relation, as was done before. Notice that f may be an ontological function, but also some more specific class, such as a systemic function."
+ ] .
+
+
+###  https://www.w3id.org/fumco/has-main-function
+<https://www.w3id.org/fumco/has-main-function> rdf:type owl:ObjectProperty ;
+                                               owl:inverseOf <https://www.w3id.org/fumco/main-function-of> ;
+                                               rdfs:label "has main function" ;
+                                               iof-av:naturalLanguageDefinition "The main function addressed by an engineering method, that is, the function such that a plan to execut it is detailed by the methos" .
+
+
+###  https://www.w3id.org/fumco/has-systemic-function
+<https://www.w3id.org/fumco/has-systemic-function> rdf:type owl:ObjectProperty ;
+                                                   owl:inverseOf <https://www.w3id.org/fumco/systemic-function-of> ;
+                                                   rdfs:domain <https://www.w3id.org/fumco/TechnicalArtifact> ;
+                                                   rdfs:range <https://www.w3id.org/fumco/SystemicFunction> ;
+                                                   rdfs:label "has systemic function" .
+
+
+###  https://www.w3id.org/fumco/instantiation-founded-on
+<https://www.w3id.org/fumco/instantiation-founded-on> rdf:type owl:ObjectProperty ;
+                                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                                      rdfs:domain <https://www.w3id.org/fumco/Concept> ;
+                                                      rdfs:range <https://www.w3id.org/fumco/Concept> ;
+                                                      rdfs:comment """foundedInst(x, y) ⇐⇒ (CN(x)∧∃z, t(CL(z, x, t))∧∀z, t(CL(z, x, t) =⇒ ∃w(founded(z,w)∧CL(w, y, t))))
+“the concept x is instantiation-founded on the concept y if and only if, given any z that plays x, then z is
+founded on some instance of y”""" ;
+                                                      rdfs:label "instantiation founded on" .
+
+
+###  https://www.w3id.org/fumco/main-function-of
+<https://www.w3id.org/fumco/main-function-of> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <https://www.w3id.org/fumco/SystemicFunction> ;
+                                              rdfs:range <https://www.w3id.org/fumco/EngineeringMethod> ;
+                                              rdfs:label "main function of" ;
+                                              iof-av:naturalLanguageDefinition "inverse of has main function" .
+
+
+###  https://www.w3id.org/fumco/partecipated-by-doer
+<https://www.w3id.org/fumco/partecipated-by-doer> rdf:type owl:ObjectProperty ;
+                                                  owl:inverseOf <https://www.w3id.org/fumco/participates-as-doer> ;
+                                                  rdfs:domain <https://www.w3id.org/fumco/Behaviour> ;
+                                                  rdfs:range [ rdf:type owl:Class ;
+                                                               owl:unionOf ( <https://w3id.org/DOLCE/OWL/DOLCEbasic#AgentiveSocialObject>
+                                                                             <https://www.w3id.org/fumco/TechnicalArtifact>
+                                                                           )
+                                                             ] ;
+                                                  rdfs:label "partecipated by doer" .
+
+
+###  https://www.w3id.org/fumco/participates-as-doer
+<https://www.w3id.org/fumco/participates-as-doer> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf <https://www.w3id.org/fumco/participates-in> ;
+                                                  rdfs:domain [ rdf:type owl:Class ;
+                                                                owl:unionOf ( <https://w3id.org/DOLCE/OWL/DOLCEbasic#AgentiveSocialObject>
+                                                                              <https://www.w3id.org/fumco/TechnicalArtifact>
+                                                                            )
+                                                              ] ;
+                                                  rdfs:range <https://www.w3id.org/fumco/Behaviour> ;
+                                                  rdfs:comment """This is a processual role contextualized by a behavior. For example, a cutting action entails that there is something that is the subject of the action, say a saw (or the system formed by a person or machine using the saw), and the object of the action, say a beam of wood. The same holds for pumping, joining, and other behaviors that can be described by transitive verbs.
+The action subjects participate-as-doer to the behavior.""" ;
+                                                  rdfs:label "participates as doer" ;
+                                                  iof-av:naturalLanguageDefinition "The participation relation specialized to doers" .
+
+
+###  https://www.w3id.org/fumco/participates-as-flow
+<https://www.w3id.org/fumco/participates-as-flow> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf <https://www.w3id.org/fumco/participates-in> ;
+                                                  rdfs:range <https://www.w3id.org/fumco/Behaviour> ;
+                                                  rdfs:comment """This is a processual role contextualized by a behavior. For example, a cutting action entails that there is something that is the subject of the action, say a saw (or the system formed by a person or machine using the saw), and the object of the action, say a beam of wood. The same holds for pumping, joining, and other behaviors that can be described by transitive verbs.
+The action objects participate-as-flow to the behavior.
+
+We do not add a Flow class to this ontology, leaving the issue to further research, or to domain-level extensions of this ontology.""" ;
+                                                  rdfs:label "participates as flow" ;
+                                                  iof-av:naturalLanguageDefinition "The participation relation specialized to flows" .
+
+
+###  https://www.w3id.org/fumco/participates-in
+<https://www.w3id.org/fumco/participates-in> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                             rdfs:domain <https://w3id.org/DOLCE/OWL/DOLCEbasic#Endurant> ;
+                                             rdfs:range <https://w3id.org/DOLCE/OWL/DOLCEbasic#Perdurant> ;
+                                             rdfs:label "participates in" ;
+                                             iof-av:naturalLanguageDefinition "participation of an object in an occurrence. Originally a ternary relation in DOLCE containing the time of participation, here is de-temporalized by stipulating that \"x participates in y\" means \"x participates in y at at least some time t\"" .
+
+
+###  https://www.w3id.org/fumco/plays-as
+<https://www.w3id.org/fumco/plays-as> rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf <https://www.w3id.org/fumco/classified-by> ;
+                                      rdfs:range <https://www.w3id.org/fumco/Role> ;
+                                      rdfs:isDefinedBy "https://www.istc.cnr.it/en/content/social-roles-and-their-descriptions" ;
+                                      rdfs:label "play as" ;
+                                      iof-av:naturalLanguageDefinition "Specialization of the classification relation to the case of roles" .
+
+
+###  https://www.w3id.org/fumco/precedes
+<https://www.w3id.org/fumco/precedes> rdf:type owl:ObjectProperty ;
+                                      rdfs:comment "precedes" ,
+                                                   """precedes is defined differently depending on its relata:
+
+in the case the relata are perdurants
+df30 precedes(x, y) =df ∃t, t′(ql(t, x)T ∧ ql(t′, y)T ∧ t ≤ t′)
+“x precedes y if the time extension of x precedes that of y.”
+
+In the case the relata are types
+df32 precedes(Φ, Ψ) =df ∀x(Ψ(x) =⇒ ∃y(Φ(y) ∧ precedes(y, x)))
+“Φ precedes Ψ if for every instance of Ψ there is an instance of Φ that
+precedes it.”
+
+In the case the relata are reified concepts:
+df34 precedes(c, d) =df ∀x(CL(x, d) =⇒ ∃y(CL(y, c) ∧ precedes(y, x)))""" ;
+                                      iof-av:naturalLanguageDefinition "As the \"follows\" relation, but with the temporal order exchanged" .
+
+
+###  https://www.w3id.org/fumco/sub-concept-of
+<https://www.w3id.org/fumco/sub-concept-of> rdf:type owl:ObjectProperty ;
+                                            owl:inverseOf <https://www.w3id.org/fumco/super-concept-of> ;
+                                            rdfs:domain <https://www.w3id.org/fumco/Concept> ;
+                                            rdfs:range <https://www.w3id.org/fumco/Concept> ;
+                                            rdfs:comment "subConceptOf(x, y)  ↔ (CN(x) ∧ CN(y) ∧ ∃z, t(CL(z, x, t)) ∧ ∀z, t(CL(z, x, t) → CL(z, y, t)))" ;
+                                            rdfs:label "sub concept of" ;
+                                            iof-av:naturalLanguageDefinition "Specialization relation between DOLCE concepts" ;
+                                            iof-av:semiFormalNaturalLanguageDefinition "“A concept x is a sub-concept of a concept y if and only if all instances of x are also instances of y”" .
+
+
+###  https://www.w3id.org/fumco/sub-function-of
+<https://www.w3id.org/fumco/sub-function-of> rdf:type owl:ObjectProperty ;
+                                             rdfs:domain <https://www.w3id.org/fumco/SystemicFunction> ;
+                                             rdfs:range <https://www.w3id.org/fumco/EngineeringMethod> ;
+                                             rdfs:label "sub function of" ;
+                                             iof-av:naturalLanguageDefinition "The relation linking a decomposing function to an engineering method: a function is the sub-function of an engineering method if it is required to be executed in order to execute a step of the engineerign method." .
+
+
+###  https://www.w3id.org/fumco/super-concept-of
+<https://www.w3id.org/fumco/super-concept-of> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <https://www.w3id.org/fumco/Concept> ;
+                                              rdfs:range <https://www.w3id.org/fumco/Concept> ;
+                                              rdfs:label "super concept of" ;
+                                              iof-av:naturalLanguageDefinition "Inverse of sub concept of" .
+
+
+###  https://www.w3id.org/fumco/systemic-function-of
+<https://www.w3id.org/fumco/systemic-function-of> rdf:type owl:ObjectProperty ;
+                                                  rdfs:domain <https://www.w3id.org/fumco/SystemicFunction> ;
+                                                  rdfs:range <https://www.w3id.org/fumco/TechnicalArtifact> ;
+                                                  rdfs:label "systemic function of" ;
+                                                  iof-av:naturalLanguageDefinition "The relation between a systemic function and its underlying system component" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://www.w3id.org/fumco/has-direct-quale
+<https://www.w3id.org/fumco/has-direct-quale> rdf:type owl:DatatypeProperty ;
+                                              rdfs:subPropertyOf owl:topDataProperty ;
+                                              rdfs:domain <https://w3id.org/DOLCE/OWL/DOLCEbasic#Quality> ;
+                                              rdfs:label "has-direct-quale" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://github.com/kataph/function-method-ontology#DivisionEvent
+:DivisionEvent rdf:type owl:Class ;
+               rdfs:subClassOf <https://www.w3id.org/fumco/OntologicalFunction> ;
+               rdfs:label "Division Event" ;
+               iof-av:naturalLanguageDefinition "An concept is recognized as a division event classifier if it classifies events where multiple entities appear related to some previously existing which disappears" .
+
+
+###  https://github.com/kataph/function-method-ontology#EntitiyCreationEvent
+:EntitiyCreationEvent rdf:type owl:Class ;
+                      rdfs:subClassOf <https://www.w3id.org/fumco/OntologicalFunction> ;
+                      rdfs:label "Entity Creation Event" ;
+                      iof-av:naturalLanguageDefinition "An concept is recognized as an entity creation event classifier if it classifies events where something new appears" .
+
+
+###  https://github.com/kataph/function-method-ontology#EntityDestructionEvent
+:EntityDestructionEvent rdf:type owl:Class ;
+                        rdfs:subClassOf <https://www.w3id.org/fumco/OntologicalFunction> ;
+                        rdfs:label "Entity Destruction Event" ;
+                        iof-av:naturalLanguageDefinition "An concept is recognized as a entity destruction event classifier if it classifies events where an entity that was present before is no more" .
+
+
+###  https://github.com/kataph/function-method-ontology#MereologicalJoinEvent
+:MereologicalJoinEvent rdf:type owl:Class ;
+                       rdfs:subClassOf <https://www.w3id.org/fumco/OntologicalFunction> ;
+                       rdfs:label "Mereological Join Event" ;
+                       iof-av:naturalLanguageDefinition "An concept is recognized as a mereological join event classifier if it classifies events where something new appears that has something else previously existing as part" .
+
+
+###  https://github.com/kataph/function-method-ontology#ParticularOntologicalFunction
+:ParticularOntologicalFunction rdf:type owl:Class ;
+                               rdfs:subClassOf <https://www.w3id.org/fumco/OntologicalFunction> ;
+                               rdfs:comment """Adopting DOLCE as an upper ontology, ontological functions and ontological functions about particulars coincide. 
+
+Of course, since the FUMCO ontology imports DOLCEbasic we do adopt DOLCE as an upper ontology. The reason we keep this class as a separated subclass is to help eventual users that may wish to align with different upper level ontologies: from their point of view ontological functions about particulars are DOLCE-ontological functions, which may be different than the ontological functions produced by their ontology of choice.
+
+Note that the subclasses of this class may not be exhaustive (we skipped the DOLCE category of abstracts, judging it irrelevant for engineering functions), but those classes that refer to the (probably) most common entities referenced by engineering functions are present: (ontological function about) quality values, features, amount of matters, and physical objects. 
+
+The additional leaf classes present (e.g. To Groove, Connect, ...) are just added to showcase how to extend the taxonomy. In particular, no claim of completeness about these is made (e.g. note that any detailed vocabulary of engineering function will contain many more verbs)""" ;
+                               rdfs:label "Ontological Function about Particulars" ;
+                               iof-av:naturalLanguageDefinition "An concept that classifies a perdurant based on what happens to any individual entity related to it" .
+
+
+###  https://github.com/kataph/function-method-ontology#Reclassification
+:Reclassification rdf:type owl:Class ;
+                  rdfs:subClassOf <https://www.w3id.org/fumco/OntologicalFunction> ;
+                  rdfs:label "Reclassification" ;
+                  iof-av:naturalLanguageDefinition "An concept is recognized as a 'reclassification' if it classifies events where some instance change its type" .
+
+
+###  https://github.com/kataph/function-method-ontology#Stasis
+:Stasis rdf:type owl:Class ;
+        rdfs:subClassOf <https://www.w3id.org/fumco/OntologicalFunction> ;
+        rdfs:label "Stasis" ;
+        iof-av:naturalLanguageDefinition "An concept is recognized as a stasis classifier if it classifies occurrences where things do not undergo change" .
+
+
+###  https://w3id.org/DOLCE/OWL/DOLCEbasic#AgentiveSocialObject
+<https://w3id.org/DOLCE/OWL/DOLCEbasic#AgentiveSocialObject> rdf:type owl:Class .
+
+
+###  https://w3id.org/DOLCE/OWL/DOLCEbasic#Endurant
+<https://w3id.org/DOLCE/OWL/DOLCEbasic#Endurant> rdf:type owl:Class .
+
+
+###  https://w3id.org/DOLCE/OWL/DOLCEbasic#NonAgentivePhysicalObject
+<https://w3id.org/DOLCE/OWL/DOLCEbasic#NonAgentivePhysicalObject> rdf:type owl:Class .
+
+
+###  https://w3id.org/DOLCE/OWL/DOLCEbasic#NonAgentiveSocialObject
+<https://w3id.org/DOLCE/OWL/DOLCEbasic#NonAgentiveSocialObject> rdf:type owl:Class .
+
+
+###  https://w3id.org/DOLCE/OWL/DOLCEbasic#Particular
+<https://w3id.org/DOLCE/OWL/DOLCEbasic#Particular> rdf:type owl:Class .
+
+
+###  https://w3id.org/DOLCE/OWL/DOLCEbasic#Perdurant
+<https://w3id.org/DOLCE/OWL/DOLCEbasic#Perdurant> rdf:type owl:Class .
+
+
+###  https://w3id.org/DOLCE/OWL/DOLCEbasic#PhysicalObject
+<https://w3id.org/DOLCE/OWL/DOLCEbasic#PhysicalObject> rdf:type owl:Class .
+
+
+###  https://w3id.org/DOLCE/OWL/DOLCEbasic#Process
+<https://w3id.org/DOLCE/OWL/DOLCEbasic#Process> rdf:type owl:Class .
+
+
+###  https://w3id.org/DOLCE/OWL/DOLCEbasic#Quality
+<https://w3id.org/DOLCE/OWL/DOLCEbasic#Quality> rdf:type owl:Class .
+
+
+###  https://w3id.org/DOLCE/OWL/DOLCEbasic#State
+<https://w3id.org/DOLCE/OWL/DOLCEbasic#State> rdf:type owl:Class .
+
+
+###  https://w3id.org/DOLCE/OWL/DOLCEbasic#Stative
+<https://w3id.org/DOLCE/OWL/DOLCEbasic#Stative> rdf:type owl:Class .
+
+
+###  https://www.w3id.org/fumco/AmountOfMatterOntologicalFunction
+<https://www.w3id.org/fumco/AmountOfMatterOntologicalFunction> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <https://www.w3id.org/fumco/EndurantOntologicalFunction> ;
+                                                               rdfs:label "Ontological Function about Amount of Matter" ;
+                                                               iof-av:naturalLanguageDefinition "An concept that classifies a perdurant based on what happens to some amount of matter related to it" .
+
+
+###  https://www.w3id.org/fumco/BatteryVoltage
+<https://www.w3id.org/fumco/BatteryVoltage> rdf:type owl:Class ;
+                                            rdfs:subClassOf <https://www.w3id.org/fumco/Capacity> ;
+                                            rdfs:comment "This is just a domain specific class give for the sake of example, to showcase possible extensions of the ontology." ;
+                                            rdfs:label "Battery Voltage" .
+
+
+###  https://www.w3id.org/fumco/Behaviour
+<https://www.w3id.org/fumco/Behaviour> rdf:type owl:Class ;
+                                       rdfs:subClassOf <https://w3id.org/DOLCE/OWL/DOLCEbasic#Perdurant> ,
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty [ owl:inverseOf <https://www.w3id.org/fumco/participates-as-doer>
+                                                                        ] ;
+                                                         owl:someValuesFrom <https://www.w3id.org/fumco/TechnicalArtifact>
+                                                       ] ,
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty [ owl:inverseOf <https://www.w3id.org/fumco/participates-as-flow>
+                                                                        ] ;
+                                                         owl:someValuesFrom owl:Thing
+                                                       ] ;
+                                       rdfs:comment """This class is partially characterized by the fact that one can identify two ‘processual’ roles in the sense of: an active one, called doer, and a passive one, called operand or flow. 
+For instance, a cutting action entails that there is something that is the subject of the action, say a saw (or the system formed by a person or machine using the saw), and the object of the action, say a beam of wood.""" ;
+                                       rdfs:label "Behaviour" ;
+                                       iof-av:naturalLanguageDefinition "A subclass of DOLCE perdurants, representing perdurants from the point of view of a selected artifact, which is seen as the active agent (\"doer\") in the perdurant." .
+
+
+###  https://www.w3id.org/fumco/Capability
+<https://www.w3id.org/fumco/Capability> rdf:type owl:Class ;
+                                        rdfs:subClassOf <https://www.w3id.org/fumco/RelationalQuality> ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <https://w3id.org/DOLCE/OWL/DOLCEbasic#specificallyDependsOn> ;
+                                                          owl:someValuesFrom <https://www.w3id.org/fumco/Capacity>
+                                                        ] ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <https://www.w3id.org/fumco/definition-founded-on> ;
+                                                          owl:someValuesFrom <https://www.w3id.org/fumco/OntologicalFunction>
+                                                        ] ;
+                                        rdfs:label "Capability" ;
+                                        skos:example "The capability of heating, the capability of generating electrical energy" ;
+                                        iof-av:firstOrderLogicAxiom "Capability(x) → ∃y(Capacity(y)∧founded(x,y))" ;
+                                        iof-av:firstOrderLogicDefinition "Capability(x) ↔ relationalQt(x)∧∃y(FunctionOnt(y)∧foundedDef(x,y))" ;
+                                        iof-av:naturalLanguageDefinition "The ability of an entity of executing some ontological function" ;
+                                        iof-av:semiFormalNaturalLanguageAxiom "A capability is founded on some capacity" ;
+                                        iof-av:semiFormalNaturalLanguageDefinition "A relational quality is a capability if and only if is definition-founded on some ontological function" .
+
+
+###  https://www.w3id.org/fumco/Capacity
+<https://www.w3id.org/fumco/Capacity> rdf:type owl:Class ;
+                                      rdfs:subClassOf <https://www.w3id.org/fumco/RelationalQuality> ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty <https://w3id.org/DOLCE/OWL/DOLCEbasic#specificallyDependsOn> ;
+                                                        owl:someValuesFrom <https://www.w3id.org/fumco/IntrinsicQuality>
+                                                      ] ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty [ owl:inverseOf <https://w3id.org/DOLCE/OWL/DOLCEbasic#specificallyDependsOn>
+                                                                       ] ;
+                                                        owl:someValuesFrom <https://www.w3id.org/fumco/Capability>
+                                                      ] ;
+                                      rdfs:comment "Capacity(x) → ∃y(Capability(y) ∧ specificallyDependentOn(y, x))" ;
+                                      rdfs:label "Capacity" ;
+                                      skos:example "Battery voltage, Flow rate, Resistance" ;
+                                      iof-av:firstOrderLogicAxiom "Capacity(x) → relationalQt(x) ∧ ∃y(specificallyDependentOn(x, y) ∧ intrinsicQt(y) ∧ bearer(x) = bearer(y))" ;
+                                      iof-av:naturalLanguageDefinition "Capacities are complex relational qualities which found capabilities, and are themselves founded on intrinsic qualities. We view them as \"parameters\" of capabilities." .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <https://www.w3id.org/fumco/Capacity> ;
+   owl:annotatedProperty rdfs:comment ;
+   owl:annotatedTarget "Capacity(x) → ∃y(Capability(y) ∧ specificallyDependentOn(y, x))" ;
+   iof-av:semiFormalNaturalLanguageAxiom "“Each capacity has a capability which is dependent on that capacity”"
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <https://www.w3id.org/fumco/Capacity> ;
+   owl:annotatedProperty iof-av:firstOrderLogicAxiom ;
+   owl:annotatedTarget "Capacity(x) → relationalQt(x) ∧ ∃y(specificallyDependentOn(x, y) ∧ intrinsicQt(y) ∧ bearer(x) = bearer(y))" ;
+   iof-av:semiFormalNaturalLanguageAxiom "“A capacity is a relational quality and is dependent on some intrinsic quality, which is carried by the same bearer.”"
+ ] .
+
+
+###  https://www.w3id.org/fumco/Concept
+<https://www.w3id.org/fumco/Concept> rdf:type owl:Class ;
+                                     rdfs:subClassOf <https://w3id.org/DOLCE/OWL/DOLCEbasic#NonAgentiveSocialObject> ;
+                                     rdfs:comment """Concepts are introduced by Masolo (https://www.istc.cnr.it/en/content/social-roles-and-their-descriptions) as a sort of reified types or classificators. They are useful e.g. to describe the change in time of or the relations with other entities of types/classificators. 
+
+In particular, this is the DOLCE-class that subsumes roles, see e.g. https://hal.science/hal-04383614/document""" ;
+                                     rdfs:isDefinedBy "https://www.istc.cnr.it/en/content/social-roles-and-their-descriptions" ;
+                                     rdfs:label "Concept" .
+
+
+###  https://www.w3id.org/fumco/Connect
+<https://www.w3id.org/fumco/Connect> rdf:type owl:Class ;
+                                     rdfs:subClassOf :MereologicalJoinEvent ,
+                                                     <https://www.w3id.org/fumco/PhysicalObjectOntologicalFunction> ;
+                                     rdfs:label "Connect" ;
+                                     skos:example "The function of a fastener" ;
+                                     iof-av:firstOrderLogicDefinition """Connect(x) ↔ (CL(y, x) ↔ E(y) ∧ startState(y, si, ti) ∧ endState(y, s f , t f ) ∧ Goal(s f ) ∧
+∃a, b, c(POB(a)∧POB(b)∧POB(c)∧PC(a, si, ti)∧PC(a, s f , t f )∧PC(b, si, ti)∧PC(b, s f , t f )∧PC(c, s f , t f )∧
+P(a, c, t f ) ∧ P(b, c, t f )) ∧ ¬∃c′(POB(c′) ∧ PC(c′, si, ti) ∧ P(a, c′, ti) ∧ P(b, c′, ti)))""" ;
+                                     iof-av:semiFormalNaturalLanguageDefinition "A concept is of connect type if and only if it classifies precisely those events that are transitions between a starting state (si, with time extension ti) and a final state (s f , with extension t f ) and, moreover, there are two physical objects (a and b) that participate in such states and, during the final state but not in the initial one, they are both part of a physical object (c)" .
+
+
+###  https://www.w3id.org/fumco/Convert
+<https://www.w3id.org/fumco/Convert> rdf:type owl:Class ;
+                                     rdfs:subClassOf :Reclassification ;
+                                     rdfs:comment "In OWL the class is left as a primitive due to the complexity of the definition. In the future, or when needed, it should be studied how to give partial or full definition within OWL." ;
+                                     rdfs:label "Convert" ;
+                                     skos:example "the function of a(ny) transducer, the function of  an electric motor of converting electrical energy into rotatory motion" ;
+                                     iof-av:firstOrderLogicDefinition """Convert(x) ↔ (CL(y, x) ↔ E(y) ∧ startState(y, si, ti) ∧ endState(y, s f , t f ) ∧ Goal(s f ) ∧
+∃Φ, Ψ, a(Φ ∈ N R ∧ Ψ ∈ N R ∧ Ψ ∩ Φ = ∅ ∧ PC(a, si, ti) ∧ PC(a, s f , t f ) ∧ Φ(a, ti) ∧ Ψ(a, t f )))""" ;
+                                     iof-av:semiFormalNaturalLanguageDefinition """A concept is of convert type if and only if it classifies precisely those events that are transitions between a starting state (si, with time extension ti) and a desired final state (s f , with extension t f ) and, moreover, there is an entity (a) that at time ti is instance of a type (Φ), while at time t f is instance of a different, disjoint, type (Ψ). Necessarily, Φ and Ψ are types belonging to the set of all non-rigid types of the underlying ontology
+(N R)""" .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <https://www.w3id.org/fumco/Convert> ;
+   owl:annotatedProperty iof-av:firstOrderLogicDefinition ;
+   owl:annotatedTarget """Convert(x) ↔ (CL(y, x) ↔ E(y) ∧ startState(y, si, ti) ∧ endState(y, s f , t f ) ∧ Goal(s f ) ∧
+∃Φ, Ψ, a(Φ ∈ N R ∧ Ψ ∈ N R ∧ Ψ ∩ Φ = ∅ ∧ PC(a, si, ti) ∧ PC(a, s f , t f ) ∧ Φ(a, ti) ∧ Ψ(a, t f )))""" ;
+   rdfs:comment "The empry intersection between phi and psi is intended to mean that at any given time the concept extensions are disjointed"
+ ] .
+
+
+###  https://www.w3id.org/fumco/ConvertEnergy
+<https://www.w3id.org/fumco/ConvertEnergy> rdf:type owl:Class ;
+                                           rdfs:subClassOf <https://www.w3id.org/fumco/QualityValueOntologicalFunction> ;
+                                           rdfs:comment "Note that putting energy conversion under \"Ontological Functions about Quality Values\" entails the conceptualization of energy as a quality of bodies." ;
+                                           rdfs:label "Convert energy" ;
+                                           skos:example "Converting electrical energy into rotatory motion" .
+
+
+###  https://www.w3id.org/fumco/Decrease
+<https://www.w3id.org/fumco/Decrease> rdf:type owl:Class ;
+                                      rdfs:subClassOf <https://www.w3id.org/fumco/QualityValueOntologicalFunction> ;
+                                      owl:disjointWith <https://www.w3id.org/fumco/Increase> ;
+                                      rdfs:label "Decrease" ;
+                                      skos:example "The function of the heat sink is to decrease the temperature of the processor" ;
+                                      iof-av:naturalLanguageDefinition "An concept that classifies a perdurant if the value of some quality (that takes values in an ordered quality space) related to it decreases" .
+
+
+###  https://www.w3id.org/fumco/EndurantOntologicalFunction
+<https://www.w3id.org/fumco/EndurantOntologicalFunction> rdf:type owl:Class ;
+                                                         rdfs:subClassOf :ParticularOntologicalFunction ;
+                                                         rdfs:label "Ontological Function about Endurants" ;
+                                                         iof-av:naturalLanguageDefinition "An concept that classifies a perdurant based on what happens to some endurant related to it" .
+
+
+###  https://www.w3id.org/fumco/EngineeringMethod
+<https://www.w3id.org/fumco/EngineeringMethod> rdf:type owl:Class ;
+                                               rdfs:subClassOf <https://w3id.org/DOLCE/OWL/DOLCEbasic#NonAgentiveSocialObject> ;
+                                               rdfs:comment "The first-order axiomatization is too complex to report it here." ;
+                                               rdfs:label "Engineering Method" ;
+                                               skos:example "welding, spot welding, joining by fasteners, cutting by asportation of material, cutting with a saw-blade, using a voltage divider" ;
+                                               iof-av:naturalLanguageDefinition """Engineering methods represent the shared engineering knowledge about ways of implementing functions through functional decomposition, and are conceptualized as individual under DOLCE's non-agentive social objects. 
+They are, essentially, plans, list of steps to be executed in order to execute the decomposed function.""" .
+
+
+###  https://www.w3id.org/fumco/FeatureOntologicalFunction
+<https://www.w3id.org/fumco/FeatureOntologicalFunction> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <https://www.w3id.org/fumco/EndurantOntologicalFunction> ;
+                                                        rdfs:label "Ontological Function about Features" ;
+                                                        iof-av:naturalLanguageDefinition "An concept that classifies a perdurant based on what happens to some feature related to it" .
+
+
+###  https://www.w3id.org/fumco/FlowRate
+<https://www.w3id.org/fumco/FlowRate> rdf:type owl:Class ;
+                                      rdfs:subClassOf <https://www.w3id.org/fumco/Capacity> ;
+                                      rdfs:comment "This is just a domain specific class give for the sake of example, to showcase possible extensions of the ontology." ;
+                                      rdfs:label "Flow Rate" .
+
+
+###  https://www.w3id.org/fumco/Goal
+<https://www.w3id.org/fumco/Goal> rdf:type owl:Class ;
+                                  rdfs:subClassOf <https://www.w3id.org/fumco/Concept> ;
+                                  rdfs:label "Goal" ;
+                                  skos:example "The furnace should be brought to the temperature of 800°C" ;
+                                  iof-av:firstOrderLogicAxiom "Goal(x) → CN(x) ∧ ∀y, t(CL(y, x, t) → STV(y))" ;
+                                  iof-av:isPrimitive "true"^^xsd:boolean ;
+                                  iof-av:naturalLanguageDefinition "Goals are descriptions of states of technical artifacts selected by some user." ;
+                                  iof-av:primitiveRationale """Goals are outside the scope of this ontology, which focuses on functions. 
+Their proper definition is delegated to an external ontology. 
+We proceed with a commonsense meaning of goals.""" ;
+                                  iof-av:semiFormalNaturalLanguageAxiom "goals are concepts that classifies stative perdurants only." .
+
+
+###  https://www.w3id.org/fumco/Increase
+<https://www.w3id.org/fumco/Increase> rdf:type owl:Class ;
+                                      rdfs:subClassOf <https://www.w3id.org/fumco/QualityValueOntologicalFunction> ;
+                                      rdfs:label "Increase" ;
+                                      iof-av:naturalLanguageDefinition "An concept that classifies a perdurant if the value of some quality (that takes values in an ordered quality space) related to it decreases" .
+
+
+###  https://www.w3id.org/fumco/IntrinsicQuality
+<https://www.w3id.org/fumco/IntrinsicQuality> rdf:type owl:Class ;
+                                              rdfs:subClassOf <https://w3id.org/DOLCE/OWL/DOLCEbasic#Quality> ;
+                                              owl:disjointWith <https://www.w3id.org/fumco/RelationalQuality> ;
+                                              rdfs:label "Intrinsic Quality" ;
+                                              skos:example "Length, Mass, Shape" ;
+                                              iof-av:firstOrderLogicDefinition "intrinsicQt(x) ↔ (Q(x) ∧¬relationalQt(x))" ;
+                                              iof-av:semiFormalNaturalLanguageDefinition "We define relational qualities as the class complementary to Relational qualities" .
+
+
+###  https://www.w3id.org/fumco/OntologicalFunction
+<https://www.w3id.org/fumco/OntologicalFunction> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <https://www.w3id.org/fumco/Concept> ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <https://www.w3id.org/fumco/super-concept-of> ;
+                                                                   owl:someValuesFrom <https://www.w3id.org/fumco/SystemicFunction>
+                                                                 ] ,
+                                                                 [ rdf:type owl:Restriction ;
+                                                                   owl:onProperty <https://www.w3id.org/fumco/super-concept-of> ;
+                                                                   owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                                       owl:unionOf ( <https://www.w3id.org/fumco/OntologicalFunction>
+                                                                                                     <https://www.w3id.org/fumco/SystemicFunction>
+                                                                                                   )
+                                                                                     ]
+                                                                 ] ;
+                                                 rdfs:comment """Note that the taxonomy of ontological functions uses two facets: a logic-based division of events (Stasis, Destruction, Division, Reclassification, etc.) and an ontology-based clasification of events (Ontological Function about Features, Ontological Function about Physical Objects, etc.). 
+
+The facets are (partially) independent so they can intersect (e.g. Convert is a subclass of both Reclassification and Ontological Function about Physical Objects). 
+
+Note also that the ontology-based factes depend on an ontology other than FUMCO. In our case it is DOLCE, but this is not a necessity.""" ;
+                                                 rdfs:label "Ontological Function" ;
+                                                 iof-av:firstOrderLogicAxiom "FunctionOnt(x) → (∃y(SP(y,x) ∧ FunctionSys(y)) ∧ ∀y(SP(y,x) ∧ ¬FunctionOnt(y) → FunctionSys(y)))" ;
+                                                 iof-av:isPrimitive "true"^^xsd:boolean ;
+                                                 iof-av:naturalLanguageDefinition "Ontological functions are functions that do not depend on either a method nor a system, and are generalisations of systemic functions" ;
+                                                 iof-av:primitiveRationale """We don't make a committment regarding the definition of this class.
+
+A possibility is to define ontological functions by comprehension of a list of specific types of ontological functions, provided that such a list is actually exhaustive. For example:
+
+OntologicalFunction(x) ⇐⇒ (Connect(x) ∨ Divide(x) ∨ Convert(x) ∨ . . . )
+
+On the other hand, one could supply an intrinsic definition, along the lines of, say:
+
+“A concept is an ontological function if and only if it classifies exactly those events
+consisting in a transition such that the changes (or the absence thereof) between
+the initial and final states is characterized in terms of a formula expressed in the
+language of an upper ontology.”
+
+However, a formalization of this latter definition would require higher-order logic. Since
+we don’t want to wander that far with the theory, we refrain from giving an intrinsic
+definition of ontological functions. 
+
+Instead, an extensional definition, as the former one above, can only be done while another ontology is chone to supply the vocabulary with which to formulate the definitions of the various subclasses. Since there are more way to do this, we do not proceed on in such a way here.""" ;
+                                                 iof-av:semiFormalNaturalLanguageAxiom "any ontological function x is specialized by some systemic function y and, beyond ontological functions, it classifies systemic functions only" .
+
+
+###  https://www.w3id.org/fumco/PerdurantOntologicalFunction
+<https://www.w3id.org/fumco/PerdurantOntologicalFunction> rdf:type owl:Class ;
+                                                          rdfs:subClassOf :ParticularOntologicalFunction ;
+                                                          rdfs:label "Ontological Function about Perdurants" ;
+                                                          iof-av:naturalLanguageDefinition "An concept that classifies a perdurant based on what happens to some other perdurant related to it" .
+
+
+###  https://www.w3id.org/fumco/PhysicalObjectOntologicalFunction
+<https://www.w3id.org/fumco/PhysicalObjectOntologicalFunction> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <https://www.w3id.org/fumco/EndurantOntologicalFunction> ;
+                                                               rdfs:label "Ontological Function about Physical Objects" ;
+                                                               iof-av:naturalLanguageDefinition "An concept that classifies a perdurant based on what happens to some physical object related to it" .
+
+
+###  https://www.w3id.org/fumco/ProcessOntologicalFunction
+<https://www.w3id.org/fumco/ProcessOntologicalFunction> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <https://www.w3id.org/fumco/PerdurantOntologicalFunction> ;
+                                                        rdfs:label "Ontological Function about Processes" ;
+                                                        iof-av:naturalLanguageDefinition "An concept that classifies a perdurant based on what happens to some (other) process related to it" .
+
+
+###  https://www.w3id.org/fumco/QualityOntologicalFunction
+<https://www.w3id.org/fumco/QualityOntologicalFunction> rdf:type owl:Class ;
+                                                        rdfs:subClassOf :ParticularOntologicalFunction ;
+                                                        rdfs:label "Ontological Function about Qualities" ;
+                                                        iof-av:naturalLanguageDefinition "An concept that classifies a perdurant based on what happens to some quality related to it" .
+
+
+###  https://www.w3id.org/fumco/QualityValueOntologicalFunction
+<https://www.w3id.org/fumco/QualityValueOntologicalFunction> rdf:type owl:Class ;
+                                                             rdfs:subClassOf :ParticularOntologicalFunction ;
+                                                             rdfs:label "Ontological Function about Quality Values" ;
+                                                             iof-av:firstOrderLogicDefinition """ChangeQualityValue(x) ↔ (CL(y, x) ↔ E(y) ∧ ∃si, sf, ti, tf, a, q, vi, vf
+(sState(y, si, ti)∧Goal(sf)∧eState(y, sf, tf)∧qt(q, a)∧PC(a, si, ti)∧PC(a, sf, tf)∧
+ql(q, vi, ti) ∧ ql(q, vf, tf) ∧ ¬(vi = vf)))""" ;
+                                                             iof-av:naturalLanguageDefinition "An concept that classifies a perdurant based on what happens to some qualit-value (DOLCE-region) related to it" ;
+                                                             iof-av:semiFormalNaturalLanguageDefinition "A ‘change of quality-value’ function is a classifier of events that are transitions between a starting state (si, with time extension ti) and a desired final state (sf, with extension tf) with a participating entity (a) which has a quality (q) with different values, vi and vf, at times ti and tf, respectively." .
+
+
+###  https://www.w3id.org/fumco/RelationalQuality
+<https://www.w3id.org/fumco/RelationalQuality> rdf:type owl:Class ;
+                                               rdfs:subClassOf <https://w3id.org/DOLCE/OWL/DOLCEbasic#Quality> ;
+                                               rdfs:label "Relational Quality" ;
+                                               iof-av:naturalLanguageDefinition "Heuristically, any quality that \"depends on\" some external entity, in some sense." .
+
+
+###  https://www.w3id.org/fumco/Resistance
+<https://www.w3id.org/fumco/Resistance> rdf:type owl:Class ;
+                                        rdfs:subClassOf <https://www.w3id.org/fumco/Capacity> ;
+                                        rdfs:comment "This is just a domain specific class give for the sake of example, to showcase possible extensions of the ontology." ;
+                                        rdfs:label "Resistance" .
+
+
+###  https://www.w3id.org/fumco/Role
+<https://www.w3id.org/fumco/Role> rdf:type owl:Class ;
+                                  rdfs:subClassOf <https://www.w3id.org/fumco/Concept> ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <https://www.w3id.org/fumco/definition-founded-on> ;
+                                                    owl:someValuesFrom <https://www.w3id.org/fumco/Concept>
+                                                  ] ;
+                                  rdfs:isDefinedBy "https://www.istc.cnr.it/en/content/social-roles-and-their-descriptions" ;
+                                  rdfs:label "Role" ;
+                                  iof-av:firstOrderLogicAxiom "RL(x) → ∃yfoundedInst(x,y)" ;
+                                  iof-av:isPrimitive "true"^^xsd:boolean ;
+                                  iof-av:primitiveRationale "A full definition is delegated to the alignment with an upper ontology" ;
+                                  iof-av:semiFormalNaturalLanguageAxiom "if x is a role, then there is a y on which it is instantiation-founded" .
+
+
+###  https://www.w3id.org/fumco/SelectedFunction
+<https://www.w3id.org/fumco/SelectedFunction> rdf:type owl:Class ;
+                                              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty <https://www.w3id.org/fumco/function-of> ;
+                                                                    owl:someValuesFrom <https://www.w3id.org/fumco/TechnicalArtifact>
+                                                                  ] ;
+                                              rdfs:subClassOf <https://www.w3id.org/fumco/Concept> ;
+                                              rdfs:label "Selected Function" ;
+                                              iof-av:firstOrderLogicDefinition "SelectedFunction(f) ↔ ∃x(hasFunction(x, f))" ;
+                                              iof-av:naturalLanguageDefinition "The function of an object, as intended by some agent" ;
+                                              iof-av:semiFormalNaturalLanguageDefinition "Selected functions are, by definition, exactly those attributed to an entity by an agent." .
+
+
+###  https://www.w3id.org/fumco/SolvedFunction
+<https://www.w3id.org/fumco/SolvedFunction> rdf:type owl:Class ;
+                                            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <https://www.w3id.org/fumco/main-function-of> ;
+                                                                  owl:someValuesFrom <https://www.w3id.org/fumco/EngineeringMethod>
+                                                                ] ;
+                                            rdfs:subClassOf <https://www.w3id.org/fumco/Role> ;
+                                            rdfs:comment "The first order logic definition is changed in OWL: we give an approximation, which exploits the relation \"main-function-of\", which replaces the main-function class. The main function class itself is not present in this OWL ontology." ;
+                                            rdfs:label "Solved Function" ;
+                                            iof-av:firstOrderLogicDefinition "solvedFunction(x) ↔ mainFunction(x)" ;
+                                            iof-av:naturalLanguageDefinition "Solved functions are functions for which a plan of how to carry them out exist." ;
+                                            iof-av:semiFormalNaturalLanguageDefinition "engineering functions and main-functions coincide" .
+
+
+###  https://www.w3id.org/fumco/System
+<https://www.w3id.org/fumco/System> rdf:type owl:Class ;
+                                    rdfs:comment """A system, especially in the engineering context, is often thought as a whole made by parts, called components, whose bahavior contributes in a particular way to the functioning of the whole system. 
+
+In this sense a system can be anything that is subject to such an analysis: even the smallest screw, say, is made by different parts that play different roles in the realization of the function of the screw, and they are important for the screw designer or manufacturer.""" ;
+                                    rdfs:label "System" ;
+                                    iof-av:isPrimitive "true"^^xsd:boolean ;
+                                    iof-av:primitiveRationale "The definition of \"system\" is outside the scope of this ontology, where it is used as a primitive, and with a (engineering-)commonsense meaning" .
+
+
+###  https://www.w3id.org/fumco/SystemicFunction
+<https://www.w3id.org/fumco/SystemicFunction> rdf:type owl:Class ;
+                                              rdfs:subClassOf <https://www.w3id.org/fumco/Role> ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty <https://www.w3id.org/fumco/classifies> ;
+                                                                owl:allValuesFrom [ owl:intersectionOf ( [ owl:intersectionOf ( <https://www.w3id.org/fumco/Behaviour>
+                                                                                                                                [ rdf:type owl:Restriction ;
+                                                                                                                                  owl:onProperty <https://www.w3id.org/fumco/causally-contributes-to> ;
+                                                                                                                                  owl:someValuesFrom <https://www.w3id.org/fumco/Goal>
+                                                                                                                                ]
+                                                                                                                              ) ;
+                                                                                                           rdf:type owl:Class
+                                                                                                         ]
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty <https://w3id.org/DOLCE/OWL/DOLCEbasic#specificallyDependsOn> ;
+                                                                                                           owl:someValuesFrom <https://www.w3id.org/fumco/System>
+                                                                                                         ]
+                                                                                                       ) ;
+                                                                                    rdf:type owl:Class
+                                                                                  ]
+                                                              ] ;
+                                              rdfs:comment """Systemic functions are understood as role concepts that
+– classify only behaviors, relative to some behaving artifact,
+– are contextualized by a system that contains the behaving artifact and for whom a goal state has been
+selected,
+– the classified behaviors contribute to the goal of the system.""" ;
+                                              rdfs:label "Systemic Function" ;
+                                              skos:example "The electrovalve controls the cylinder" ;
+                                              iof-av:firstOrderLogicAxiom "FunctionSys(x) ↔ ∃yFunctionOfSys(x,y)" ;
+                                              iof-av:firstOrderLogicDefinition """FunctionOfSys(x,y) ↔ (RL(x) ∧∃z,g(System(z) ∧goalOf(g,z) ∧∃b,t(CL(b,x,t)  ∧P(y,z,t))
+    ∀b,t((CL(b,x,t) ∧P(y,z,t)) → (Behaviour(b) ∧participatesAsDoer(y,b,t)
+    ∧causalContr(b,g)))))""" ;
+                                              iof-av:naturalLanguageDefinition "The role of a component of a system in determining the behavior of the whole system" ;
+                                              iof-av:semiFormalNaturalLanguageAxiom "“x is a systemic function if and only if it is the systemic function of some object y”" ;
+                                              iof-av:semiFormalNaturalLanguageDefinition "“x is a systemic function of y if and only if x is a role and there exist a system z and a goal g for z such that x is satisfied only by behaviors which have y as doer and causally contribute to achieve g, whenever y is part of z”" .
+
+
+###  https://www.w3id.org/fumco/TechnicalArtifact
+<https://www.w3id.org/fumco/TechnicalArtifact> rdf:type owl:Class ;
+                                               rdfs:subClassOf <https://w3id.org/DOLCE/OWL/DOLCEbasic#NonAgentivePhysicalObject> ;
+                                               rdfs:comment "For the sake of simplicity, we focus on technical artifacts that are physical objects. In the future, or if the need arises, it should be considered the case of artifacts that are not physical objects also." ;
+                                               rdfs:label "(Physical) Technical Artifact" ;
+                                               skos:example "a pipe, a motor, a battery" ;
+                                               iof-av:naturalLanguageDefinition "A technical artifact is any physical object that came into being through some intentional technical process, such as, e.g., any car, plane, tooling machine, or mechanical device." .
+
+
+###  https://www.w3id.org/fumco/ToGroove
+<https://www.w3id.org/fumco/ToGroove> rdf:type owl:Class ;
+                                      rdfs:subClassOf <https://www.w3id.org/fumco/FeatureOntologicalFunction> ;
+                                      rdfs:comment "This is just a domain-level specific class given as an example" ;
+                                      rdfs:label "To Groove" ;
+                                      skos:example "A groove feature is added in some workpiece" ;
+                                      iof-av:firstOrderLogicDefinition """ToGroove(x) ↔ (CL(y, x) ↔ E(y) ∧ ∃si, sf, ti, tf, a, f
+(sState(y, si, ti)∧Goal(sf)∧eState(y, sf, tf)∧Groove(f)∧SD(f, a)∧PC(a, si, ti)∧
+PC(a, sf, tf) ∧ ¬PRE(f, ti) ∧ PRE(f, tf)))""" ;
+                                      iof-av:semiFormalNaturalLanguageDefinition """A ‘change to groove’ function is a classifier of events that are transitions between
+a starting state (si, with time extension ti) and a desired final state (sf, with
+extension tf) with a participating entity (a) that has a feature (f) of ‘Groove’
+type at time tf but not at time ti.""" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <https://www.w3id.org/fumco/BatteryVoltage>
+                <https://www.w3id.org/fumco/FlowRate>
+                <https://www.w3id.org/fumco/Resistance>
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
