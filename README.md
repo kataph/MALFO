@@ -1,4 +1,4 @@
-# MALFO serialization
+![image](https://github.com/user-attachments/assets/abb75231-6957-4094-a1df-979e54bdb3d6)# MALFO serialization
 This repo contains various serializations of the ontology MALFO (MALFunction Ontology): 
 - **first-order logic**: MALFO is serialized in the languages clif (Common Logic Interchange Format), tptp (Thousands of Problems for Theorem Provers format), and p9 (Prover9). The clif version was parsed with The .clif axioms were parsed with macleod: https://github.com/thahmann/macleod. With the same tool the tptp and p9 version were generated automatically.
 - **disjunctive datalog**: MALFO is serialized in a disjunctive datalog  language (MALFO.pl has been parsed with [DLV](https://www.dlvsystem.it/dlvsite/dlv/)). Note that MALFO.pl contains a program roughly equivalent to first-order MALFO (the signature of DLV MALFO has been expanded with auxiliary predicates to realize the equivalence: these should be removed if used in applications, especially those participating in existential rules, otherwise there is the risk of slow or non-terminating program executions).
@@ -14,7 +14,17 @@ The models have been encoded in graphml files for the sake of visual presentatio
 
 ## MALFO Taxonomy
 The taxonomy of MALFO, obtained with Plant UML:
-![image](https://github.com/user-attachments/assets/a4c9d10e-f74a-40bc-8d59-99f47fd98deb)
+
+| ![image](https://github.com/user-attachments/assets/ab46b934-4961-428a-8f6e-9dcd3c99d988) |
+|:--:| 
+| *MALFO taxonomy, vertical orientation* |
+
+| ![image](https://github.com/user-attachments/assets/9d886269-8566-473f-bdda-24f8b5899b27) |
+|:--:| 
+| *MALFO taxonomy, horizontal orientation* |
+
+
+
 
 
 ### Biblio
