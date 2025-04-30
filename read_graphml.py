@@ -11,7 +11,7 @@ from rdflib.namespace import OWL, RDF, RDFS
 
 
 ROOT_URL = "https://www.example.com/"
-MALFO_URL = "https://www.w3id.org/MALFO#"
+MALFO_URL = "https://www.w3id.org/malfo/"
 INPUT_GRAPHML = input("Input the graphml file name or path (with the extension). The file must follow the convention hardcoded in this script> ")
 OUTPUT_TURTLE = 'graphml2rdf-out.ttl'
 
@@ -63,7 +63,7 @@ edges = soup.findAll("edge")
 g = rl.Graph()
 g.bind("rdf", RDF)
 g.bind("rdfs", RDFS)
-g.bind("MALFO", MALFO)
+g.bind("malfo", MALFO)
 
 
 for edge in edges:
@@ -117,12 +117,12 @@ for edge in edges:
     g.add((category_e, RDF.type, OWL.ObjectProperty))
 
 g.add((MALFO["FunctionCompatible"], RDF.type, OWL.Class))
-g.add((MALFO["FunctionCompatible"], RDFS.comment, rl.Literal('Utility class representing the complement of MALFO:Malfunction')))
+g.add((MALFO["FunctionCompatible"], RDFS.comment, rl.Literal('Utility class representing the complement of malfo:Malfunction')))
 g.add((MALFO["FunctionCompatible"], OWL.disjointWith, MALFO["Malfunction"]))
 document = rl.BNode()
 g.add((document, RDF.type, OWL.Ontology))
 g.add((document, RDFS.comment, rl.Literal(f'Graph automatically built from \'{INPUT_GRAPHML}\' on {str(datetime.datetime.now())}')))
-g.add((document, OWL.imports, rl.URIRef('https://www.w3id.org/MALFO')))
+g.add((document, OWL.imports, rl.URIRef('https://www.w3id.org/malfo')))
 
 
 g.serialize(OUTPUT_TURTLE, format = "ttl")  

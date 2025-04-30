@@ -5,7 +5,7 @@ CLASSIFICATION_QUERIES = {
 ##[reduced to RANK1]
 ## SELECTS all malfunction-processes # Complete knowledge about functional compatibility of putative malfunction-processes is assumed (for the FILTER NOT EXISTS, otherwise some non-malfunction-processes may be returned)
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX malfo: <https://www.w3id.org/MALFO#>
+PREFIX malfo: <https://www.w3id.org/malfo/>
 INSERT {?x a malfo:MalfunctionProcess}
 WHERE {
 	?x a malfo:Process .
@@ -15,7 +15,7 @@ WHERE {
 ##[reduced to RANK1]
 ## SELECTS all faults # Complete knowledge about functional compatibility of putative faults is assumed (for the FILTER NOT EXISTS, otherwise some non-faults may be returned)
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX malfo: <https://www.w3id.org/MALFO#>
+PREFIX malfo: <https://www.w3id.org/malfo/>
 INSERT {?x a malfo:Fault}
 WHERE {
 	?x a malfo:State .
@@ -27,7 +27,7 @@ WHERE {
 ["""##[reduced to RANK2]
 ## SELECTS all failures # Complete knowledge about functional compatibility of putative failures is assumed (for the FILTER NOT EXISTS, otherwise some non-failures may be returned)
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX malfo: <https://www.w3id.org/MALFO#>
+PREFIX malfo: <https://www.w3id.org/malfo/>
 INSERT {?x a malfo:Failure}
 WHERE {
 	?x a malfo:Event .
@@ -36,10 +36,10 @@ WHERE {
 }""",
 
 """##[reduced to RANK2]; requires negation-as-failure
-## SELECTS all down-states # Complete knowledge about functional compatibility of putative down-states  is assumed (for the FILTER NOT EXISTS, otherwise some non-down-states  may be returned)
+## SELECTS all abnoraml ext. dis. states # Complete knowledge about functional compatibility of putative ab.ext.dis. states  is assumed (for the FILTER NOT EXISTS, otherwise some non-ab.ext.dis. states  may be returned)
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX malfo: <https://www.w3id.org/MALFO#>
-INSERT {?x a malfo:DownState}
+PREFIX malfo: <https://www.w3id.org/malfo/>
+INSERT {?x a malfo:AbnormalExternalDisabledState}
 WHERE {
 	?x a malfo:State .
 	?x a malfo:Malfunction .
@@ -49,7 +49,7 @@ WHERE {
 ["""##[reduced to RANK3]
 ## SELECTS all failure conditions
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX malfo: <https://www.w3id.org/MALFO#>
+PREFIX malfo: <https://www.w3id.org/malfo/>
 INSERT {?x rdf:type malfo:FailureCondition} 
 WHERE {
 	?x a malfo:State .
@@ -63,7 +63,7 @@ WHERE {
 """##[reduced to RANK3]
 ## SELECTS all failure mechanisms
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX malfo: <https://www.w3id.org/MALFO#>
+PREFIX malfo: <https://www.w3id.org/malfo/>
 INSERT {?x a malfo:FailureMechanism}
 WHERE {
 	?x (malfo:achieves|malfo:allows|malfo:facilPreconditionFor|malfo:hasPhysicalConseq)* ?fa . ?fa a malfo:Failure .
@@ -75,7 +75,7 @@ WHERE {
 """##[reduced to RANK3]; requires negation-as-failure
 ## SELECTS all non-performance event # Complete knowledge about functional compatibility of putative non-performance event is assumed (for the FILTER NOT EXISTS, otherwise some non-non-performance-event  may be returned)
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX malfo: <https://www.w3id.org/MALFO#>
+PREFIX malfo: <https://www.w3id.org/malfo/>
 INSERT {?x a malfo:NonPerformanceEvent}	
 WHERE {
 	?x a malfo:Event .
@@ -86,7 +86,7 @@ WHERE {
 """##[reduced to RANK3]; requires negation-as-failure
 ## SELECTS all mere symptoms # Complete knowledge about causal consequences of putative mere sympoms is assumed (for the FILTER NOT EXISTS, otherwise some non-mere-symptoms may be returned)
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX malfo: <https://www.w3id.org/MALFO#>
+PREFIX malfo: <https://www.w3id.org/malfo/>
 INSERT {?x a malfo:MereSymptom}
 WHERE {
 	?mal (malfo:achieves|malfo:allows|malfo:prevents|malfo:disallows) ?x . ?mal a malfo:Malfunction
@@ -100,7 +100,7 @@ CAUSATION_RULES = {
     "rank1":[
         """## hasPhysicalConseq is the neutral element for causation
 		PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-		PREFIX malfo: <https://www.w3id.org/MALFO#>
+		PREFIX malfo: <https://www.w3id.org/malfo/>
 		INSERT {?x ?p ?y}
         WHERE {
 			?x malfo:hasPhysicalConseq* ?x1 . ?x1 ?p ?x2 . ?x2 malfo:hasPhysicalConseq* ?y . 
@@ -109,7 +109,7 @@ CAUSATION_RULES = {
     "rank2":[
         """## APPLIES THE DEFINITION OF allows; requires negation-as-failure
 		PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-		PREFIX malfo: <https://www.w3id.org/MALFO#>
+		PREFIX malfo: <https://www.w3id.org/malfo/>
 		INSERT {?x malfo:allows ?y}
         WHERE {
 			{?x malfo:achieves|malfo:maintains ?z .
@@ -122,7 +122,7 @@ CAUSATION_RULES = {
 		}""",
         """## APPLIES THE DEFINITION OF disallows
 		PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-		PREFIX malfo: <https://www.w3id.org/MALFO#>
+		PREFIX malfo: <https://www.w3id.org/malfo/>
 		INSERT {?x malfo:disallows ?y}
         WHERE {
 			{?x malfo:achieves|malfo:maintains ?z .
@@ -133,7 +133,7 @@ CAUSATION_RULES = {
 		}""",
         """## APPLIES THE DEFINITION OF prevents
 		PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-		PREFIX malfo: <https://www.w3id.org/MALFO#>
+		PREFIX malfo: <https://www.w3id.org/malfo/>
 		INSERT {?x malfo:prevents ?y}
         WHERE {
 			?x malfo:achieves ?z .
@@ -146,7 +146,7 @@ RANGE_DOMAIN_CONSTRAINTS = {
     "achieves":"""
 	## check violations of range domain axioms of achieves:
 	PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-	PREFIX malfo: <https://www.w3id.org/MALFO#>
+	PREFIX malfo: <https://www.w3id.org/malfo/>
     ASK {
         {?occ malfo:achieves ?ev . ?ev rdf:type malfo:Event} 
         UNION 
@@ -156,7 +156,7 @@ RANGE_DOMAIN_CONSTRAINTS = {
     "prevents":"""
 	## check violations of range domain axioms of prevents:
 	PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-	PREFIX malfo: <https://www.w3id.org/MALFO#>
+	PREFIX malfo: <https://www.w3id.org/malfo/>
     ASK {
         {?occ malfo:prevents ?ev . ?ev rdf:type malfo:Event} 
         UNION 
@@ -166,7 +166,7 @@ RANGE_DOMAIN_CONSTRAINTS = {
     "allows":"""
 	## check violations of range domain axioms of allows:
 	PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-	PREFIX malfo: <https://www.w3id.org/MALFO#>
+	PREFIX malfo: <https://www.w3id.org/malfo/>
     ASK {
         {?st malfo:allows ?occ . ?st rdf:type malfo:State} 
         }
@@ -174,7 +174,7 @@ RANGE_DOMAIN_CONSTRAINTS = {
     "disallows":"""
 	## check violations of range domain axioms of disallows:
 	PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-	PREFIX malfo: <https://www.w3id.org/MALFO#>
+	PREFIX malfo: <https://www.w3id.org/malfo/>
     ASK {
         {?st malfo:disallows ?occ . ?st rdf:type malfo:State} 
         }
@@ -183,7 +183,7 @@ RANGE_DOMAIN_CONSTRAINTS = {
 
 SELECT_FINER_CAUSES = {
     "absolute": """PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-	PREFIX malfo: <https://www.w3id.org/MALFO#>
+	PREFIX malfo: <https://www.w3id.org/malfo/>
 	PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 	SELECT DISTINCT ?x ?p ?y
 	WHERE {
@@ -195,7 +195,7 @@ SELECT_FINER_CAUSES = {
         BIND(malfo:absoluteCauseOf as ?p)
 	}""",
     "ultimate":"""PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-	PREFIX malfo: <https://www.w3id.org/MALFO#>
+	PREFIX malfo: <https://www.w3id.org/malfo/>
 	PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 	SELECT DISTINCT ?x ?p ?y ?q ?s
 	WHERE {
